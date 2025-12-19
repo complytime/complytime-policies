@@ -30,6 +30,7 @@ This implementation showcases several CALM features:
 ### View Available Commands
 
 ```bash
+# List all commands available from Makefile
 make help
 ```
 
