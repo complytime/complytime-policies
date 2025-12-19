@@ -9,11 +9,10 @@ CONTROLS_DIR := controls
 URL_MAPPING := $(STANDARDS_DIR)/url-mapping.json
 ARCHITECTURES := $(wildcard $(ARCHITECTURE_DIR)/*.json)
 PATTERNS := $(wildcard $(PATTERNS_DIR)/*.pattern.json)
-STANDARDS_PATTERNS := $(wildcard $(STANDARDS_DIR)/*.pattern.json)
 STANDARDS := $(wildcard $(STANDARDS_DIR)/*.standard.json)
 CONTROLS := $(wildcard $(CONTROLS_DIR)/*.json)
 
-.PHONY: help validate validate-architectures validate-patterns validate-standards validate-all check-calm
+.PHONY: help validate validate-architectures validate-patterns validate-standards validate-all check-calm validate-example validate-control-files validate-deployment-examples
 
 help: ## Display this help screen
 	@grep -E '^[a-z.A-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -72,26 +71,6 @@ validate-standards: check-calm ## Validate all CALM standards (as JSON Schema)
 	@echo "✓ All standards validated successfully"
 
 
-validate-with-standards: check-calm ## Validate architecture against compliance ecosystem pattern with standards enforcement
-	@echo "Validating architecture against pattern with standards..."
-	@if [ ! -f "$(ARCHITECTURE_DIR)/complytime-example.arch.json" ]; then \
-		echo "Error: Architecture file not found: $(ARCHITECTURE_DIR)/complytime-example.arch.json"; \
-		exit 1; \
-	fi
-	@if [ ! -f "$(STANDARDS_DIR)/complytime-pattern.pattern.json" ]; then \
-		echo "Error: Pattern file not found: $(STANDARDS_DIR)/complytime-pattern.pattern.json"; \
-		exit 1; \
-	fi
-	@if [ ! -f "$(URL_MAPPING)" ]; then \
-		echo "Error: URL mapping file not found: $(URL_MAPPING)"; \
-		exit 1; \
-	fi
-	@$(CALM_CLI) validate \
-		-p $(STANDARDS_DIR)/complytime-pattern.pattern.json \
-		-a $(ARCHITECTURE_DIR)/complytime-example.arch.json \
-		-u $(URL_MAPPING)
-	@echo "✓ Architecture validated against pattern with standards"
-
 validate-example: check-calm ## Validate example architecture against deployment pattern
 	@echo "Validating example architecture..."
 	@if [ ! -f "$(ARCHITECTURE_DIR)/complytime-example.arch.json" ]; then \
@@ -133,6 +112,6 @@ docify: check-calm ## Generate visual documentation website from CALM architectu
 	@echo "  Run cd docs && npm install && npm start"
 
 # Validate everything
-validate: validate-architectures validate-patterns validate-standards validate-with-standards validate-control-files validate-deployment-examples
+validate: validate-architectures validate-patterns validate-standards validate-control-files validate-deployment-examples
 	@echo ""
 	@echo "✓ All validations passed"
