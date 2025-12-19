@@ -4,7 +4,7 @@ Thank you for your interest in contributing to ComplyTime Policies!
 
 ## Contribution Guidelines
 
-This repository follows the [ComplyTime Organization Style Guide](https://github.com/complytime/org-infra/blob/main/docs/style-guide.md). Please review the style guide before submitting contributions.
+This repository follows the [ComplyTime Organization Style Guide](https://github.com/complytime/community/blob/main/STYLE_GUIDE.md). Please review the style guide before submitting contributions.
 
 ### Key Principles
 
