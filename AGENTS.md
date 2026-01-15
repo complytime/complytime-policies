@@ -15,17 +15,12 @@ Agent-specific instructions for ComplyTime codebases.
 
 ---
 
-## Setup Commands
+## Dependency Management
 
-**Dependency Management:**
 - Use latest stable versions (no alpha/beta/rc)
 - Pin exact versions when possible (prefer `1.2.3` over `^1.2.3`)
 - Use semantic versioning ranges (`^` or `~`) only when pinning is impractical
-
-**Project Structure:**
-- All repos must include: `README.md`, `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `.github/`
-- Use Makefile for code-specific commands
-- Configure pre-commit hooks via [pre-commit](https://pre-commit.com/)
+- When suggesting dependencies, evaluate: adoption rate, governance model, maintenance frequency, community health
 
 ---
 
@@ -35,6 +30,8 @@ Agent-specific instructions for ComplyTime codebases.
 - Empty line at end of file (POSIX standard)
 - Line length: 99 characters max (exceptions for readability)
 - Write tests with descriptive names and edge cases
+- Run tests locally before committing
+- Fix all test and type errors before PR
 
 **Go:**
 - File names: lowercase with underscores (`my_file.go`)
@@ -43,18 +40,20 @@ Agent-specific instructions for ComplyTime codebases.
 - Format with `goimports` and `go fmt`
 - License header: `// SPDX-License-Identifier: Apache-2.0`
 - Run `.golangci.yml` checks locally before PR
+- Place shared constants in `internal/consts/consts.go` or `consts.go`
 
 **Python:**
 - Use type hints
 - Format with `black` and `isort`
-- Lint with `flake8`
+- Lint with `ruff`
 - Type check with `mypy`
 - License header: `# SPDX-License-Identifier: Apache-2.0`
+- Place shared constants in `settings.py` or `constants.py` (use `UPPER_CASE` for constant names)
 - Non-Python files: use [Megalinter](https://github.com/oxsecurity/megalinter)
 
 ---
 
-## Design Patterns
+## Required Questions Before Implementation
 
 **Before Implementing Features:**
 1. Ask: "Who is the specific User Persona for this feature?"
@@ -65,7 +64,7 @@ Agent-specific instructions for ComplyTime codebases.
 **Before Creating Data Storage:**
 1. Ask: "What is the retention policy for this data? (When do we delete it?)"
 2. Ask: "Are there compliance requirements regarding immutability or encryption?"
-3. Suggest default resource lifecycle policies in generated code
+3. Include default resource lifecycle policies in generated code
 
 **Cloud Resources:**
 - Do NOT provide minimal resources only
@@ -74,46 +73,10 @@ Agent-specific instructions for ComplyTime codebases.
 
 ---
 
-## Core Principles
+## Variable Names
 
-**Single Source of Truth:**
-- Centralize constants in dedicated files (`internal/consts/consts.go`, `settings.py`)
 - No magic strings/numbers inline
-- One change updates all references automatically
-
-**Simplicity & Isolation:**
-- Keep functions small and focused (Single Responsibility)
-- Easier to test and maintain
-
-**Readability:**
-- Code is read 10x more than written
-- Explicit naming (`days_until_expiration` not `d`)
-- Avoid clever code
-- Comments explain *why*, not *what*
-
-**Efficiency:**
-- Research existing solutions first
-- Suggest dependencies based on risk assessment (adoption rate, governance model, maintenance frequency, community health)
-- Vet dependencies before recommending
-
-**Architecture:**
-- Composability: tools should work together (JSON/YAML streams)
-- Convention over configuration: sensible defaults
-
-**Design Documentation:**
-- Document design decisions in available location (check for `adr/`, `docs/design/`, or similar directories)
-- If no standard location exists, use inline comments with clear references
-- Include rationale, alternatives considered, and trade-offs
-
----
-
-## Testing Instructions
-
-- Write tests for all code changes
-- Use descriptive test function names
-- Include edge cases
-- Run tests locally before committing
-- Fix all test and type errors before PR
+- Use descriptive variable names (e.g., `days_until_expiration` not `d`)
 
 ---
 
@@ -121,7 +84,7 @@ Agent-specific instructions for ComplyTime codebases.
 
 **Branching:**
 - Create feature branches from `main`
-- Keep PRs atomic (reviewable in one sitting)
+- Keep PRs focused on a single change or feature
 
 **PR Requirements:**
 - Title format: `<type>: <description>` (e.g., `feat: implement oscal validation logic`)
@@ -131,20 +94,16 @@ Agent-specific instructions for ComplyTime codebases.
 
 **Commits:**
 - Follow [Conventional Commits](https://www.conventionalcommits.org/)
+- Format: `<type>(<scope>): <description>`
+- Include DCO sign-off: use `git commit --signoff` or add `Signed-off-by: Your Name <email@example.com>`
 
 ---
 
-## Writing Guidelines
+## Design Documentation
 
-**Style:**
-- Zero filler: eliminate introductory phrases
-- Active voice only (never passive)
-- Ruthless deletion: remove hedge words (*actually, basically, virtually, really, clearly*)
-
-**Structure:**
-- Bottom Line Up Front (BLUF): first sentence states status/critical action
-- Tables: lean headers (1-2 words), cells are fragments not sentences
-- Signposting: use bold headers for navigation
+- Document design decisions in available location (check for `adr/`, `docs/design/`, or similar directories)
+- If no standard location exists, use inline comments with clear references
+- Include rationale, alternatives considered, and trade-offs
 
 ---
 
@@ -153,6 +112,7 @@ Agent-specific instructions for ComplyTime codebases.
 When working on a bug/feature:
 - If you identify improvements (refactoring, formatting, naming), consider opening a **separate PR or Issue**
 - Keep aesthetic changes separate from logic fixes
-- Ensures PRs remain atomic and reviewable
 
 ---
+
+The ComplyTime community repository containing more detailed guides is located at: https://github.com/complytime/community
