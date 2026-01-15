@@ -1,0 +1,8 @@
+{
+  "https://standards.complytime.org/complytime-node-metadata.standard.json": "complytime-node-metadata.standard.json",
+  "https://standards.complytime.org/complytime-relationship-metadata.standard.json": "complytime-relationship-metadata.standard.json",
+  "https://standards.complytime.org/complytime-gemara-policy-inclusion.standard.json": "complytime-gemara-policy-inclusion.standard.json",
+  "https://patterns.complytime.org/complytime-deployment.pattern.json": "../patterns/complytime-deployment.pattern.json",
+  "gemara://policies/cloud-policy-001/controls/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01": "../controls/cloud-policy-001-cn01-tr01.requirement.json",
+  "gemara://controls/FINOS-CCC/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01": "../controls/ccc-core-cn01-tr01.requirement.json"
+}

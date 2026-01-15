@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standards.complytime.org/complytime-node-metadata.standard.json",
+  "title": "ComplyTime Node Metadata Standard",
+  "description": "Standard metadata requirements for ComplyTime CALM architecture nodes. Enforces consistent documentation of primary function, context, data contracts, and Gemara layer information.",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "primary_function": {
+          "type": "string",
+          "description": "Primary function or purpose of the node (e.g., 'Policy Authoring & MCP Server Host', 'OTEL Processor')"
+        },
+        "gemara_layer": {
+          "type": "string",
+          "description": "Gemara layer(s) this node operates at (e.g., 'Layer 1: Guidance, Layer 2: Controls, Layer 3: Policy')",
+          "pattern": "^[1-6]+:"
+        }
+      },
+      "required": ["primary_function"],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

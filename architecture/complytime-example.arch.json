@@ -1,0 +1,391 @@
+{
+  "$schema": "https://calm.finos.org/release/1.1/meta/calm.json",
+  "unique-id": "complytime-example",
+  "name": "ComplyTime Example Architecture",
+  "description": "Example ComplyTime deployment with OTEL Collector running in agent mode as a sidecar. Includes Loki for log aggregation, S3 for evidence storage, and Grafana for visualization. Single application service with ProofWatch instrumentation.",
+  "metadata": [
+    {
+      "version": "0.2.0",
+      "organization": "ComplyTime",
+      "created": "2025-01-15",
+      "architecture_version": "beyond",
+      "deployment_pattern": "agent-mode-sidecar"
+    }
+  ],
+  "nodes": [
+    {
+      "unique-id": "application-service",
+      "node-type": "service",
+      "name": "Application Service",
+      "description": "Application service that uses ProofWatch for policy evaluation event instrumentation.",
+      "metadata": {
+        "primary_function": "Business Application",
+        "context": "Production workload"
+      }
+    },
+    {
+      "unique-id": "proofwatch",
+      "node-type": "library",
+      "name": "ProofWatch",
+      "description": "Instrumentation Library. Converts raw policy evaluation events into standardized OpenTelemetry log records (Raw Evidence).",
+      "metadata": {
+        "primary_function": "Instrumentation Library"
+      }
+    },
+    {
+      "unique-id": "collector-agent",
+      "node-type": "service",
+      "name": "OTEL Collector Agent",
+      "description": "OpenTelemetry Collector running in agent mode (sidecar). Receives telemetry from ProofWatch and processes it with TruthBeam.",
+      "metadata": {
+        "primary_function": "Runtime Environment",
+        "deployment_mode": "agent"
+      },
+      "controls": {
+        "security": {
+          "description": "Controls for secure telemetry collection and processing",
+          "requirements": [
+            {
+              "requirement-url": "gemara://policies/cloud-policy-001/controls/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01",
+              "description": "Encrypt Data for Transmission - TLS 1.3 for OTLP endpoints",
+              "config": {
+                "tls-version": "1.3"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "unique-id": "truthbeam",
+      "node-type": "application",
+      "name": "TruthBeam",
+      "description": "OTEL Processor component. Enriches OTel log records with Gemara-derived compliance attributes by querying the Compass API.",
+      "interfaces": [
+        {
+          "unique-id": "compass-client",
+          "interface-type": {
+            "unique-id": "compass-client-interface"
+          },
+          "protocol": "HTTPS",
+          "client-type": "Compass API Client",
+          "description": "HTTPS client for querying Compass service API"
+        }
+      ],
+      "metadata": {
+        "primary_function": "OTEL Processor"
+      }
+    },
+    {
+      "unique-id": "compass-service",
+      "node-type": "service",
+      "name": "Compass Service",
+      "description": "Central Lookup Service providing Gemara policy and control context.",
+      "interfaces": [
+        {
+          "unique-id": "compass-api",
+          "interface-type": {
+            "unique-id": "https-api"
+          },
+          "protocol": "HTTPS",
+          "tls-version": "1.3",
+          "tls-enabled-by-default": true
+        }
+      ],
+      "controls": {
+        "security": {
+          "description": "Controls for policy distribution service",
+          "requirements": [
+            {
+              "requirement-url": "gemara://policies/cloud-policy-001/controls/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01",
+              "description": "Encrypt Data for Transmission - TLS 1.3 enabled by default",
+              "config": {
+                "default-tls-enabled": true,
+                "tls-version": "1.3"
+              }
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "primary_function": "Policy & Control Lookup Service"
+      }
+    },
+    {
+      "unique-id": "loki",
+      "node-type": "service",
+      "name": "Loki",
+      "description": "Log aggregation system. Receives logs from OTEL Collector and provides query interface for Grafana.",
+      "metadata": {
+        "primary_function": "Log Aggregation",
+        "component": "observability"
+      },
+      "controls": {
+        "security": {
+          "description": "Controls for log aggregation service",
+          "requirements": [
+            {
+              "requirement-url": "gemara://policies/cloud-policy-001/controls/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01",
+              "description": "Encrypt Data for Transmission - TLS 1.3 for Loki API",
+              "config": {
+                "tls-version": "1.3"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "unique-id": "s3-evidence-store",
+      "node-type": "storage",
+      "name": "S3 Evidence Store",
+      "description": "Amazon S3 bucket for long-term immutable evidence storage. Stores enriched compliance evidence records with versioning enabled.",
+      "metadata": {
+        "primary_function": "Evidence Persistence",
+        "storage_type": "object-storage",
+        "versioning": true,
+        "immutability": true
+      },
+      "controls": {
+        "data-protection": {
+          "description": "Controls for evidence store data protection",
+          "requirements": [
+            {
+              "requirement-url": "gemara://policies/cloud-policy-001/controls/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01",
+              "description": "Encrypt Data for Transmission - TLS for S3 API access",
+              "config": {
+                "tls-enabled": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "unique-id": "grafana",
+      "node-type": "service",
+      "name": "Grafana",
+      "description": "Observability and visualization platform. Queries Loki for compliance evidence logs and provides dashboards for compliance monitoring.",
+      "metadata": {
+        "primary_function": "Visualization & Monitoring",
+        "component": "observability"
+      },
+      "controls": {
+        "security": {
+          "description": "Controls for visualization service",
+          "requirements": [
+            {
+              "requirement-url": "gemara://policies/cloud-policy-001/controls/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01",
+              "description": "Encrypt Data for Transmission - TLS 1.3 for Grafana web interface",
+              "config": {
+                "tls-version": "1.3"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "unique-id": "complyctl",
+      "node-type": "cli",
+      "name": "complyctl",
+      "description": "Execution & Orchestration CLI. Provides the developer interface for synchronous, local system scans.",
+      "metadata": {
+        "primary_function": "Execution & Orchestration"
+      }
+    },
+    {
+      "unique-id": "complyctl_plugins",
+      "node-type": "service",
+      "name": "complyctl Plugins",
+      "description": "Execution & C2P Logic plugins. Executes specific checks (e.g., OpenSCAP) and incorporates the Compliance-to-Policy (C2P) engine to generate immediate reports.",
+      "metadata": {
+        "primary_function": "Execution & C2P Logic"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "unique-id": "application_to_proofwatch",
+      "description": "Application integrates ProofWatch library",
+      "relationship-type": {
+        "connects": {
+          "source": {
+            "node": "application-service"
+          },
+          "destination": {
+            "node": "proofwatch"
+          }
+        }
+      },
+      "metadata": {
+        "interaction_type": "Synchronous",
+        "direction": "outbound",
+        "integration_type": "library"
+      }
+    },
+    {
+      "unique-id": "proofwatch_to_collector_agent",
+      "description": "ProofWatch emits OTLP logs to local OTEL Collector Agent",
+      "relationship-type": {
+        "connects": {
+          "source": {
+            "node": "proofwatch"
+          },
+          "destination": {
+            "node": "collector-agent"
+          }
+        }
+      },
+      "protocol": "HTTPS",
+      "metadata": {
+        "interaction_type": "Asynchronous",
+        "direction": "outbound",
+        "data_contract": "OTLP Log Records",
+        "transport": "gRPC"
+      }
+    },
+    {
+      "unique-id": "collector_composed_of_truthbeam",
+      "description": "OTEL Collector Agent is composed of TruthBeam processor",
+      "relationship-type": {
+        "composed-of": {
+          "container": "collector-agent",
+          "nodes": ["truthbeam"]
+        }
+      },
+      "metadata": {
+        "interaction_type": "Synchronous",
+        "direction": "outbound",
+        "component_type": "processor"
+      }
+    },
+    {
+      "unique-id": "truthbeam_to_compass",
+      "description": "TruthBeam queries Compass API for compliance context",
+      "relationship-type": {
+        "connects": {
+          "source": {
+            "node": "truthbeam",
+            "interfaces": ["compass-client"]
+          },
+          "destination": {
+            "node": "compass-service",
+            "interfaces": ["compass-api"]
+          }
+        }
+      },
+      "protocol": "HTTPS",
+      "metadata": {
+        "interaction_type": "Asynchronous",
+        "direction": "outbound",
+        "data_contract": "Compliance metadata lookup"
+      }
+    },
+    {
+      "unique-id": "collector_agent_to_loki",
+      "description": "Collector Agent sends enriched logs to Loki for aggregation",
+      "relationship-type": {
+        "connects": {
+          "source": {
+            "node": "collector-agent"
+          },
+          "destination": {
+            "node": "loki"
+          }
+        }
+      },
+      "protocol": "HTTPS",
+      "metadata": {
+        "interaction_type": "Asynchronous",
+        "direction": "outbound",
+        "data_contract": "OTLP Log Records",
+        "transport": "gRPC"
+      }
+    },
+    {
+      "unique-id": "collector_agent_to_s3",
+      "description": "Collector Agent persists enriched evidence records to S3",
+      "relationship-type": {
+        "connects": {
+          "source": {
+            "node": "collector-agent"
+          },
+          "destination": {
+            "node": "s3-evidence-store"
+          }
+        }
+      },
+      "protocol": "HTTPS",
+      "metadata": {
+        "interaction_type": "Asynchronous",
+        "direction": "outbound",
+        "data_contract": "Evidence Records",
+        "transport": "S3 API"
+      }
+    },
+    {
+      "unique-id": "grafana_to_loki",
+      "description": "Grafana queries Loki for log data to display in dashboards",
+      "relationship-type": {
+        "connects": {
+          "source": {
+            "node": "grafana"
+          },
+          "destination": {
+            "node": "loki"
+          }
+        }
+      },
+      "protocol": "HTTPS",
+      "metadata": {
+        "interaction_type": "Synchronous",
+        "direction": "outbound",
+        "data_contract": "LogQL Queries",
+        "transport": "HTTP/2"
+      }
+    },
+    {
+      "unique-id": "complyctl_to_plugins",
+      "description": "complyctl orchestrates plugin execution via gRPC for local system scans",
+      "relationship-type": {
+        "connects": {
+          "source": {
+            "node": "complyctl"
+          },
+          "destination": {
+            "node": "complyctl_plugins"
+          }
+        }
+      },
+      "protocol": "HTTPS",
+      "metadata": {
+        "interaction_type": "Synchronous",
+        "direction": "outbound",
+        "data_contract": "Plugin execution requests and results",
+        "transport": "gRPC over HTTP/2"
+      }
+    },
+    {
+      "unique-id": "complyctl_to_proofwatch",
+      "description": "complyctl may optionally incorporate ProofWatch library for instrumentation",
+      "relationship-type": {
+        "connects": {
+          "source": {
+            "node": "complyctl"
+          },
+          "destination": {
+            "node": "proofwatch"
+          }
+        }
+      },
+      "metadata": {
+        "interaction_type": "Synchronous",
+        "direction": "outbound",
+        "data_contract": "Library integration for policy evaluation event instrumentation",
+        "optional": true,
+        "integration_type": "library"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standards.complytime.org/complytime-relationship-metadata.standard.json",
+  "title": "ComplyTime Relationship Metadata Standard",
+  "description": "Standard metadata requirements for ComplyTime CALM architecture relationships. Enforces consistent documentation of interaction types, directionality, and data contracts.",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "interaction_type": {
+          "type": "string",
+          "enum": ["Synchronous", "Asynchronous"],
+          "description": "Type of interaction between nodes (Synchronous for request-response, Asynchronous for event-driven)"
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["inbound", "outbound"],
+          "description": "Direction of the relationship from the source node's perspective (inbound = receiving, outbound = sending)"
+        },
+        "data_contract": {
+          "type": "string",
+          "description": "Description of the data contract for this relationship (e.g., 'OTLP Log Records', 'Gemara Layer 2/3 YAML')"
+        }
+      },
+      "required": ["interaction_type", "direction"],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://calm.finos.org/release/1.1/meta/control-requirement.json",
+  "$id": "gemara://policies/cloud-policy-001/controls/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01",
+  "control-id": "CCC.Core.CN01.TR01",
+  "name": "Encrypt Data for Transmission - TLS 1.3 Required",
+  "description": "All HTTPS communications MUST use TLS 1.3 or higher",
+  "metadata": {
+    "gemara": {
+      "layer": "Layer 3",
+      "policy-id": "cloud-policy-001",
+      "control-id": "CCC.Core.CN01",
+      "requirement-id": "CCC.Core.CN01.TR01",
+      "source": {
+        "type": "policy",
+        "policy-id": "cloud-policy-001",
+        "control-id": "CCC.Core.CN01"
+      },
+      "base-requirement": {
+        "reference-url": "gemara://controls/FINOS-CCC/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01",
+        "catalog-id": "FINOS-CCC"
+      },
+      "applicability": ["default"]
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standards.complytime.org/complytime-gemara-policy-inclusion.standard.json",
+  "title": "ComplyTime Gemara Policy Inclusion Standard",
+  "description": "Standard for including Gemara assessment requirements as control requirements in CALM architectures. Each assessment requirement is a control requirement with resolved text as description.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "https://calm.finos.org/release/1.1/meta/control-requirement.json",
+      "description": "CALM control requirement schema reference"
+    },
+    "$id": {
+      "type": "string",
+      "pattern": "^gemara://(policies|controls)/[a-zA-Z0-9-]+(/[a-zA-Z0-9.-]+)+/requirements/[a-zA-Z0-9.-]+$",
+      "description": "Gemara URL identifier following the format: gemara://policies/{policy-id}/controls/{control-id}/requirements/{requirement-id} or gemara://controls/{catalog-id}/{control-id}/requirements/{requirement-id}"
+    },
+    "control-id": {
+      "type": "string",
+      "description": "Assessment requirement identifier (e.g., 'CCC.Core.CN01.TR01')"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable name of the assessment requirement"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Resolved assessment requirement text (the testable statement)"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "gemara": {
+          "type": "object",
+          "properties": {
+            "layer": {
+              "type": "string",
+              "enum": ["Layer 2", "Layer 3"],
+              "description": "Gemara layer this assessment requirement belongs to. Layer 2 = from catalog, Layer 3 = from policy"
+            },
+            "policy-id": {
+              "type": "string",
+              "description": "Policy ID for Layer 3 requirements (e.g., 'cloud-policy-001')"
+            },
+            "control-id": {
+              "type": "string",
+              "description": "Control ID this requirement belongs to (e.g., 'CCC.Core.CN01')"
+            },
+            "requirement-id": {
+              "type": "string",
+              "description": "Assessment requirement identifier (e.g., 'CCC.Core.CN01.TR01')"
+            },
+            "catalog-id": {
+              "type": "string",
+              "description": "Catalog ID for Layer 2 requirements (e.g., 'FINOS-CCC')"
+            },
+            "source": {
+              "type": "object",
+              "description": "Source of this assessment requirement",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["catalog", "policy"],
+                  "description": "Source type: catalog or policy"
+                },
+                "catalog-id": {
+                  "type": "string",
+                  "description": "Catalog ID if source is catalog"
+                },
+                "policy-id": {
+                  "type": "string",
+                  "description": "Policy ID if source is policy"
+                },
+                "control-id": {
+                  "type": "string",
+                  "description": "Control ID this requirement belongs to"
+                }
+              },
+              "required": ["type", "control-id"]
+            },
+            "base-requirement": {
+              "type": "object",
+              "description": "Reference to base requirement for Layer 3 requirements",
+              "properties": {
+                "reference-url": {
+                  "type": "string",
+                  "pattern": "^gemara://controls/[a-zA-Z0-9-]+/[a-zA-Z0-9.-]+/requirements/[a-zA-Z0-9.-]+$",
+                  "description": "Gemara URL to base requirement (e.g., 'gemara://controls/FINOS-CCC/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01')"
+                },
+                "catalog-id": {
+                  "type": "string",
+                  "description": "Catalog ID (e.g., 'FINOS-CCC')"
+                }
+              },
+              "required": ["reference-url", "catalog-id"],
+              "additionalProperties": false
+            },
+            "applicability": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Applicability scope (e.g., ['default', 'payment-processing'])"
+            }
+          },
+          "required": ["layer", "control-id", "requirement-id", "source", "applicability"],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "layer": {
+                    "const": "Layer 3"
+                  }
+                }
+              },
+              "then": {
+                "required": ["policy-id", "base-requirement"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "layer": {
+                    "const": "Layer 2"
+                  }
+                }
+              },
+              "then": {
+                "required": ["catalog-id"]
+              }
+            }
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": ["gemara"],
+      "additionalProperties": true
+    }
+  },
+  "required": ["$schema", "$id", "control-id", "name", "description", "metadata"],
+  "additionalProperties": true
+}
+

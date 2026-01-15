@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+.cursor/
+.cursor/rules/
+.cursor/rules/calm-prompts/
+.cursor/rules/calm-prompts/calm-cli-instructions.md
+.cursor/rules/calm-prompts/architecture-creation.md
+.cursor/rules/calm-prompts/pattern-creation.md
+.cursor/rules/calm-prompts/standard-creation.md
+.cursor/rules/calm-prompts/control-creation.md
+.cursor/rules/calm-prompts/control-requirement-creation.md
+.cursor/rules/calm-prompts/control-requirement-creation.md
+.cursor/CALM.mdc
+docs/**

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://calm.finos.org/release/1.1/meta/control-requirement.json",
+  "$id": "gemara://controls/FINOS-CCC/CCC.Core.CN01/requirements/CCC.Core.CN01.TR01",
+  "control-id": "CCC.Core.CN01.TR01",
+  "name": "Encrypt Data for Transmission - TLS 1.3 Required",
+  "description": "All network traffic MUST include a TLS handshake AND be encrypted using TLS 1.3 or higher",
+  "metadata": {
+    "gemara": {
+      "layer": "Layer 2",
+      "catalog-id": "FINOS-CCC",
+      "control-id": "CCC.Core.CN01",
+      "requirement-id": "CCC.Core.CN01.TR01",
+      "source": {
+        "type": "catalog",
+        "catalog-id": "FINOS-CCC",
+        "control-id": "CCC.Core.CN01"
+      },
+      "applicability": ["default"]
+    }
+  }
+}
