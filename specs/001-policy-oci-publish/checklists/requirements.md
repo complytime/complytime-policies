@@ -33,3 +33,4 @@
 
 - Validation: all items pass for `/speckit.clarify` or `/speckit.plan` readiness. If the default branch is not `main` or the public registry path changes, update Assumptions and FR-002/FR-006 wording only (no [NEEDS CLARIFICATION] required for planning).
 - 2026-04-22: Spec updated with explicit “publishable content” scope and issue #5 / #7–#9 traceability in `spec.md` Assumptions (council spec review).
+- 2026-04-22: Spec updated to allow batched / explicit releases (per [PR #14](https://github.com/complytime/complytime-policies/pull/14) review: not a mandatory publish on every merge to publishable paths); FR-002, User Story 1, and SC-001 aligned.
