@@ -111,6 +111,8 @@ jobs:
       source_image: ${{ needs.publish.outputs.source_image }}
       source_tag: ${{ needs.publish.outputs.source_tag }}
       dest_registry: quay.io
+      # Fork / tests: use a namespace the Quay robot can write to. For upstream:
+      # continuouscompliance/complytime-policies (see spec).
       dest_image: test_complytime/complytime-policies
       dest_tag: ${{ needs.publish.outputs.source_tag }}
       verify_signature: true

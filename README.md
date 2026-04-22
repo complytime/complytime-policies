@@ -81,7 +81,7 @@ The promote job passes `source_token: ${{ secrets.GITHUB_TOKEN }}` to pull the s
 
 ## Consumers (FR-005)
 
-Public images are expected at `quay.io/continuouscompliance/complytime-policies` (see **Clarifications** in the spec if the path changes). Step-by-step **fetch / verify** examples: [`specs/001-policy-oci-publish/quickstart.md`](specs/001-policy-oci-publish/quickstart.md) (or use **`complyctl get`** as documented in ComplyTime when aligned with the published tag).
+Public images for the **org** product are at `quay.io/continuouscompliance/complytime-policies` (this fork’s workflow currently promotes to **`quay.io/test_complytime/complytime-policies`** — adjust `dest_image` in [`.github/workflows/publish-policy-oci.yml`](.github/workflows/publish-policy-oci.yml) when using org credentials; see the spec if the path changes). Step-by-step **fetch / verify** examples: [`specs/001-policy-oci-publish/quickstart.md`](specs/001-policy-oci-publish/quickstart.md) (or use **`complyctl get`** as documented in ComplyTime when aligned with the published tag).
 
 **Examples in this file:** image refs are labeled **(placeholder — replace after first real release run)** where the exact tag/digest must come from a successful publish log.
 
