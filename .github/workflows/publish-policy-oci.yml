@@ -20,6 +20,8 @@ concurrency:
 permissions:
   contents: read
   packages: write
+  # Required for keyless cosign sign on staging (promote runs cosign verify).
+  id-token: write
 
 jobs:
   assert-quay-secrets:
@@ -73,6 +75,26 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           validate: "true"
           working_directory: "."
+
+      # org-infra promote uses cosign verify on the staging digest. The publish
+      # action does not sign; keyless sign here so verify_signature: true works.
+      - name: Set up cosign
+        uses: sigstore/cosign-installer@cad07c2e89fa2edd6e2d7bab4c1aa38e53f76003
+
+      - name: Log in to GHCR (cosign)
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | \
+            cosign login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Keyless sign staging image
+        run: |
+          set -euo pipefail
+          D="${{ steps.pack.outputs.digest }}"
+          if [[ ! "$D" == sha256:* ]]; then
+            D="sha256:$D"
+          fi
+          REF="ghcr.io/${{ steps.ghcr_image.outputs.repo_lc }}@$D"
+          cosign sign --yes "$REF"
 
   promote:
     name: Promote to Quay
