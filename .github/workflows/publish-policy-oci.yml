@@ -22,8 +22,25 @@ permissions:
   packages: write
 
 jobs:
+  assert-quay-secrets:
+    name: Check Quay secrets (repository Actions)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require QUAY_ROBOT_* for promote
+        env:
+          QUAY_USER: ${{ secrets.QUAY_ROBOT_USERNAME }}
+          QUAY_TOKEN: ${{ secrets.QUAY_ROBOT_TOKEN }}
+        run: |
+          if [ -z "${QUAY_USER}" ] || [ -z "${QUAY_TOKEN}" ]; then
+            echo '::error::Missing QUAY_ROBOT_USERNAME or QUAY_ROBOT_TOKEN.'
+            echo 'Add both: repo Settings, Secrets and variables, Actions.'
+            echo 'Forks do not inherit secrets from the upstream repository.'
+            exit 1
+          fi
+
   publish:
     name: Pack and push to GHCR
+    needs: assert-quay-secrets
     runs-on: ubuntu-latest
     outputs:
       source_image: ${{ steps.ghcr_image.outputs.repo_lc }}
