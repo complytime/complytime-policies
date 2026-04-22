@@ -111,7 +111,7 @@ jobs:
       source_image: ${{ needs.publish.outputs.source_image }}
       source_tag: ${{ needs.publish.outputs.source_tag }}
       dest_registry: quay.io
-      dest_image: continuouscompliance/complytime-policies
+      dest_image: test_complytime/complytime-policies
       dest_tag: ${{ needs.publish.outputs.source_tag }}
       verify_signature: true
       fail_if_dest_exists: true
