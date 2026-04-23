@@ -9,7 +9,7 @@
 # (then switch publish-ghcr back to `uses:` the reusable).
 # Interim composite: sonupreetam/gemara-publish-oci@… | Quay default: test_complytime/…
 #
-# Pin: complytime/org-infra (sign + promote only; bump in README per FR-006)
+# Reusable sign + Quay: sonupreetam/org-infra-tests (mirrors org-infra + allow_unprotected_ref; bump in README)
 
 name: Publish policy OCI
 
@@ -152,19 +152,17 @@ jobs:
           sbom-path: sbom.spdx.json
           push-to-registry: true
 
-  # Public complytime/org-infra reusable (this pin) has no `allow_unprotected_ref` input; its
-  # sign-and-verify job runs only when `github.ref_protected` (see that repo). Unprotected
-  # forks: enable branch protection on `main`, or use a small protected “tests” repo (see README),
-  # or pin a fork of org-infra that adds that input to the reusable.
+  # org-infra-tests mirrors complytime/org-infra with `allow_unprotected_ref` on sign (fork-friendly).
   sign-verify:
     name: Keyless sign + verify attestations
     needs: publish-ghcr
-    uses: complytime/org-infra/.github/workflows/reusable_sign_and_verify.yml@9205a3ac6b76b75dbe6e22b2f0f330bc8edbeb38
+    uses: sonupreetam/org-infra-tests/.github/workflows/reusable_sign_and_verify.yml@4af2962d32edb1faa83386c2332812b92aa81638
     with:
       image_name: ${{ needs.publish-ghcr.outputs.image }}
       digest: ${{ needs.publish-ghcr.outputs.digest }}
       allowed_identity_regex: ${{ format('https://github.com/{0}/.*', github.repository_owner) }}
       verify_vuln: false
+      allow_unprotected_ref: ${{ inputs.allow_unprotected_ref }}
     secrets: inherit
 
   promote:
@@ -173,7 +171,7 @@ jobs:
     permissions:
       contents: read
       packages: read
-    uses: complytime/org-infra/.github/workflows/resuable_publish_quay.yml@9205a3ac6b76b75dbe6e22b2f0f330bc8edbeb38
+    uses: sonupreetam/org-infra-tests/.github/workflows/resuable_publish_quay.yml@4af2962d32edb1faa83386c2332812b92aa81638
     with:
       source_registry: ghcr.io
       source_image: ${{ needs.assert-quay.outputs.repo_lc }}
