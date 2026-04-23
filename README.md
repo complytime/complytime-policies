@@ -39,9 +39,9 @@ complytime-policies/
 
 | Component | Pinned `uses` | Interim? |
 |-----------|----------------|----------|
-| Staging: Gemara pack, digest, SLSA + SPDX | [`reusable_publish_oras.yml` (Gemara-only) @c85271d…](https://github.com/sonupreetam/org-infra-tests/blob/c85271dae1ff157d24929251bf0bbb56a2b8c5bf/.github/workflows/reusable_publish_oras.yml) in [org-infra-tests](https://github.com/sonupreetam/org-infra-tests) (not yet on [public org-infra](https://github.com/complytime/org-infra) `main` at this pin) | **Yes** (oci-artifact composite in that workflow) |
-| Staging: keyless cosign + verify | [`reusable_sign_and_verify.yml@c85271d…`](https://github.com/sonupreetam/org-infra-tests/blob/c85271dae1ff157d24929251bf0bbb56a2b8c5bf/.github/workflows/reusable_sign_and_verify.yml) | — |
-| Cross-registry promote | [`resuable_publish_quay.yml@c85271d…`](https://github.com/sonupreetam/org-infra-tests/blob/c85271dae1ff157d24929251bf0bbb56a2b8c5bf/.github/workflows/resuable_publish_quay.yml) | — |
+| Staging: Gemara pack, digest, SLSA + SPDX | [`reusable_publish_oras.yml` (Gemara-only) @8ffcea9…](https://github.com/sonupreetam/org-infra-tests/blob/8ffcea997fc3026f62fc54c645974c51b42b7aa0/.github/workflows/reusable_publish_oras.yml) in [org-infra-tests](https://github.com/sonupreetam/org-infra-tests) (not yet on [public org-infra](https://github.com/complytime/org-infra) `main` at this pin) | **Yes** (oci-artifact composite in that workflow) |
+| Staging: keyless cosign + verify | [`reusable_sign_and_verify.yml@8ffcea9…`](https://github.com/sonupreetam/org-infra-tests/blob/8ffcea997fc3026f62fc54c645974c51b42b7aa0/.github/workflows/reusable_sign_and_verify.yml) | — |
+| Cross-registry promote | [`resuable_publish_quay.yml@8ffcea9…`](https://github.com/sonupreetam/org-infra-tests/blob/8ffcea997fc3026f62fc54c645974c51b42b7aa0/.github/workflows/resuable_publish_quay.yml) | — |
 | Interim composite (pack + push) | `sonupreetam/gemara-publish-oci@7203d6158a16208a0338cc33ea001bb077f4705c` in the same workflow | **Yes** (migrate to `complytime/oci-artifact@…` or org-agreed ref per upstream) |
 
 **Why org-infra-tests?** The three reusable `workflow_call` targets (Gemara **staging**, **sign/verify**, **Quay** promote) are [mirrored in org-infra-tests](https://github.com/sonupreetam/org-infra-tests) at one **pin** (see [FR-006 table](#pinned-action-references-fr-006)) so GitHub can resolve the refs and so **`allow_unprotected_ref`** is available for forks. When [complytime/org-infra](https://github.com/complytime/org-infra) publishes the same files on `main`, point [publish-policy-oci](https://github.com/complytime/complytime-policies/blob/main/.github/workflows/publish-policy-oci.yml) at `complytime/org-infra@…` and drop the test mirror.
@@ -96,8 +96,8 @@ The promote job passes `source_token: ${{ secrets.GITHUB_TOKEN }}` to pull the s
 
 | Piece | Interim value |
 |-------|----------------|
-| Staging (Gemara + attest) | [`reusable_publish_oras`](https://github.com/sonupreetam/org-infra-tests/blob/c85271dae1ff157d24929251bf0bbb56a2b8c5bf/.github/workflows/reusable_publish_oras.yml) (embeds `sonupreetam/gemara-publish-oci@7203d6…`) |
-| org-infra-tests (staging + sign + Quay `uses:`) | `sonupreetam/org-infra-tests@c85271dae1ff157d24929251bf0bbb56a2b8c5bf` |
+| Staging (Gemara + attest) | [`reusable_publish_oras`](https://github.com/sonupreetam/org-infra-tests/blob/8ffcea997fc3026f62fc54c645974c51b42b7aa0/.github/workflows/reusable_publish_oras.yml) (embeds `sonupreetam/gemara-publish-oci@7203d6…`) |
+| org-infra-tests (staging + sign + Quay `uses:`) | `sonupreetam/org-infra-tests@8ffcea997fc3026f62fc54c645974c51b42b7aa0` |
 | Test Quay repository | `quay.io/test_complytime/complytime-policies` (workflow default **`dest_image`**: `test_complytime/complytime-policies`) |
 
 **Local static check (before pushing):** from the repo root, `bash scripts/verify-interim-demo.sh` (validates YAML, public org-infra reuses pin, test-Quay default, and the Gemara composite pin in the workflow file).
