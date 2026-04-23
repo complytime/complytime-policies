@@ -45,7 +45,11 @@ grep -qE "oci_tag:" "$WF" && grep -qE "bundle_file:" "$WF" || {
   echo "error: expected publish-ghcr to pass oci_tag and bundle_file" >&2
   exit 1
 }
-echo "ok: staging uses org-infra-tests/reusable_publish_oras (Gemara-only contract)"
+grep -qE "publish_mode:\s*gemara" "$WF" || {
+  echo "error: expected publish-ghcr to set publish_mode: gemara (reusable default is oras)" >&2
+  exit 1
+}
+echo "ok: staging uses org-infra-tests/reusable_publish_oras (publish_mode: gemara)"
 if [[ -f "$TESTS_REPO" ]]; then
   grep -qF "${INTERIM_ACTION}@${INTERIM_ACTION_REF}" "$TESTS_REPO" || {
     echo "error: expected ${INTERIM_ACTION}@${INTERIM_ACTION_REF} in $TESTS_REPO" >&2

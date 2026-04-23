@@ -76,6 +76,7 @@ jobs:
     if: success() && (github.ref_protected || inputs.allow_unprotected_ref)
     uses: sonupreetam/org-infra-tests/.github/workflows/reusable_publish_oras.yml@b7e38d59f149aa0c02dfac4b6ab6df6497362a77
     with:
+      publish_mode: gemara
       image_name: ${{ needs.assert-quay.outputs.repo_lc }}
       oci_tag: ${{ inputs.release_tag }}
       bundle_file: ${{ inputs.bundle_file }}
