@@ -152,6 +152,10 @@ jobs:
           sbom-path: sbom.spdx.json
           push-to-registry: true
 
+  # Public complytime/org-infra reusable (this pin) has no `allow_unprotected_ref` input; its
+  # sign-and-verify job runs only when `github.ref_protected` (see that repo). Unprotected
+  # forks: enable branch protection on `main`, or use a small protected “tests” repo (see README),
+  # or pin a fork of org-infra that adds that input to the reusable.
   sign-verify:
     name: Keyless sign + verify attestations
     needs: publish-ghcr
@@ -161,7 +165,6 @@ jobs:
       digest: ${{ needs.publish-ghcr.outputs.digest }}
       allowed_identity_regex: ${{ format('https://github.com/{0}/.*', github.repository_owner) }}
       verify_vuln: false
-      allow_unprotected_ref: ${{ inputs.allow_unprotected_ref }}
     secrets: inherit
 
   promote:
