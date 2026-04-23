@@ -1,0 +1,14 @@
+# AI-driven spec review flow (template)
+
+1. **Feature spec in its own directory** — e.g. `specs/00N-*/` with `spec.md`, `plan.md`, `research.md` as needed. Do not rewrite older `00M` specs; add a new feature for new work.
+2. **One PR per repository** — scope: spec/docs only (or clearly separated commits). Title: `docs(spec): …` with Conventional Commits.
+3. **PR body** — link sibling specs in other repos, list reviewers (maintainers + supply-chain), note “spec review only / no runtime change” when true.
+4. **After merge** — bump pins or implementation in follow-up PRs, not in the spec PR.
+
+**Related handoff specs (this initiative):**
+
+| Repo | Spec path |
+|------|-----------|
+| complytime-policies | `specs/002-policy-oci-quay-e2e-supply-chain/` |
+| oci-artifact (gemara-publish-oci) | `specs/002-gemara-oci-supply-chain-e2e/` |
+| org-infra | `specs/008-quay-promote-signature-verification/` |
