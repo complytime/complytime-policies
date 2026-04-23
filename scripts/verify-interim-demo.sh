@@ -6,12 +6,12 @@ set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 WF="${ROOT}/.github/workflows/publish-policy-oci.yml"
 # sonupreetam/org-infra-tests: all three workflow_call targets use this SHA in publish-policy-oci.
-ORG_INFRA_TESTS_PIN="031341209f0fcc1642c49e94c870090b1db4c16e"
-# Composite lives inside org-infra-tests/reusable_publish_gemara_oci.yml; optional sibling check.
+ORG_INFRA_TESTS_PIN="9a166dd4be83f39f599be4827d38d43b74efe1c2"
+# Composite is pinned inside org-infra-tests/reusable_publish_oras.yml (publish_mode: gemara); optional sibling check.
 INTERIM_ACTION="sonupreetam/gemara-publish-oci"
 INTERIM_ACTION_REF="7203d6158a16208a0338cc33ea001bb077f4705c"
 QUAY_TEST_DEST="test_complytime/complytime-policies"
-TESTS_REPO="${ROOT}/../org-infra-tests/.github/workflows/reusable_publish_gemara_oci.yml"
+TESTS_REPO="${ROOT}/../org-infra-tests/.github/workflows/reusable_publish_oras.yml"
 
 if [[ ! -f "$WF" ]]; then
   echo "error: missing $WF" >&2
@@ -37,19 +37,27 @@ grep -qF "$QUAY_TEST_DEST" "$WF" || {
 }
 echo "ok: default dest_image matches test Quay repo (${QUAY_TEST_DEST})"
 
-grep -qF "reusable_publish_gemara_oci.yml" "$WF" || {
-  echo "error: expected publish-ghcr to use reusable_publish_gemara_oci" >&2
+grep -qF "reusable_publish_oras.yml" "$WF" || {
+  echo "error: expected publish-ghcr to use reusable_publish_oras" >&2
   exit 1
 }
-echo "ok: staging uses org-infra-tests/reusable_publish_gemara_oci"
+grep -qE "publish_mode: *gemara" "$WF" || {
+  echo "error: expected publish-ghcr to set publish_mode: gemara" >&2
+  exit 1
+}
+echo "ok: staging uses org-infra-tests/reusable_publish_oras (publish_mode: gemara)"
 if [[ -f "$TESTS_REPO" ]]; then
+  grep -qF "publish_mode: gemara" "$TESTS_REPO" || {
+    echo "error: expected publish_mode: gemara in $TESTS_REPO" >&2
+    exit 1
+  }
   grep -qF "${INTERIM_ACTION}@${INTERIM_ACTION_REF}" "$TESTS_REPO" || {
     echo "error: expected ${INTERIM_ACTION}@${INTERIM_ACTION_REF} in $TESTS_REPO" >&2
     exit 1
   }
-  echo "ok: sibling org-infra-tests gemara step pins ${INTERIM_ACTION} @ ${INTERIM_ACTION_REF}"
+  echo "ok: sibling org-infra-tests oras workflow pins ${INTERIM_ACTION} @ ${INTERIM_ACTION_REF}"
 else
-  echo "skip: place org-infra-tests next to this repo to verify gemara composite pin in reusable_publish_gemara_oci.yml"
+  echo "skip: place org-infra-tests next to this repo to verify gemara composite pin in reusable_publish_oras.yml"
 fi
 
 echo
