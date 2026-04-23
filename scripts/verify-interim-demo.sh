@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Local static checks: interim demo = public org-infra pin (sign + promote) + inline gemara + test Quay.
+# Local static checks: org-infra-tests (gemara + sign + quay) + test Quay default.
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 WF="${ROOT}/.github/workflows/publish-policy-oci.yml"
-# sonupreetam/org-infra-tests (reusable sign + resuable quay, mirrors org-infra).
-ORG_INFRA_TESTS_PIN="4af2962d32edb1faa83386c2332812b92aa81638"
+# sonupreetam/org-infra-tests: all three workflow_call targets use this SHA in publish-policy-oci.
+ORG_INFRA_TESTS_PIN="031341209f0fcc1642c49e94c870090b1db4c16e"
+# Composite lives inside org-infra-tests/reusable_publish_gemara_oci.yml; optional sibling check.
 INTERIM_ACTION="sonupreetam/gemara-publish-oci"
 INTERIM_ACTION_REF="7203d6158a16208a0338cc33ea001bb077f4705c"
 QUAY_TEST_DEST="test_complytime/complytime-policies"
+TESTS_REPO="${ROOT}/../org-infra-tests/.github/workflows/reusable_publish_gemara_oci.yml"
 
 if [[ ! -f "$WF" ]]; then
   echo "error: missing $WF" >&2
@@ -35,11 +37,20 @@ grep -qF "$QUAY_TEST_DEST" "$WF" || {
 }
 echo "ok: default dest_image matches test Quay repo (${QUAY_TEST_DEST})"
 
-grep -qF "${INTERIM_ACTION}@${INTERIM_ACTION_REF}" "$WF" || {
-  echo "error: expected ${INTERIM_ACTION}@${INTERIM_ACTION_REF} in $WF" >&2
+grep -qF "reusable_publish_gemara_oci.yml" "$WF" || {
+  echo "error: expected publish-ghcr to use reusable_publish_gemara_oci" >&2
   exit 1
 }
-echo "ok: inline staging pins interim pack action ${INTERIM_ACTION} @ ${INTERIM_ACTION_REF}"
+echo "ok: staging uses org-infra-tests/reusable_publish_gemara_oci"
+if [[ -f "$TESTS_REPO" ]]; then
+  grep -qF "${INTERIM_ACTION}@${INTERIM_ACTION_REF}" "$TESTS_REPO" || {
+    echo "error: expected ${INTERIM_ACTION}@${INTERIM_ACTION_REF} in $TESTS_REPO" >&2
+    exit 1
+  }
+  echo "ok: sibling org-infra-tests gemara step pins ${INTERIM_ACTION} @ ${INTERIM_ACTION_REF}"
+else
+  echo "skip: place org-infra-tests next to this repo to verify gemara composite pin in reusable_publish_gemara_oci.yml"
+fi
 
 echo
 echo "Interim demo run (on GitHub):"
