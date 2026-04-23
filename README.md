@@ -39,10 +39,12 @@ complytime-policies/
 
 | Component | Pinned `uses` | Interim? |
 |-----------|----------------|----------|
-| OCI pack and push to GHCR | `sonupreetam/gemara-publish-oci@7203d6158a16208a0338cc33ea001bb077f4705c` | **Yes** (migrate to `complytime/oci-artifact` or org-agreed ref when available) |
-| Cross-registry promote | `complytime/org-infra/.github/workflows/resuable_publish_quay.yml@790e4080713fbd3d4359bcbd6b665699b27e7c30` | No (pin updates when the reusable workflow’s behavior changes) |
+| Staging: Gemara pack, digest, SLSA + SPDX attest | `complytime/org-infra/.github/workflows/reusable_publish_gemara_oci.yml@7eabc2b960778190d38c591b7b96b376489d0acb` | No (bump with org when behavior changes) |
+| Staging: keyless cosign + verify attestations | `complytime/org-infra/.github/workflows/reusable_sign_and_verify.yml@7eabc2b960778190d38c591b7b96b376489d0acb` | No |
+| Cross-registry promote | `complytime/org-infra/.github/workflows/resuable_publish_quay.yml@7eabc2b960778190d38c591b7b96b376489d0acb` | No (pin updates when the reusable workflow’s behavior changes) |
+| (inside org `reusable_publish_gemara_oci` only) composite `uses` | `sonupreetam/gemara-publish-oci@7203d6158a16208a0338cc33ea001bb077f4705c` | **Yes** (bump in [org-infra `reusable_publish_gemara_oci.yml`](https://github.com/complytime/org-infra/blob/main/.github/workflows/reusable_publish_gemara_oci.yml); migrate to `complytime/oci-artifact@…` per upstream) |
 
-**Migration:** when **gemaraproj**-published **go-gemara** and an org-composite action are ready, open a follow-up, bump the `uses` pin here and in the workflow, and document **interim** retirement per **SC-004** (see **Migration (interim action)** below).
+**Migration:** when **gemaraproj**-published **go-gemara** and an org-composite action are ready, update the **action** `uses:` in **org-infra** (not only this repo’s workflow), then bump the **org-infra** SHA in `.github/workflows/publish-policy-oci.yml` and this table, and document **interim** retirement per **SC-004** (see **Migration (interim action)** below).
 
 ## GitHub secrets (no values in git, FR-007)
 
@@ -50,7 +52,7 @@ Configure these in the repository (or org) **Secrets**:
 
 | Secret | Purpose |
 |--------|--------|
-| (optional) *none extra for publish* | GHCR uses `secrets.GITHUB_TOKEN` with `packages: write` from the `publish` job. |
+| (optional) *none extra for publish* | GHCR uses `secrets.GITHUB_TOKEN` with `packages: write` and attestations for the `publish-ghcr` (org reusable) and `sign-verify` jobs. |
 | `QUAY_ROBOT_USERNAME` | Quay robot or service account **username** for the promote `workflow_call` (`dest_username`) |
 | `QUAY_ROBOT_TOKEN` | Quay robot **token** or password (`dest_password`) |
 
@@ -60,8 +62,9 @@ The promote job passes `source_token: ${{ secrets.GITHUB_TOKEN }}` to pull the s
 
 ## v1 release procedure (FR-002)
 
-- **Only trigger:** `workflow_dispatch` (no tag-only trigger in v1). Use **Actions → Publish policy OCI → Run workflow** and set **`release_tag`**. That tag is used for both the GHCR staging image and the primary Quay `dest_tag`.
-- **Branch scope:** the workflow checks out the **repository default branch** only, so the published content matches vetted `main` (or your renamed default) as required by the spec.
+- **Only trigger:** `workflow_dispatch` (no tag-only trigger in v1). Use **Actions → Publish policy OCI → Run workflow** and set **`release_tag`**. That tag is used for both the GHCR staging image and the primary Quay `dest_tag`. Set **`allow_unprotected_ref: true`** if the default branch is not **protected** (typical for forks) so the org **staging and sign/verify** jobs are not skipped.
+- **Optional inputs:** **`bundle_file`** (default in workflow), **`allow_unprotected_ref`** (default `false`), **`dest_image`** (default `test_complytime/complytime-policies` for POC; set to `continuouscompliance/complytime-policies` for org production when Quay and secrets are ready).
+- **Branch scope:** org **`reusable_publish_gemara_oci`** checks out the **repository default branch** only, so the published content matches vetted `main` (or your renamed default) as required by the spec.
 - **Concurrency:** workflow `concurrency.group: publish-policy-oci` and **`cancel-in-progress: false`** (serialize overlapping runs; document if you change this).
 - **Immutability:** promote uses `fail_if_dest_exists: true` (org default) so a duplicate `dest_tag` on Quay fails the run. Choose a new **`release_tag`** for each public release.
 - **Overlapping runs:** a second **Run workflow** while one is in flight **waits** (same concurrency group) instead of starting a second full publish, reducing races on staging/promote.
@@ -79,9 +82,19 @@ The promote job passes `source_token: ${{ secrets.GITHUB_TOKEN }}` to pull the s
 
 **Optional** org vulnerability/reviewer workflows (**FR-008**): not wired in v1; if enabled later, set inputs only in line with the org reusable contract and document here.
 
+## Interim POC / verification (SC-003)
+
+Use this for a first **end-to-end** run with the **interim** pack action (pinned inside org-infra; see [FR-006](#pinned-action-references-fr-006)):
+
+1. Add repository **Actions** secrets: `QUAY_ROBOT_USERNAME`, `QUAY_ROBOT_TOKEN` (must be able to **push** to the Quay path you use).
+2. In **Actions → Publish policy OCI → Run workflow**: set a **new** `release_tag` (e.g. `poc-0.0.1`); with `fail_if_dest_exists: true`, reusing a tag that already exists on the destination will fail.
+3. **Forks / unprotected default branch:** set **`allow_unprotected_ref`** to `true` so `reusable_publish_gemara_oci` and `reusable_sign_and_verify` are not skipped.
+4. **Quay destination:** leave **`dest_image`** as default for a POC namespace, or set **`continuouscompliance/complytime-policies`** when the org robot is scoped to that namespace.
+5. On success, copy **GHCR** digest and **Quay** digest from the workflow summary / job logs; paste into release notes or a PR comment to record **SC-003** evidence.
+
 ## Consumers (FR-005)
 
-Public images for the **org** product are at `quay.io/continuouscompliance/complytime-policies` (this fork’s workflow currently promotes to **`quay.io/test_complytime/complytime-policies`** — adjust `dest_image` in [`.github/workflows/publish-policy-oci.yml`](.github/workflows/publish-policy-oci.yml) when using org credentials; see the spec if the path changes). Step-by-step **fetch / verify** examples: [`specs/001-policy-oci-publish/quickstart.md`](specs/001-policy-oci-publish/quickstart.md) (or use **`complyctl get`** as documented in ComplyTime when aligned with the published tag).
+Public images for the **ComplyTime** org are expected at `quay.io/continuouscompliance/complytime-policies` (set **`dest_image`** on dispatch when promoting there; the default is **`quay.io/test_complytime/complytime-policies`** for POC / fork demos). Step-by-step **fetch / verify** examples: [`specs/001-policy-oci-publish/quickstart.md`](specs/001-policy-oci-publish/quickstart.md) (or use **`complyctl get`** as documented in ComplyTime when aligned with the published tag).
 
 **Examples in this file:** image refs are labeled **(placeholder — replace after first real release run)** where the exact tag/digest must come from a successful publish log.
 
@@ -91,7 +104,7 @@ Public images for the **org** product are at `quay.io/continuouscompliance/compl
 
 ## E2E demonstration (SC-003)
 
-*Pending a maintainer run in a credentialed org:* run **Publish policy OCI** on the default branch with a new **`release_tag`**, then capture staging + public **digest** lines here (or in release notes) after a successful end-to-end pass.
+Follow **[Interim POC / verification](#interim-poc--verification-sc-003)**; after a green run, record the staging (**GHCR**) and public (**Quay**) digests (issue/PR, release note, or this file if maintainers keep a log here).
 
 ---
 

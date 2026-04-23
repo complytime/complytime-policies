@@ -1,7 +1,10 @@
 # SPDX-License-Identifier: Apache-2.0
 ---
-# Publish Gemara: GHCR (staging) → org-infra promote → Quay. See
-# specs/001-policy-oci-publish/spec.md and README (publish matrix).
+# Gemara policy OCI: org-infra staging (pack + attest + keyless sign/verify) → Quay
+# per specs/001-policy-oci-publish/spec.md and contracts/publish-pipeline.md.
+# POC / interim: composite pack lives in org-infra (pinned); Quay path via `dest_image` input.
+#
+# Pin: complytime/org-infra@7eabc2b960778190d38c591b7b96b376489d0acb (bump in README per FR-006)
 
 name: Publish policy OCI
 
@@ -12,6 +15,25 @@ name: Publish policy OCI
         description: "Tag for GHCR and Quay (e.g. v0.1.0, sha-abc123de)"
         required: true
         type: string
+      allow_unprotected_ref:
+        description: >-
+          Set true if the default branch is not protected (e.g. fork) so
+          org-infra staging and sign/verify run.
+        required: false
+        type: boolean
+        default: false
+      bundle_file:
+        description: "Root Gemara bundle YAML (relative to repo root)"
+        required: false
+        type: string
+        default: bundles/cis-fedora-l1-workstation.yaml
+      dest_image:
+        description: >-
+          Quay path (namespace/repository) without registry. Default is a POC namespace;
+          set continuouscompliance/complytime-policies for org production.
+        required: false
+        type: string
+        default: test_complytime/complytime-policies
 
 concurrency:
   group: publish-policy-oci
@@ -20,13 +42,15 @@ concurrency:
 permissions:
   contents: read
   packages: write
-  # Required for keyless cosign sign on staging (promote runs cosign verify).
   id-token: write
+  attestations: write
 
 jobs:
-  assert-quay-secrets:
-    name: Check Quay secrets (repository Actions)
+  assert-quay:
+    name: Check Quay + image name
     runs-on: ubuntu-latest
+    outputs:
+      repo_lc: ${{ steps.image.outputs.repo_lc }}
     steps:
       - name: Require QUAY_ROBOT_* for promote
         env:
@@ -39,82 +63,54 @@ jobs:
             echo 'Forks do not inherit secrets from the upstream repository.'
             exit 1
           fi
-
-  publish:
-    name: Pack and push to GHCR
-    needs: assert-quay-secrets
-    runs-on: ubuntu-latest
-    outputs:
-      source_image: ${{ steps.ghcr_image.outputs.repo_lc }}
-      source_tag: ${{ github.event.inputs.release_tag }}
-    steps:
-      - name: Checkout (default branch)
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.repository.default_branch }}
-          fetch-depth: 0
-
       - name: GHCR image name (lowercase)
-        id: ghcr_image
+        id: image
         run: |
           r='${{ github.repository }}'
-          lc=$(echo "$r" | tr '[:upper:]' '[:lower:]')
-          echo "repo_lc=$lc" >> "$GITHUB_OUTPUT"
+          echo "repo_lc=${r,,}" >> "$GITHUB_OUTPUT"
 
-      - name: Publish Gemara OCI bundle (staging)
-        id: pack
-        # Interim: pin; migrate to org action per FR-006. See README.
-        uses: >-
-          sonupreetam/gemara-publish-oci@7203d6158a16208a0338cc33ea001bb077f4705c
-        with:
-          registry: ghcr.io
-          repository: ${{ steps.ghcr_image.outputs.repo_lc }}
-          tag: ${{ github.event.inputs.release_tag }}
-          file: bundles/cis-fedora-l1-workstation.yaml
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          validate: "true"
-          working_directory: "."
+  publish-ghcr:
+    name: Staging to GHCR (Gemara)
+    needs: assert-quay
+    if: success()
+    uses: >-
+      complytime/org-infra/.github/workflows/reusable_publish_gemara_oci.yml@7eabc2b960778190d38c591b7b96b376489d0acb
+    with:
+      image_name: ${{ needs.assert-quay.outputs.repo_lc }}
+      oci_tag: ${{ inputs.release_tag }}
+      bundle_file: ${{ inputs.bundle_file }}
+      allow_unprotected_ref: ${{ inputs.allow_unprotected_ref }}
+    secrets: inherit
 
-      # org-infra promote uses cosign verify on the staging digest. The publish
-      # action does not sign; keyless sign here so verify_signature: true works.
-      - name: Set up cosign
-        uses: sigstore/cosign-installer@cad07c2e89fa2edd6e2d7bab4c1aa38e53f76003
-
-      - name: Log in to GHCR (cosign)
-        run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | \
-            cosign login ghcr.io -u "${{ github.actor }}" --password-stdin
-
-      - name: Keyless sign staging image
-        run: |
-          set -euo pipefail
-          D="${{ steps.pack.outputs.digest }}"
-          if [[ ! "$D" == sha256:* ]]; then
-            D="sha256:$D"
-          fi
-          REF="ghcr.io/${{ steps.ghcr_image.outputs.repo_lc }}@$D"
-          cosign sign --yes "$REF"
+  sign-verify:
+    name: Keyless sign + verify attestations
+    needs: publish-ghcr
+    if: success()
+    uses: >-
+      complytime/org-infra/.github/workflows/reusable_sign_and_verify.yml@7eabc2b960778190d38c591b7b96b376489d0acb
+    with:
+      image_name: ${{ needs.publish-ghcr.outputs.image }}
+      digest: ${{ needs.publish-ghcr.outputs.digest }}
+      allowed_identity_regex: ${{ format('https://github.com/{0}/.*', github.repository_owner) }}
+      verify_vuln: false
+      allow_unprotected_ref: ${{ inputs.allow_unprotected_ref }}
+    secrets: inherit
 
   promote:
     name: Promote to Quay
-    needs: publish
-    if: success()
+    needs: [assert-quay, sign-verify]
     permissions:
       contents: read
       packages: read
-    # Pin SHA per FR-006. Update when resuable_publish_quay changes. See README.
     uses: >-
-      complytime/org-infra/.github/workflows/resuable_publish_quay.yml@790e4080713fbd3d4359bcbd6b665699b27e7c30
+      complytime/org-infra/.github/workflows/resuable_publish_quay.yml@7eabc2b960778190d38c591b7b96b376489d0acb
     with:
       source_registry: ghcr.io
-      source_image: ${{ needs.publish.outputs.source_image }}
-      source_tag: ${{ needs.publish.outputs.source_tag }}
+      source_image: ${{ needs.assert-quay.outputs.repo_lc }}
+      source_tag: ${{ inputs.release_tag }}
       dest_registry: quay.io
-      # Fork / tests: use a namespace the Quay robot can write to. For upstream:
-      # continuouscompliance/complytime-policies (see spec).
-      dest_image: test_complytime/complytime-policies
-      dest_tag: ${{ needs.publish.outputs.source_tag }}
+      dest_image: ${{ inputs.dest_image }}
+      dest_tag: ${{ inputs.release_tag }}
       verify_signature: true
       fail_if_dest_exists: true
       include_sha_tags: true
