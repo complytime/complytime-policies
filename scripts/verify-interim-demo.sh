@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Local static checks: interim demo = org-infra pin + test Quay default + (optional) sibling org-infra gemara action pin.
+# Local static checks: interim demo = public org-infra pin (sign + promote) + inline gemara + test Quay.
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 WF="${ROOT}/.github/workflows/publish-policy-oci.yml"
-ORG_PIN="7eabc2b960778190d38c591b7b96b376489d0acb"
+# Public complytime/org-infra (reusable_sign_and_verify + resuable_publish_quay only).
+ORG_PIN="9205a3ac6b76b75dbe6e22b2f0f330bc8edbeb38"
 INTERIM_ACTION="sonupreetam/gemara-publish-oci"
-# SHA baked into org-infra reusable_publish_gemara_oci at ORG_PIN (bump with org-infra).
 INTERIM_ACTION_REF="7203d6158a16208a0338cc33ea001bb077f4705c"
 QUAY_TEST_DEST="test_complytime/complytime-policies"
 
@@ -31,18 +31,11 @@ grep -qF "$QUAY_TEST_DEST" "$WF" || {
 }
 echo "ok: default dest_image matches test Quay repo (${QUAY_TEST_DEST})"
 
-# Optional: workspace checkout of org-infra (parent or ORG_INFRA env).
-GARA="${ORG_INFRA:-$ROOT/../org-infra}/.github/workflows/reusable_publish_gemara_oci.yml"
-if [[ -f "$GARA" ]]; then
-  grep -qF "${INTERIM_ACTION}@${INTERIM_ACTION_REF}" "$GARA" || {
-    echo "error: expected ${INTERIM_ACTION}@${INTERIM_ACTION_REF} in $GARA" >&2
-    exit 1
-  }
-  echo "ok: sibling org-infra pins interim pack action ${INTERIM_ACTION} @ ${INTERIM_ACTION_REF}"
-else
-  echo "skip: set ORG_INFRA or place org-infra next to this repo to verify gemara action pin in reusable_publish_gemara_oci.yml"
-  echo "    (expected: ${INTERIM_ACTION}@${INTERIM_ACTION_REF})"
-fi
+grep -qF "${INTERIM_ACTION}@${INTERIM_ACTION_REF}" "$WF" || {
+  echo "error: expected ${INTERIM_ACTION}@${INTERIM_ACTION_REF} in $WF" >&2
+  exit 1
+}
+echo "ok: inline staging pins interim pack action ${INTERIM_ACTION} @ ${INTERIM_ACTION_REF}"
 
 echo
 echo "Interim demo run (on GitHub):"

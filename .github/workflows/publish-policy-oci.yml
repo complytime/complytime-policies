@@ -1,12 +1,15 @@
 # SPDX-License-Identifier: Apache-2.0
 ---
-# Gemara policy OCI: org-infra staging (pack + attest + keyless sign/verify) → Quay
-# per specs/001-policy-oci-publish/spec.md and contracts/publish-pipeline.md.
+# Gemara policy OCI: GHCR staging (pack + attest) → org-infra sign/verify → Quay promote
+# (spec: specs/001-policy-oci-publish/…)
 #
-# Interim / local demo (before gemaraproj/oci-artifact in org-infra):
-#   - org-infra reusable_publish_gemara_oci uses: sonupreetam/gemara-publish-oci@7203d6158a16208a0338cc33ea001bb077f4705c
-#   - Quay: default dest_image = test_complytime/complytime-policies (scripts/verify-interim-demo.sh)
-# Pin: complytime/org-infra@7eabc2b960778190d38c591b7b96b376489d0acb (bump in README per FR-006)
+# The Gemara pack + SLSA/SBOM attestation run inline here. GitHub can only `workflow_call`
+# reusable workflows that exist on the target ref; `reusable_publish_gemara_oci` is not yet
+# on public complytime/org-infra, so the same steps are kept in-repo until that lands
+# (then switch publish-ghcr back to `uses:` the reusable).
+# Interim composite: sonupreetam/gemara-publish-oci@… | Quay default: test_complytime/…
+#
+# Pin: complytime/org-infra (sign + promote only; bump in README per FR-006)
 
 name: Publish policy OCI
 
@@ -20,7 +23,7 @@ name: Publish policy OCI
       allow_unprotected_ref:
         description: >-
           Set true if the default branch is not protected (e.g. fork) so
-          org-infra staging and sign/verify run.
+          staging, sign, and attestation jobs run.
         required: false
         type: boolean
         default: false
@@ -74,24 +77,85 @@ jobs:
   publish-ghcr:
     name: Staging to GHCR (Gemara)
     needs: assert-quay
-    if: success()
-    uses: >-
-      complytime/org-infra/.github/workflows/reusable_publish_gemara_oci.yml@7eabc2b960778190d38c591b7b96b376489d0acb
-    with:
-      image_name: ${{ needs.assert-quay.outputs.repo_lc }}
-      oci_tag: ${{ inputs.release_tag }}
-      bundle_file: ${{ inputs.bundle_file }}
-      allow_unprotected_ref: ${{ inputs.allow_unprotected_ref }}
-    secrets: inherit
+    if: success() && (github.ref_protected || inputs.allow_unprotected_ref)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      digest: ${{ steps.norm_digest.outputs.digest }}
+      image: ${{ steps.image_out.outputs.image }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Log in to GHCR
+        uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 # v4.1.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Image ref (no registry in image_name)
+        id: image_out
+        run: |
+          echo "image=ghcr.io/${{ needs.assert-quay.outputs.repo_lc }}" >> "$GITHUB_OUTPUT"
+
+      - name: Pack and push Gemara bundle
+        id: gemara
+        uses: sonupreetam/gemara-publish-oci@7203d6158a16208a0338cc33ea001bb077f4705c
+        with:
+          registry: ghcr.io
+          repository: ${{ needs.assert-quay.outputs.repo_lc }}
+          tag: ${{ inputs.release_tag }}
+          file: ${{ inputs.bundle_file }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          validate: "true"
+          working_directory: "."
+
+      - name: Normalize digest for attestation
+        id: norm_digest
+        env:
+          RAW: ${{ steps.gemara.outputs.digest }}
+        run: |
+          D="${RAW}"
+          if [[ ! "$D" == sha256:* ]]; then
+            D="sha256:$D"
+          fi
+          echo "digest=$D" >> "$GITHUB_OUTPUT"
+
+      - name: Attest SLSA provenance
+        if: ${{ github.ref_protected || inputs.allow_unprotected_ref }}
+        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32 # v4.1.0
+        with:
+          subject-name: ${{ steps.image_out.outputs.image }}
+          subject-digest: ${{ steps.norm_digest.outputs.digest }}
+          push-to-registry: true
+
+      - name: Generate SBOM
+        if: ${{ github.ref_protected || inputs.allow_unprotected_ref }}
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+        with:
+          path: "."
+          format: spdx-json
+          output-file: sbom.spdx.json
+
+      - name: Attest SBOM
+        if: ${{ github.ref_protected || inputs.allow_unprotected_ref }}
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
+        with:
+          subject-name: ${{ steps.image_out.outputs.image }}
+          subject-digest: ${{ steps.norm_digest.outputs.digest }}
+          sbom-path: sbom.spdx.json
+          push-to-registry: true
 
   sign-verify:
     name: Keyless sign + verify attestations
     needs: publish-ghcr
-    if: success()
-    uses: >-
-      complytime/org-infra/.github/workflows/reusable_sign_and_verify.yml@7eabc2b960778190d38c591b7b96b376489d0acb
-    # image + digest: workflow_call outputs of reusable_publish_gemara_oci (complytime/org-infra; job publish).
-    # The Actions schema cannot resolve cross-repo reusable outputs; IDE may warn here — safe to ignore.
+    uses: complytime/org-infra/.github/workflows/reusable_sign_and_verify.yml@9205a3ac6b76b75dbe6e22b2f0f330bc8edbeb38
     with:
       image_name: ${{ needs.publish-ghcr.outputs.image }}
       digest: ${{ needs.publish-ghcr.outputs.digest }}
@@ -106,8 +170,7 @@ jobs:
     permissions:
       contents: read
       packages: read
-    uses: >-
-      complytime/org-infra/.github/workflows/resuable_publish_quay.yml@7eabc2b960778190d38c591b7b96b376489d0acb
+    uses: complytime/org-infra/.github/workflows/resuable_publish_quay.yml@9205a3ac6b76b75dbe6e22b2f0f330bc8edbeb38
     with:
       source_registry: ghcr.io
       source_image: ${{ needs.assert-quay.outputs.repo_lc }}
