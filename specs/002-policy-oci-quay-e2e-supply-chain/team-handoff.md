@@ -14,6 +14,8 @@
 
 ## Current reality (2026-04)
 
+- This **002** spec covers the **Quay E2E / promote / verify** story for **any** org-infra pin
+  (production or interim). The **org-infra-tests** entry below is only the **interim** pin path.
 - **org-infra-tests** (public mirror) used while upstream **main** and **pins** align; retire at parity
   with [complytime/org-infra](https://github.com/complytime/org-infra).
 - **Forks:** **`allow_unprotected_ref: true`** on publishing/sign jobs as required by org reusables.

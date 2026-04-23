@@ -8,10 +8,20 @@
 ## Purpose
 
 Capture **operational and design** work that does **not** modify the [001](./../001-policy-oci-publish/spec.md)
-product spec: E2E validation of **complytime-policies → GHCR → sign → Quay**, **org-infra-tests** as an
-interim pin, **destination `cosign verify` on Quay**, **cosign copy** vs **`oras copy -r`**, Quay UI
-vs CLI for Gemara bundles, and **team asks** for review. This feature is the **single spec home** for
-that narrative; [001](../001-policy-oci-publish/spec.md) remains the **v1 release** requirements.
+product spec: end-to-end validation and handoff of **complytime-policies → GHCR → sign → Quay**
+including **destination `cosign verify`**, how promotion copies images and cosign **referrers** to
+Quay (**cosign copy** vs **`oras copy -r`** — see **org-infra** **008**), and Quay **UI** vs **CLI**
+for Gemara OCI bundles.
+
+**Not** “test-mirror only”: the **test mirror** ([org-infra-tests](https://github.com/sonupreetam/org-infra-tests))
+is documented as an **interim** way to pin **`workflow_call`** SHAs and run **`allow_unprotected_ref`**
+on forks while **complytime/org-infra** `main` catches up. The same **002** narrative applies when
+callers use **`complytime/org-infra@<sha>`** in production: Quay **dest** verify, pin migration
+(**001** **FR-006** / **README**), and cross-repo links are in scope; only the **mirror** is
+temporary.
+
+[001](../001-policy-oci-publish/spec.md) remains the **v1** product requirements; **002** is the
+**handoff** / coordination spec for the Quay leg and registry edge cases.
 
 ## Scope (in)
 
