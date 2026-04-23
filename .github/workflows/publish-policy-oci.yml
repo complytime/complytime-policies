@@ -2,8 +2,10 @@
 ---
 # Gemara policy OCI: org-infra staging (pack + attest + keyless sign/verify) → Quay
 # per specs/001-policy-oci-publish/spec.md and contracts/publish-pipeline.md.
-# POC / interim: composite pack lives in org-infra (pinned); Quay path via `dest_image` input.
 #
+# Interim / local demo (before gemaraproj/oci-artifact in org-infra):
+#   - org-infra reusable_publish_gemara_oci uses: sonupreetam/gemara-publish-oci@7203d6158a16208a0338cc33ea001bb077f4705c
+#   - Quay: default dest_image = test_complytime/complytime-policies (scripts/verify-interim-demo.sh)
 # Pin: complytime/org-infra@7eabc2b960778190d38c591b7b96b376489d0acb (bump in README per FR-006)
 
 name: Publish policy OCI

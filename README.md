@@ -84,13 +84,22 @@ The promote job passes `source_token: ${{ secrets.GITHUB_TOKEN }}` to pull the s
 
 ## Interim POC / verification (SC-003)
 
-Use this for a first **end-to-end** run with the **interim** pack action (pinned inside org-infra; see [FR-006](#pinned-action-references-fr-006)):
+**Interim values for a fork / demo run** (matches [FR-006](#pinned-action-references-fr-006)):
 
-1. Add repository **Actions** secrets: `QUAY_ROBOT_USERNAME`, `QUAY_ROBOT_TOKEN` (must be able to **push** to the Quay path you use).
-2. In **Actions → Publish policy OCI → Run workflow**: set a **new** `release_tag` (e.g. `poc-0.0.1`); with `fail_if_dest_exists: true`, reusing a tag that already exists on the destination will fail.
+| Piece | Interim value |
+|-------|----------------|
+| Pack + push (inside org-infra) | `sonupreetam/gemara-publish-oci@7203d6158a16208a0338cc33ea001bb077f4705c` |
+| Test Quay repository | `quay.io/test_complytime/complytime-policies` (workflow default **`dest_image`**: `test_complytime/complytime-policies`) |
+
+**Local static check (before pushing):** from the repo root, `bash scripts/verify-interim-demo.sh` (validates YAML, org-infra and test-Quay defaults, and if `../org-infra` is present, that the Gemara action pin matches the table above).
+
+**GitHub end-to-end:**
+
+1. Add repository **Actions** secrets: `QUAY_ROBOT_USERNAME`, `QUAY_ROBOT_TOKEN` (robot must **push** to `quay.io/repository/…` for the default `dest_image` path).
+2. **Actions → Publish policy OCI → Run workflow:** set a **new** `release_tag` (e.g. `demo-0.0.1`); with `fail_if_dest_exists: true`, reusing an existing dest tag will fail.
 3. **Forks / unprotected default branch:** set **`allow_unprotected_ref`** to `true` so `reusable_publish_gemara_oci` and `reusable_sign_and_verify` are not skipped.
-4. **Quay destination:** leave **`dest_image`** as default for a POC namespace, or set **`continuouscompliance/complytime-policies`** when the org robot is scoped to that namespace.
-5. On success, copy **GHCR** digest and **Quay** digest from the workflow summary / job logs; paste into release notes or a PR comment to record **SC-003** evidence.
+4. Leave **`dest_image`** at the default to target the **test** Quay repo above, or set **`continuouscompliance/complytime-policies`** when the org robot is scoped to production.
+5. On success, copy **GHCR** and **Quay** digests from the logs; paste into release notes or a PR comment for **SC-003** evidence.
 
 ## Consumers (FR-005)
 
