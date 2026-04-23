@@ -74,9 +74,8 @@ jobs:
     name: Staging to GHCR (Gemara)
     needs: assert-quay
     if: success() && (github.ref_protected || inputs.allow_unprotected_ref)
-    uses: sonupreetam/org-infra-tests/.github/workflows/reusable_publish_oras.yml@9a166dd4be83f39f599be4827d38d43b74efe1c2
+    uses: sonupreetam/org-infra-tests/.github/workflows/reusable_publish_oras.yml@b7e38d59f149aa0c02dfac4b6ab6df6497362a77
     with:
-      publish_mode: gemara
       image_name: ${{ needs.assert-quay.outputs.repo_lc }}
       oci_tag: ${{ inputs.release_tag }}
       bundle_file: ${{ inputs.bundle_file }}
@@ -86,7 +85,7 @@ jobs:
   sign-verify:
     name: Keyless sign + verify attestations
     needs: publish-ghcr
-    uses: sonupreetam/org-infra-tests/.github/workflows/reusable_sign_and_verify.yml@9a166dd4be83f39f599be4827d38d43b74efe1c2
+    uses: sonupreetam/org-infra-tests/.github/workflows/reusable_sign_and_verify.yml@b7e38d59f149aa0c02dfac4b6ab6df6497362a77
     with:
       image_name: ${{ needs.publish-ghcr.outputs.image }}
       digest: ${{ needs.publish-ghcr.outputs.digest }}
@@ -101,7 +100,7 @@ jobs:
     permissions:
       contents: read
       packages: read
-    uses: sonupreetam/org-infra-tests/.github/workflows/resuable_publish_quay.yml@9a166dd4be83f39f599be4827d38d43b74efe1c2
+    uses: sonupreetam/org-infra-tests/.github/workflows/resuable_publish_quay.yml@b7e38d59f149aa0c02dfac4b6ab6df6497362a77
     with:
       source_registry: ghcr.io
       source_image: ${{ needs.assert-quay.outputs.repo_lc }}

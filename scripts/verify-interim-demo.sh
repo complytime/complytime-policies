@@ -6,8 +6,8 @@ set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 WF="${ROOT}/.github/workflows/publish-policy-oci.yml"
 # sonupreetam/org-infra-tests: all three workflow_call targets use this SHA in publish-policy-oci.
-ORG_INFRA_TESTS_PIN="9a166dd4be83f39f599be4827d38d43b74efe1c2"
-# Composite is pinned inside org-infra-tests/reusable_publish_oras.yml (publish_mode: gemara); optional sibling check.
+ORG_INFRA_TESTS_PIN="b7e38d59f149aa0c02dfac4b6ab6df6497362a77"
+# Composite is pinned inside org-infra-tests/reusable_publish_oras.yml; optional sibling check.
 INTERIM_ACTION="sonupreetam/gemara-publish-oci"
 INTERIM_ACTION_REF="7203d6158a16208a0338cc33ea001bb077f4705c"
 QUAY_TEST_DEST="test_complytime/complytime-policies"
@@ -41,16 +41,12 @@ grep -qF "reusable_publish_oras.yml" "$WF" || {
   echo "error: expected publish-ghcr to use reusable_publish_oras" >&2
   exit 1
 }
-grep -qE "publish_mode: *gemara" "$WF" || {
-  echo "error: expected publish-ghcr to set publish_mode: gemara" >&2
+grep -qE "oci_tag:" "$WF" && grep -qE "bundle_file:" "$WF" || {
+  echo "error: expected publish-ghcr to pass oci_tag and bundle_file" >&2
   exit 1
 }
-echo "ok: staging uses org-infra-tests/reusable_publish_oras (publish_mode: gemara)"
+echo "ok: staging uses org-infra-tests/reusable_publish_oras (Gemara-only contract)"
 if [[ -f "$TESTS_REPO" ]]; then
-  grep -qF "publish_mode: gemara" "$TESTS_REPO" || {
-    echo "error: expected publish_mode: gemara in $TESTS_REPO" >&2
-    exit 1
-  }
   grep -qF "${INTERIM_ACTION}@${INTERIM_ACTION_REF}" "$TESTS_REPO" || {
     echo "error: expected ${INTERIM_ACTION}@${INTERIM_ACTION_REF} in $TESTS_REPO" >&2
     exit 1
