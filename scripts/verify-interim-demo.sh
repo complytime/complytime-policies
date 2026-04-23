@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 WF="${ROOT}/.github/workflows/publish-policy-oci.yml"
 # sonupreetam/org-infra-tests: all three workflow_call targets use this SHA in publish-policy-oci.
-ORG_INFRA_TESTS_PIN="b7e38d59f149aa0c02dfac4b6ab6df6497362a77"
+ORG_INFRA_TESTS_PIN="c85271dae1ff157d24929251bf0bbb56a2b8c5bf"
 # Composite is pinned inside org-infra-tests/reusable_publish_oras.yml; optional sibling check.
 INTERIM_ACTION="sonupreetam/gemara-publish-oci"
 INTERIM_ACTION_REF="7203d6158a16208a0338cc33ea001bb077f4705c"
