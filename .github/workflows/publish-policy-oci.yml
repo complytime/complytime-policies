@@ -90,6 +90,8 @@ jobs:
     if: success()
     uses: >-
       complytime/org-infra/.github/workflows/reusable_sign_and_verify.yml@7eabc2b960778190d38c591b7b96b376489d0acb
+    # image + digest: workflow_call outputs of reusable_publish_gemara_oci (complytime/org-infra; job publish).
+    # The Actions schema cannot resolve cross-repo reusable outputs; IDE may warn here — safe to ignore.
     with:
       image_name: ${{ needs.publish-ghcr.outputs.image }}
       digest: ${{ needs.publish-ghcr.outputs.digest }}
