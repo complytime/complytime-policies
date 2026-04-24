@@ -1,0 +1,118 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+# Gemara policy OCI: GHCR staging (pack + attest) → sign/verify → Quay promote
+# (spec: specs/001-policy-oci-publish/…)
+#
+# Staging, sign, and Quay: workflow_call to sonupreetam/org-infra-tests (mirrors
+# complytime/org-infra; public until upstream ships the same files). Bump SHA in README (FR-006).
+# Quay default: test_complytime/…
+
+name: Publish policy OCI
+
+"on":
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Tag for GHCR and Quay (e.g. v0.1.0, sha-abc123de)"
+        required: true
+        type: string
+      allow_unprotected_ref:
+        description: >-
+          Set true if the default branch is not protected (e.g. fork) so
+          staging, sign, and attestation jobs run.
+        required: false
+        type: boolean
+        default: false
+      bundle_file:
+        description: "Root Gemara bundle YAML (relative to repo root)"
+        required: false
+        type: string
+        default: bundles/cis-fedora-l1-workstation.yaml
+      dest_image:
+        description: >-
+          Quay path (namespace/repository) without registry. Default is a POC namespace;
+          set continuouscompliance/complytime-policies for org production.
+        required: false
+        type: string
+        default: test_complytime/complytime-policies
+
+concurrency:
+  group: publish-policy-oci
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+  attestations: write
+
+jobs:
+  assert-quay:
+    name: Check Quay + image name
+    runs-on: ubuntu-latest
+    outputs:
+      repo_lc: ${{ steps.image.outputs.repo_lc }}
+    steps:
+      - name: Require QUAY_ROBOT_* for promote
+        env:
+          QUAY_USER: ${{ secrets.QUAY_ROBOT_USERNAME }}
+          QUAY_TOKEN: ${{ secrets.QUAY_ROBOT_TOKEN }}
+        run: |
+          if [ -z "${QUAY_USER}" ] || [ -z "${QUAY_TOKEN}" ]; then
+            echo '::error::Missing QUAY_ROBOT_USERNAME or QUAY_ROBOT_TOKEN.'
+            echo 'Add both: repo Settings, Secrets and variables, Actions.'
+            echo 'Forks do not inherit secrets from the upstream repository.'
+            exit 1
+          fi
+      - name: GHCR image name (lowercase)
+        id: image
+        run: |
+          r='${{ github.repository }}'
+          echo "repo_lc=${r,,}" >> "$GITHUB_OUTPUT"
+
+  publish-ghcr:
+    name: Staging to GHCR (Gemara)
+    needs: assert-quay
+    if: success() && (github.ref_protected || inputs.allow_unprotected_ref)
+    uses: sonupreetam/org-infra-tests/.github/workflows/reusable_publish_oras.yml@8ffcea997fc3026f62fc54c645974c51b42b7aa0
+    with:
+      publish_mode: gemara
+      image_name: ${{ needs.assert-quay.outputs.repo_lc }}
+      oci_tag: ${{ inputs.release_tag }}
+      bundle_file: ${{ inputs.bundle_file }}
+      allow_unprotected_ref: ${{ inputs.allow_unprotected_ref }}
+    secrets: inherit
+
+  sign-verify:
+    name: Keyless sign + verify attestations
+    needs: publish-ghcr
+    uses: sonupreetam/org-infra-tests/.github/workflows/reusable_sign_and_verify.yml@8ffcea997fc3026f62fc54c645974c51b42b7aa0
+    with:
+      image_name: ${{ needs.publish-ghcr.outputs.image }}
+      digest: ${{ needs.publish-ghcr.outputs.digest }}
+      allowed_identity_regex: ${{ format('https://github.com/{0}/.*', github.repository_owner) }}
+      verify_vuln: false
+      allow_unprotected_ref: ${{ inputs.allow_unprotected_ref }}
+    secrets: inherit
+
+  promote:
+    name: Promote to Quay
+    needs: [assert-quay, sign-verify]
+    permissions:
+      contents: read
+      packages: read
+    uses: sonupreetam/org-infra-tests/.github/workflows/resuable_publish_quay.yml@8ffcea997fc3026f62fc54c645974c51b42b7aa0
+    with:
+      source_registry: ghcr.io
+      source_image: ${{ needs.assert-quay.outputs.repo_lc }}
+      source_tag: ${{ inputs.release_tag }}
+      dest_registry: quay.io
+      dest_image: ${{ inputs.dest_image }}
+      dest_tag: ${{ inputs.release_tag }}
+      verify_signature: true
+      fail_if_dest_exists: true
+      include_sha_tags: true
+    secrets:
+      source_token: ${{ secrets.GITHUB_TOKEN }}
+      dest_username: ${{ secrets.QUAY_ROBOT_USERNAME }}
+      dest_password: ${{ secrets.QUAY_ROBOT_TOKEN }}
