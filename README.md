@@ -8,6 +8,7 @@ Workflow: [`.github/workflows/publish-policy-oci.yml`](.github/workflows/publish
 
 - **Thin caller:** a single `uses:` of the composite
   [`sonupreetam/gemara-publish-oci@967268e281b90e12b88224231583a04bb57a5c3f`](https://github.com/sonupreetam/gemara-publish-oci) (see [PR #4](https://github.com/sonupreetam/gemara-publish-oci/pull/4) / `feat/demo-push-only`); bump the SHA in the workflow when the action changes.
+- **Pin table (FR-006 / T004):** the **callee** pin is the composite SHA above (also in [`.github/workflows/publish-policy-oci.yml`](.github/workflows/publish-policy-oci.yml)). This **Option 3** layout does **not** add a second line item for [complytime/org-infra **`resuable_publish_quay.yml`**](https://github.com/complytime/org-infra/blob/main/.github/workflows/resuable_publish_quay.yml) because promote is **inside** the action. On **convergence** to a caller **`workflow_call`** to that reusable, add its **commit SHA** here and in the workflow.
 - **Defaults (dispatch):** `trust_mode: resign`, `verify_quay: true` (destination `cosign verify` after promote when promote runs); `sign_source` / `verify_source` stay off unless you change the workflow. Forks can set `allow_unprotected_ref: true` to run without a protected branch.
 
 ```mermaid

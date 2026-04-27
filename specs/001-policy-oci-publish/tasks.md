@@ -38,8 +38,8 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 
 **⚠️ CRITICAL**: Complete **T003**–**T008** before **US1** workflow implementation.
 
-- [X] T003 Confirm with org-infra that staging images satisfy **`verify_signature: true`** on promote (**FR-004**) or append the **documented exception** (scope + sunset) to `specs/001-policy-oci-publish/research.md` §5
-- [X] T004 Add pinned **`uses:`** table (composite publish action SHA + `complytime/org-infra` `.github/workflows/resuable_publish_quay.yml` SHA) with **interim** / **post-migration** labels to `README.md` per **FR-006** (`specs/001-policy-oci-publish/spec.md`)
+- [X] T003 **(satisfied by interim spec):** **FR-004** promote verification is covered by **Session 2026-04-27** (composite + `verify_quay`) and **Session 2026-04-22** Q2 for a **future** literal org **`workflow_call`**. A separate org-infra sign-off is **not** required to merge Option 3; track **convergence** in `README` / spec. Add a **documented exception** in `research.md` §5 only if maintainers agree to **turn off** destination verify.
+- [X] T004 Add **FR-006** pin documentation to `README.md`: **required** full SHA of the **composite** `uses:`; **org-infra** `resuable_publish_quay.yml` **SHA** is **N/A** for **Option 3** (promote inside the action) and **MUST** be added when the caller switches to that **`workflow_call`**
 - [X] T005 Document required GitHub **secret names** and token scopes for GHCR push and Quay promote (no values) in `README.md` per **FR-007** (`specs/001-policy-oci-publish/spec.md`)
 - [X] T006 Document the first primary Gemara root YAML **`file:`** path (for example `bundles/cis-fedora-l1-workstation.yaml`) and future matrix expansion in `README.md` per `specs/001-policy-oci-publish/research.md` §6
 - [X] T007 Document **v1** **`workflow_dispatch` only**, workflow **`concurrency`** (group key + **`cancel-in-progress`** rationale), overlapping-run behavior, and complementary **`fail_if_dest_exists`** / unique `dest_tag` guidance in `README.md` per **FR-002** and **Edge Cases** in `specs/001-policy-oci-publish/spec.md`
@@ -78,7 +78,7 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 
 - [X] T013 [US2] **(superseded shape):** Wire `allowed_identity_regex` and other composite inputs (e.g. `verify_destination` / `verify_quay` mapping) in `.github/workflows/publish-policy-oci.yml`; *not* org-infra `workflow_call`-specific keys unless a future job calls that reusable
 - [X] T014 [US2] Add operator checklist (verify steps, digests, failure modes) to `README.md` per **User Story 2** in `specs/001-policy-oci-publish/spec.md`
-- [X] T015 [US2] If optional org vulnerability gates apply, add only supported inputs in `.github/workflows/publish-policy-oci.yml` and document enable/disable in `README.md` per **FR-008**
+- [X] T015 [US2] **(N/A for current composite):** the pinned action does not expose a **`verify_vuln`/`verify_vulns`**-style input in this repo’s `with:` block. If **FR-008** / org later requires vulnerability gates, add only **supported** action inputs and document in `README.md` — *no* silent skips.
 
 **Checkpoint**: **US2** satisfied.
 
@@ -104,9 +104,9 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 **Purpose**: E2E evidence, migration tracking, spec alignment.
 
 - [X] T018 [P] Add migration tracking link or instruction for retiring interim composite-action pin in `README.md` per **FR-006** / **SC-004**
-- [ ] T019 Run **SC-003** end-to-end (`workflow_dispatch` → staging → promote → verify) and add digest/tag or log pointers to `README.md`
+- [ ] T019 Run **SC-003** end-to-end (`workflow_dispatch` → staging → promote → verify) and add digest/tag or log pointers to `README.md` (**blocks** declaring the epic “done” for consumers)
 - [X] T020 [P] Reconcile `specs/001-policy-oci-publish/quickstart.md` with final `.github/workflows/publish-policy-oci.yml` inputs and job names
-- [X] T021 Verify **FR-001**–**FR-008** and success criteria in `specs/001-policy-oci-publish/spec.md` against merged `README.md` and `.github/workflows/publish-policy-oci.yml`
+- [X] T021 [P] **Static** alignment: `spec.md` / `contracts/` / `README` / `quickstart` describe the same **Option 3** **inputs`, **defaults**, and **pin** as `.github/workflows/publish-policy-oci.yml`. Does **not** satisfy **SC-003** (see **T019**)
 
 ---
 

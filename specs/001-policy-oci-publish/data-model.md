@@ -1,5 +1,7 @@
 # Data model: policy OCI publish
 
+> **Workflow shape:** The diagram below and any **separate** “promote” step describe the **pre–Option-3** and **convergence** mental model. For the **v1** **Option 3** / **PR #19** **single-composite** caller, treat [contracts/publish-pipeline.md](contracts/publish-pipeline.md) as the source of truth; do not infer `needs:` edges in GitHub Actions from this file alone.
+
 This feature is **pipeline- and content-centric**; there is no application database. Entities below are **logical** for specs, workflows, and documentation.
 
 ## Entities

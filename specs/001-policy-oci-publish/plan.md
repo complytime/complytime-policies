@@ -1,7 +1,7 @@
 # Implementation Plan: Published policy OCI release pipeline (content + thin workflow)
 
 **Branch**: `001-policy-oci-publish` | **Date**: 2026-04-22 | **Spec**: [spec.md](./spec.md)  
-**Input**: Feature specification from `/specs/001-policy-oci-publish/spec.md` (includes **Clarifications** sessions 2026-04-22 and 2026-04-27).
+**Input**: Feature specification from `/specs/001-policy-oci-publish/spec.md` (includes **Clarifications** sessions 2026-04-22, 2026-04-27, and 2026-04-28).
 
 ## Summary
 
