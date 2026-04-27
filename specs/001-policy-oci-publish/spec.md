@@ -19,6 +19,10 @@
 - Q: What are the default **signing / verify** values for the published workflow? → A: **`trust_mode: resign`**, **`verify_quay: true`** (destination `cosign verify` in CI when promote runs), with source sign/verify off in the checked-in workflow unless changed. This supersedes an earlier “copy-only, all verify off” demo description.
 - Q: Where is the **input and secret contract** for the thin caller? → A: [contracts/publish-pipeline.md](contracts/publish-pipeline.md) and the workflow file; keep them in sync when pins or `with:` change.
 
+### Session 2026-04-28 (SpecKit `/speckit-clarify`)
+
+- Q: The **001-policy-oci-publish** feature branch trailed this PR; should it be fully reconciled with the **Option 3** / **PR #19** spec set? → A: **Yes** — branch `001-policy-oci-publish` carries the full `specs/001-policy-oci-publish/`, `contracts/`, and **README** layout; for SpecKit **`.specify/scripts/bash/check-prerequisites.sh`**, check out a **`001-*` feature branch** (this feature) instead of a `feat/...` work branch, or the script will not return **FEATURE_SPEC**.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Maintainers get reliable, automatable releases of policy content (Priority: P1)
