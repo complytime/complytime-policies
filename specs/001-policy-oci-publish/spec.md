@@ -43,11 +43,11 @@ Security and platform operators need published policy artifacts to follow the sa
 
 **Why this priority**: Reduces org risk and supports audits; secondary to “something is published at all” (P1).
 
-**Independent Test**: Can be tested by reviewing pipeline outputs and attestation material for a successful run and confirming the promotion path matches the organization’s standard (staging → **cosign verify** when enabled on promote → promotion to public registry), with **`verify_signature: true`** on the org **`workflow_call`** unless a documented org exception applies (**v1**).
+**Independent Test**: Can be tested by reviewing pipeline outputs and attestation material for a successful run and confirming the promotion path matches the organization’s **intent** (staging → **cosign verify** on destination when enabled → public Quay). For **v1** as implemented (**Session 2026-04-27**), verification is the composite’s **`verify_quay`** (destination) path; a literal org-infra promote **`workflow_call`** is a **convergence** target, not a gate for this story.
 
 **Acceptance Scenarios**:
 
-1. **Given** a successful release run, **When** an operator reviews the run’s outputs, **Then** signing/verification steps (including **`verify_signature: true`** behavior on the org promote **`workflow_call`** unless a documented exception applies) and promotion to the public registry are present and follow the standard organization pattern for similar artifacts.
+1. **Given** a successful release run, **When** an operator reviews the run’s outputs, **Then** signing/verification steps and promotion to the public registry are present. **Interim (composite):** destination **verify** aligns with **Clarifications** and dispatch defaults; **convergence:** org **`verify_signature: true`** on promote when [**`resuable_publish_quay`**](https://github.com/complytime/org-infra/blob/main/.github/workflows/resuable_publish_quay.yml) is invoked instead of embedded promote.
 2. **Given** optional vulnerability-related checks the organization allows for this artifact class, **When** those checks are enabled, **Then** failed checks block promotion according to the agreed policy.
 
 ---

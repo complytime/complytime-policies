@@ -8,7 +8,7 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 **Prerequisites**: `plan.md`, `spec.md`, `research.md`, `data-model.md`, `contracts/`, `quickstart.md`  
 **Tests**: Omitted — spec does not require automated tests; validation is manual **E2E** (**SC-003**).
 
-**Organization**: Phases follow **US1** (P1), **US2** (P2), **US3** (P3) in `specs/001-policy-oci-publish/spec.md`. **v1** norms: **`workflow_dispatch` only** (**FR-002**); workflow **`concurrency`** (**FR-002**, **research.md** §7); promote **`verify_signature: true`** (**FR-004**, **Clarifications**).
+**Organization**: Phases follow **US1** (P1), **US2** (P2), **US3** (P3) in `specs/001-policy-oci-publish/spec.md`. **v1** norms: **`workflow_dispatch` only** (**FR-002**); workflow **`concurrency`**; destination verification for trust (**FR-004**): **interim** = composite `verify_quay` / `trust_mode` per **Session 2026-04-27**; **convergence** = org **`resuable_publish_quay`** `verify_signature` (see **research.md** for that design).
 
 ## Format: `[ID] [P?] [Story?] Description`
 
@@ -72,7 +72,7 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 
 **Goal**: Operators see **cosign verify** on promote and org-standard promotion; no silent skipping of agreed checks.
 
-**Independent Test**: Logs show verify + promote; **`verify_signature: true`** unless **T003** exception is documented (**User Story 2**, **FR-008**).
+**Independent Test**: Logs show promote + destination verify (composite **`verify_quay`**) and signing posture per **trust_mode**; org **`verify_signature: true`** on **resuable_publish_quay** applies after **FR-004** convergence unless **T003** exception is documented (**User Story 2**, **FR-008**).
 
 ### Implementation for User Story 2
 

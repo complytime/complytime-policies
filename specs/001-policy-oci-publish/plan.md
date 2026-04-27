@@ -9,14 +9,14 @@ Implement a **thin** `.github/workflows/publish-policy-oci.yml` over **`governan
 
 ## Technical Context
 
-**Language/Version**: Gemara YAML; CI **`ubuntu-latest`**; composite action uses internal **Go 1.25.x** (not this repo’s module).  
-**Primary Dependencies**: **GitHub Actions**; **Publish Gemara OCI bundle** composite (e.g. **`complytime/oci-artifact`** / interim SHA); **`complytime/org-infra`** promote reusable workflow; **crane/cosign** inside org workflow.  
+**Language/Version**: Gemara YAML; CI **`ubuntu-latest`**; composite action uses internal **Go** (version per action `action.yml` / `setup-go`, not this repo’s module).  
+**Primary Dependencies**: **GitHub Actions**; one pinned **composite** that runs pack/push, optional **cosign**, and ORAS promote to Quay; **id-token** for keyless where enabled. **Long-term:** [org-infra **`resuable_publish_quay`**](https://github.com/complytime/org-infra/blob/main/.github/workflows/resuable_publish_quay.yml) as **`workflow_call`** (see spec **FR-004** convergence) — *not* the v1 two-job design. **research.md** still describes the historical two-job + promote shape.  
 **Storage**: N/A; **OCI** on **GHCR** + **Quay**.  
-**Testing**: Manual **E2E** (**SC-003**).  
+**Testing**: Manual **E2E** (**SC-003**), task **T019**.  
 **Target Platform**: **GitHub-hosted** `ubuntu-latest`.  
 **Project Type**: **Policy repository** + **CI integration**.  
-**Performance Goals**: Within org promote timeout (~**15 min**).  
-**Constraints**: **FR-002** (dispatch-only **v1**, **`concurrency`**, publish-matrix docs); **FR-003**/**FR-004** (thin caller, **`verify_signature: true`** default); **FR-006**–**FR-008**; **Apache-2.0** / **AGENTS.md**; no secrets in git.  
+**Performance Goals**: Within a single workflow job timeout (align with org promote expectations, ~**15 min** as ballpark).  
+**Constraints**: **FR-002** (dispatch-only **v1**, **`concurrency`**, publish-matrix docs); **FR-003**/**FR-004** (thin caller; interim composite per **Clarifications**; verify defaults per **Session 2026-04-27**); **FR-006**–**FR-008**; **Apache-2.0** / **AGENTS.md**; no secrets in git.  
 **Scale/Scope**: One public image; start **one** **`file:`** root; document matrix expansion.
 
 ## Constitution Check
@@ -31,7 +31,7 @@ Implement a **thin** `.github/workflows/publish-policy-oci.yml` over **`governan
 
 ### Constitution Check (post–Phase 1 design)
 
-- [x] **`research.md`**, **`contracts/`**, **`data-model.md`**, **`quickstart.md`** align with spec clarifications.
+- [x] **`contracts/`**, **`quickstart.md`**, **`spec.md`** align with **Clarifications**. **`research.md`** / **`data-model.md`**: historical; superseded for workflow shape by **PR #19** (single composite) unless revisited.
 
 ## Project Structure
 
@@ -68,8 +68,8 @@ README.md
 
 | Phase | Artifact | Status |
 |-------|-----------|--------|
-| 0 | `research.md` | Current — no **NEEDS CLARIFICATION** |
-| 1 | `data-model.md`, `contracts/publish-pipeline.md`, `quickstart.md` | Current — aligned with **FR-002**/**FR-004** |
+| 0 | `research.md` | Current — `workflow_call` to org-infra is the **pre–Option-3** research; **convergence** in spec. |
+| 1 | `data-model.md`, `contracts/publish-pipeline.md`, `quickstart.md` | **contracts** / **quickstart** aligned with **Session 2026-04-27**; **data-model** may still show promote as a node — treat **contracts** as source of truth for the caller. |
 | 2 | `tasks.md` | Maintained via **`/speckit.tasks`**; see `specs/001-policy-oci-publish/tasks.md` |
 
 **Agent context**: `.cursor/rules/specify-rules.mdc` → plan + siblings under `specs/001-policy-oci-publish/`.
