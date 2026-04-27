@@ -27,6 +27,14 @@ flowchart LR
 
 Forks must define their own repository secrets.
 
+## Who can run the publish workflow (T008, FR-002)
+
+The job runs when **`github.ref_protected` is true** (e.g. dispatch from a **protected** default or release branch) **or** when you set the dispatch input **`allow_unprotected_ref: true`**. The publish job is **skipped** if the ref is **not** protected **and** `allow_unprotected_ref` is false (the default), so forks and unprotected branches need **`allow_unprotected_ref: true`**. See [`.github/workflows/publish-policy-oci.yml`](.github/workflows/publish-policy-oci.yml) (`if:` on the `publish` job).
+
+- **Org production:** use branch protection and maintainers with permission to run **Actions → Publish policy OCI**; align **`dest_image`** and secrets with your namespace policy.
+- **Forks / demos:** set **`allow_unprotected_ref: true`**, add **`QUAY_ROBOT_*`**, and do not expect upstream secrets to be inherited.
+- **Optional GitHub Environment** (e.g. `publish-oci-prod`): not set in the checked-in workflow. If your org requires an [environment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment) (approvals, wait timers), add `environment: <name>` to the job in agreement with maintainers and document the name here when you do.
+
 ## Run a release
 
 Use **Actions -> Publish policy OCI -> Run workflow** and set:
@@ -41,6 +49,12 @@ Success criteria:
 
 - workflow job passes
 - logs contain `source_ref`, `destination_ref`, and (when `verify_quay` is true) `verified_destination`
+
+## E2D / SC-003 (T019)
+
+*Fill this in after a successful `workflow_dispatch` to prove **SC-003** (end-to-end staging → promote → verify) for maintainers. Replace the placeholder; link to a specific Actions run and note `release_tag` and any digest you rely on for consumers.*
+
+- **E2D evidence (placeholder):** *(add: GitHub Actions run URL, `release_tag`, optional `destination` digest, date)*
 
 ## Policy content
 

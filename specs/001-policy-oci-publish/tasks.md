@@ -43,7 +43,7 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 - [X] T005 Document required GitHub **secret names** and token scopes for GHCR push and Quay promote (no values) in `README.md` per **FR-007** (`specs/001-policy-oci-publish/spec.md`)
 - [X] T006 Document the first primary Gemara root YAML **`file:`** path (for example `bundles/cis-fedora-l1-workstation.yaml`) and future matrix expansion in `README.md` per `specs/001-policy-oci-publish/research.md` §6
 - [X] T007 Document **v1** **`workflow_dispatch` only**, **`concurrency`**, and overlapping-dispatch policy in `README.md`; for **`fail_if_dest_exists`** / unique **`dest_tag`**: **Option 3** does **not** plumb org promote inputs through this repo—document that distinction and point to `README` + **Edge Cases** in `specs/001-policy-oci-publish/spec.md` (satisfied by the **“Overlapping runs & dest tags”** bullet)
-- [X] T008 Add `README.md` subsection on **who may run** **`workflow_dispatch`** and optional **GitHub Environment** gating for production (fill per org/repo policy; aligns with **FR-002** default-branch scope)
+- [X] T008 Add `README.md` subsection on **who may run** **`workflow_dispatch`** and optional **GitHub Environment** gating for production (fill per org/repo policy; aligns with **FR-002** default-branch scope) — **satisfied** by [root `README.md` § *Who can run the publish workflow (T008, FR-002)*](../../README.md)
 
 **Checkpoint**: Foundation documented.
 
