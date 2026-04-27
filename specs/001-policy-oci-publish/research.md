@@ -39,6 +39,6 @@
 
 ## 7. Overlapping `workflow_dispatch` runs
 
-- **Decision**: Use workflow-level **`concurrency`** (**FR-002**, **Clarifications** 2026-04-22): one stable **group** key (for example `publish-policy-oci`) and an explicit **`cancel-in-progress`** choice (`true` or `false`) documented in **`README.md`** with maintainer rationale. Keep org **`fail_if_dest_exists`** (or equivalent) for duplicate **`dest_tag`** as a second line of defense.
+- **Decision**: Use workflow-level **`concurrency`** (**FR-002**, **Clarifications** 2026-04-22): one stable **group** key (for example `publish-policy-oci`) and an explicit **`cancel-in-progress`** choice (`true` or `false`) documented in publish docs (`specs/001-policy-oci-publish/quickstart.md`) with maintainer rationale. Keep org **`fail_if_dest_exists`** (or equivalent) for duplicate **`dest_tag`** as a second line of defense.
 - **Rationale**: Reduces publish/promote races; satisfies the **Back-to-back merges / overlapping** edge case beyond registry-only failures.
 - **Alternatives considered**: Concurrency off, rely on **`fail_if_dest_exists`** only (rejected by clarification).

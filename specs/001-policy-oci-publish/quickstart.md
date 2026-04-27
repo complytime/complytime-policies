@@ -3,8 +3,8 @@
 ## Prerequisites
 
 - Policy YAML under **`governance/`** and **`bundles/`** passes merge-time validation in this repository.
-- GitHub **secrets** (names only): see **GitHub secrets** in [`README.md`](../../README.md) — `QUAY_ROBOT_USERNAME`, `QUAY_ROBOT_TOKEN` for Quay; GHCR uses `GITHUB_TOKEN` from the workflow.
-- Pinned `uses` rows in `README.md` and in [`.github/workflows/publish-policy-oci.yml`](../../.github/workflows/publish-policy-oci.yml).
+- GitHub **secrets** (names only): [`README.md` root](../../README.md) and this file — `QUAY_ROBOT_USERNAME`, `QUAY_ROBOT_TOKEN` for Quay; GHCR uses `GITHUB_TOKEN` from the workflow.
+- **Pinned** composite SHA: in [`.github/workflows/publish-policy-oci.yml`](../../.github/workflows/publish-policy-oci.yml) only (bump when the action changes; **FR-006** in `specs/001-policy-oci-publish/spec.md`).
 
 ## What “thin” means
 
@@ -17,14 +17,16 @@
 
 No in-repo redefinition of OCI manifest layout; see [contracts/publish-pipeline.md](contracts/publish-pipeline.md).
 
-**Overlapping runs:** workflow `concurrency` group `publish-policy-oci` with `cancel-in-progress: false` (**FR-002**).
+**Overlapping runs:** workflow `concurrency` group `publish-policy-oci` with `cancel-in-progress: false` (**FR-002**). **`fail_if_dest_exists`**-style org promote flags are not passed from this repo’s `with:`; the composite defines tag/overwrite behavior (see [contracts/publish-pipeline.md](contracts/publish-pipeline.md)).
+
+**Who can run:** the job runs when the ref is **protected** (`github.ref_protected`) or when dispatch sets **`allow_unprotected_ref: true`**. Unprotected default branches (typical on forks) need **`allow_unprotected_ref: true`**. See the `if:` on the `publish` job in the workflow. Optional [GitHub Environment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment) gating is not in the default workflow; add `environment: <name>` in agreement with your org if required.
 
 ## Run the release workflow
 
 1. Go to **Actions** → **Publish policy OCI** → **Run workflow** (on the default branch).  
-2. **release_tag (required):** single tag for GHCR and Quay destination.
-3. Optional: set `trust_mode` / `verify_quay` if you need a non-default path.  
-4. On success, copy `source_ref`, `destination_ref`, and (when `verify_quay: true`) `verified_destination` from workflow logs.
+2. **release_tag (required):** one tag for GHCR and Quay.  
+3. Optional: `bundle_file` (default `bundles/cis-fedora-l1-workstation.yaml`), `dest_image`, `trust_mode`, `verify_quay`, `allow_unprotected_ref` (unprotected / fork default branches).  
+4. On success, copy `source_ref`, `destination_ref`, and (when `verify_quay: true`) `verified_destination` from logs.
 
 **Workflow file:** [`.github/workflows/publish-policy-oci.yml`](../../.github/workflows/publish-policy-oci.yml)
 
@@ -38,7 +40,15 @@ No in-repo redefinition of OCI manifest layout; see [contracts/publish-pipeline.
 1. Merge the desired policy/bundle state to the **default branch**.  
 2. Run **Publish policy OCI** with a **new** `release_tag`.
 3. Confirm source and destination refs plus verification outputs.
-4. For consumers, follow the **Consumers** section in `README.md` and **SC-002** timing guidance in the spec.
+4. For consumers, use **Usage** in the root `README` (or the **Consumers** section below) and **SC-002** in the spec.
+
+## Verified E2E (optional)
+
+*After a successful* `workflow_dispatch`*, add run URL,* `release_tag`*, and optional Quay digest here (for* **SC-003** */ maintainer record).*
+
+- *(add when available)*
+
+**Migration (interim pin):** when the composite action moves to a `gemaraproj` or org-wide repo, update the **SHA in** [`.github/workflows/publish-policy-oci.yml`](../../.github/workflows/publish-policy-oci.yml) and drop any interim location once **FR-006** migration is done.
 
 ## Consumers: fetch and verify (SC-002)
 

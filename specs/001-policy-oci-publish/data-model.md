@@ -62,7 +62,7 @@ This feature is **pipeline- and content-centric**; there is no application datab
 | Field | Type | Notes |
 |-------|------|--------|
 | `kind` | enum | **v1**: **`workflow_dispatch` only** (**FR-002**). Future values (e.g. `push_tag`) require spec + publish doc precedence rules. |
-| `concurrency_group` | string | Workflow **`concurrency.group`** value; documented in **`README.md`** (**FR-002**). |
+| `concurrency_group` | string | Workflow **`concurrency.group`** value; documented in **`specs/001-policy-oci-publish/quickstart.md`** and workflow file (**FR-002**). |
 | `cancel_in_progress` | boolean | Workflow **`concurrency.cancel-in-progress`**; documented with rationale (**FR-002**). |
 | `actor_constraints` | string (doc) | GitHub environments / required reviewers (optional, ops). |
 

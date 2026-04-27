@@ -42,8 +42,8 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 - [X] T004 Add **FR-006** pin documentation to `README.md`: **required** full SHA of the **composite** `uses:`; **org-infra** `resuable_publish_quay.yml` **SHA** is **N/A** for **Option 3** (promote inside the action) and **MUST** be added when the caller switches to that **`workflow_call`**
 - [X] T005 Document required GitHub **secret names** and token scopes for GHCR push and Quay promote (no values) in `README.md` per **FR-007** (`specs/001-policy-oci-publish/spec.md`)
 - [X] T006 Document the first primary Gemara root YAML **`file:`** path (for example `bundles/cis-fedora-l1-workstation.yaml`) and future matrix expansion in `README.md` per `specs/001-policy-oci-publish/research.md` §6
-- [X] T007 Document **v1** **`workflow_dispatch` only**, **`concurrency`**, and overlapping-dispatch policy in `README.md`; for **`fail_if_dest_exists`** / unique **`dest_tag`**: **Option 3** does **not** plumb org promote inputs through this repo—document that distinction and point to `README` + **Edge Cases** in `specs/001-policy-oci-publish/spec.md` (satisfied by the **“Overlapping runs & dest tags”** bullet)
-- [X] T008 Add `README.md` subsection on **who may run** **`workflow_dispatch`** and optional **GitHub Environment** gating for production (fill per org/repo policy; aligns with **FR-002** default-branch scope) — **satisfied** by [root `README.md` § *Who can run the publish workflow (T008, FR-002)*](../../README.md)
+- [X] T007 Document **v1** **`workflow_dispatch` only**, **`concurrency`**, and overlapping-dispatch policy in `README.md`; for **`fail_if_dest_exists`** / unique **`dest_tag`**: **Option 3** does **not** plumb org promote inputs through this repo—document that distinction and point to `README` + **Edge Cases** in `specs/001-policy-oci-publish/spec.md` (satisfied in [`quickstart.md`](quickstart.md) **What “thin” means** — *Overlapping runs* / promote inputs)
+- [X] T008 Add `README.md` subsection on **who may run** **`workflow_dispatch`** and optional **GitHub Environment** gating for production (fill per org/repo policy; aligns with **FR-002** default-branch scope) — **satisfied** in [`quickstart.md`](quickstart.md) (**Who can run** under **What “thin” means**; root [README **Releasing**](../README.md#releasing) is the lean pointer)
 
 **Checkpoint**: Foundation documented.
 
@@ -104,7 +104,7 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 **Purpose**: E2E evidence, migration tracking, spec alignment.
 
 - [X] T018 [P] Add migration tracking link or instruction for retiring interim composite-action pin in `README.md` per **FR-006** / **SC-004**
-- [ ] T019 Run **SC-003** end-to-end (`workflow_dispatch` → staging → promote → verify) and add digest/tag or log pointers to `README.md` (**blocks** declaring the epic “done” for consumers)
+- [ ] T019 Run **SC-003** end-to-end (`workflow_dispatch` → staging → promote → verify) and add digest/tag or log pointers under **“Verified E2E (optional)”** in `specs/001-policy-oci-publish/quickstart.md` (or briefly in root `README` if maintainers prefer) — **blocks** declaring the epic “done” for consumers
 - [X] T020 [P] Reconcile `specs/001-policy-oci-publish/quickstart.md` with final `.github/workflows/publish-policy-oci.yml` inputs and job names
 - [X] T021 [P] **Static** alignment: `spec.md` / `contracts/` / `README` / `quickstart` describe the same **Option 3** **inputs`, **defaults**, and **pin** as `.github/workflows/publish-policy-oci.yml`. Does **not** satisfy **SC-003** (see **T019**)
 
