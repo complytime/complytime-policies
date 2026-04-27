@@ -1,0 +1,115 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+# Option 3 thin caller: delegate pack/push/sign/verify/promote to sonupreetam/gemara-publish-oci
+# (PR #4 branch feat/demo-push-only; pin full SHA, bump when the action branch moves or merges to main).
+
+name: Publish policy OCI
+
+"on":
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Tag for GHCR and Quay (e.g. v0.1.0, sha-abc123de)"
+        required: true
+        type: string
+      allow_unprotected_ref:
+        description: >-
+          Set true if the default branch is not protected (e.g. fork) so
+          staging, sign, and attestation jobs run.
+        required: false
+        type: boolean
+        default: false
+      bundle_file:
+        description: "Root Gemara bundle YAML (relative to repo root)"
+        required: false
+        type: string
+        default: bundles/cis-fedora-l1-workstation.yaml
+      dest_image:
+        description: >-
+          Quay path (namespace/repository) without registry. Default is a POC namespace;
+          set continuouscompliance/complytime-policies for org production.
+        required: false
+        type: string
+        default: test_complytime/complytime-policies
+      trust_mode:
+        description: "Destination trust mode: resign (re-sign on Quay), copy-only, or copy-referrers"
+        required: false
+        type: string
+        default: resign
+      verify_quay:
+        description: >-
+          Run cosign verify on the Quay digest after promote (proves the destination signature in CI;
+          set false only for debugging).
+        required: false
+        type: boolean
+        default: true
+
+concurrency:
+  group: publish-policy-oci
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+  packages: write
+
+jobs:
+  publish:
+    name: Publish via gemara-publish-oci
+    runs-on: ubuntu-latest
+    if: github.ref_protected || inputs.allow_unprotected_ref
+    steps:
+      - name: Require Quay credentials for promote
+        env:
+          QUAY_USER: ${{ secrets.QUAY_ROBOT_USERNAME }}
+          QUAY_TOKEN: ${{ secrets.QUAY_ROBOT_TOKEN }}
+        run: |
+          if [ -z "${QUAY_USER}" ] || [ -z "${QUAY_TOKEN}" ]; then
+            echo '::error::Missing QUAY_ROBOT_USERNAME or QUAY_ROBOT_TOKEN.'
+            echo 'Add both: repo Settings, Secrets and variables, Actions.'
+            echo 'Forks do not inherit secrets from the upstream repository.'
+            exit 1
+          fi
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: GHCR image name (lowercase)
+        id: image
+        run: |
+          r='${{ github.repository }}'
+          echo "repo_lc=${r,,}" >> "$GITHUB_OUTPUT"
+
+      - name: Publish bundle, sign, verify, and promote
+        id: publish
+        # yamllint disable-line rule:line-length
+        # https://github.com/sonupreetam/gemara-publish-oci/pull/4 @ feat/demo-push-only
+        uses: sonupreetam/gemara-publish-oci@967268e281b90e12b88224231583a04bb57a5c3f
+        with:
+          publish_mode: gemara-file
+          registry: ghcr.io
+          repository: ${{ steps.image.outputs.repo_lc }}
+          tag: ${{ inputs.release_tag }}
+          file: ${{ inputs.bundle_file }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          validate: "true"
+          bundle_version: "1"
+          working_directory: "."
+          sign_source: "false"
+          verify_source: "false"
+          promote_to_quay: "true"
+          quay_registry: quay.io
+          quay_image: ${{ inputs.dest_image }}
+          quay_tag: ${{ inputs.release_tag }}
+          quay_username: ${{ secrets.QUAY_ROBOT_USERNAME }}
+          quay_password: ${{ secrets.QUAY_ROBOT_TOKEN }}
+          trust_mode: ${{ inputs.trust_mode }}
+          sign_destination: "false"
+          verify_destination: ${{ inputs.verify_quay && 'true' || 'false' }}
+          allowed_identity_regex: ${{ format('^https://github.com/{0}/.github/workflows/', github.repository) }}
+
+      - name: Print release refs
+        run: |
+          echo "source_ref=${{ steps.publish.outputs.source_ref }}"
+          echo "destination_ref=${{ steps.publish.outputs.destination_ref }}"
+          echo "verified_destination=${{ steps.publish.outputs.verified_destination }}"

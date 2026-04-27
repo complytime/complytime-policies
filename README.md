@@ -1,39 +1,56 @@
 # complytime-policies
 
-Centralized repository for Gemara policies used by [ComplyTime](https://github.com/complytime) tooling. Policies defined here will be released as OCI artifacts to Quay.io and consumed via the `complyctl get` command.
+Centralized repository for Gemara policies used by [ComplyTime](https://github.com/complytime) tooling. Policies defined here are published as OCI artifacts to a public **Quay.io** namespace and consumed (for example via `complyctl get`).
 
-## Overview
+## Current publish design
 
-This repository contains governance artifacts used to define and enforce security controls across supported platforms (GitHub, GitLab, etc.). The governance content follows the [Gemara](https://github.com/gemaraproj/gemara) framework and is organized into catalogs and policies.
+Workflow: [`.github/workflows/publish-policy-oci.yml`](.github/workflows/publish-policy-oci.yml)
 
-## Repository Structure
+- Thin caller model: this repo calls the pinned action
+  `sonupreetam/gemara-publish-oci@3e82d5dfa822ce486ce9b129665e8b6db3e7b2b9`
+- Current mode is push-only:
+  - `sign_source: false`
+  - `verify_source: false`
+  - `trust_mode: copy-only` (default input)
+  - `sign_destination: false`
+  - `verify_destination: false`
 
+```mermaid
+flowchart LR
+  policyRepo[complytime_policies_workflow] --> ghcrPush[push_to_ghcr]
+  ghcrPush --> quayCopy[copy_to_quay]
+  quayCopy --> refs[source_ref_and_destination_ref]
 ```
-complytime-policies/
-├── governance/
-│   ├── catalogs/    # Security control catalogs and definitions
-│   └── policies/    # Implementation policies and technical controls
-├── LICENSE
-└── README.md
-```
 
-## Governance Content
+## Required secrets
 
-### Catalogs
+- `QUAY_ROBOT_USERNAME`
+- `QUAY_ROBOT_TOKEN`
+- `GITHUB_TOKEN` is used automatically for GHCR
 
-Security control catalogs define the set of controls and assessment requirements. Each catalog groups controls into families and specifies the objectives and applicability of each control.
+Forks must define their own repository secrets.
 
-- [Branch Protection Catalog](governance/catalogs/ampel-branch-protection-catalog.yaml) - Controls for protecting source code repositories via branch protection rules
+## Run a release
 
-### Policies
+Use **Actions -> Publish policy OCI -> Run workflow** and set:
 
-Implementation policies define how controls are evaluated, who is responsible, and what automated tools are used for assessment.
+- `release_tag` (required)
+- optional `bundle_file` (default: `bundles/cis-fedora-l1-workstation.yaml`)
+- optional `dest_image` (default: `test_complytime/complytime-policies`)
+- optional `allow_unprotected_ref` (`true` for unprotected fork branches)
 
-- [Branch Protection Policy](governance/policies/ampel-branch-protection-policy.yaml) - Automated evaluation policy for branch protection controls using AMPEL
+Success criteria:
+
+- workflow job passes
+- logs contain `source_ref` and `destination_ref`
+
+## Policy content
+
+- Catalogs: `governance/catalogs/`
+- Policies: `governance/policies/`
+- Bundle roots: `bundles/*.yaml`
 
 ## Usage
-
-Policies from this repository are planned to be released as OCI artifacts to Quay.io. Once available, they can be consumed using the `complyctl get` command, which retrieves policies based on a configuration file.
 
 ```bash
 complyctl get
@@ -41,4 +58,4 @@ complyctl get
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+Apache-2.0. See [LICENSE](LICENSE).
