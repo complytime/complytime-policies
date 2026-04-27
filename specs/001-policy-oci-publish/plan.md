@@ -25,7 +25,7 @@ Implement a **thin** `.github/workflows/publish-policy-oci.yml` over **`governan
 
 - [x] **Gemara and ecosystem fit**: Caller passes paths; validation stays SDK/action + merge-time checks.
 - [x] **Traceability and reviewability**: Small workflow + doc diffs; SHA-pinned **`uses:`**.
-- [x] **Testable requirements**: Green run + digests + docs match **SC-001**–**SC-004**.
+- [x] **Testable requirements**: **SC-001**–**SC-002** and **SC-004** satisfied by static alignment + **green** `workflow_dispatch` (see **T021**); full **SC-003** (E2D evidence in **README**) is gated by open **T019** per **tasks.md** Phase 6.
 - [x] **Release and consumer impact**: **v1** dispatch, concurrency, verify defaults; consumer docs (**FR-005**).
 - [x] **Licensing and hygiene**: Secrets via GitHub only; minimal **`permissions`**.
 
@@ -54,7 +54,7 @@ governance/
 ├── catalogs/
 └── policies/
 bundles/
-.github/workflows/          # publish-policy-oci.yml (add)
+.github/workflows/          # publish-policy-oci.yml
 README.md
 ```
 

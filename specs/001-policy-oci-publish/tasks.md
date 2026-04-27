@@ -42,7 +42,7 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 - [X] T004 Add **FR-006** pin documentation to `README.md`: **required** full SHA of the **composite** `uses:`; **org-infra** `resuable_publish_quay.yml` **SHA** is **N/A** for **Option 3** (promote inside the action) and **MUST** be added when the caller switches to that **`workflow_call`**
 - [X] T005 Document required GitHub **secret names** and token scopes for GHCR push and Quay promote (no values) in `README.md` per **FR-007** (`specs/001-policy-oci-publish/spec.md`)
 - [X] T006 Document the first primary Gemara root YAML **`file:`** path (for example `bundles/cis-fedora-l1-workstation.yaml`) and future matrix expansion in `README.md` per `specs/001-policy-oci-publish/research.md` §6
-- [X] T007 Document **v1** **`workflow_dispatch` only**, workflow **`concurrency`** (group key + **`cancel-in-progress`** rationale), overlapping-run behavior, and complementary **`fail_if_dest_exists`** / unique `dest_tag` guidance in `README.md` per **FR-002** and **Edge Cases** in `specs/001-policy-oci-publish/spec.md`
+- [X] T007 Document **v1** **`workflow_dispatch` only**, **`concurrency`**, and overlapping-dispatch policy in `README.md`; for **`fail_if_dest_exists`** / unique **`dest_tag`**: **Option 3** does **not** plumb org promote inputs through this repo—document that distinction and point to `README` + **Edge Cases** in `specs/001-policy-oci-publish/spec.md` (satisfied by the **“Overlapping runs & dest tags”** bullet)
 - [X] T008 Add `README.md` subsection on **who may run** **`workflow_dispatch`** and optional **GitHub Environment** gating for production (fill per org/repo policy; aligns with **FR-002** default-branch scope)
 
 **Checkpoint**: Foundation documented.
@@ -165,4 +165,4 @@ T020: quickstart.md vs publish-policy-oci.yml
 | **US3** | 2 |
 | **Phase 6** | 4 |
 
-**Format validation**: All tasks `- [ ] Tnnn …` with file paths; **[USn]** only Phases 3–5; **[P]** on **T018** and **T020** only.
+**Format validation**: Tasks use `- [ ]` or `- [X]` with `Tnnn` and file paths; **[USn]** only Phases 3–5; **[P]** on **T018** and **T020** only.

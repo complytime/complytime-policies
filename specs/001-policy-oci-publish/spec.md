@@ -2,7 +2,7 @@
 
 **Feature Branch**: `001-policy-oci-publish`  
 **Created**: 2026-04-22  
-**Status**: Draft  
+**Status**: Draft (implementation: **Option 3**; **E2D / SC-003** evidence: **T019** in `tasks.md`)  
 **Input**: User description: "Publish Gemara policy bundles and governance content as OCI artifacts: automated, controlled release to the public registry (not required on every merge to publishable paths), organization staging registries, signing and attestation, promotion to the public ComplyTime registry. Repository provides source content and a thin release caller; artifact contract and transport are defined by the SDK and shared org automation. Document how consumers obtain and verify published policy artifacts. Aligns with GitHub issue 5 and sub-issues 7-9."
 
 ## Clarifications
