@@ -57,10 +57,12 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 
 ### Implementation for User Story 1
 
+*Supersedes 2026-04-27 ([PR #19](https://github.com/complytime/complytime-policies/pull/19)):* **T011**–**T012** are satisfied by a **single** `uses:` of the composite: promote (ORAS copy) runs **inside** the action, not a second workflow job. Convergence to a separate org-infra `workflow_call` is tracked in spec **FR-004** (interim) / Session 2026-04-27.
+
 - [X] T009 [US1] Create `.github/workflows/publish-policy-oci.yml` with **`on.workflow_dispatch` only** for **v1**, top-level **`concurrency`** per **FR-002**, and inputs matching `README.md` and `specs/001-policy-oci-publish/spec.md`
 - [X] T010 [US1] Add checkout of the **repository default branch** (policy content scope per **FR-002**) and GHCR **publish** job with pinned composite `uses:` in `.github/workflows/publish-policy-oci.yml` per `specs/001-policy-oci-publish/contracts/publish-pipeline.md`
-- [X] T011 [US1] Add **promote** job calling `complytime/org-infra/.github/workflows/resuable_publish_quay.yml@<pinned SHA>` with **`verify_signature: true`** and `source_*` / `dest_*` per **FR-004** and `specs/001-policy-oci-publish/contracts/publish-pipeline.md`
-- [X] T012 [US1] Set minimal `permissions`, `needs:` from publish → promote, and consistent `source_tag` / `dest_tag` mapping in `.github/workflows/publish-policy-oci.yml`
+- [X] T011 [US1] **(shape superseded):** *Originally:* promote job with `complytime/org-infra/.../resuable_publish_quay.yml`. *As shipped:* promote is **inside** the composite; destination verify via `verify_quay` and action inputs per **FR-004** interim + `contracts/publish-pipeline.md`
+- [X] T012 [US1] Set minimal `permissions` in `.github/workflows/publish-policy-oci.yml` and consistent `tag` / `dest` mapping; no `needs:` between publish and promote (single job)
 
 **Checkpoint**: **US1** MVP complete.
 
@@ -74,7 +76,7 @@ description: "Task list for Published policy OCI release pipeline (001-policy-oc
 
 ### Implementation for User Story 2
 
-- [X] T013 [US2] Wire `allowed_identity_regex`, `fail_if_dest_exists`, `include_sha_tags`, and other agreed `workflow_call` inputs in `.github/workflows/publish-policy-oci.yml` to match **T003** and `complytime/org-infra/.github/workflows/resuable_publish_quay.yml`
+- [X] T013 [US2] **(superseded shape):** Wire `allowed_identity_regex` and other composite inputs (e.g. `verify_destination` / `verify_quay` mapping) in `.github/workflows/publish-policy-oci.yml`; *not* org-infra `workflow_call`-specific keys unless a future job calls that reusable
 - [X] T014 [US2] Add operator checklist (verify steps, digests, failure modes) to `README.md` per **User Story 2** in `specs/001-policy-oci-publish/spec.md`
 - [X] T015 [US2] If optional org vulnerability gates apply, add only supported inputs in `.github/workflows/publish-policy-oci.yml` and document enable/disable in `README.md` per **FR-008**
 

@@ -6,14 +6,9 @@ Centralized repository for Gemara policies used by [ComplyTime](https://github.c
 
 Workflow: [`.github/workflows/publish-policy-oci.yml`](.github/workflows/publish-policy-oci.yml)
 
-- Thin caller model: this repo calls the pinned action
-  `sonupreetam/gemara-publish-oci@3e82d5dfa822ce486ce9b129665e8b6db3e7b2b9`
-- Current mode is push-only:
-  - `sign_source: false`
-  - `verify_source: false`
-  - `trust_mode: copy-only` (default input)
-  - `sign_destination: false`
-  - `verify_destination: false`
+- **Thin caller:** a single `uses:` of the composite
+  [`sonupreetam/gemara-publish-oci@967268e281b90e12b88224231583a04bb57a5c3f`](https://github.com/sonupreetam/gemara-publish-oci) (see [PR #4](https://github.com/sonupreetam/gemara-publish-oci/pull/4) / `feat/demo-push-only`); bump the SHA in the workflow when the action changes.
+- **Defaults (dispatch):** `trust_mode: resign`, `verify_quay: true` (destination `cosign verify` after promote when promote runs); `sign_source` / `verify_source` stay off unless you change the workflow. Forks can set `allow_unprotected_ref: true` to run without a protected branch.
 
 ```mermaid
 flowchart LR
@@ -37,12 +32,13 @@ Use **Actions -> Publish policy OCI -> Run workflow** and set:
 - `release_tag` (required)
 - optional `bundle_file` (default: `bundles/cis-fedora-l1-workstation.yaml`)
 - optional `dest_image` (default: `test_complytime/complytime-policies`)
+- optional `trust_mode`, `verify_quay`
 - optional `allow_unprotected_ref` (`true` for unprotected fork branches)
 
 Success criteria:
 
 - workflow job passes
-- logs contain `source_ref` and `destination_ref`
+- logs contain `source_ref`, `destination_ref`, and (when `verify_quay` is true) `verified_destination`
 
 ## Policy content
 

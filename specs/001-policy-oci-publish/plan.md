@@ -1,11 +1,11 @@
 # Implementation Plan: Published policy OCI release pipeline (content + thin workflow)
 
 **Branch**: `001-policy-oci-publish` | **Date**: 2026-04-22 | **Spec**: [spec.md](./spec.md)  
-**Input**: Feature specification from `/specs/001-policy-oci-publish/spec.md` (includes **Clarifications** session 2026-04-22).
+**Input**: Feature specification from `/specs/001-policy-oci-publish/spec.md` (includes **Clarifications** sessions 2026-04-22 and 2026-04-27).
 
 ## Summary
 
-Implement a **thin** `.github/workflows/publish-policy-oci.yml` pipeline over **`governance/`** and **`bundles/`** Gemara YAML: checkout (default branch) → pinned **composite publish action** → **GHCR** staging → **`workflow_call`** **`complytime/org-infra`** [`.github/workflows/resuable_publish_quay.yml`](https://github.com/complytime/org-infra/blob/main/.github/workflows/resuable_publish_quay.yml) → **`quay.io/continuouscompliance/complytime-policies`**. **v1** norms (spec + clarifications): **`workflow_dispatch` only**; workflow **`concurrency`** for overlapping runs (document **group** + **`cancel-in-progress`** in **`README.md`**); promote **`verify_signature: true`** unless org-documented exception (scope + sunset). Document pins (**FR-006**), secrets (**FR-007**), consumers (**FR-005**). See **`research.md`** §§1–7 for decisions.
+Implement a **thin** `.github/workflows/publish-policy-oci.yml` over **`governance/`** and **`bundles/`** Gemara YAML: checkout (default branch) → one pinned **composite** (`gemara-publish-oci` / `oci-artifact` per **FR-006**) that does **GHCR** staging **and** ORAS **promote to** **`quay.io/…`** in the same `uses:`. A separate **`workflow_call`** to [org-infra **`resuable_publish_quay.yml`**](https://github.com/complytime/org-infra/blob/main/.github/workflows/resuable_publish_quay.yml) is the **longer-term convergence** target (see spec **Session 2026-04-27** / [PR #19](https://github.com/complytime/complytime-policies/pull/19)) — not a second job in the current “Option 3” implementer path. **v1** norms: **`workflow_dispatch` only**; workflow **`concurrency`**; default **`resign` +** destination verify in CI. Document pins (**FR-006**), secrets (**FR-007**), consumers (**FR-005**). See **`research.md`** for historical `workflow_call` design notes.
 
 ## Technical Context
 

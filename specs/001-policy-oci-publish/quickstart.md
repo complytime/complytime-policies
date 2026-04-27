@@ -9,12 +9,11 @@
 ## What “thin” means
 
 1. **Checkout** the **default branch** in the workflow.  
-2. The caller invokes one pinned action: `uses: complytime/oci-artifact@<sha>`.
-3. The action performs publish to GHCR, source sign/verify, and Quay promotion/verification per
-   caller inputs (`trust_mode`, `dest_image`, etc.).
+2. The caller invokes one pinned composite, for example `uses: sonupreetam/gemara-publish-oci@<full-sha>` (or `complytime/oci-artifact@<sha>` when the same `action.yml` is on `main`); see the workflow and **FR-006** for the current pin.  
+3. The action performs publish to GHCR, optional keyless sign/verify, and ORAS copy to Quay per
+   `with:` inputs (`trust_mode`, `verify_quay`, `dest_image`, etc.) in a single `uses:`.
 
-For current demo branches, signing/verification inputs are intentionally disabled and the flow is
-push/copy only.
+**Defaults (as in the checked-in workflow, PR #19):** `trust_mode: resign`, `verify_quay: true` (see **spec** Session 2026-04-27). You can set `copy-only` for a stricter no-resign path when debugging.
 
 No in-repo redefinition of OCI manifest layout; see [contracts/publish-pipeline.md](contracts/publish-pipeline.md).
 
@@ -24,8 +23,8 @@ No in-repo redefinition of OCI manifest layout; see [contracts/publish-pipeline.
 
 1. Go to **Actions** → **Publish policy OCI** → **Run workflow** (on the default branch).  
 2. **release_tag (required):** single tag for GHCR and Quay destination.
-3. Optional: set `trust_mode` (demo default is `copy-only`).
-4. On success, copy `source_ref` and `destination_ref` from workflow logs.
+3. Optional: set `trust_mode` / `verify_quay` if you need a non-default path.  
+4. On success, copy `source_ref`, `destination_ref`, and (when `verify_quay: true`) `verified_destination` from workflow logs.
 
 **Workflow file:** [`.github/workflows/publish-policy-oci.yml`](../../.github/workflows/publish-policy-oci.yml)
 
