@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Policy to Proof — ComplyTime &amp; Gemara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #7c3aed;
+      --indigo: #4f46e5;
+      --green: #059669;
+      --orange: #ea580c;
+      --red: #dc2626;
+      --red-dark: #991b1b;
+      --red-text: #7f1d1d;
+      --red-bg: #fef2f2;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-500: #64748b;
+      --gray-600: #6b7280;
+      --gray-900: #1e293b;
+    }
+
+    html {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--gray-900);
+    }
+
+    body {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--purple), var(--indigo));
+      color: white;
+      padding: 28px 32px;
+      text-align: center;
+    }
+
+    .header .branding {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .header .tagline {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    .problem {
+      background: var(--red-bg);
+      border-left: 4px solid var(--red);
+      padding: 16px 24px;
+      margin: 20px 20px 16px;
+    }
+
+    .problem h2 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--red-dark);
+      margin-bottom: 6px;
+    }
+
+    .problem p {
+      font-size: 0.78rem;
+      color: var(--red-text);
+      line-height: 1.55;
+    }
+
+    .three-acts {
+      display: flex;
+      gap: 14px;
+      padding: 0 20px;
+      margin-bottom: 16px;
+    }
+
+    .act {
+      flex: 1;
+      border: 2px solid;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .act-header {
+      color: white;
+      padding: 10px 14px;
+      text-align: center;
+    }
+
+    .act-header h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .act-header .tool {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.85;
+    }
+
+    .act-body {
+      padding: 12px 14px;
+      font-size: 0.72rem;
+      line-height: 1.55;
+    }
+
+    .act-body .lead {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .act-body ul {
+      padding-left: 16px;
+      margin: 0;
+    }
+
+    .act-body li {
+      margin-bottom: 4px;
+    }
+
+    .act-body .analog {
+      margin-top: 8px;
+      font-style: italic;
+      font-size: 0.65rem;
+      color: var(--gray-600);
+    }
+
+    .act--define { border-color: var(--purple); }
+    .act--define .act-header { background: var(--purple); }
+    .act--distribute { border-color: var(--green); }
+    .act--distribute .act-header { background: var(--green); }
+    .act--demonstrate { border-color: var(--orange); }
+    .act--demonstrate .act-header { background: var(--orange); }
+
+    .flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px 14px;
+      font-size: 0.78rem;
+      color: var(--gray-600);
+    }
+
+    .flow .pill {
+      padding: 3px 12px;
+      border-radius: 12px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .flow .pill--purple { background: var(--purple); }
+    .flow .pill--green { background: var(--green); }
+    .flow .pill--orange { background: var(--orange); }
+
+    .outcomes {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      padding: 16px 24px;
+    }
+
+    .outcomes h2 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 10px;
+    }
+
+    .outcomes-grid {
+      display: flex;
+      gap: 16px;
+    }
+
+    .outcomes-grid .outcome {
+      flex: 1;
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+
+    .outcome .check {
+      font-weight: 700;
+    }
+
+    .check--purple { color: var(--purple); }
+    .check--green { color: var(--green); }
+    .check--orange { color: var(--orange); }
+
+    .footer {
+      background: var(--gray-100);
+      padding: 12px 24px;
+      font-size: 0.65rem;
+      color: var(--gray-500);
+      text-align: center;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    @media print {
+      html { font-size: 14px; }
+      body { max-width: 100%; }
+      @page { margin: 0.5in; size: letter; }
+      .header { padding: 20px 24px; }
+      .problem { margin: 12px 12px 10px; padding: 10px 16px; }
+      .three-acts { padding: 0 12px; gap: 10px; margin-bottom: 10px; }
+      .act-body { padding: 8px 10px; }
+      .flow { padding: 0 12px 8px; }
+      .outcomes { padding: 10px 16px; }
+      .footer { padding: 8px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="branding">ComplyTime &amp; Gemara</div>
+    <h1>From Policy to Proof</h1>
+    <p class="tagline">Closing the gap between &ldquo;we have a policy&rdquo; and &ldquo;we can prove we follow it&rdquo;</p>
+  </header>
+
+  <section class="problem">
+    <h2>The Problem</h2>
+    <p>Compliance teams define policies in documents. Engineering teams implement controls in systems. But proving that the systems actually satisfy the policies? That&rsquo;s a manual, error-prone process of collecting evidence, mapping it to controls, and reformatting for auditors&mdash;often repeated from scratch each cycle.</p>
+  </section>
+
+  <section class="three-acts">
+    <article class="act act--define">
+      <div class="act-header">
+        <h3>1. Define</h3>
+        <span class="tool">Gemara</span>
+      </div>
+      <div class="act-body">
+        <p class="lead">Structure your compliance requirements into machine-readable building blocks:</p>
+        <ul>
+          <li><strong>Guidance</strong> &mdash; high-level requirements from standards bodies (e.g., CIS Controls, NIST 800-53)</li>
+          <li><strong>Controls</strong> &mdash; testable conditions with configurable applicability for a specific technology (e.g., CIS Benchmarks). Where a condition is applicable, it must be true for satisfaction of the control objective</li>
+          <li><strong>Risk</strong> &mdash; your org&rsquo;s appetite, acceptance, and mitigation strategy</li>
+          <li><strong>Policy</strong> &mdash; the scoped, time-bound rules tying it all together, including an <strong>adherence plan</strong> that defines the schedule and scope for evaluating assessment requirements and handling non-compliance notifications</li>
+        </ul>
+        <p class="analog">GRC analog: turning your compliance framework into structured, reusable components instead of static documents.</p>
+      </div>
+    </article>
+
+    <article class="act act--distribute">
+      <div class="act-header">
+        <h3>2. Distribute</h3>
+        <span class="tool">Policy Library</span>
+      </div>
+      <div class="act-body">
+        <p class="lead">Publish policies to a central library that teams across your organization can pull from:</p>
+        <ul>
+          <li><strong>Versioned</strong> &mdash; every policy has a version; teams know exactly what they&rsquo;re assessed against</li>
+          <li><strong>Tamper-evident</strong> &mdash; cryptographic integrity ensures what you published is what gets pulled</li>
+          <li><strong>Consistent</strong> &mdash; everyone scans against the same policy, eliminating &ldquo;which version?&rdquo; confusion</li>
+        </ul>
+        <p class="analog">GRC analog: a controlled document repository, but machine-readable and automatically distributed.</p>
+      </div>
+    </article>
+
+    <article class="act act--demonstrate">
+      <div class="act-header">
+        <h3>3. Demonstrate</h3>
+        <span class="tool">complyctl</span>
+      </div>
+      <div class="act-body">
+        <p class="lead">Automatically prove compliance by scanning systems against the policies you defined:</p>
+        <ul>
+          <li><strong>Pull</strong> &mdash; fetch the latest policies from the library</li>
+          <li><strong>Scan</strong> &mdash; specialized assessors evaluate each testable condition against applicable targets</li>
+          <li><strong>Report</strong> &mdash; produce audit-ready evidence mapped to your framework</li>
+        </ul>
+        <p class="analog">GRC analog: an automated assessor that runs your assessment plan and generates the evidence package.</p>
+      </div>
+    </article>
+  </section>
+
+  <div class="flow">
+    <span class="pill pill--purple">Requirements</span>
+    <span>&rarr;</span>
+    <span class="pill pill--green">Shared Policies</span>
+    <span>&rarr;</span>
+    <span class="pill pill--orange">Audit-Ready Evidence</span>
+  </div>
+
+  <section class="outcomes">
+    <h2>What This Means For Your Program</h2>
+    <div class="outcomes-grid">
+      <div class="outcome">
+        <span class="check check--purple">&#10003;</span> Policies are structured and reusable&mdash;write once, assess across frameworks
+      </div>
+      <div class="outcome">
+        <span class="check check--green">&#10003;</span> Evidence is timestamped, traceable, and reproducible&mdash;not screenshots in a folder
+      </div>
+      <div class="outcome">
+        <span class="check check--orange">&#10003;</span> Assessments are automated and repeatable&mdash;continuous posture, not point-in-time
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <strong>Gemara</strong> (the model) &bull; <strong>complyctl</strong> (the tool) &bull; Part of the <strong>ComplyTime</strong> ecosystem &bull; Open source under Apache 2.0
+  </footer>
+</body>
+</html>
