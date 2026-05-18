@@ -41,11 +41,11 @@ repository per bundle.
 
 ### Published bundles
 
-| Bundle | Quay repository |
-|--------|-----------------|
-| `ampel-branch-protection` | `quay.io/complytime/policies-ampel-branch-protection` |
-| `cis-fedora-l1-workstation` | `quay.io/complytime/policies-cis-fedora-l1-workstation` |
-| `cis-fedora-l1-server` | `quay.io/complytime/policies-cis-fedora-l1-server` |
+| Bundle | Quay repository | Provider |
+|--------|-----------------|----------|
+| `ampel-branch-protection` | `quay.io/complytime/policies-ampel-branch-protection` | [ampel](https://github.com/complytime/complytime-providers/tree/main/cmd/ampel-provider) |
+| `cis-fedora-l1-workstation` | `quay.io/complytime/policies-cis-fedora-l1-workstation` | [openscap](https://github.com/complytime/complytime-providers/tree/main/cmd/openscap-provider) |
+| `cis-fedora-l1-server` | `quay.io/complytime/policies-cis-fedora-l1-server` | [openscap](https://github.com/complytime/complytime-providers/tree/main/cmd/openscap-provider) |
 
 ## Tags
 
@@ -84,6 +84,11 @@ This returns the `sha256:…` digest, which you can use for immutable references
 oras pull quay.io/complytime/policies-cis-fedora-l1-workstation@sha256:<digest> -o ./output
 ```
 
+> **Note:** ORAS, cosign, and curl use standard OCI reference syntax
+> (`:tag` and `@sha256:digest`). `complyctl` uses its own `@tag` convention
+> in `complytime.yaml` — see the [Using with complyctl](#using-with-complyctl)
+> section below.
+
 ## Verifying the Cosign signature
 
 All artifacts are signed with [keyless Cosign](https://docs.sigstore.dev/cosign/signing/overview/)
@@ -103,10 +108,10 @@ tampered with since signing.
 > **Tip:** Replace `:latest` with a `@sha256:<digest>` reference for the
 > strongest verification guarantee.
 
-## Verifying via registry API
+## Verifying the artifact
 
-Quay's package UI may appear sparse for custom OCI media types. The API
-and CLI checks below are authoritative.
+Quay's package UI may appear sparse for custom OCI media types. The ORAS
+CLI checks below are authoritative.
 
 ### Fetch the manifest
 
@@ -127,34 +132,50 @@ oras manifest fetch quay.io/complytime/policies-cis-fedora-l1-workstation:latest
     done
 ```
 
-If the API checks pass but the Quay UI still looks sparse, treat the artifact
+If these checks pass but the Quay UI still looks sparse, treat the artifact
 as valid.
 
 ## Using with complyctl
 
 [complyctl](https://github.com/complytime/complyctl) can consume Gemara
-bundles directly from the OCI registry. Point the policy source at the
-published artifact:
+bundles directly from the OCI registry. Point the policy source at a
+published bundle in `complytime.yaml`:
 
 ```yaml
 # complytime.yaml
 policies:
-  - url: quay.io/complytime/policies-cis-fedora-l1-workstation@latest
-    id: cis-fedora-l1
+  - url: quay.io/complytime/policies-ampel-branch-protection@latest
+    id: ampel-bp
 ```
 
-Then run:
+Then fetch and scan:
 
 ```bash
 complyctl get
+complyctl scan --policy-id ampel-bp
 ```
 
-`complyctl` resolves the OCI reference, pulls the bundle layers via the Go
-ORAS library, and makes the policy, catalog, and guidance available for
-scanning.
+See the
+[complyctl Quick Start](https://github.com/complytime/complyctl/blob/main/docs/QUICK_START.md)
+for installation, full `complytime.yaml` reference, and output formats.
+
+### Bundle providers
+
+Each provider has its own prerequisites, `complytime.yaml` variables, and
+setup instructions:
+
+| Bundle | Provider | What it evaluates |
+|--------|----------|-------------------|
+| `ampel-branch-protection` | [ampel](https://github.com/complytime/complytime-providers/tree/main/cmd/ampel-provider) | GitHub / GitLab branch protection rules |
+| `cis-fedora-l1-workstation` | [openscap](https://github.com/complytime/complytime-providers/tree/main/cmd/openscap-provider) | CIS Fedora L1 Workstation benchmark |
+| `cis-fedora-l1-server` | [openscap](https://github.com/complytime/complytime-providers/tree/main/cmd/openscap-provider) | CIS Fedora L1 Server benchmark |
 
 ## Further reading
 
+- [complyctl Quick Start](https://github.com/complytime/complyctl/blob/main/docs/QUICK_START.md) — installation, `complytime.yaml` reference, output formats
+- [ampel provider docs](https://github.com/complytime/complytime-providers/blob/main/cmd/ampel-provider/docs/configuration.md) — variables, token auth, granular policies
+- [openscap provider docs](https://github.com/complytime/complytime-providers/blob/main/cmd/openscap-provider/docs/configuration.md) — variables, profiles, prerequisites
+- [complytime-demos](https://github.com/complytime/complytime-demos) — automated VM setup with sample policies
 - [Quickstart for maintainers](../specs/001-policy-oci-publish/quickstart.md) — how to run the publish workflow
 - [Pipeline contract](../specs/001-policy-oci-publish/contracts/publish-pipeline.md) — action inputs, secrets, and outputs
 - [gemara-registry-cli](https://github.com/gemaraproj/gemara-registry-cli) — the composite action that produces the artifact
