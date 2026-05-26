@@ -1,0 +1,117 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+# yamllint disable rule:line-length
+# Validates all governance artifacts (policies, control catalogs, guidance catalogs)
+# against the official Gemara CUE schemas via a two-phase approach:
+#   1. Build a Go tool that loads YAML through go-gemara SDK (validates + normalizes)
+#   2. CUE-validate the SDK-produced output against gemaraproj/gemara schemas
+#
+# Modeled after: https://github.com/ossf/security-baseline/blob/main/.github/workflows/cue-validate.yaml
+# Resolves: https://github.com/complytime/complytime-policies/issues/31
+
+name: Validate Gemara Schemas
+
+on:
+  pull_request:
+    paths:
+      - 'governance/**'
+      - 'bundles/**'
+      - 'cmd/validate/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Governance Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Setup Go
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c  # v6.4.0
+        with:
+          go-version-file: cmd/validate/go.mod
+          check-latest: true
+          cache: true
+
+      - name: Setup CUE
+        uses: cue-lang/setup-cue@a93fa358375740cd8b0078f76355512b9208acb1  # v1.0.1
+        with:
+          version: latest
+
+      - name: Build validator
+        run: go build -C cmd/validate/ -o ../../gemara-validate .
+
+      - name: Generate Gemara output
+        run: ./gemara-validate -governance-dir governance/ -output-dir generated/
+
+      - name: Validate control catalogs against CUE schema
+        run: |
+          set -euo pipefail
+          for f in generated/catalogs/*.yaml; do
+            [ -f "$f" ] || continue
+            echo "::group::Validating $f"
+            cue vet -c -d '#ControlCatalog' github.com/gemaraproj/gemara@latest "$f"
+            echo "::endgroup::"
+          done
+
+      - name: Validate guidance catalogs against CUE schema
+        run: |
+          set -euo pipefail
+          for f in generated/guidance/*.yaml; do
+            [ -f "$f" ] || continue
+            echo "::group::Validating $f"
+            cue vet -c -d '#GuidanceCatalog' github.com/gemaraproj/gemara@latest "$f"
+            echo "::endgroup::"
+          done
+
+      - name: Validate policies against CUE schema
+        run: |
+          set -euo pipefail
+          for f in generated/policies/*.yaml; do
+            [ -f "$f" ] || continue
+            echo "::group::Validating $f"
+            cue vet -c -d '#Policy' github.com/gemaraproj/gemara@latest "$f"
+            echo "::endgroup::"
+          done
+
+      - name: Validate bundle manifests
+        run: |
+          set -euo pipefail
+          for bundle_file in bundles/*.yaml; do
+            [ -f "${bundle_file}" ] || continue
+            echo "::group::Checking bundle ${bundle_file}"
+            while IFS= read -r layer; do
+              layer="$(echo "${layer}" | sed 's/^[[:space:]]*-[[:space:]]*//')"
+              if [ ! -f "${layer}" ]; then
+                echo "::error file=${bundle_file}::Layer file not found: ${layer}"
+                exit 1
+              fi
+              echo "  layer exists: ${layer}"
+            done < <(grep -E '^\s*-\s+' "${bundle_file}")
+            echo "::endgroup::"
+          done
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Gemara Schema Validation Results"
+            echo ""
+            echo "| Phase | Description |"
+            echo "|-------|-------------|"
+            echo "| Go SDK | \`gemara.Load[T]\` via go-gemara v0.5.0 — validates structure, resolves references, normalizes output |"
+            echo "| CUE Schema | \`cue vet -c\` against \`github.com/gemaraproj/gemara@latest\` — authoritative schema conformance |"
+            echo ""
+            echo "| Type | Files | CUE Definition |"
+            echo "|------|-------|----------------|"
+            echo "| Control Catalogs | $(ls generated/catalogs/*.yaml 2>/dev/null | wc -l | tr -d ' ') | \`#ControlCatalog\` |"
+            echo "| Guidance Catalogs | $(ls generated/guidance/*.yaml 2>/dev/null | wc -l | tr -d ' ') | \`#GuidanceCatalog\` |"
+            echo "| Policies | $(ls generated/policies/*.yaml 2>/dev/null | wc -l | tr -d ' ') | \`#Policy\` |"
+            echo "| Bundle Manifests | $(ls bundles/*.yaml 2>/dev/null | wc -l | tr -d ' ') | layer-existence |"
+          } >> "${GITHUB_STEP_SUMMARY}"
