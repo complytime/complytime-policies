@@ -1,0 +1,99 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+# yamllint disable rule:line-length
+# Validates governance artifacts against the official Gemara CUE schemas.
+#
+# Reference: https://github.com/ossf/security-baseline/blob/main/.github/workflows/cue-validate.yaml
+# Related to: https://github.com/complytime/complytime-policies/issues/31
+
+name: Validate Gemara Schemas
+
+on:
+  pull_request:
+    paths:
+      - 'governance/**'
+      - 'bundles/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  validate-schemas:
+    name: "${{ matrix.name }}"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Control Catalogs
+            dir: governance/catalogs
+            definition: "#ControlCatalog"
+          - name: Guidance Catalogs
+            dir: governance/guidance
+            definition: "#GuidanceCatalog"
+          - name: Policies
+            dir: governance/policies
+            definition: "#Policy"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Setup CUE
+        uses: cue-lang/setup-cue@a93fa358375740cd8b0078f76355512b9208acb1  # v1.0.1
+        with:
+          version: latest
+
+      - name: Validate against CUE schema
+        run: |
+          failed=0
+          for f in ${{ matrix.dir }}/*.yaml; do
+            [ -f "$f" ] || continue
+            if ! output=$(cue vet -c -d '${{ matrix.definition }}' github.com/gemaraproj/gemara@latest "$f" 2>&1); then
+              echo "::error file=$f::CUE validation failed"
+              if [ "$failed" -eq 0 ]; then
+                echo "### Failed: ${{ matrix.name }} (\`${{ matrix.definition }}\`)" >> "${GITHUB_STEP_SUMMARY}"
+                echo "" >> "${GITHUB_STEP_SUMMARY}"
+              fi
+              echo "<details><summary><code>$f</code></summary>" >> "${GITHUB_STEP_SUMMARY}"
+              echo "" >> "${GITHUB_STEP_SUMMARY}"
+              echo '```' >> "${GITHUB_STEP_SUMMARY}"
+              echo "$output" >> "${GITHUB_STEP_SUMMARY}"
+              echo '```' >> "${GITHUB_STEP_SUMMARY}"
+              echo "</details>" >> "${GITHUB_STEP_SUMMARY}"
+              echo "" >> "${GITHUB_STEP_SUMMARY}"
+              failed=1
+            fi
+          done
+          exit $failed
+
+  validate-bundles:
+    name: Bundle Manifests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Validate layer existence
+        run: |
+          failed=0
+          for bundle_file in bundles/*.yaml; do
+            [ -f "${bundle_file}" ] || continue
+            while IFS= read -r layer; do
+              layer="$(echo "${layer}" | sed 's/^[[:space:]]*-[[:space:]]*//')"
+              if [ ! -f "${layer}" ]; then
+                echo "::error file=${bundle_file}::Layer file not found: ${layer}"
+                if [ "$failed" -eq 0 ]; then
+                  echo "### Failed: Bundle Manifests" >> "${GITHUB_STEP_SUMMARY}"
+                  echo "" >> "${GITHUB_STEP_SUMMARY}"
+                fi
+                echo "- \`${bundle_file}\`: missing layer \`${layer}\`" >> "${GITHUB_STEP_SUMMARY}"
+                failed=1
+              fi
+            done < <(grep -E '^\s*-\s+' "${bundle_file}")
+          done
+          exit $failed
