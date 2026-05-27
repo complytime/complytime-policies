@@ -1,0 +1,76 @@
+# SPDX-License-Identifier: Apache-2.0
+#
+# --------------------------------------------------------------------------
+# Creates a GitHub Release from a semver tag. If the tag does not exist yet,
+# the workflow creates it on the selected branch before publishing.
+#
+# Usage:
+#   - From the Actions tab: select this workflow, choose the branch, enter the tag.
+#   - From the CLI: gh workflow run release.yml --ref main -f tag=v0.1.0
+# --------------------------------------------------------------------------
+---
+# yamllint disable rule:line-length
+
+name: Release
+
+"on":
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Semver tag to release (e.g., v0.1.0)'
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  release:
+    name: Publish Release
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Validate tag format
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          if [[ ! "${TAG}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Tag must match semver format: vMAJOR.MINOR.PATCH"
+            exit 1
+          fi
+
+      - name: Verify release is from default branch
+        env:
+          REF: ${{ github.ref }}
+        run: |
+          if [[ "${REF}" != "refs/heads/main" ]]; then
+            echo "::error::Releases MUST be created from the main branch. Current ref: ${REF}"
+            exit 1
+          fi
+
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Create tag if it does not exist
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          if git rev-parse "refs/tags/${TAG}" >/dev/null 2>&1; then
+            echo "Tag ${TAG} already exists — skipping creation."
+          else
+            git tag "${TAG}"
+            git push origin "${TAG}"
+            echo "Created and pushed tag ${TAG}."
+          fi
+
+      - name: Publish GitHub release
+        uses: release-drafter/release-drafter@693d20e7c1ce1a81d3a41962f85914253b518449  # v7.3.1
+        with:
+          publish: true
+          tag: ${{ inputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

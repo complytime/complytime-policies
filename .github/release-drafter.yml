@@ -1,0 +1,139 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+
+category-template: |
+  ### $TITLE
+
+template: |
+  ## complytime-policies $RESOLVED_VERSION
+
+  Centralized [Gemara](https://github.com/gemaraproj/gemara) policies for
+  [ComplyTime](https://github.com/complytime) tooling. Content is published
+  as OCI artifacts to **Quay.io** and consumed with `complyctl get`.
+
+  #### After this release
+
+  - Run the **Publish policy OCI** workflow to push updated bundles to GHCR and Quay.
+  - Consumers: update `complytime.yaml` references to the new OCI tag or digest.
+
+  **[View full diff: `$PREVIOUS_TAG` → `v$RESOLVED_VERSION`](https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION)**
+
+  ## Changes
+
+  $CHANGES
+
+  ---
+
+  **Compare:** [`$PREVIOUS_TAG`…`v$RESOLVED_VERSION`](https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION)
+
+  **Thanks** to $CONTRIBUTORS for this release.
+
+change-template: "- $TITLE — [#$NUMBER]($URL) · @$AUTHOR"
+no-changes-template: |
+  *No pull requests are included in this release since the previous tag. If that's unexpected, check that PRs are merged to the default branch and not labeled `skip-changelog`.*
+sort-by: merged_at
+sort-direction: ascending
+
+categories:
+  - title: "Breaking changes"
+    labels:
+      - "breaking"
+      - "major"
+  - title: "Policy & governance content"
+    labels:
+      - "policy"
+      - "catalog"
+      - "guidance"
+    collapse-after: 12
+  - title: "Bundles & OCI publishing"
+    labels:
+      - "bundles"
+      - "publishing"
+      - "workflows"
+    collapse-after: 12
+  - title: "Features"
+    labels:
+      - "feature"
+      - "enhancement"
+  - title: "Bug fixes"
+    labels:
+      - "fix"
+      - "bugfix"
+      - "bug"
+  - title: "Maintenance"
+    labels:
+      - "infrastructure"
+      - "automation"
+      - "documentation"
+      - "dependencies"
+      - "maintenance"
+      - "revert"
+
+exclude-labels:
+  - "skip-changelog"
+
+exclude-contributors:
+  - "github-actions[bot]"
+  - "dependabot[bot]"
+
+version-resolver:
+  major:
+    labels:
+      - "breaking"
+      - "major"
+  minor:
+    labels:
+      - "feature"
+      - "enhancement"
+      - "minor"
+  patch:
+    labels:
+      - "fix"
+      - "documentation"
+      - "maintenance"
+      - "patch"
+      - "policy"
+      - "catalog"
+      - "guidance"
+      - "bundles"
+      - "publishing"
+      - "workflows"
+  default: patch
+
+autolabeler:
+  - label: "workflows"
+    files:
+      - ".github/workflows/**"
+      - ".github/actions/**"
+  - label: "policy"
+    files:
+      - "governance/policies/**"
+  - label: "catalog"
+    files:
+      - "governance/catalogs/**"
+  - label: "guidance"
+    files:
+      - "governance/guidance/**"
+  - label: "bundles"
+    files:
+      - "bundles/**"
+  - label: "automation"
+    title:
+      - "/^(build|ci|refactor|test).*/i"
+  - label: "documentation"
+    title:
+      - "/^(docs).*/i"
+  - label: "feature"
+    title:
+      - "/^(feat).*/i"
+  - label: "fix"
+    title:
+      - "/^(fix).*/i"
+  - label: "maintenance"
+    title:
+      - "/^(chore|maintenance).*/i"
+  - label: "revert"
+    title:
+      - "/^(revert).*/i"
