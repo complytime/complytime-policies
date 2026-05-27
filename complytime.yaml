@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+# complytime.yaml - workspace configuration for consume-side checks.
+#
+# Each bundle is published to its own Quay repository under the
+# complytime namespace (one repo per bundle, see docs/adr/0001).
+#
+# Quay tags (web UI):
+#   https://quay.io/repository/complytime/policies-ampel-branch-protection?tab=tags
+# List tags:
+#   curl -sS https://quay.io/v2/complytime/policies-ampel-branch-protection/tags/list
+#
+# Policy `url`: optional scheme; @suffix = tag or sha256:…
+#   (complyctl tag/digest resolution, complytime/complyctl main+).
+
+policies:
+  - id: ampel-branch-protection
+    url: quay.io/complytime/policies-ampel-branch-protection@latest
+  - id: cis-fedora-l1-workstation
+    url: quay.io/complytime/policies-cis-fedora-l1-workstation@latest
+  - id: cis-fedora-l1-server
+    url: quay.io/complytime/policies-cis-fedora-l1-server@latest
+
+targets:
+  - id: default
+    policies:
+      - ampel-branch-protection
+    variables:
+      url: https://github.com/complytime/complytime-policies
+      specs: "builtin:github/branch-rules.yaml"
