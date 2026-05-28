@@ -51,7 +51,7 @@ specs/001-policy-oci-publish/
 
 ```text
 governance/
-├── catalogs/
+├── controls/
 ├── guidance/
 └── policies/
 bundles/

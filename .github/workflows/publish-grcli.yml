@@ -1,0 +1,176 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+# yamllint disable rule:line-length
+# Publishes selected governance files to grc.store via grcli.
+#
+# To publish a new release of a file:
+#   1. Bump `metadata.version` in the source YAML.
+#   2. Dispatch this workflow with the file's checkbox set.
+#
+# Re-publishing the same metadata.version will fail — versions are
+# immutable. Bump the version each time you want to push a change.
+
+name: Publish to grc.store
+
+"on":
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (validate without publishing)"
+        required: false
+        type: boolean
+        default: false
+      cis_fedora_l1_guidance:
+        description: "Publish cis-fedora-l1-guidance"
+        required: false
+        type: boolean
+        default: true
+      ampel_branch_protection_catalog:
+        description: "Publish branch-protection-controls"
+        required: false
+        type: boolean
+        default: true
+      cis_fedora_l1_server_catalog:
+        description: "Publish cis-fedora-l1-server-controls"
+        required: false
+        type: boolean
+        default: true
+      cis_fedora_l1_workstation_catalog:
+        description: "Publish cis-fedora-l1-workstation-controls"
+        required: false
+        type: boolean
+        default: true
+      ampel_branch_protection_policy:
+        description: "Publish ampel-branch-protection-policy"
+        required: false
+        type: boolean
+        default: true
+      cis_fedora_l1_server_policy:
+        description: "Publish cis-fedora-l1-server-policy"
+        required: false
+        type: boolean
+        default: true
+      cis_fedora_l1_workstation_policy:
+        description: "Publish cis-fedora-l1-workstation-policy"
+        required: false
+        type: boolean
+        default: true
+
+concurrency:
+  group: publish-grcli
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: Publish selected files${{ inputs.dry_run && ' (Dry Run)' || '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Install ORAS
+        uses: oras-project/setup-oras@38de303aac69abb66f3e6255b7198bff35f323e3
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@v3
+
+      - name: Install grcli
+        # Pinned to a specific release rather than :latest so this
+        # workflow doesn't change behavior unexpectedly when a new
+        # grcli ships. Bump deliberately after reviewing the release notes.
+        run: |
+          oras pull ghcr.io/revanite-io/grcli:v0.1.2 --platform linux/amd64
+          sudo install grcli /usr/local/bin/grcli
+
+      - name: Publish selected files via grcli${{ inputs.dry_run && ' (Dry Run)' || '' }}
+        env:
+          CIS_GUIDANCE: ${{ inputs.cis_fedora_l1_guidance }}
+          AMPEL_CATALOG: ${{ inputs.ampel_branch_protection_catalog }}
+          CIS_SERVER_CATALOG: ${{ inputs.cis_fedora_l1_server_catalog }}
+          CIS_WORKSTATION_CATALOG: ${{ inputs.cis_fedora_l1_workstation_catalog }}
+          AMPEL_POLICY: ${{ inputs.ampel_branch_protection_policy }}
+          CIS_SERVER_POLICY: ${{ inputs.cis_fedora_l1_server_policy }}
+          CIS_WORKSTATION_POLICY: ${{ inputs.cis_fedora_l1_workstation_policy }}
+        run: |
+          set -euo pipefail
+
+          DRY_RUN=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            DRY_RUN="--dry-run"
+            echo "::notice::Dry run mode enabled — no files will be published."
+          fi
+
+          published=()
+
+          publish_file() {
+            local file="$1"
+            local name
+            name="$(basename "${file}" .yaml)"
+
+            echo "::group::${name}"
+            if [ ! -f "${file}" ]; then
+              echo "::error::File not found: ${file}"
+              exit 1
+            fi
+            # grcli prints the full published coordinate (including
+            # version) on success — see the step group for the exact tag.
+            echo "Publishing ${file}..."
+            grcli publish -f "${file}" ${DRY_RUN}
+
+            local ns id ver
+            ns="$(yq -r '.metadata.author.id' "${file}")"
+            id="$(yq -r '.metadata.id' "${file}")"
+            ver="$(yq -r '.metadata.version' "${file}")"
+            published+=("${file}|${ns}|${id}|${ver}")
+            echo "::endgroup::"
+          }
+
+          if [ "${CIS_GUIDANCE}" = "true" ]; then
+            publish_file governance/guidance/cis-fedora-l1-guidance.yaml
+          fi
+          if [ "${AMPEL_CATALOG}" = "true" ]; then
+            publish_file governance/controls/branch-protection-controls.yaml
+          fi
+          if [ "${CIS_SERVER_CATALOG}" = "true" ]; then
+            publish_file governance/controls/cis-fedora-l1-server-controls.yaml
+          fi
+          if [ "${CIS_WORKSTATION_CATALOG}" = "true" ]; then
+            publish_file governance/controls/cis-fedora-l1-workstation-controls.yaml
+          fi
+          if [ "${AMPEL_POLICY}" = "true" ]; then
+            publish_file governance/policies/ampel-branch-protection-policy.yaml
+          fi
+          if [ "${CIS_SERVER_POLICY}" = "true" ]; then
+            publish_file governance/policies/cis-fedora-l1-server-policy.yaml
+          fi
+          if [ "${CIS_WORKSTATION_POLICY}" = "true" ]; then
+            publish_file governance/policies/cis-fedora-l1-workstation-policy.yaml
+          fi
+
+          if [ ${#published[@]} -eq 0 ]; then
+            echo "::warning::No files were selected for publishing."
+            exit 0
+          fi
+
+          {
+            if [ -n "${DRY_RUN}" ]; then
+              echo "### Dry Run — Publish to grc.store"
+              echo
+              echo "> **This was a dry run.** To confirm, you may click the links below to see that the artifacts were not published as part of this run. If a previous artifact exists, review the release timestamp to confirm."
+              echo
+            else
+              echo "### Published to grc.store"
+              echo
+            fi
+            echo "| Source | Publication |"
+            echo "|------|-----------|"
+            for entry in "${published[@]}"; do
+              IFS='|' read -r f ns id ver <<< "${entry}"
+              echo "| \`${f}\` | [${ns}/${id} @ ${ver}](https://grc.store/search/${ns}/${id}/versions/${ver}) |"
+            done
+            echo
+            echo "_Tag = each file's \`metadata.version\`._"
+          } >> "${GITHUB_STEP_SUMMARY}"

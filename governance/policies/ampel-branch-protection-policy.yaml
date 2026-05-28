@@ -2,6 +2,8 @@ title: AMPEL Branch Protection Policy
 metadata:
     id: ampel-branch-protection-policy
     type: Policy
+    gemara-version: "1.2.0"
+    version: "0.0.1"
     description: Automated evaluation policy for branch protection controls using AMPEL
     author:
         id: complytime
@@ -12,7 +14,7 @@ metadata:
           title: Branch Protection Controls
           version: 1.0.0
           description: Control catalog for branch protection rules
-          url: ../catalogs/ampel-branch-protection-catalog.yaml
+          url: https://github.com/complytime/complytime-policies/blob/main/governance/controls/branch-protection-controls.yaml
 contacts:
     responsible:
         - name: Repository Administrator
@@ -31,9 +33,18 @@ imports:
 adherence:
     evaluation-methods:
         - id: ampel-gate
+          type: Intent
+          mode: Automated
+          description: AMPEL automated check to determine branch protection configuration
+          executor:
+              id: ampel
+              name: AMPEL
+              type: Software
+    enforcement-methods:
+        - id: ampel-gate
           type: Gate
           mode: Automated
-          description: AMPEL automated branch protection evaluation
+          description: AMPEL automated branch protection enforcement gate
           executor:
               id: ampel
               name: AMPEL
@@ -44,33 +55,33 @@ adherence:
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
-                type: Gate
+                type: Intent
                 mode: Automated
         - id: BP-2.01
           requirement-id: BP-2.01
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
-                type: Gate
+                type: Intent
                 mode: Automated
         - id: BP-3.01
           requirement-id: BP-3.01
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
-                type: Gate
+                type: Intent
                 mode: Automated
         - id: BP-4.01
           requirement-id: BP-4.01
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
-                type: Gate
+                type: Intent
                 mode: Automated
         - id: BP-5.01
           requirement-id: BP-5.01
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
-                type: Gate
+                type: Intent
                 mode: Automated

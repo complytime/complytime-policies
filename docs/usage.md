@@ -16,7 +16,7 @@ the policy and all of its resolved dependencies:
 | Layer | Example file | Description |
 |-------|-------------|-------------|
 | Policy | `cis-fedora-l1-workstation-policy.yaml` | Root policy defining controls and their mapping references |
-| Catalog | `cis-fedora-l1-workstation-catalog.yaml` | Security control catalog resolved from the policy's `mapping-references` |
+| Catalog | `cis-fedora-l1-workstation-controls.yaml` | Security control catalog resolved from the policy's `mapping-references` |
 | Guidance | `cis-fedora-l1-guidance.yaml` | Best-practice guidance resolved from the policy's `mapping-references` |
 
 ### OCI media types
