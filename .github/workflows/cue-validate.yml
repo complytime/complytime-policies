@@ -2,9 +2,6 @@
 ---
 # yamllint disable rule:line-length
 # Validates governance artifacts against the official Gemara CUE schemas.
-#
-# Reference: https://github.com/ossf/security-baseline/blob/main/.github/workflows/cue-validate.yaml
-# Related to: https://github.com/complytime/complytime-policies/issues/31
 
 name: Validate Gemara Schemas
 
@@ -17,6 +14,10 @@ on:
 
 permissions:
   contents: read
+
+env:
+  CUE_VERSION: v0.16.1
+  GEMARA_VERSION: v1.2.0
 
 jobs:
   validate-schemas:
@@ -44,17 +45,21 @@ jobs:
       - name: Setup CUE
         uses: cue-lang/setup-cue@a93fa358375740cd8b0078f76355512b9208acb1  # v1.0.1
         with:
-          version: latest
+          version: ${{ env.CUE_VERSION }}
 
       - name: Validate against CUE schema
+        env:
+          SCHEMA_DIR: ${{ matrix.dir }}
+          SCHEMA_DEF: ${{ matrix.definition }}
+          SCHEMA_NAME: ${{ matrix.name }}
         run: |
           failed=0
-          for f in ${{ matrix.dir }}/*.yaml; do
+          for f in "${SCHEMA_DIR}"/*.yaml; do
             [ -f "$f" ] || continue
-            if ! output=$(cue vet -c -d '${{ matrix.definition }}' github.com/gemaraproj/gemara@latest "$f" 2>&1); then
+            if ! output=$(cue vet -c -d "${SCHEMA_DEF}" "github.com/gemaraproj/gemara@${GEMARA_VERSION}" "$f" 2>&1); then
               echo "::error file=$f::CUE validation failed"
               if [ "$failed" -eq 0 ]; then
-                echo "### Failed: ${{ matrix.name }} (\`${{ matrix.definition }}\`)" >> "${GITHUB_STEP_SUMMARY}"
+                echo "### Failed: ${SCHEMA_NAME} (\`${SCHEMA_DEF}\`)" >> "${GITHUB_STEP_SUMMARY}"
                 echo "" >> "${GITHUB_STEP_SUMMARY}"
               fi
               echo "<details><summary><code>$f</code></summary>" >> "${GITHUB_STEP_SUMMARY}"
