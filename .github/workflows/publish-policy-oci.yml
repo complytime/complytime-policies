@@ -66,7 +66,7 @@ jobs:
             [ -f "${bundle_file}" ] || continue
             bundle_name="$(basename "${bundle_file}" .yaml)"
             # The root policy file is the last layer entry (type: Policy)
-            root_file="$(grep -E '^\s*-\s+' "${bundle_file}" | tail -1 | sed 's/^[[:space:]]*-[[:space:]]*//')"
+            root_file="$(yq '.layers[-1]' "${bundle_file}")"
             if [ -z "${root_file}" ]; then
               echo "::warning::No layers found in ${bundle_file}, skipping."
               continue
@@ -121,9 +121,8 @@ jobs:
           {
             sha256sum "${BUNDLE_FILE}"
             while IFS= read -r layer; do
-              layer="$(echo "${layer}" | sed 's/^[[:space:]]*-[[:space:]]*//')"
               [ -f "${layer}" ] && sha256sum "${layer}" || true
-            done < <(grep -E '^\s*-\s+' "${BUNDLE_FILE}")
+            done < <(yq -r '.layers[]' "${BUNDLE_FILE}")
           } | sha256sum - | awk '{print "hash=" $1}' >> "$GITHUB_OUTPUT"
 
       - name: Skip publish if content unchanged
