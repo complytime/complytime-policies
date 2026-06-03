@@ -39,36 +39,36 @@ adherence:
               name: AMPEL
               type: Software
     assessment-plans:
-        - id: BP-1.01
-          requirement-id: BP-1.01
+        - id: require-pull-request
+          requirement-id: require-pull-request
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
                 type: Gate
                 mode: Automated
-        - id: BP-2.01
-          requirement-id: BP-2.01
+        - id: minimum-approvals
+          requirement-id: minimum-approvals
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
                 type: Gate
                 mode: Automated
-        - id: BP-3.01
-          requirement-id: BP-3.01
+        - id: block-force-push
+          requirement-id: block-force-push
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
                 type: Gate
                 mode: Automated
-        - id: BP-4.01
-          requirement-id: BP-4.01
+        - id: prevent-admin-bypass
+          requirement-id: prevent-admin-bypass
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate
                 type: Gate
                 mode: Automated
-        - id: BP-5.01
-          requirement-id: BP-5.01
+        - id: require-code-owner-review
+          requirement-id: require-code-owner-review
           frequency: on-demand
           evaluation-methods:
               - id: ampel-gate

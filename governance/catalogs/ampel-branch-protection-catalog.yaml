@@ -12,52 +12,52 @@ families:
       title: Source Code Protection
       description: Controls for protecting source code repositories via branch protection rules
 controls:
-    - id: BP-1
+    - id: pull-request-enforcement
       title: Require Pull Request Reviews
       objective: Ensure changes to protected branches go through a pull request process
       family: source-code
       assessment-requirements:
-          - id: BP-1.01
+          - id: require-pull-request
             text: Direct pushes to protected branches MUST be blocked
             applicability:
                 - GitHub repositories
                 - GitLab repositories
-    - id: BP-2
+    - id: approval-requirements
       title: Require Minimum Approvals
       objective: Pull requests to protected branches must have a minimum number of approvals
       family: source-code
       assessment-requirements:
-          - id: BP-2.01
+          - id: minimum-approvals
             text: Pull requests must require a minimum number of approvals
             applicability:
                 - GitHub repositories
                 - GitLab repositories
-    - id: BP-3
+    - id: force-push-restriction
       title: Restrict Force Pushes
       objective: Force pushes to protected branches must be blocked
       family: source-code
       assessment-requirements:
-          - id: BP-3.01
+          - id: block-force-push
             text: Force pushes to protected branches must be blocked
             applicability:
                 - GitHub repositories
                 - GitLab repositories
-    - id: BP-4
+    - id: admin-bypass-prevention
       title: Prevent Admin Bypass
       objective: Admin bypass of branch protection rules must be prevented
       family: source-code
       assessment-requirements:
-          - id: BP-4.01
+          - id: prevent-admin-bypass
             text: Admin bypass prevention must be enabled on protected branches
             applicability:
                 - GitHub repositories
                 - GitLab repositories
-    - id: BP-5
+    - id: code-owner-enforcement
       title: Require Code Owner Review
       objective: Code owner review must be required when CODEOWNERS file exists
       family: source-code
       assessment-requirements:
-          - id: BP-5.01
+          - id: require-code-owner-review
             text: Code owner review requirements must be enabled
             applicability:
                 - GitHub repositories
