@@ -30,7 +30,7 @@ imports:
         - reference-id: repo-branch-protection
 adherence:
     evaluation-methods:
-        - id: ampel-gate
+        - id: ampel-automated-evaluation
           type: Gate
           mode: Automated
           description: AMPEL automated branch protection evaluation
@@ -43,34 +43,34 @@ adherence:
           requirement-id: require-pull-request
           frequency: on-demand
           evaluation-methods:
-              - id: ampel-gate
+              - id: ampel-automated-evaluation
                 type: Gate
                 mode: Automated
         - id: minimum-approvals
           requirement-id: minimum-approvals
           frequency: on-demand
           evaluation-methods:
-              - id: ampel-gate
+              - id: ampel-automated-evaluation
                 type: Gate
                 mode: Automated
         - id: block-force-push
           requirement-id: block-force-push
           frequency: on-demand
           evaluation-methods:
-              - id: ampel-gate
+              - id: ampel-automated-evaluation
                 type: Gate
                 mode: Automated
         - id: prevent-admin-bypass
           requirement-id: prevent-admin-bypass
           frequency: on-demand
           evaluation-methods:
-              - id: ampel-gate
+              - id: ampel-automated-evaluation
                 type: Gate
                 mode: Automated
         - id: require-code-owner-review
           requirement-id: require-code-owner-review
           frequency: on-demand
           evaluation-methods:
-              - id: ampel-gate
+              - id: ampel-automated-evaluation
                 type: Gate
                 mode: Automated
