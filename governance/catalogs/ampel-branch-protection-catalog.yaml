@@ -2,12 +2,20 @@ title: Branch Protection Controls
 metadata:
     id: repo-branch-protection
     type: ControlCatalog
+    gemara-version: "1.2.0"
     description: Branch protection controls for GitHub/GitLab repositories
     author:
         id: complytime
         name: ComplyTime
         type: Software Assisted
-families:
+    applicability-groups:
+        - id: github-repos
+          title: GitHub Repositories
+          description: GitHub-hosted repositories with branch protection support
+        - id: gitlab-repos
+          title: GitLab Repositories
+          description: GitLab-hosted repositories with branch protection support
+groups:
     - id: source-code
       title: Source Code Protection
       description: Controls for protecting source code repositories via branch protection rules
@@ -15,50 +23,60 @@ controls:
     - id: pull-request-enforcement
       title: Require Pull Request Reviews
       objective: Ensure changes to protected branches go through a pull request process
-      family: source-code
+      group: source-code
+      state: Active
       assessment-requirements:
           - id: require-pull-request
+            state: Active
             text: Direct pushes to protected branches MUST be blocked
             applicability:
-                - GitHub repositories
-                - GitLab repositories
+                - github-repos
+                - gitlab-repos
     - id: approval-requirements
       title: Require Minimum Approvals
       objective: Pull requests to protected branches must have a minimum number of approvals
-      family: source-code
+      group: source-code
+      state: Active
       assessment-requirements:
           - id: minimum-approvals
+            state: Active
             text: Pull requests must require a minimum number of approvals
             applicability:
-                - GitHub repositories
-                - GitLab repositories
+                - github-repos
+                - gitlab-repos
     - id: force-push-restriction
       title: Restrict Force Pushes
       objective: Force pushes to protected branches must be blocked
-      family: source-code
+      group: source-code
+      state: Active
       assessment-requirements:
           - id: block-force-push
+            state: Active
             text: Force pushes to protected branches must be blocked
             applicability:
-                - GitHub repositories
-                - GitLab repositories
+                - github-repos
+                - gitlab-repos
     - id: admin-bypass-prevention
       title: Prevent Admin Bypass
       objective: Admin bypass of branch protection rules must be prevented
-      family: source-code
+      group: source-code
+      state: Active
       assessment-requirements:
           - id: prevent-admin-bypass
+            state: Active
             text: Admin bypass prevention must be enabled on protected branches
             applicability:
-                - GitHub repositories
-                - GitLab repositories
+                - github-repos
+                - gitlab-repos
     - id: code-owner-enforcement
       title: Require Code Owner Review
       objective: Code owner review must be required when CODEOWNERS file exists
-      family: source-code
+      group: source-code
+      state: Active
       assessment-requirements:
           - id: require-code-owner-review
+            state: Active
             text: Code owner review requirements must be enabled
             applicability:
-                - GitHub repositories
-                - GitLab repositories
+                - github-repos
+                - gitlab-repos

@@ -2,6 +2,7 @@ title: AMPEL Branch Protection Policy
 metadata:
     id: ampel-branch-protection-policy
     type: Policy
+    gemara-version: "1.2.0"
     description: Automated evaluation policy for branch protection controls using AMPEL
     author:
         id: complytime
@@ -12,7 +13,7 @@ metadata:
           title: Branch Protection Controls
           version: 1.0.0
           description: Control catalog for branch protection rules
-          url: ../catalogs/ampel-branch-protection-catalog.yaml
+          url: file://../catalogs/ampel-branch-protection-catalog.yaml
 contacts:
     responsible:
         - name: Repository Administrator
@@ -31,7 +32,7 @@ imports:
 adherence:
     evaluation-methods:
         - id: ampel-automated-evaluation
-          type: Gate
+          type: Behavioral
           mode: Automated
           description: AMPEL automated branch protection evaluation
           executor:
@@ -44,33 +45,33 @@ adherence:
           frequency: on-demand
           evaluation-methods:
               - id: ampel-automated-evaluation
-                type: Gate
+                type: Behavioral
                 mode: Automated
         - id: minimum-approvals
           requirement-id: minimum-approvals
           frequency: on-demand
           evaluation-methods:
               - id: ampel-automated-evaluation
-                type: Gate
+                type: Behavioral
                 mode: Automated
         - id: block-force-push
           requirement-id: block-force-push
           frequency: on-demand
           evaluation-methods:
               - id: ampel-automated-evaluation
-                type: Gate
+                type: Behavioral
                 mode: Automated
         - id: prevent-admin-bypass
           requirement-id: prevent-admin-bypass
           frequency: on-demand
           evaluation-methods:
               - id: ampel-automated-evaluation
-                type: Gate
+                type: Behavioral
                 mode: Automated
         - id: require-code-owner-review
           requirement-id: require-code-owner-review
           frequency: on-demand
           evaluation-methods:
               - id: ampel-automated-evaluation
-                type: Gate
+                type: Behavioral
                 mode: Automated
