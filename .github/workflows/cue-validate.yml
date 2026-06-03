@@ -2,6 +2,7 @@
 ---
 # yamllint disable rule:line-length
 # Validates governance artifacts against the official Gemara CUE schemas.
+# Each matrix job validates files by their metadata.type field, not by directory.
 
 name: Validate Gemara Schemas
 
@@ -27,15 +28,21 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: Control Catalogs
-            dir: governance/catalogs
-            definition: "#ControlCatalog"
-          - name: Guidance Catalogs
-            dir: governance/guidance
+          - name: "Guidance"
             definition: "#GuidanceCatalog"
-          - name: Policies
-            dir: governance/policies
+            type_value: "GuidanceCatalog"
+          - name: "Controls"
+            definition: "#ControlCatalog"
+            type_value: "ControlCatalog"
+          - name: "Threats"
+            definition: "#ThreatCatalog"
+            type_value: "ThreatCatalog"
+          - name: "Risks"
+            definition: "#RiskCatalog"
+            type_value: "RiskCatalog"
+          - name: "Policy"
             definition: "#Policy"
+            type_value: "Policy"
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
@@ -47,17 +54,20 @@ jobs:
         with:
           version: ${{ env.CUE_VERSION }}
 
-      - name: Validate against CUE schema
+      - name: Discover and validate files by metadata.type
         env:
-          SCHEMA_DIR: ${{ matrix.dir }}
           SCHEMA_DEF: ${{ matrix.definition }}
           SCHEMA_NAME: ${{ matrix.name }}
+          TYPE_VALUE: ${{ matrix.type_value }}
         run: |
           failed=0
-          for f in "${SCHEMA_DIR}"/*.yaml; do
-            [ -f "$f" ] || continue
+          found=0
+          for f in $(find governance -name '*.yaml' -type f | sort); do
+            file_type=$(head -20 "$f" | grep -E '^\s+type:' | head -1 | sed 's/.*type:[[:space:]]*//' | tr -d '"' | tr -d "'")
+            [ "$file_type" = "$TYPE_VALUE" ] || continue
+            found=$((found + 1))
             if ! output=$(cue vet -c -d "${SCHEMA_DEF}" "github.com/gemaraproj/gemara@${GEMARA_VERSION}" "$f" 2>&1); then
-              echo "::error file=$f::CUE validation failed"
+              echo "::error file=$f::CUE validation failed for ${TYPE_VALUE}"
               if [ "$failed" -eq 0 ]; then
                 echo "### Failed: ${SCHEMA_NAME} (\`${SCHEMA_DEF}\`)" >> "${GITHUB_STEP_SUMMARY}"
                 echo "" >> "${GITHUB_STEP_SUMMARY}"
@@ -70,8 +80,15 @@ jobs:
               echo "</details>" >> "${GITHUB_STEP_SUMMARY}"
               echo "" >> "${GITHUB_STEP_SUMMARY}"
               failed=1
+            else
+              echo "✓ $f"
             fi
           done
+          if [ "$found" -eq 0 ]; then
+            echo "No files with metadata.type=${TYPE_VALUE} found — skipping."
+          else
+            echo "Validated $found file(s) of type ${TYPE_VALUE}."
+          fi
           exit $failed
 
   validate-bundles:
@@ -86,19 +103,32 @@ jobs:
       - name: Validate layer existence
         run: |
           failed=0
+          echo "### Bundle Layer Summary" >> "${GITHUB_STEP_SUMMARY}"
+          echo "" >> "${GITHUB_STEP_SUMMARY}"
           for bundle_file in bundles/*.yaml; do
             [ -f "${bundle_file}" ] || continue
+            bundle_name="$(basename "${bundle_file}" .yaml)"
+            layer_count=0
+            missing_count=0
             while IFS= read -r layer; do
               layer="$(echo "${layer}" | sed 's/^[[:space:]]*-[[:space:]]*//')"
+              layer_count=$((layer_count + 1))
               if [ ! -f "${layer}" ]; then
                 echo "::error file=${bundle_file}::Layer file not found: ${layer}"
                 if [ "$failed" -eq 0 ]; then
-                  echo "### Failed: Bundle Manifests" >> "${GITHUB_STEP_SUMMARY}"
+                  echo "#### ❌ Missing Layers" >> "${GITHUB_STEP_SUMMARY}"
                   echo "" >> "${GITHUB_STEP_SUMMARY}"
                 fi
-                echo "- \`${bundle_file}\`: missing layer \`${layer}\`" >> "${GITHUB_STEP_SUMMARY}"
+                echo "- \`${bundle_file}\`: missing \`${layer}\`" >> "${GITHUB_STEP_SUMMARY}"
+                missing_count=$((missing_count + 1))
                 failed=1
               fi
             done < <(grep -E '^\s*-\s+' "${bundle_file}")
+            if [ "$missing_count" -eq 0 ]; then
+              echo "✓ ${bundle_name}: ${layer_count} layer(s) present"
+            else
+              echo "✗ ${bundle_name}: ${missing_count}/${layer_count} layer(s) missing"
+            fi
           done
+          echo "" >> "${GITHUB_STEP_SUMMARY}"
           exit $failed
