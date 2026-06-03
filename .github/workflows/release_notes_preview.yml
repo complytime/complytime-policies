@@ -1,0 +1,55 @@
+# SPDX-License-Identifier: Apache-2.0
+#
+# --------------------------------------------------------------------------
+# Preview Release Drafter output using real GitHub data (no release created).
+# Trigger from the Actions tab or: gh workflow run release_notes_preview.yml
+# --------------------------------------------------------------------------
+
+name: Release notes preview
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Check out code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Draft release notes (dry run)
+        id: drafter
+        uses: release-drafter/release-drafter@693d20e7c1ce1a81d3a41962f85914253b518449  # v7.3.1
+        with:
+          dry-run: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add preview to job summary
+        env:
+          BODY: ${{ steps.drafter.outputs.body }}
+        run: |
+          {
+            echo "## Release Drafter preview"
+            echo
+            printf '%s\n' "$BODY"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Write preview file
+        env:
+          BODY: ${{ steps.drafter.outputs.body }}
+        run: printf '%s\n' "$BODY" > release-notes-preview.md
+
+      - name: Upload preview
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+        with:
+          name: release-notes-preview
+          path: release-notes-preview.md

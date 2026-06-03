@@ -8,12 +8,9 @@
 #   - From the Actions tab: select this workflow, choose the branch, enter the tag.
 #   - From the CLI: gh workflow run release.yml --ref main -f tag=v0.1.0
 # --------------------------------------------------------------------------
----
-# yamllint disable rule:line-length
-
 name: Release
 
-"on":
+on:
   workflow_dispatch:
     inputs:
       tag:
