@@ -22,6 +22,37 @@ These statements set expectations but do not define the specific checks an evalu
 
 ## Layer 2 -- Threats and Controls
 
+### Capabilities
+
+**What it is:** The functional capabilities a project or system provides. A [CapabilityCatalog](https://github.com/gemaraproj/gemara/blob/main/capabilitycatalog.cue) enumerates the features, components, or objects that define what a system can do. Capabilities expose the attack surface that threats target -- you cannot model threats without first knowing what a system is capable of.
+
+**Real-world example:** For the branch protection use case, capabilities would include:
+
+| Capability | Description |
+|-----------|-------------|
+| Pull request workflow | Accept, review, and merge code changes via pull requests |
+| Branch protection rules | Configure restrictions on who can push, merge, or force-push to branches |
+| Code review enforcement | Require peer approval before changes are merged |
+| Audit logging | Record repository events for accountability and forensic review |
+
+Each capability is assigned to a group within the catalog. The [schema](https://github.com/gemaraproj/gemara/blob/main/capabilitycatalog.cue) enforces that every capability references a valid group, ensuring consistent categorization.
+
+**GRC equivalent:** Capabilities map to an **asset inventory** or **system capability register** in a GRC platform -- the documented record of what a system does, which informs threat modeling and control selection.
+
+### Threats
+
+**What it is:** Things that could go wrong based on the project's capabilities. Threats inform which controls are necessary and feed into the risk analysis.
+
+**Real-world example:** For the branch protection use case, threats would include:
+
+- Unauthorized code reaching production via direct push to a protected branch
+- Malicious changes merged without peer review
+- History rewritten via force push, destroying audit trail
+
+These threats drive the selection of controls like BP-1 (require PR reviews) and BP-3 (restrict force pushes).
+
+**GRC equivalent:** Threats map to entries in a **threat model** or **risk register** that describe what could go wrong for a given system.
+
 ### Controls
 
 **What it is:** Technology-specific, assessable security requirements. Each control includes assessment requirements that can be evaluated by a scanning provider. If you cannot write a testable check for it, it belongs in Layer 1.
@@ -38,23 +69,9 @@ Each requirement specifies applicability (GitHub repositories, GitLab repositori
 
 **GRC equivalent:** Controls map to **technical controls** or **security requirements** in a GRC platform -- the specific, assessable items that auditors check.
 
-### Threats
-
-**What it is:** Things that could go wrong based on the project's capabilities. Threats inform which controls are necessary and feed into the risk analysis.
-
-**Real-world example:** For the branch protection use case, threats would include:
-
-- Unauthorized code reaching production via direct push to a protected branch
-- Malicious changes merged without peer review
-- History rewritten via force push, destroying audit trail
-
-These threats drive the selection of controls like BP-1 (require PR reviews) and BP-3 (restrict force pushes).
-
-**GRC equivalent:** Threats map to entries in a **threat model** or **risk register** that describe what could go wrong for a given system.
-
 ---
 
-## Layer 3 -- Risk
+## Layer 3 -- Risk and Policy
 
 **What it is:** The organizational record of risk appetite, risk acceptance, and controls chosen to mitigate or accept identified risks. Risks pull in associated controls that satisfy mitigation of the threats imposed on the system.
 
@@ -103,6 +120,7 @@ adherence:
 | Gemara Layer | Contains | GRC Equivalent | Example in This Repo |
 |-------------|----------|----------------|---------------------|
 | Layer 1 -- Guidance | High-level requirements | Framework requirements, control objectives | [CIS Fedora L1 Guidance](../governance/guidance/cis-fedora-l1-guidance.yaml) |
+| Layer 2 -- Capabilities | Functional capabilities of a system | Asset inventory, system capability register | _(not yet in repo)_ |
 | Layer 2 -- Threats | What could go wrong | Threat model, risk register entries | _(not yet in repo)_ |
 | Layer 2 -- Controls | Testable security requirements | Technical controls, security requirements | [Branch Protection Catalog](../governance/catalogs/ampel-branch-protection-catalog.yaml) |
 | Layer 3 -- Risk | Risk appetite and treatment decisions | Risk register, risk treatment plan | _(not yet in repo)_ |
