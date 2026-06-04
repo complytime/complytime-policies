@@ -42,8 +42,10 @@ controls:
       title: Ensure Cramfs Kernel Module Is Not Available
       objective: Ensure Cramfs Kernel Module Is Not Available
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: kernel_module_cramfs_disabled
+            state: Active
             text: Cramfs Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -51,8 +53,10 @@ controls:
       title: Ensure Freevxfs Kernel Module Is Not Available
       objective: Ensure Freevxfs Kernel Module Is Not Available
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: kernel_module_freevxfs_disabled
+            state: Active
             text: Freevxfs Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -60,8 +64,10 @@ controls:
       title: Ensure Hfs Kernel Module Is Not Available
       objective: Ensure Hfs Kernel Module Is Not Available
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: kernel_module_hfs_disabled
+            state: Active
             text: Hfs Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -69,8 +75,10 @@ controls:
       title: Ensure Hfsplus Kernel Module Is Not Available
       objective: Ensure Hfsplus Kernel Module Is Not Available
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: kernel_module_hfsplus_disabled
+            state: Active
             text: Hfsplus Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -78,8 +86,10 @@ controls:
       title: Ensure Jffs2 Kernel Module Is Not Available
       objective: Ensure Jffs2 Kernel Module Is Not Available
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: kernel_module_jffs2_disabled
+            state: Active
             text: Jffs2 Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -87,8 +97,10 @@ controls:
       title: CIS Fedora 1 - 1.2.1.1
       objective: CIS Fedora 1 - 1.2.1.1
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: partition_for_tmp
+            state: Active
             text: CIS Fedora 1 - 1.2.1.1 MUST be verified
             applicability:
                 - fedora-linux
@@ -96,8 +108,10 @@ controls:
       title: CIS Fedora 1 - 1.2.1.2
       objective: CIS Fedora 1 - 1.2.1.2
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_tmp_nodev
+            state: Active
             text: CIS Fedora 1 - 1.2.1.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -105,8 +119,10 @@ controls:
       title: CIS Fedora 1 - 1.2.1.3
       objective: CIS Fedora 1 - 1.2.1.3
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_tmp_nosuid
+            state: Active
             text: CIS Fedora 1 - 1.2.1.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -114,8 +130,10 @@ controls:
       title: CIS Fedora 1 - 1.2.1.4
       objective: CIS Fedora 1 - 1.2.1.4
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_tmp_noexec
+            state: Active
             text: CIS Fedora 1 - 1.2.1.4 MUST be verified
             applicability:
                 - fedora-linux
@@ -123,8 +141,10 @@ controls:
       title: CIS Fedora 1 - 1.2.2.1
       objective: CIS Fedora 1 - 1.2.2.1
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: partition_for_dev_shm
+            state: Active
             text: CIS Fedora 1 - 1.2.2.1 MUST be verified
             applicability:
                 - fedora-linux
@@ -132,8 +152,10 @@ controls:
       title: CIS Fedora 1 - 1.2.2.2
       objective: CIS Fedora 1 - 1.2.2.2
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_dev_shm_nodev
+            state: Active
             text: CIS Fedora 1 - 1.2.2.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -141,8 +163,10 @@ controls:
       title: CIS Fedora 1 - 1.2.2.3
       objective: CIS Fedora 1 - 1.2.2.3
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_dev_shm_nosuid
+            state: Active
             text: CIS Fedora 1 - 1.2.2.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -150,8 +174,10 @@ controls:
       title: CIS Fedora 1 - 1.2.2.4
       objective: CIS Fedora 1 - 1.2.2.4
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_dev_shm_noexec
+            state: Active
             text: CIS Fedora 1 - 1.2.2.4 MUST be verified
             applicability:
                 - fedora-linux
@@ -159,8 +185,10 @@ controls:
       title: CIS Fedora 1 - 1.2.3.2
       objective: CIS Fedora 1 - 1.2.3.2
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_home_nodev
+            state: Active
             text: CIS Fedora 1 - 1.2.3.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -168,8 +196,10 @@ controls:
       title: CIS Fedora 1 - 1.2.3.3
       objective: CIS Fedora 1 - 1.2.3.3
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_home_nosuid
+            state: Active
             text: CIS Fedora 1 - 1.2.3.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -177,8 +207,10 @@ controls:
       title: CIS Fedora 1 - 1.2.4.2
       objective: CIS Fedora 1 - 1.2.4.2
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_nodev
+            state: Active
             text: CIS Fedora 1 - 1.2.4.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -186,8 +218,10 @@ controls:
       title: CIS Fedora 1 - 1.2.4.3
       objective: CIS Fedora 1 - 1.2.4.3
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_nosuid
+            state: Active
             text: CIS Fedora 1 - 1.2.4.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -195,8 +229,10 @@ controls:
       title: CIS Fedora 1 - 1.2.5.2
       objective: CIS Fedora 1 - 1.2.5.2
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_tmp_nodev
+            state: Active
             text: CIS Fedora 1 - 1.2.5.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -204,8 +240,10 @@ controls:
       title: CIS Fedora 1 - 1.2.5.3
       objective: CIS Fedora 1 - 1.2.5.3
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_tmp_nosuid
+            state: Active
             text: CIS Fedora 1 - 1.2.5.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -213,8 +251,10 @@ controls:
       title: CIS Fedora 1 - 1.2.5.4
       objective: CIS Fedora 1 - 1.2.5.4
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_tmp_noexec
+            state: Active
             text: CIS Fedora 1 - 1.2.5.4 MUST be verified
             applicability:
                 - fedora-linux
@@ -222,8 +262,10 @@ controls:
       title: CIS Fedora 1 - 1.2.6.2
       objective: CIS Fedora 1 - 1.2.6.2
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_log_nodev
+            state: Active
             text: CIS Fedora 1 - 1.2.6.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -231,8 +273,10 @@ controls:
       title: CIS Fedora 1 - 1.2.6.3
       objective: CIS Fedora 1 - 1.2.6.3
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_log_nosuid
+            state: Active
             text: CIS Fedora 1 - 1.2.6.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -240,8 +284,10 @@ controls:
       title: CIS Fedora 1 - 1.2.6.4
       objective: CIS Fedora 1 - 1.2.6.4
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_log_noexec
+            state: Active
             text: CIS Fedora 1 - 1.2.6.4 MUST be verified
             applicability:
                 - fedora-linux
@@ -249,8 +295,10 @@ controls:
       title: CIS Fedora 1 - 1.2.7.2
       objective: CIS Fedora 1 - 1.2.7.2
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_log_audit_nodev
+            state: Active
             text: CIS Fedora 1 - 1.2.7.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -258,8 +306,10 @@ controls:
       title: CIS Fedora 1 - 1.2.7.3
       objective: CIS Fedora 1 - 1.2.7.3
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_log_audit_nosuid
+            state: Active
             text: CIS Fedora 1 - 1.2.7.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -267,8 +317,10 @@ controls:
       title: CIS Fedora 1 - 1.2.7.4
       objective: CIS Fedora 1 - 1.2.7.4
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: mount_option_var_log_audit_noexec
+            state: Active
             text: CIS Fedora 1 - 1.2.7.4 MUST be verified
             applicability:
                 - fedora-linux
@@ -276,8 +328,10 @@ controls:
       title: Ensure Gpgcheck Is Configured
       objective: Ensure Gpgcheck Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: ensure_gpgcheck_globally_activated
+            state: Active
             text: Gpgcheck Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -285,8 +339,10 @@ controls:
       title: Ensure Selinux Is Installed
       objective: Ensure Selinux Is Installed
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: package_libselinux_installed
+            state: Active
             text: Selinux Is Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -294,8 +350,10 @@ controls:
       title: Ensure Selinux Is Not Disabled In Bootloader Configuration
       objective: Ensure Selinux Is Not Disabled In Bootloader Configuration
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: grub2_enable_selinux
+            state: Active
             text: Selinux Is Not Disabled In Bootloader Configuration MUST be verified
             applicability:
                 - fedora-linux
@@ -303,8 +361,10 @@ controls:
       title: Ensure Selinux Policy Is Configured
       objective: Ensure Selinux Policy Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: selinux_policytype
+            state: Active
             text: Selinux Policy Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -312,8 +372,10 @@ controls:
       title: Ensure The Selinux Mode Is Not Disabled
       objective: Ensure The Selinux Mode Is Not Disabled
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: selinux_not_disabled
+            state: Active
             text: The Selinux Mode Is Not Disabled MUST be verified
             applicability:
                 - fedora-linux
@@ -321,8 +383,10 @@ controls:
       title: Ensure The Mcs Translation Service (Mcstrans) Is Not Installed
       objective: Ensure The Mcs Translation Service (Mcstrans) Is Not Installed
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: package_mcstrans_removed
+            state: Active
             text: The Mcs Translation Service (Mcstrans) Is Not Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -330,8 +394,10 @@ controls:
       title: Ensure Bootloader Password Is Set
       objective: Ensure Bootloader Password Is Set
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: grub2_password
+            state: Active
             text: Bootloader Password Is Set MUST be verified
             applicability:
                 - fedora-linux
@@ -339,8 +405,10 @@ controls:
       title: Ensure Core File Size Is Configured
       objective: Ensure Core File Size Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: disable_users_coredumps
+            state: Active
             text: Core File Size Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -348,8 +416,10 @@ controls:
       title: Ensure Systemd-Coredump Storage Is Configured
       objective: Ensure Systemd-Coredump Storage Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: coredump_disable_storage
+            state: Active
             text: Systemd-Coredump Storage Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -357,8 +427,10 @@ controls:
       title: Ensure Fs.Protected_Hardlinks Is Configured
       objective: Ensure Fs.Protected_Hardlinks Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: sysctl_fs_protected_hardlinks
+            state: Active
             text: Fs.Protected_Hardlinks Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -366,8 +438,10 @@ controls:
       title: Ensure Fs.Protected_Symlinks Is Configured
       objective: Ensure Fs.Protected_Symlinks Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: sysctl_fs_protected_symlinks
+            state: Active
             text: Fs.Protected_Symlinks Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -375,8 +449,10 @@ controls:
       title: Ensure Fs.Suid_Dumpable Is Configured
       objective: Ensure Fs.Suid_Dumpable Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: sysctl_fs_suid_dumpable
+            state: Active
             text: Fs.Suid_Dumpable Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -384,8 +460,10 @@ controls:
       title: Ensure Kernel.Dmesg_Restrict Is Configured
       objective: Ensure Kernel.Dmesg_Restrict Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: sysctl_kernel_dmesg_restrict
+            state: Active
             text: Kernel.Dmesg_Restrict Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -393,8 +471,10 @@ controls:
       title: Ensure Kernel.Kptr_Restrict Is Configured
       objective: Ensure Kernel.Kptr_Restrict Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: sysctl_kernel_kptr_restrict
+            state: Active
             text: Kernel.Kptr_Restrict Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -402,8 +482,10 @@ controls:
       title: Ensure Kernel.Yama.Ptrace_Scope Is Configured
       objective: Ensure Kernel.Yama.Ptrace_Scope Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: sysctl_kernel_yama_ptrace_scope
+            state: Active
             text: Kernel.Yama.Ptrace_Scope Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -411,8 +493,10 @@ controls:
       title: Ensure Kernel.Randomize_Va_Space Is Configured
       objective: Ensure Kernel.Randomize_Va_Space Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: sysctl_kernel_randomize_va_space
+            state: Active
             text: Kernel.Randomize_Va_Space Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -420,8 +504,10 @@ controls:
       title: Ensure Systemd-Coredump Processsizemax Is Configured
       objective: Ensure Systemd-Coredump Processsizemax Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: coredump_disable_backtraces
+            state: Active
             text: Systemd-Coredump Processsizemax Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -429,8 +515,10 @@ controls:
       title: Ensure System Wide Crypto Policy Disables Sha1 Hash And Signature Support
       objective: Ensure System Wide Crypto Policy Disables Sha1 Hash And Signature Support
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: cis_fedora_1-6.2-ar
+            state: Active
             text: System Wide Crypto Policy Disables Sha1 Hash And Signature Support MUST be verified
             applicability:
                 - fedora-linux
@@ -438,8 +526,10 @@ controls:
       title: Ensure System Wide Crypto Policy Macs Are Configured
       objective: Ensure System Wide Crypto Policy Macs Are Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: cis_fedora_1-6.3-ar
+            state: Active
             text: System Wide Crypto Policy Macs Are Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -447,8 +537,10 @@ controls:
       title: Ensure System Wide Crypto Policy Disables Cbc For Ssh
       objective: Ensure System Wide Crypto Policy Disables Cbc For Ssh
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: cis_fedora_1-6.4-ar
+            state: Active
             text: System Wide Crypto Policy Disables Cbc For Ssh MUST be verified
             applicability:
                 - fedora-linux
@@ -456,8 +548,10 @@ controls:
       title: Ensure /Etc/Motd Is Configured
       objective: Ensure /Etc/Motd Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: banner_etc_motd_cis
+            state: Active
             text: /Etc/Motd Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -465,8 +559,10 @@ controls:
       title: Ensure /Etc/Issue Is Configured
       objective: Ensure /Etc/Issue Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: banner_etc_issue_cis
+            state: Active
             text: /Etc/Issue Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -474,8 +570,10 @@ controls:
       title: Ensure /Etc/Issue.Net Is Configured
       objective: Ensure /Etc/Issue.Net Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: banner_etc_issue_net_cis
+            state: Active
             text: /Etc/Issue.Net Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -483,16 +581,20 @@ controls:
       title: Ensure Access To /Etc/Motd Is Configured
       objective: Ensure Access To /Etc/Motd Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: file_groupowner_etc_motd
+            state: Active
             text: Access To /Etc/Motd Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_etc_motd
+            state: Active
             text: Access To /Etc/Motd Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_etc_motd
+            state: Active
             text: Access To /Etc/Motd Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -500,16 +602,20 @@ controls:
       title: Ensure Access To /Etc/Issue Is Configured
       objective: Ensure Access To /Etc/Issue Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: file_groupowner_etc_issue
+            state: Active
             text: Access To /Etc/Issue Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_etc_issue
+            state: Active
             text: Access To /Etc/Issue Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_etc_issue
+            state: Active
             text: Access To /Etc/Issue Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -517,16 +623,20 @@ controls:
       title: Ensure Access To /Etc/Issue.Net Is Configured
       objective: Ensure Access To /Etc/Issue.Net Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: file_groupowner_etc_issue_net
+            state: Active
             text: Access To /Etc/Issue.Net Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_etc_issue_net
+            state: Active
             text: Access To /Etc/Issue.Net Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_etc_issue_net
+            state: Active
             text: Access To /Etc/Issue.Net Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -534,12 +644,15 @@ controls:
       title: Ensure Gdm Login Banner Is Configured
       objective: Ensure Gdm Login Banner Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: dconf_gnome_banner_enabled
+            state: Active
             text: Gdm Login Banner Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: dconf_gnome_login_banner_text
+            state: Active
             text: Gdm Login Banner Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -547,8 +660,10 @@ controls:
       title: Ensure Gdm Disable-User-List Is Configured
       objective: Ensure Gdm Disable-User-List Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: dconf_gnome_disable_user_list
+            state: Active
             text: Gdm Disable-User-List Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -556,20 +671,25 @@ controls:
       title: Ensure Gdm Screen Lock Is Configured
       objective: Ensure Gdm Screen Lock Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: dconf_gnome_screensaver_idle_delay
+            state: Active
             text: Gdm Screen Lock Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: dconf_gnome_screensaver_lock_delay
+            state: Active
             text: Gdm Screen Lock Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: dconf_gnome_screensaver_user_locks
+            state: Active
             text: Gdm Screen Lock Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: dconf_gnome_session_idle_user_locks
+            state: Active
             text: Gdm Screen Lock Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -577,8 +697,10 @@ controls:
       title: Ensure Gdm Autorun-Never Is Configured
       objective: Ensure Gdm Autorun-Never Is Configured
       group: initial-setup
+      state: Active
       assessment-requirements:
           - id: dconf_gnome_disable_autorun
+            state: Active
             text: Gdm Autorun-Never Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -586,8 +708,10 @@ controls:
       title: Ensure Rpcbind Services Are Not In Use
       objective: Ensure Rpcbind Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: service_rpcbind_disabled
+            state: Active
             text: Rpcbind Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -595,8 +719,10 @@ controls:
       title: Ensure Rsync Services Are Not In Use
       objective: Ensure Rsync Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_rsync_removed
+            state: Active
             text: Rsync Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -604,8 +730,10 @@ controls:
       title: Ensure Samba File Server Services Are Not In Use
       objective: Ensure Samba File Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_samba_removed
+            state: Active
             text: Samba File Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -613,8 +741,10 @@ controls:
       title: Ensure Snmp Services Are Not In Use
       objective: Ensure Snmp Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_net-snmp_removed
+            state: Active
             text: Snmp Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -622,8 +752,10 @@ controls:
       title: Ensure Telnet Server Services Are Not In Use
       objective: Ensure Telnet Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_telnet-server_removed
+            state: Active
             text: Telnet Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -631,8 +763,10 @@ controls:
       title: Ensure Tftp Server Services Are Not In Use
       objective: Ensure Tftp Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_tftp-server_removed
+            state: Active
             text: Tftp Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -640,8 +774,10 @@ controls:
       title: Ensure Web Proxy Server Services Are Not In Use
       objective: Ensure Web Proxy Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_squid_removed
+            state: Active
             text: Web Proxy Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -649,12 +785,15 @@ controls:
       title: Ensure Web Server Services Are Not In Use
       objective: Ensure Web Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_httpd_removed
+            state: Active
             text: Web Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
           - id: package_nginx_removed
+            state: Active
             text: Web Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -662,12 +801,15 @@ controls:
       title: Ensure Mail Transfer Agents Are Configured For Local-Only Mode
       objective: Ensure Mail Transfer Agents Are Configured For Local-Only Mode
       group: services
+      state: Active
       assessment-requirements:
           - id: has_nonlocal_mta
+            state: Active
             text: Mail Transfer Agents Are Configured For Local-Only Mode MUST be verified
             applicability:
                 - fedora-linux
           - id: postfix_network_listening_disabled
+            state: Active
             text: Mail Transfer Agents Are Configured For Local-Only Mode MUST be verified
             applicability:
                 - fedora-linux
@@ -675,8 +817,10 @@ controls:
       title: Ensure Dhcp Server Services Are Not In Use
       objective: Ensure Dhcp Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_kea_removed
+            state: Active
             text: Dhcp Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -684,8 +828,10 @@ controls:
       title: Ensure Dns Server Services Are Not In Use
       objective: Ensure Dns Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_bind_removed
+            state: Active
             text: Dns Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -693,8 +839,10 @@ controls:
       title: Ensure Dnsmasq Services Are Not In Use
       objective: Ensure Dnsmasq Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_dnsmasq_removed
+            state: Active
             text: Dnsmasq Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -702,8 +850,10 @@ controls:
       title: Ensure Ftp Server Services Are Not In Use
       objective: Ensure Ftp Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_vsftpd_removed
+            state: Active
             text: Ftp Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -711,12 +861,15 @@ controls:
       title: Ensure Message Access Server Services Are Not In Use
       objective: Ensure Message Access Server Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: package_cyrus-imapd_removed
+            state: Active
             text: Message Access Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
           - id: package_dovecot_removed
+            state: Active
             text: Message Access Server Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -724,8 +877,10 @@ controls:
       title: Ensure Network File System Services Are Not In Use
       objective: Ensure Network File System Services Are Not In Use
       group: services
+      state: Active
       assessment-requirements:
           - id: service_nfs_disabled
+            state: Active
             text: Network File System Services Are Not In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -733,8 +888,10 @@ controls:
       title: Ensure Ftp Client Is Not Installed
       objective: Ensure Ftp Client Is Not Installed
       group: services
+      state: Active
       assessment-requirements:
           - id: package_ftp_removed
+            state: Active
             text: Ftp Client Is Not Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -742,8 +899,10 @@ controls:
       title: Ensure Telnet Client Is Not Installed
       objective: Ensure Telnet Client Is Not Installed
       group: services
+      state: Active
       assessment-requirements:
           - id: package_telnet_removed
+            state: Active
             text: Telnet Client Is Not Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -751,8 +910,10 @@ controls:
       title: Ensure Tftp Client Is Not Installed
       objective: Ensure Tftp Client Is Not Installed
       group: services
+      state: Active
       assessment-requirements:
           - id: package_tftp_removed
+            state: Active
             text: Tftp Client Is Not Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -760,8 +921,10 @@ controls:
       title: Ensure Chrony Is Configured
       objective: Ensure Chrony Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: chronyd_specify_remote_server
+            state: Active
             text: Chrony Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -769,8 +932,10 @@ controls:
       title: Ensure Chrony Is Not Run As The Root User
       objective: Ensure Chrony Is Not Run As The Root User
       group: services
+      state: Active
       assessment-requirements:
           - id: chronyd_run_as_chrony_user
+            state: Active
             text: Chrony Is Not Run As The Root User MUST be verified
             applicability:
                 - fedora-linux
@@ -778,12 +943,15 @@ controls:
       title: Ensure Cron Daemon Is Enabled And Active
       objective: Ensure Cron Daemon Is Enabled And Active
       group: services
+      state: Active
       assessment-requirements:
           - id: package_cron_installed
+            state: Active
             text: Cron Daemon Is Enabled And Active MUST be verified
             applicability:
                 - fedora-linux
           - id: service_crond_enabled
+            state: Active
             text: Cron Daemon Is Enabled And Active MUST be verified
             applicability:
                 - fedora-linux
@@ -791,16 +959,20 @@ controls:
       title: Ensure Access To /Etc/Crontab Is Configured
       objective: Ensure Access To /Etc/Crontab Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: file_groupowner_crontab
+            state: Active
             text: Access To /Etc/Crontab Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_crontab
+            state: Active
             text: Access To /Etc/Crontab Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_crontab
+            state: Active
             text: Access To /Etc/Crontab Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -808,16 +980,20 @@ controls:
       title: Ensure Access To /Etc/Cron.Hourly Is Configured
       objective: Ensure Access To /Etc/Cron.Hourly Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: file_groupowner_cron_hourly
+            state: Active
             text: Access To /Etc/Cron.Hourly Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_cron_hourly
+            state: Active
             text: Access To /Etc/Cron.Hourly Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_cron_hourly
+            state: Active
             text: Access To /Etc/Cron.Hourly Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -825,16 +1001,20 @@ controls:
       title: Ensure Access To /Etc/Cron.Daily Is Configured
       objective: Ensure Access To /Etc/Cron.Daily Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: file_groupowner_cron_daily
+            state: Active
             text: Access To /Etc/Cron.Daily Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_cron_daily
+            state: Active
             text: Access To /Etc/Cron.Daily Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_cron_daily
+            state: Active
             text: Access To /Etc/Cron.Daily Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -842,16 +1022,20 @@ controls:
       title: Ensure Access To /Etc/Cron.Weekly Is Configured
       objective: Ensure Access To /Etc/Cron.Weekly Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: file_groupowner_cron_weekly
+            state: Active
             text: Access To /Etc/Cron.Weekly Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_cron_weekly
+            state: Active
             text: Access To /Etc/Cron.Weekly Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_cron_weekly
+            state: Active
             text: Access To /Etc/Cron.Weekly Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -859,16 +1043,20 @@ controls:
       title: Ensure Access To /Etc/Cron.Monthly Is Configured
       objective: Ensure Access To /Etc/Cron.Monthly Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: file_groupowner_cron_monthly
+            state: Active
             text: Access To /Etc/Cron.Monthly Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_cron_monthly
+            state: Active
             text: Access To /Etc/Cron.Monthly Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_cron_monthly
+            state: Active
             text: Access To /Etc/Cron.Monthly Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -876,16 +1064,20 @@ controls:
       title: Ensure Access To /Etc/Cron.D Is Configured
       objective: Ensure Access To /Etc/Cron.D Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: file_groupowner_cron_d
+            state: Active
             text: Access To /Etc/Cron.D Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_cron_d
+            state: Active
             text: Access To /Etc/Cron.D Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_cron_d
+            state: Active
             text: Access To /Etc/Cron.D Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -893,24 +1085,30 @@ controls:
       title: Ensure Access To Crontab Is Configured
       objective: Ensure Access To Crontab Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: file_cron_allow_exists
+            state: Active
             text: Access To Crontab Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_cron_deny_not_exist
+            state: Active
             text: Access To Crontab Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_groupowner_cron_allow
+            state: Active
             text: Access To Crontab Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_cron_allow
+            state: Active
             text: Access To Crontab Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_cron_allow
+            state: Active
             text: Access To Crontab Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -918,20 +1116,25 @@ controls:
       title: Ensure Access To At Is Configured
       objective: Ensure Access To At Is Configured
       group: services
+      state: Active
       assessment-requirements:
           - id: file_at_deny_not_exist
+            state: Active
             text: Access To At Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_groupowner_at_allow
+            state: Active
             text: Access To At Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_at_allow
+            state: Active
             text: Access To At Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_at_allow
+            state: Active
             text: Access To At Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -939,8 +1142,10 @@ controls:
       title: Ensure Atm Kernel Module Is Not Available
       objective: Ensure Atm Kernel Module Is Not Available
       group: network
+      state: Active
       assessment-requirements:
           - id: kernel_module_atm_disabled
+            state: Active
             text: Atm Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -948,8 +1153,10 @@ controls:
       title: Ensure Can Kernel Module Is Not Available
       objective: Ensure Can Kernel Module Is Not Available
       group: network
+      state: Active
       assessment-requirements:
           - id: kernel_module_can_disabled
+            state: Active
             text: Can Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -957,8 +1164,10 @@ controls:
       title: Ensure Dccp Kernel Module Is Not Available
       objective: Ensure Dccp Kernel Module Is Not Available
       group: network
+      state: Active
       assessment-requirements:
           - id: kernel_module_dccp_disabled
+            state: Active
             text: Dccp Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -966,8 +1175,10 @@ controls:
       title: Ensure Tipc Kernel Module Is Not Available
       objective: Ensure Tipc Kernel Module Is Not Available
       group: network
+      state: Active
       assessment-requirements:
           - id: kernel_module_tipc_disabled
+            state: Active
             text: Tipc Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -975,8 +1186,10 @@ controls:
       title: Ensure Rds Kernel Module Is Not Available
       objective: Ensure Rds Kernel Module Is Not Available
       group: network
+      state: Active
       assessment-requirements:
           - id: kernel_module_rds_disabled
+            state: Active
             text: Rds Kernel Module Is Not Available MUST be verified
             applicability:
                 - fedora-linux
@@ -984,8 +1197,10 @@ controls:
       title: Ensure Net.Ipv4.Ip_Forward Is Configured
       objective: Ensure Net.Ipv4.Ip_Forward Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_ip_forward
+            state: Active
             text: Net.Ipv4.Ip_Forward Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -993,8 +1208,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.All.Secure_Redirects Is Configured
       objective: Ensure Net.Ipv4.Conf.All.Secure_Redirects Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_all_secure_redirects
+            state: Active
             text: Net.Ipv4.Conf.All.Secure_Redirects Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1002,8 +1219,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.Default.Secure_Redirects Is Configured
       objective: Ensure Net.Ipv4.Conf.Default.Secure_Redirects Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_default_secure_redirects
+            state: Active
             text: Net.Ipv4.Conf.Default.Secure_Redirects Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1011,8 +1230,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.All.Rp_Filter Is Configured
       objective: Ensure Net.Ipv4.Conf.All.Rp_Filter Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_all_rp_filter
+            state: Active
             text: Net.Ipv4.Conf.All.Rp_Filter Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1020,8 +1241,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.Default.Rp_Filter Is Configured
       objective: Ensure Net.Ipv4.Conf.Default.Rp_Filter Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_default_rp_filter
+            state: Active
             text: Net.Ipv4.Conf.Default.Rp_Filter Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1029,8 +1252,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.All.Accept_Source_Route Is Configured
       objective: Ensure Net.Ipv4.Conf.All.Accept_Source_Route Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_all_accept_source_route
+            state: Active
             text: Net.Ipv4.Conf.All.Accept_Source_Route Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1038,8 +1263,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.Default.Accept_Source_Route Is Configured
       objective: Ensure Net.Ipv4.Conf.Default.Accept_Source_Route Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_default_accept_source_route
+            state: Active
             text: Net.Ipv4.Conf.Default.Accept_Source_Route Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1047,8 +1274,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.All.Log_Martians Is Configured
       objective: Ensure Net.Ipv4.Conf.All.Log_Martians Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_all_log_martians
+            state: Active
             text: Net.Ipv4.Conf.All.Log_Martians Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1056,8 +1285,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.Default.Log_Martians Is Configured
       objective: Ensure Net.Ipv4.Conf.Default.Log_Martians Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_default_log_martians
+            state: Active
             text: Net.Ipv4.Conf.Default.Log_Martians Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1065,8 +1296,10 @@ controls:
       title: Ensure Net.Ipv4.Tcp_Syncookies Is Configured
       objective: Ensure Net.Ipv4.Tcp_Syncookies Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_tcp_syncookies
+            state: Active
             text: Net.Ipv4.Tcp_Syncookies Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1074,8 +1307,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.All.Send_Redirects Is Configured
       objective: Ensure Net.Ipv4.Conf.All.Send_Redirects Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_all_send_redirects
+            state: Active
             text: Net.Ipv4.Conf.All.Send_Redirects Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1083,8 +1318,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.Default.Send_Redirects Is Configured
       objective: Ensure Net.Ipv4.Conf.Default.Send_Redirects Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_default_send_redirects
+            state: Active
             text: Net.Ipv4.Conf.Default.Send_Redirects Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1092,8 +1329,10 @@ controls:
       title: Ensure Net.Ipv4.Icmp_Ignore_Bogus_Error_Responses Is Configured
       objective: Ensure Net.Ipv4.Icmp_Ignore_Bogus_Error_Responses Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_icmp_ignore_bogus_error_responses
+            state: Active
             text: Net.Ipv4.Icmp_Ignore_Bogus_Error_Responses Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1101,8 +1340,10 @@ controls:
       title: Ensure Net.Ipv4.Icmp_Echo_Ignore_Broadcasts Is Configured
       objective: Ensure Net.Ipv4.Icmp_Echo_Ignore_Broadcasts Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_icmp_echo_ignore_broadcasts
+            state: Active
             text: Net.Ipv4.Icmp_Echo_Ignore_Broadcasts Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1110,8 +1351,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.All.Accept_Redirects Is Configured
       objective: Ensure Net.Ipv4.Conf.All.Accept_Redirects Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_all_accept_redirects
+            state: Active
             text: Net.Ipv4.Conf.All.Accept_Redirects Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1119,8 +1362,10 @@ controls:
       title: Ensure Net.Ipv4.Conf.Default.Accept_Redirects Is Configured
       objective: Ensure Net.Ipv4.Conf.Default.Accept_Redirects Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv4_conf_default_accept_redirects
+            state: Active
             text: Net.Ipv4.Conf.Default.Accept_Redirects Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1128,8 +1373,10 @@ controls:
       title: Ensure Net.Ipv6.Conf.All.Forwarding Is Configured
       objective: Ensure Net.Ipv6.Conf.All.Forwarding Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv6_conf_all_forwarding
+            state: Active
             text: Net.Ipv6.Conf.All.Forwarding Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1137,8 +1384,10 @@ controls:
       title: Ensure Net.Ipv6.Conf.All.Accept_Redirects Is Configured
       objective: Ensure Net.Ipv6.Conf.All.Accept_Redirects Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv6_conf_all_accept_redirects
+            state: Active
             text: Net.Ipv6.Conf.All.Accept_Redirects Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1146,8 +1395,10 @@ controls:
       title: Ensure Net.Ipv6.Conf.Default.Accept_Redirects Is Configured
       objective: Ensure Net.Ipv6.Conf.Default.Accept_Redirects Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv6_conf_default_accept_redirects
+            state: Active
             text: Net.Ipv6.Conf.Default.Accept_Redirects Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1155,8 +1406,10 @@ controls:
       title: Ensure Net.Ipv6.Conf.All.Accept_Source_Route Is Configured
       objective: Ensure Net.Ipv6.Conf.All.Accept_Source_Route Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv6_conf_all_accept_source_route
+            state: Active
             text: Net.Ipv6.Conf.All.Accept_Source_Route Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1164,8 +1417,10 @@ controls:
       title: Ensure Net.Ipv6.Conf.Default.Accept_Source_Route Is Configured
       objective: Ensure Net.Ipv6.Conf.Default.Accept_Source_Route Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv6_conf_default_accept_source_route
+            state: Active
             text: Net.Ipv6.Conf.Default.Accept_Source_Route Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1173,8 +1428,10 @@ controls:
       title: Ensure Net.Ipv6.Conf.All.Accept_Ra Is Configured
       objective: Ensure Net.Ipv6.Conf.All.Accept_Ra Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv6_conf_all_accept_ra
+            state: Active
             text: Net.Ipv6.Conf.All.Accept_Ra Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1182,8 +1439,10 @@ controls:
       title: Ensure Net.Ipv6.Conf.Default.Accept_Ra Is Configured
       objective: Ensure Net.Ipv6.Conf.Default.Accept_Ra Is Configured
       group: network
+      state: Active
       assessment-requirements:
           - id: sysctl_net_ipv6_conf_default_accept_ra
+            state: Active
             text: Net.Ipv6.Conf.Default.Accept_Ra Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1191,8 +1450,10 @@ controls:
       title: Ensure Nftables Is Installed
       objective: Ensure Nftables Is Installed
       group: firewall
+      state: Active
       assessment-requirements:
           - id: package_nftables_installed
+            state: Active
             text: Nftables Is Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -1200,16 +1461,20 @@ controls:
       title: Ensure A Single Firewall Configuration Utility Is In Use
       objective: Ensure A Single Firewall Configuration Utility Is In Use
       group: firewall
+      state: Active
       assessment-requirements:
           - id: package_firewalld_installed
+            state: Active
             text: A Single Firewall Configuration Utility Is In Use MUST be verified
             applicability:
                 - fedora-linux
           - id: service_firewalld_enabled
+            state: Active
             text: A Single Firewall Configuration Utility Is In Use MUST be verified
             applicability:
                 - fedora-linux
           - id: service_nftables_disabled
+            state: Active
             text: A Single Firewall Configuration Utility Is In Use MUST be verified
             applicability:
                 - fedora-linux
@@ -1217,12 +1482,15 @@ controls:
       title: Ensure Firewalld Loopback Traffic Is Configured
       objective: Ensure Firewalld Loopback Traffic Is Configured
       group: firewall
+      state: Active
       assessment-requirements:
           - id: firewalld_loopback_traffic_restricted
+            state: Active
             text: Firewalld Loopback Traffic Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: firewalld_loopback_traffic_trusted
+            state: Active
             text: Firewalld Loopback Traffic Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1230,16 +1498,20 @@ controls:
       title: Ensure Access To /Etc/Ssh/Sshd_Config Is Configured
       objective: Ensure Access To /Etc/Ssh/Sshd_Config Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: file_groupowner_sshd_config
+            state: Active
             text: Access To /Etc/Ssh/Sshd_Config Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_sshd_config
+            state: Active
             text: Access To /Etc/Ssh/Sshd_Config Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_sshd_config
+            state: Active
             text: Access To /Etc/Ssh/Sshd_Config Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1247,8 +1519,10 @@ controls:
       title: Ensure Sshd Gssapiauthentication Is Disabled
       objective: Ensure Sshd Gssapiauthentication Is Disabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_disable_gssapi_auth
+            state: Active
             text: Sshd Gssapiauthentication Is Disabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1256,8 +1530,10 @@ controls:
       title: Ensure Sshd Hostbasedauthentication Is Disabled
       objective: Ensure Sshd Hostbasedauthentication Is Disabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: disable_host_auth
+            state: Active
             text: Sshd Hostbasedauthentication Is Disabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1265,8 +1541,10 @@ controls:
       title: Ensure Sshd Ignorerhosts Is Enabled
       objective: Ensure Sshd Ignorerhosts Is Enabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_disable_rhosts
+            state: Active
             text: Sshd Ignorerhosts Is Enabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1274,8 +1552,10 @@ controls:
       title: Ensure Sshd Logingracetime Is Configured
       objective: Ensure Sshd Logingracetime Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_set_login_grace_time
+            state: Active
             text: Sshd Logingracetime Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1283,8 +1563,10 @@ controls:
       title: Ensure Sshd Loglevel Is Configured
       objective: Ensure Sshd Loglevel Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_set_loglevel_verbose
+            state: Active
             text: Sshd Loglevel Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1292,8 +1574,10 @@ controls:
       title: Ensure Sshd Maxauthtries Is Configured
       objective: Ensure Sshd Maxauthtries Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_set_max_auth_tries
+            state: Active
             text: Sshd Maxauthtries Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1301,8 +1585,10 @@ controls:
       title: Ensure Sshd Maxstartups Is Configured
       objective: Ensure Sshd Maxstartups Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_set_maxstartups
+            state: Active
             text: Sshd Maxstartups Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1310,8 +1596,10 @@ controls:
       title: Ensure Sshd Maxsessions Is Configured
       objective: Ensure Sshd Maxsessions Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_set_max_sessions
+            state: Active
             text: Sshd Maxsessions Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1319,8 +1607,10 @@ controls:
       title: Ensure Sshd Permitemptypasswords Is Disabled
       objective: Ensure Sshd Permitemptypasswords Is Disabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_disable_empty_passwords
+            state: Active
             text: Sshd Permitemptypasswords Is Disabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1328,16 +1618,20 @@ controls:
       title: Ensure Access To Ssh Private Host Key Files Is Configured
       objective: Ensure Access To Ssh Private Host Key Files Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: file_groupownership_sshd_private_key
+            state: Active
             text: Access To Ssh Private Host Key Files Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_ownership_sshd_private_key
+            state: Active
             text: Access To Ssh Private Host Key Files Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_sshd_private_key
+            state: Active
             text: Access To Ssh Private Host Key Files Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1345,8 +1639,10 @@ controls:
       title: Ensure Sshd Permitrootlogin Is Disabled
       objective: Ensure Sshd Permitrootlogin Is Disabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_disable_root_login
+            state: Active
             text: Sshd Permitrootlogin Is Disabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1354,8 +1650,10 @@ controls:
       title: Ensure Sshd Permituserenvironment Is Disabled
       objective: Ensure Sshd Permituserenvironment Is Disabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_do_not_permit_user_env
+            state: Active
             text: Sshd Permituserenvironment Is Disabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1363,8 +1661,10 @@ controls:
       title: Ensure Sshd Usepam Is Enabled
       objective: Ensure Sshd Usepam Is Enabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_enable_pam
+            state: Active
             text: Sshd Usepam Is Enabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1372,16 +1672,20 @@ controls:
       title: Ensure Access To Ssh Public Host Key Files Is Configured
       objective: Ensure Access To Ssh Public Host Key Files Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: file_groupownership_sshd_pub_key
+            state: Active
             text: Access To Ssh Public Host Key Files Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_ownership_sshd_pub_key
+            state: Active
             text: Access To Ssh Public Host Key Files Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_sshd_pub_key
+            state: Active
             text: Access To Ssh Public Host Key Files Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1389,8 +1693,10 @@ controls:
       title: Ensure Sshd Ciphers Are Configured
       objective: Ensure Sshd Ciphers Are Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: cis_fedora_5-1.4-ar
+            state: Active
             text: Sshd Ciphers Are Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1398,8 +1704,10 @@ controls:
       title: Ensure Sshd Kexalgorithms Is Configured
       objective: Ensure Sshd Kexalgorithms Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: cis_fedora_5-1.5-ar
+            state: Active
             text: Sshd Kexalgorithms Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1407,8 +1715,10 @@ controls:
       title: Ensure Sshd Macs Are Configured
       objective: Ensure Sshd Macs Are Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: cis_fedora_5-1.6-ar
+            state: Active
             text: Sshd Macs Are Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1416,8 +1726,10 @@ controls:
       title: Ensure Sshd Access Is Configured
       objective: Ensure Sshd Access Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_limit_user_access
+            state: Active
             text: Sshd Access Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1425,8 +1737,10 @@ controls:
       title: Ensure Sshd Banner Is Configured
       objective: Ensure Sshd Banner Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_enable_warning_banner_net
+            state: Active
             text: Sshd Banner Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1434,12 +1748,15 @@ controls:
       title: Ensure Sshd Clientaliveinterval And Clientalivecountmax Are Configured
       objective: Ensure Sshd Clientaliveinterval And Clientalivecountmax Are Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sshd_set_idle_timeout
+            state: Active
             text: Sshd Clientaliveinterval And Clientalivecountmax Are Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: sshd_set_keepalive
+            state: Active
             text: Sshd Clientaliveinterval And Clientalivecountmax Are Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1447,8 +1764,10 @@ controls:
       title: Ensure Sudo Is Installed
       objective: Ensure Sudo Is Installed
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: package_sudo_installed
+            state: Active
             text: Sudo Is Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -1456,8 +1775,10 @@ controls:
       title: Ensure Sudo Commands Use Pty
       objective: Ensure Sudo Commands Use Pty
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sudo_add_use_pty
+            state: Active
             text: Sudo Commands Use Pty MUST be verified
             applicability:
                 - fedora-linux
@@ -1465,8 +1786,10 @@ controls:
       title: Ensure Sudo Log File Exists
       objective: Ensure Sudo Log File Exists
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sudo_custom_logfile
+            state: Active
             text: Sudo Log File Exists MUST be verified
             applicability:
                 - fedora-linux
@@ -1474,8 +1797,10 @@ controls:
       title: Ensure Re-Authentication For Privilege Escalation Is Not Disabled Globally
       objective: Ensure Re-Authentication For Privilege Escalation Is Not Disabled Globally
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sudo_remove_no_authenticate
+            state: Active
             text: Re-Authentication For Privilege Escalation Is Not Disabled Globally MUST be verified
             applicability:
                 - fedora-linux
@@ -1483,8 +1808,10 @@ controls:
       title: Ensure Sudo Timestamp_Timeout Is Configured
       objective: Ensure Sudo Timestamp_Timeout Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: sudo_require_reauthentication
+            state: Active
             text: Sudo Timestamp_Timeout Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1492,12 +1819,15 @@ controls:
       title: Ensure Access To The Su Command Is Restricted
       objective: Ensure Access To The Su Command Is Restricted
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: ensure_pam_wheel_group_empty
+            state: Active
             text: Access To The Su Command Is Restricted MUST be verified
             applicability:
                 - fedora-linux
           - id: use_pam_wheel_group_for_su
+            state: Active
             text: Access To The Su Command Is Restricted MUST be verified
             applicability:
                 - fedora-linux
@@ -1505,8 +1835,10 @@ controls:
       title: Ensure Latest Version Of Libpwquality Is Installed
       objective: Ensure Latest Version Of Libpwquality Is Installed
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: package_pam_pwquality_installed
+            state: Active
             text: Latest Version Of Libpwquality Is Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -1514,12 +1846,15 @@ controls:
       title: Ensure Pam_Faillock Module Is Enabled
       objective: Ensure Pam_Faillock Module Is Enabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: account_password_pam_faillock_password_auth
+            state: Active
             text: Pam_Faillock Module Is Enabled MUST be verified
             applicability:
                 - fedora-linux
           - id: account_password_pam_faillock_system_auth
+            state: Active
             text: Pam_Faillock Module Is Enabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1527,12 +1862,15 @@ controls:
       title: Ensure Pam_Pwquality Module Is Enabled
       objective: Ensure Pam_Pwquality Module Is Enabled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_pam_pwquality_password_auth
+            state: Active
             text: Pam_Pwquality Module Is Enabled MUST be verified
             applicability:
                 - fedora-linux
           - id: accounts_password_pam_pwquality_system_auth
+            state: Active
             text: Pam_Pwquality Module Is Enabled MUST be verified
             applicability:
                 - fedora-linux
@@ -1540,8 +1878,10 @@ controls:
       title: CIS Fedora 5 - 3.3.1.1
       objective: CIS Fedora 5 - 3.3.1.1
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_passwords_pam_faillock_deny
+            state: Active
             text: CIS Fedora 5 - 3.3.1.1 MUST be verified
             applicability:
                 - fedora-linux
@@ -1549,8 +1889,10 @@ controls:
       title: CIS Fedora 5 - 3.3.1.2
       objective: CIS Fedora 5 - 3.3.1.2
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_passwords_pam_faillock_unlock_time
+            state: Active
             text: CIS Fedora 5 - 3.3.1.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -1558,8 +1900,10 @@ controls:
       title: CIS Fedora 5 - 3.3.2.1
       objective: CIS Fedora 5 - 3.3.2.1
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_pam_difok
+            state: Active
             text: CIS Fedora 5 - 3.3.2.1 MUST be verified
             applicability:
                 - fedora-linux
@@ -1567,8 +1911,10 @@ controls:
       title: CIS Fedora 5 - 3.3.2.2
       objective: CIS Fedora 5 - 3.3.2.2
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_pam_minlen
+            state: Active
             text: CIS Fedora 5 - 3.3.2.2 MUST be verified
             applicability:
                 - fedora-linux
@@ -1576,8 +1922,10 @@ controls:
       title: CIS Fedora 5 - 3.3.2.3
       objective: CIS Fedora 5 - 3.3.2.3
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_pam_minclass
+            state: Active
             text: CIS Fedora 5 - 3.3.2.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -1585,8 +1933,10 @@ controls:
       title: CIS Fedora 5 - 3.3.2.4
       objective: CIS Fedora 5 - 3.3.2.4
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_pam_maxrepeat
+            state: Active
             text: CIS Fedora 5 - 3.3.2.4 MUST be verified
             applicability:
                 - fedora-linux
@@ -1594,8 +1944,10 @@ controls:
       title: CIS Fedora 5 - 3.3.2.6
       objective: CIS Fedora 5 - 3.3.2.6
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_pam_dictcheck
+            state: Active
             text: CIS Fedora 5 - 3.3.2.6 MUST be verified
             applicability:
                 - fedora-linux
@@ -1603,8 +1955,10 @@ controls:
       title: CIS Fedora 5 - 3.3.2.7
       objective: CIS Fedora 5 - 3.3.2.7
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_pam_enforce_root
+            state: Active
             text: CIS Fedora 5 - 3.3.2.7 MUST be verified
             applicability:
                 - fedora-linux
@@ -1612,12 +1966,15 @@ controls:
       title: CIS Fedora 5 - 3.3.3.1
       objective: CIS Fedora 5 - 3.3.3.1
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_pam_pwhistory_remember_password_auth
+            state: Active
             text: CIS Fedora 5 - 3.3.3.1 MUST be verified
             applicability:
                 - fedora-linux
           - id: accounts_password_pam_pwhistory_remember_system_auth
+            state: Active
             text: CIS Fedora 5 - 3.3.3.1 MUST be verified
             applicability:
                 - fedora-linux
@@ -1625,8 +1982,10 @@ controls:
       title: CIS Fedora 5 - 3.3.4.1
       objective: CIS Fedora 5 - 3.3.4.1
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: no_empty_passwords
+            state: Active
             text: CIS Fedora 5 - 3.3.4.1 MUST be verified
             applicability:
                 - fedora-linux
@@ -1634,12 +1993,15 @@ controls:
       title: CIS Fedora 5 - 3.3.4.3
       objective: CIS Fedora 5 - 3.3.4.3
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: set_password_hashing_algorithm_passwordauth
+            state: Active
             text: CIS Fedora 5 - 3.3.4.3 MUST be verified
             applicability:
                 - fedora-linux
           - id: set_password_hashing_algorithm_systemauth
+            state: Active
             text: CIS Fedora 5 - 3.3.4.3 MUST be verified
             applicability:
                 - fedora-linux
@@ -1647,12 +2009,15 @@ controls:
       title: Ensure Password Expiration Is Configured
       objective: Ensure Password Expiration Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_maximum_age_login_defs
+            state: Active
             text: Password Expiration Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: accounts_password_set_max_life_existing
+            state: Active
             text: Password Expiration Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1660,12 +2025,15 @@ controls:
       title: Ensure Password Expiration Warning Days Is Configured
       objective: Ensure Password Expiration Warning Days Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_set_warn_age_existing
+            state: Active
             text: Password Expiration Warning Days Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: accounts_password_warn_age_login_defs
+            state: Active
             text: Password Expiration Warning Days Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1673,8 +2041,10 @@ controls:
       title: Ensure Strong Password Hashing Algorithm Is Configured
       objective: Ensure Strong Password Hashing Algorithm Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: set_password_hashing_algorithm_logindefs
+            state: Active
             text: Strong Password Hashing Algorithm Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1682,12 +2052,15 @@ controls:
       title: Ensure Inactive Password Lock Is Configured
       objective: Ensure Inactive Password Lock Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: account_disable_post_pw_expiration
+            state: Active
             text: Inactive Password Lock Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: accounts_set_post_pw_existing
+            state: Active
             text: Inactive Password Lock Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1695,8 +2068,10 @@ controls:
       title: Ensure All Users Last Password Change Date Is In The Past
       objective: Ensure All Users Last Password Change Date Is In The Past
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_password_last_change_is_in_past
+            state: Active
             text: All Users Last Password Change Date Is In The Past MUST be verified
             applicability:
                 - fedora-linux
@@ -1704,8 +2079,10 @@ controls:
       title: Ensure Root Is The Only Uid 0 Account
       objective: Ensure Root Is The Only Uid 0 Account
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_no_uid_except_zero
+            state: Active
             text: Root Is The Only Uid 0 Account MUST be verified
             applicability:
                 - fedora-linux
@@ -1713,8 +2090,10 @@ controls:
       title: Ensure Root Is The Only Gid 0 Account
       objective: Ensure Root Is The Only Gid 0 Account
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_root_gid_zero
+            state: Active
             text: Root Is The Only Gid 0 Account MUST be verified
             applicability:
                 - fedora-linux
@@ -1722,8 +2101,10 @@ controls:
       title: Ensure Root Account Access Is Controlled
       objective: Ensure Root Account Access Is Controlled
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: ensure_root_password_configured
+            state: Active
             text: Root Account Access Is Controlled MUST be verified
             applicability:
                 - fedora-linux
@@ -1731,12 +2112,15 @@ controls:
       title: Ensure Root Path Integrity
       objective: Ensure Root Path Integrity
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_root_path_dirs_no_write
+            state: Active
             text: Root Path Integrity MUST be verified
             applicability:
                 - fedora-linux
           - id: root_path_no_dot
+            state: Active
             text: Root Path Integrity MUST be verified
             applicability:
                 - fedora-linux
@@ -1744,12 +2128,15 @@ controls:
       title: Ensure System Accounts Do Not Have A Valid Login Shell
       objective: Ensure System Accounts Do Not Have A Valid Login Shell
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: no_password_auth_for_systemaccounts
+            state: Active
             text: System Accounts Do Not Have A Valid Login Shell MUST be verified
             applicability:
                 - fedora-linux
           - id: no_shelllogin_for_systemaccounts
+            state: Active
             text: System Accounts Do Not Have A Valid Login Shell MUST be verified
             applicability:
                 - fedora-linux
@@ -1757,8 +2144,10 @@ controls:
       title: Ensure Default User Shell Timeout Is Configured
       objective: Ensure Default User Shell Timeout Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_tmout
+            state: Active
             text: Default User Shell Timeout Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1766,16 +2155,20 @@ controls:
       title: Ensure Default User Umask Is Configured
       objective: Ensure Default User Umask Is Configured
       group: access-auth
+      state: Active
       assessment-requirements:
           - id: accounts_umask_etc_bashrc
+            state: Active
             text: Default User Umask Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: accounts_umask_etc_login_defs
+            state: Active
             text: Default User Umask Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: accounts_umask_etc_profile
+            state: Active
             text: Default User Umask Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1783,12 +2176,15 @@ controls:
       title: Ensure Aide Is Installed
       objective: Ensure Aide Is Installed
       group: logging
+      state: Active
       assessment-requirements:
           - id: aide_build_database
+            state: Active
             text: Aide Is Installed MUST be verified
             applicability:
                 - fedora-linux
           - id: package_aide_installed
+            state: Active
             text: Aide Is Installed MUST be verified
             applicability:
                 - fedora-linux
@@ -1796,8 +2192,10 @@ controls:
       title: Ensure Filesystem Integrity Is Regularly Checked
       objective: Ensure Filesystem Integrity Is Regularly Checked
       group: logging
+      state: Active
       assessment-requirements:
           - id: aide_periodic_cron_checking
+            state: Active
             text: Filesystem Integrity Is Regularly Checked MUST be verified
             applicability:
                 - fedora-linux
@@ -1805,8 +2203,10 @@ controls:
       title: Ensure Cryptographic Mechanisms Are Used To Protect The Integrity Of Audit Tools
       objective: Ensure Cryptographic Mechanisms Are Used To Protect The Integrity Of Audit Tools
       group: logging
+      state: Active
       assessment-requirements:
           - id: aide_check_audit_tools
+            state: Active
             text: Cryptographic Mechanisms Are Used To Protect The Integrity Of Audit Tools MUST be verified
             applicability:
                 - fedora-linux
@@ -1814,8 +2214,10 @@ controls:
       title: Ensure Journald Service Is Active
       objective: Ensure Journald Service Is Active
       group: logging
+      state: Active
       assessment-requirements:
           - id: service_systemd-journald_enabled
+            state: Active
             text: Journald Service Is Active MUST be verified
             applicability:
                 - fedora-linux
@@ -1823,8 +2225,10 @@ controls:
       title: CIS Fedora 6 - 2.2.1.1
       objective: CIS Fedora 6 - 2.2.1.1
       group: logging
+      state: Active
       assessment-requirements:
           - id: package_systemd-journal-remote_installed
+            state: Active
             text: CIS Fedora 6 - 2.2.1.1 MUST be verified
             applicability:
                 - fedora-linux
@@ -1832,8 +2236,10 @@ controls:
       title: CIS Fedora 6 - 2.2.1.4
       objective: CIS Fedora 6 - 2.2.1.4
       group: logging
+      state: Active
       assessment-requirements:
           - id: socket_systemd-journal-remote_disabled
+            state: Active
             text: CIS Fedora 6 - 2.2.1.4 MUST be verified
             applicability:
                 - fedora-linux
@@ -1841,8 +2247,10 @@ controls:
       title: Ensure Journald Compress Is Configured
       objective: Ensure Journald Compress Is Configured
       group: logging
+      state: Active
       assessment-requirements:
           - id: journald_compress
+            state: Active
             text: Journald Compress Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1850,8 +2258,10 @@ controls:
       title: Ensure Journald Storage Is Configured
       objective: Ensure Journald Storage Is Configured
       group: logging
+      state: Active
       assessment-requirements:
           - id: journald_storage
+            state: Active
             text: Journald Storage Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1859,16 +2269,20 @@ controls:
       title: Ensure Access To All Logfiles Has Been Configured
       objective: Ensure Access To All Logfiles Has Been Configured
       group: logging
+      state: Active
       assessment-requirements:
           - id: rsyslog_files_groupownership
+            state: Active
             text: Access To All Logfiles Has Been Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: rsyslog_files_ownership
+            state: Active
             text: Access To All Logfiles Has Been Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: rsyslog_files_permissions
+            state: Active
             text: Access To All Logfiles Has Been Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1876,16 +2290,20 @@ controls:
       title: Ensure Access To /Etc/Passwd Is Configured
       objective: Ensure Access To /Etc/Passwd Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_etc_passwd
+            state: Active
             text: Access To /Etc/Passwd Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_etc_passwd
+            state: Active
             text: Access To /Etc/Passwd Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_etc_passwd
+            state: Active
             text: Access To /Etc/Passwd Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1893,12 +2311,15 @@ controls:
       title: Ensure World Writable Files And Directories Are Secured
       objective: Ensure World Writable Files And Directories Are Secured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: dir_perms_world_writable_sticky_bits
+            state: Active
             text: World Writable Files And Directories Are Secured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_unauthorized_world_writable
+            state: Active
             text: World Writable Files And Directories Are Secured MUST be verified
             applicability:
                 - fedora-linux
@@ -1906,16 +2327,20 @@ controls:
       title: Ensure Access To /Etc/Passwd- Is Configured
       objective: Ensure Access To /Etc/Passwd- Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_backup_etc_passwd
+            state: Active
             text: Access To /Etc/Passwd- Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_backup_etc_passwd
+            state: Active
             text: Access To /Etc/Passwd- Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_backup_etc_passwd
+            state: Active
             text: Access To /Etc/Passwd- Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1923,16 +2348,20 @@ controls:
       title: Ensure Access To /Etc/Group Is Configured
       objective: Ensure Access To /Etc/Group Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_etc_group
+            state: Active
             text: Access To /Etc/Group Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_etc_group
+            state: Active
             text: Access To /Etc/Group Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_etc_group
+            state: Active
             text: Access To /Etc/Group Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1940,16 +2369,20 @@ controls:
       title: Ensure Access To /Etc/Group- Is Configured
       objective: Ensure Access To /Etc/Group- Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_backup_etc_group
+            state: Active
             text: Access To /Etc/Group- Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_backup_etc_group
+            state: Active
             text: Access To /Etc/Group- Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_backup_etc_group
+            state: Active
             text: Access To /Etc/Group- Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1957,16 +2390,20 @@ controls:
       title: Ensure Access To /Etc/Shadow Is Configured
       objective: Ensure Access To /Etc/Shadow Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_etc_shadow
+            state: Active
             text: Access To /Etc/Shadow Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_etc_shadow
+            state: Active
             text: Access To /Etc/Shadow Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_etc_shadow
+            state: Active
             text: Access To /Etc/Shadow Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1974,16 +2411,20 @@ controls:
       title: Ensure Access To /Etc/Shadow- Is Configured
       objective: Ensure Access To /Etc/Shadow- Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_backup_etc_shadow
+            state: Active
             text: Access To /Etc/Shadow- Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_backup_etc_shadow
+            state: Active
             text: Access To /Etc/Shadow- Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_backup_etc_shadow
+            state: Active
             text: Access To /Etc/Shadow- Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -1991,16 +2432,20 @@ controls:
       title: Ensure Access To /Etc/Gshadow Is Configured
       objective: Ensure Access To /Etc/Gshadow Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_etc_gshadow
+            state: Active
             text: Access To /Etc/Gshadow Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_etc_gshadow
+            state: Active
             text: Access To /Etc/Gshadow Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_etc_gshadow
+            state: Active
             text: Access To /Etc/Gshadow Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -2008,16 +2453,20 @@ controls:
       title: Ensure Access To /Etc/Gshadow- Is Configured
       objective: Ensure Access To /Etc/Gshadow- Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_backup_etc_gshadow
+            state: Active
             text: Access To /Etc/Gshadow- Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_backup_etc_gshadow
+            state: Active
             text: Access To /Etc/Gshadow- Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_backup_etc_gshadow
+            state: Active
             text: Access To /Etc/Gshadow- Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -2025,16 +2474,20 @@ controls:
       title: Ensure Access To /Etc/Shells Is Configured
       objective: Ensure Access To /Etc/Shells Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: file_groupowner_etc_shells
+            state: Active
             text: Access To /Etc/Shells Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_owner_etc_shells
+            state: Active
             text: Access To /Etc/Shells Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_etc_shells
+            state: Active
             text: Access To /Etc/Shells Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -2042,8 +2495,10 @@ controls:
       title: Ensure Accounts In /Etc/Passwd Use Shadowed Passwords
       objective: Ensure Accounts In /Etc/Passwd Use Shadowed Passwords
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: accounts_password_all_shadowed
+            state: Active
             text: Accounts In /Etc/Passwd Use Shadowed Passwords MUST be verified
             applicability:
                 - fedora-linux
@@ -2051,8 +2506,10 @@ controls:
       title: Ensure /Etc/Shadow Password Fields Are Not Empty
       objective: Ensure /Etc/Shadow Password Fields Are Not Empty
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: no_empty_passwords_etc_shadow
+            state: Active
             text: /Etc/Shadow Password Fields Are Not Empty MUST be verified
             applicability:
                 - fedora-linux
@@ -2060,8 +2517,10 @@ controls:
       title: Ensure All Groups In /Etc/Passwd Exist In /Etc/Group
       objective: Ensure All Groups In /Etc/Passwd Exist In /Etc/Group
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: gid_passwd_group_same
+            state: Active
             text: All Groups In /Etc/Passwd Exist In /Etc/Group MUST be verified
             applicability:
                 - fedora-linux
@@ -2069,8 +2528,10 @@ controls:
       title: Ensure No Duplicate Uids Exist
       objective: Ensure No Duplicate Uids Exist
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: account_unique_id
+            state: Active
             text: No Duplicate Uids Exist MUST be verified
             applicability:
                 - fedora-linux
@@ -2078,8 +2539,10 @@ controls:
       title: Ensure No Duplicate Gids Exist
       objective: Ensure No Duplicate Gids Exist
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: group_unique_id
+            state: Active
             text: No Duplicate Gids Exist MUST be verified
             applicability:
                 - fedora-linux
@@ -2087,8 +2550,10 @@ controls:
       title: Ensure No Duplicate User Names Exist
       objective: Ensure No Duplicate User Names Exist
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: account_unique_name
+            state: Active
             text: No Duplicate User Names Exist MUST be verified
             applicability:
                 - fedora-linux
@@ -2096,8 +2561,10 @@ controls:
       title: Ensure No Duplicate Group Names Exist
       objective: Ensure No Duplicate Group Names Exist
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: group_unique_name
+            state: Active
             text: No Duplicate Group Names Exist MUST be verified
             applicability:
                 - fedora-linux
@@ -2105,16 +2572,20 @@ controls:
       title: Ensure Local Interactive User Home Directories Are Configured
       objective: Ensure Local Interactive User Home Directories Are Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: accounts_user_interactive_home_directory_exists
+            state: Active
             text: Local Interactive User Home Directories Are Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_ownership_home_directories
+            state: Active
             text: Local Interactive User Home Directories Are Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permissions_home_directories
+            state: Active
             text: Local Interactive User Home Directories Are Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -2122,24 +2593,30 @@ controls:
       title: Ensure Local Interactive User Dot Files Access Is Configured
       objective: Ensure Local Interactive User Dot Files Access Is Configured
       group: maintenance
+      state: Active
       assessment-requirements:
           - id: accounts_user_dot_group_ownership
+            state: Active
             text: Local Interactive User Dot Files Access Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: accounts_user_dot_user_ownership
+            state: Active
             text: Local Interactive User Dot Files Access Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: file_permission_user_init_files
+            state: Active
             text: Local Interactive User Dot Files Access Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: no_forward_files
+            state: Active
             text: Local Interactive User Dot Files Access Is Configured MUST be verified
             applicability:
                 - fedora-linux
           - id: no_netrc_files
+            state: Active
             text: Local Interactive User Dot Files Access Is Configured MUST be verified
             applicability:
                 - fedora-linux
@@ -2147,8 +2624,10 @@ controls:
       title: Reload Dconf Database
       objective: Reload Dconf Database
       group: operations
+      state: Active
       assessment-requirements:
           - id: dconf_db_up_to_date
+            state: Active
             text: The dconf database MUST be reloaded after configuration changes
             applicability:
                 - fedora-linux
