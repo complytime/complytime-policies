@@ -11,6 +11,8 @@ on:
     paths:
       - 'governance/**'
       - 'bundles/**'
+      - '.github/workflows/**'
+      - 'scripts/**'
   workflow_dispatch: {}
 
 permissions:
@@ -132,3 +134,15 @@ jobs:
           done
           echo "" >> "${GITHUB_STEP_SUMMARY}"
           exit $failed
+
+  test-bundle-parsing:
+    name: Bundle Parsing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Run bundle parsing tests
+        run: make test-bundle-parsing
