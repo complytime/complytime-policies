@@ -111,7 +111,7 @@ jobs:
             layer_count=0
             missing_count=0
             while IFS= read -r layer; do
-              layer="$(echo "${layer}" | sed 's/^[[:space:]]*-[[:space:]]*//')"
+              [ -z "${layer}" ] && continue
               layer_count=$((layer_count + 1))
               if [ ! -f "${layer}" ]; then
                 echo "::error file=${bundle_file}::Layer file not found: ${layer}"
@@ -123,7 +123,7 @@ jobs:
                 missing_count=$((missing_count + 1))
                 failed=1
               fi
-            done < <(grep -E '^\s*-\s+' "${bundle_file}")
+            done < <(yq -r '(.layers // [])[]' "${bundle_file}")
             if [ "$missing_count" -eq 0 ]; then
               echo "✓ ${bundle_name}: ${layer_count} layer(s) present"
             else
