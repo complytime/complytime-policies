@@ -11,6 +11,8 @@ on:
     paths:
       - 'governance/**'
       - 'bundles/**'
+      - '.github/workflows/**'
+      - 'scripts/**'
   workflow_dispatch: {}
 
 permissions:
@@ -111,7 +113,7 @@ jobs:
             layer_count=0
             missing_count=0
             while IFS= read -r layer; do
-              layer="$(echo "${layer}" | sed 's/^[[:space:]]*-[[:space:]]*//')"
+              [ -z "${layer}" ] && continue
               layer_count=$((layer_count + 1))
               if [ ! -f "${layer}" ]; then
                 echo "::error file=${bundle_file}::Layer file not found: ${layer}"
@@ -123,7 +125,7 @@ jobs:
                 missing_count=$((missing_count + 1))
                 failed=1
               fi
-            done < <(grep -E '^\s*-\s+' "${bundle_file}")
+            done < <(yq -r '(.layers // [])[]' "${bundle_file}")
             if [ "$missing_count" -eq 0 ]; then
               echo "✓ ${bundle_name}: ${layer_count} layer(s) present"
             else
@@ -132,3 +134,15 @@ jobs:
           done
           echo "" >> "${GITHUB_STEP_SUMMARY}"
           exit $failed
+
+  test-bundle-parsing:
+    name: Bundle Parsing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Run bundle parsing tests
+        run: make test-bundle-parsing
