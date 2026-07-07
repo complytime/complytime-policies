@@ -10,16 +10,16 @@
 # List tags:
 #   curl -sS https://quay.io/v2/complytime/policies-ampel-branch-protection/tags/list
 #
-# Policy `url`: optional scheme; @suffix = tag or sha256:…
+# Policy `url`: optional scheme; :tag or @sha256:… suffix
 #   (complyctl tag/digest resolution, complytime/complyctl main+).
 
 policies:
   - id: ampel-branch-protection
-    url: quay.io/complytime/policies-ampel-branch-protection@latest
+    url: quay.io/complytime/policies-ampel-branch-protection:latest
   - id: cis-fedora-l1-workstation
-    url: quay.io/complytime/policies-cis-fedora-l1-workstation@latest
+    url: quay.io/complytime/policies-cis-fedora-l1-workstation:latest
   - id: cis-fedora-l1-server
-    url: quay.io/complytime/policies-cis-fedora-l1-server@latest
+    url: quay.io/complytime/policies-cis-fedora-l1-server:latest
 
 targets:
   - id: default
