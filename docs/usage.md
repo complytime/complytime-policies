@@ -84,10 +84,8 @@ This returns the `sha256:…` digest, which you can use for immutable references
 oras pull quay.io/complytime/policies-cis-fedora-l1-workstation@sha256:<digest> -o ./output
 ```
 
-> **Note:** ORAS, cosign, and curl use standard OCI reference syntax
-> (`:tag` and `@sha256:digest`). `complyctl` uses its own `@tag` convention
-> in `complytime.yaml` — see the [Using with complyctl](#using-with-complyctl)
-> section below.
+> **Note:** All tools — ORAS, cosign, curl, and `complyctl` — use standard
+> OCI reference syntax (`:tag` and `@sha256:digest`).
 
 ## Verifying the Cosign signature
 
@@ -144,7 +142,7 @@ published bundle in `complytime.yaml`:
 ```yaml
 # complytime.yaml
 policies:
-  - url: quay.io/complytime/policies-ampel-branch-protection@latest
+  - url: quay.io/complytime/policies-ampel-branch-protection:latest
     id: ampel-bp
 ```
 
