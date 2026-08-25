@@ -1,0 +1,67 @@
+title: CIS Fedora Linux - Level 1 Server - Host-Based Firewall
+metadata:
+  id: cis-fedora-l1-server-firewall
+  type: ControlCatalog
+  gemara-version: 0.24.0
+  description: Control catalog derived from the CIS Fedora Linux Level 1 Server Benchmark (Host-Based Firewall)
+  author:
+    id: complytime
+    name: ComplyTime
+    type: Software
+  applicability-groups:
+  - id: fedora-linux
+    title: Fedora Linux
+    description: Fedora Linux operating system
+groups:
+- id: firewall
+  title: Host-Based Firewall
+  description: Firewall package installation and traffic filtering configuration
+controls:
+- id: cis_fedora_4-1.1
+  title: Ensure Nftables Is Installed
+  objective: Ensure Nftables Is Installed
+  group: firewall
+  state: Active
+  assessment-requirements:
+  - id: package_nftables_installed
+    state: Active
+    text: Nftables Is Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_4-1.2
+  title: Ensure A Single Firewall Configuration Utility Is In Use
+  objective: Ensure A Single Firewall Configuration Utility Is In Use
+  group: firewall
+  state: Active
+  assessment-requirements:
+  - id: package_firewalld_installed
+    state: Active
+    text: A Single Firewall Configuration Utility Is In Use MUST be verified
+    applicability:
+    - fedora-linux
+  - id: service_firewalld_enabled
+    state: Active
+    text: A Single Firewall Configuration Utility Is In Use MUST be verified
+    applicability:
+    - fedora-linux
+  - id: service_nftables_disabled
+    state: Active
+    text: A Single Firewall Configuration Utility Is In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_4-2.2
+  title: Ensure Firewalld Loopback Traffic Is Configured
+  objective: Ensure Firewalld Loopback Traffic Is Configured
+  group: firewall
+  state: Active
+  assessment-requirements:
+  - id: firewalld_loopback_traffic_restricted
+    state: Active
+    text: Firewalld Loopback Traffic Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: firewalld_loopback_traffic_trusted
+    state: Active
+    text: Firewalld Loopback Traffic Is Configured MUST be verified
+    applicability:
+    - fedora-linux

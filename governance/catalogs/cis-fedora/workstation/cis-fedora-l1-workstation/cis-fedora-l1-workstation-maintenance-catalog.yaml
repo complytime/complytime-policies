@@ -1,0 +1,353 @@
+title: CIS Fedora Linux - Level 1 Workstation - System Maintenance
+metadata:
+  id: cis-fedora-l1-workstation-maintenance
+  type: ControlCatalog
+  gemara-version: 0.24.0
+  description: Control catalog derived from the CIS Fedora Linux Level 1 Workstation Benchmark (System Maintenance)
+  author:
+    id: complytime
+    name: ComplyTime
+    type: Software
+  applicability-groups:
+  - id: fedora-linux
+    title: Fedora Linux
+    description: Fedora Linux operating system
+groups:
+- id: maintenance
+  title: System Maintenance
+  description: File permissions, user/group integrity, and home directory configuration
+controls:
+- id: cis_fedora_7-1.1
+  title: Ensure Access To /Etc/Passwd Is Configured
+  objective: Ensure Access To /Etc/Passwd Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_etc_passwd
+    state: Active
+    text: Access To /Etc/Passwd Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_etc_passwd
+    state: Active
+    text: Access To /Etc/Passwd Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_etc_passwd
+    state: Active
+    text: Access To /Etc/Passwd Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.11
+  title: Ensure World Writable Files And Directories Are Secured
+  objective: Ensure World Writable Files And Directories Are Secured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: dir_perms_world_writable_sticky_bits
+    state: Active
+    text: World Writable Files And Directories Are Secured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_unauthorized_world_writable
+    state: Active
+    text: World Writable Files And Directories Are Secured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.2
+  title: Ensure Access To /Etc/Passwd- Is Configured
+  objective: Ensure Access To /Etc/Passwd- Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_backup_etc_passwd
+    state: Active
+    text: Access To /Etc/Passwd- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_backup_etc_passwd
+    state: Active
+    text: Access To /Etc/Passwd- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_backup_etc_passwd
+    state: Active
+    text: Access To /Etc/Passwd- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.3
+  title: Ensure Access To /Etc/Group Is Configured
+  objective: Ensure Access To /Etc/Group Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_etc_group
+    state: Active
+    text: Access To /Etc/Group Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_etc_group
+    state: Active
+    text: Access To /Etc/Group Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_etc_group
+    state: Active
+    text: Access To /Etc/Group Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.4
+  title: Ensure Access To /Etc/Group- Is Configured
+  objective: Ensure Access To /Etc/Group- Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_backup_etc_group
+    state: Active
+    text: Access To /Etc/Group- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_backup_etc_group
+    state: Active
+    text: Access To /Etc/Group- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_backup_etc_group
+    state: Active
+    text: Access To /Etc/Group- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.5
+  title: Ensure Access To /Etc/Shadow Is Configured
+  objective: Ensure Access To /Etc/Shadow Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_etc_shadow
+    state: Active
+    text: Access To /Etc/Shadow Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_etc_shadow
+    state: Active
+    text: Access To /Etc/Shadow Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_etc_shadow
+    state: Active
+    text: Access To /Etc/Shadow Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.6
+  title: Ensure Access To /Etc/Shadow- Is Configured
+  objective: Ensure Access To /Etc/Shadow- Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_backup_etc_shadow
+    state: Active
+    text: Access To /Etc/Shadow- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_backup_etc_shadow
+    state: Active
+    text: Access To /Etc/Shadow- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_backup_etc_shadow
+    state: Active
+    text: Access To /Etc/Shadow- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.7
+  title: Ensure Access To /Etc/Gshadow Is Configured
+  objective: Ensure Access To /Etc/Gshadow Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_etc_gshadow
+    state: Active
+    text: Access To /Etc/Gshadow Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_etc_gshadow
+    state: Active
+    text: Access To /Etc/Gshadow Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_etc_gshadow
+    state: Active
+    text: Access To /Etc/Gshadow Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.8
+  title: Ensure Access To /Etc/Gshadow- Is Configured
+  objective: Ensure Access To /Etc/Gshadow- Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_backup_etc_gshadow
+    state: Active
+    text: Access To /Etc/Gshadow- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_backup_etc_gshadow
+    state: Active
+    text: Access To /Etc/Gshadow- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_backup_etc_gshadow
+    state: Active
+    text: Access To /Etc/Gshadow- Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-1.9
+  title: Ensure Access To /Etc/Shells Is Configured
+  objective: Ensure Access To /Etc/Shells Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_etc_shells
+    state: Active
+    text: Access To /Etc/Shells Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_etc_shells
+    state: Active
+    text: Access To /Etc/Shells Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_etc_shells
+    state: Active
+    text: Access To /Etc/Shells Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.1
+  title: Ensure Accounts In /Etc/Passwd Use Shadowed Passwords
+  objective: Ensure Accounts In /Etc/Passwd Use Shadowed Passwords
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_all_shadowed
+    state: Active
+    text: Accounts In /Etc/Passwd Use Shadowed Passwords MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.2
+  title: Ensure /Etc/Shadow Password Fields Are Not Empty
+  objective: Ensure /Etc/Shadow Password Fields Are Not Empty
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: no_empty_passwords_etc_shadow
+    state: Active
+    text: /Etc/Shadow Password Fields Are Not Empty MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.3
+  title: Ensure All Groups In /Etc/Passwd Exist In /Etc/Group
+  objective: Ensure All Groups In /Etc/Passwd Exist In /Etc/Group
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: gid_passwd_group_same
+    state: Active
+    text: All Groups In /Etc/Passwd Exist In /Etc/Group MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.4
+  title: Ensure No Duplicate Uids Exist
+  objective: Ensure No Duplicate Uids Exist
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: account_unique_id
+    state: Active
+    text: No Duplicate Uids Exist MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.5
+  title: Ensure No Duplicate Gids Exist
+  objective: Ensure No Duplicate Gids Exist
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: group_unique_id
+    state: Active
+    text: No Duplicate Gids Exist MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.6
+  title: Ensure No Duplicate User Names Exist
+  objective: Ensure No Duplicate User Names Exist
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: account_unique_name
+    state: Active
+    text: No Duplicate User Names Exist MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.7
+  title: Ensure No Duplicate Group Names Exist
+  objective: Ensure No Duplicate Group Names Exist
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: group_unique_name
+    state: Active
+    text: No Duplicate Group Names Exist MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.8
+  title: Ensure Local Interactive User Home Directories Are Configured
+  objective: Ensure Local Interactive User Home Directories Are Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: accounts_user_interactive_home_directory_exists
+    state: Active
+    text: Local Interactive User Home Directories Are Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_ownership_home_directories
+    state: Active
+    text: Local Interactive User Home Directories Are Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_home_directories
+    state: Active
+    text: Local Interactive User Home Directories Are Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_7-2.9
+  title: Ensure Local Interactive User Dot Files Access Is Configured
+  objective: Ensure Local Interactive User Dot Files Access Is Configured
+  group: maintenance
+  state: Active
+  assessment-requirements:
+  - id: accounts_user_dot_group_ownership
+    state: Active
+    text: Local Interactive User Dot Files Access Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: accounts_user_dot_user_ownership
+    state: Active
+    text: Local Interactive User Dot Files Access Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permission_user_init_files
+    state: Active
+    text: Local Interactive User Dot Files Access Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: no_forward_files
+    state: Active
+    text: Local Interactive User Dot Files Access Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: no_netrc_files
+    state: Active
+    text: Local Interactive User Dot Files Access Is Configured MUST be verified
+    applicability:
+    - fedora-linux

@@ -1,0 +1,30 @@
+title: CIS Fedora Linux - Level 1 Workstation - Operations
+metadata:
+  id: cis-fedora-l1-workstation-operations
+  type: ControlCatalog
+  gemara-version: 0.24.0
+  description: Control catalog derived from the CIS Fedora Linux Level 1 Workstation Benchmark (Operations)
+  author:
+    id: complytime
+    name: ComplyTime
+    type: Software
+  applicability-groups:
+  - id: fedora-linux
+    title: Fedora Linux
+    description: Fedora Linux operating system
+groups:
+- id: operations
+  title: Operations
+  description: Operational tasks required for configuration application
+controls:
+- id: reload_dconf_db
+  title: Reload Dconf Database
+  objective: Reload Dconf Database
+  group: operations
+  state: Active
+  assessment-requirements:
+  - id: dconf_db_up_to_date
+    state: Active
+    text: The dconf database MUST be reloaded after configuration changes
+    applicability:
+    - fedora-linux

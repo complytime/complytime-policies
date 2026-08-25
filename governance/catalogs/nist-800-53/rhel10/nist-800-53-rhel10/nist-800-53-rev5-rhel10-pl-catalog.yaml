@@ -1,0 +1,215 @@
+metadata:
+  id: nist-800-53-rev5-rhel10-pl
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for RHEL10, generated from ComplianceAsCode (PL family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-07-30T14:11:28Z'
+  applicability-groups:
+  - id: rhel10-low
+    title: RHEL10 Low Baseline
+    description: NIST 800-53 Low impact baseline for RHEL10
+  - id: rhel10-moderate
+    title: RHEL10 Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for RHEL10 (inherits Low)
+  - id: rhel10-high
+    title: RHEL10 High Baseline
+    description: NIST 800-53 High impact baseline for RHEL10 (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for RHEL10 - Planning
+groups:
+- id: pl
+  title: Planning
+  description: 'NIST 800-53 PL family: Planning'
+controls:
+- id: pl-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, pl-1_prm_1 }}: Designate an {{ insert: param, pl-01_odp.04 }} to manage the development, documentation, and dissemination of the planning policy and procedures; and Review and update the current planning:'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-2.1
+  title: Concept of Operations
+  objective: Concept of Operations
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-2.2
+  title: Functional Architecture
+  objective: Functional Architecture
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-2.3
+  title: Plan and Coordinate with Other Organizational Entities
+  objective: Plan and Coordinate with Other Organizational Entities
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-2
+  title: System Security and Privacy Plans
+  objective: 'Develop security and privacy plans for the system that: Distribute copies of the plans and communicate subsequent changes to the plans to {{ insert: param, pl-02_odp.02 }}; Review the plans {{ insert: param, pl-02_odp.03 }}; Update the plans to address changes to the system and environment of operation or problems identified during plan implementation or control assessments; and Protect the plans from unauthorized disclosure and modification.'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-3
+  title: System Security Plan Update
+  objective: System Security Plan Update
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-4.1
+  title: Social Media and External Site/Application Usage Restrictions
+  objective: 'Include in the rules of behavior, restrictions on:'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-4
+  title: Rules of Behavior
+  objective: 'Establish and provide to individuals requiring access to the system, the rules that describe their responsibilities and expected behavior for information and system usage, security, and privacy; Receive a documented acknowledgment from such individuals, indicating that they have read, understand, and agree to abide by the rules of behavior, before authorizing access to information and the system; Review and update the rules of behavior {{ insert: param, pl-04_odp.01 }} ; and Require individuals who have acknowledged a previous version of the rules of behavior to read and re-acknowledge {{ insert: param, pl-04_odp.02 }}.'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-5
+  title: Privacy Impact Assessment
+  objective: Privacy Impact Assessment
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-6
+  title: Security-related Activity Planning
+  objective: Security-related Activity Planning
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-7
+  title: Concept of Operations
+  objective: 'Develop a Concept of Operations (CONOPS) for the system describing how the organization intends to operate the system from the perspective of information security and privacy; and Review and update the CONOPS {{ insert: param, pl-07_odp }}.'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-8.1
+  title: Defense in Depth
+  objective: 'Design the security and privacy architectures for the system using a defense-in-depth approach that:'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: pl-8.2
+  title: Supplier Diversity
+  objective: 'Require that {{ insert: param, pl-08.02_odp.01 }} allocated to {{ insert: param, pl-08.02_odp.02 }} are obtained from different suppliers.'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: pl-8
+  title: Security and Privacy Architectures
+  objective: 'Develop security and privacy architectures for the system that: Review and update the architectures {{ insert: param, pl-08_odp }} to reflect changes in the enterprise architecture; and Reflect planned architecture changes in security and privacy plans, Concept of Operations (CONOPS), criticality analysis, organizational procedures, and procurements and acquisitions.'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: pl-9
+  title: Central Management
+  objective: 'Centrally manage {{ insert: param, pl-09_odp }}.'
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-10
+  title: Baseline Selection
+  objective: Select a control baseline for the system.
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: pl-11
+  title: Baseline Tailoring
+  objective: Tailor the selected control baseline by applying specified tailoring actions.
+  group: pl
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
