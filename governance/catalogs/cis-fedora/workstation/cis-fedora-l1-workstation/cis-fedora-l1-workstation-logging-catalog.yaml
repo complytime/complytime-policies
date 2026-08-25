@@ -1,0 +1,133 @@
+title: CIS Fedora Linux - Level 1 Workstation - Logging and Auditing
+metadata:
+  id: cis-fedora-l1-workstation-logging
+  type: ControlCatalog
+  gemara-version: 0.24.0
+  description: Control catalog derived from the CIS Fedora Linux Level 1 Workstation Benchmark (Logging and Auditing)
+  author:
+    id: complytime
+    name: ComplyTime
+    type: Software
+  applicability-groups:
+  - id: fedora-linux
+    title: Fedora Linux
+    description: Fedora Linux operating system
+groups:
+- id: logging
+  title: Logging and Auditing
+  description: System logging, journald, and file integrity monitoring configuration
+controls:
+- id: cis_fedora_6-1.1
+  title: Ensure Aide Is Installed
+  objective: Ensure Aide Is Installed
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: aide_build_database
+    state: Active
+    text: Aide Is Installed MUST be verified
+    applicability:
+    - fedora-linux
+  - id: package_aide_installed
+    state: Active
+    text: Aide Is Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_6-1.2
+  title: Ensure Filesystem Integrity Is Regularly Checked
+  objective: Ensure Filesystem Integrity Is Regularly Checked
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: aide_periodic_cron_checking
+    state: Active
+    text: Filesystem Integrity Is Regularly Checked MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_6-1.3
+  title: Ensure Cryptographic Mechanisms Are Used To Protect The Integrity Of Audit Tools
+  objective: Ensure Cryptographic Mechanisms Are Used To Protect The Integrity Of Audit Tools
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: aide_check_audit_tools
+    state: Active
+    text: Cryptographic Mechanisms Are Used To Protect The Integrity Of Audit Tools MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_6-2.1.1
+  title: Ensure Journald Service Is Active
+  objective: Ensure Journald Service Is Active
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: service_systemd-journald_enabled
+    state: Active
+    text: Journald Service Is Active MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_6-2.2.1.1
+  title: CIS Fedora 6 - 2.2.1.1
+  objective: CIS Fedora 6 - 2.2.1.1
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: package_systemd-journal-remote_installed
+    state: Active
+    text: CIS Fedora 6 - 2.2.1.1 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_6-2.2.1.4
+  title: CIS Fedora 6 - 2.2.1.4
+  objective: CIS Fedora 6 - 2.2.1.4
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: socket_systemd-journal-remote_disabled
+    state: Active
+    text: CIS Fedora 6 - 2.2.1.4 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_6-2.2.3
+  title: Ensure Journald Compress Is Configured
+  objective: Ensure Journald Compress Is Configured
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: journald_compress
+    state: Active
+    text: Journald Compress Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_6-2.2.4
+  title: Ensure Journald Storage Is Configured
+  objective: Ensure Journald Storage Is Configured
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: journald_storage
+    state: Active
+    text: Journald Storage Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_6-2.6.1
+  title: Ensure Access To All Logfiles Has Been Configured
+  objective: Ensure Access To All Logfiles Has Been Configured
+  group: logging
+  state: Active
+  assessment-requirements:
+  - id: rsyslog_files_groupownership
+    state: Active
+    text: Access To All Logfiles Has Been Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: rsyslog_files_ownership
+    state: Active
+    text: Access To All Logfiles Has Been Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: rsyslog_files_permissions
+    state: Active
+    text: Access To All Logfiles Has Been Configured MUST be verified
+    applicability:
+    - fedora-linux

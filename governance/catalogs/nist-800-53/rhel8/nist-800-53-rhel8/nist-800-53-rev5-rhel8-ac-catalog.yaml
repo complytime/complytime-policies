@@ -1,0 +1,2430 @@
+metadata:
+  id: nist-800-53-rev5-rhel8-ac
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for RHEL8, generated from ComplianceAsCode (AC family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-07-30T14:11:25Z'
+  applicability-groups:
+  - id: rhel8-low
+    title: RHEL8 Low Baseline
+    description: NIST 800-53 Low impact baseline for RHEL8
+  - id: rhel8-moderate
+    title: RHEL8 Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for RHEL8 (inherits Low)
+  - id: rhel8-high
+    title: RHEL8 High Baseline
+    description: NIST 800-53 High impact baseline for RHEL8 (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for RHEL8 - Access Control
+groups:
+- id: ac
+  title: Access Control
+  description: 'NIST 800-53 AC family: Access Control'
+controls:
+- id: ac-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, ac-1_prm_1 }}: Designate an {{ insert: param, ac-01_odp.04 }} to manage the development, documentation, and dissemination of the access control policy and procedures; and Review and update the current access control:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-2.1
+  title: Automated System Account Management
+  objective: 'Support the management of system accounts using {{ insert: param, ac-02.01_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-2.2
+  title: Automated Temporary and Emergency Account Management
+  objective: 'Automatically {{ insert: param, ac-02.02_odp.01 }} temporary and emergency accounts after {{ insert: param, ac-02.02_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-2.3
+  title: Disable Accounts
+  objective: 'Disable accounts within {{ insert: param, ac-02.03_odp.01 }} when the accounts:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-2.4
+  title: Automated Audit Actions
+  objective: Automatically audit account creation, modification, enabling, disabling, and removal actions.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-2.5
+  title: Inactivity Logout
+  objective: 'Require that users log out when {{ insert: param, ac-02.05_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: accounts_tmout
+    state: Active
+    text: Rule 'accounts_tmout' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: inactivity_timeout_value
+    state: Active
+    text: Variable 'inactivity_timeout_value' is set to '15_minutes'
+    applicability:
+    - rhel8-moderate
+  - id: no_invalid_shell_accounts_unlocked
+    state: Active
+    text: Rule 'no_invalid_shell_accounts_unlocked' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: no_password_auth_for_systemaccounts
+    state: Active
+    text: Rule 'no_password_auth_for_systemaccounts' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: no_shelllogin_for_systemaccounts
+    state: Active
+    text: Rule 'no_shelllogin_for_systemaccounts' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: var_accounts_tmout
+    state: Active
+    text: Variable 'var_accounts_tmout' is set to '15_min'
+    applicability:
+    - rhel8-moderate
+  state: Active
+- id: ac-2.6
+  title: Dynamic Privilege Management
+  objective: 'Implement {{ insert: param, ac-02.06_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-2.7
+  title: Privileged User Accounts
+  objective: 'Establish and administer privileged user accounts in accordance with {{ insert: param, ac-02.07_odp }}; Monitor privileged role or attribute assignments; Monitor changes to roles or attributes; and Revoke access when privileged role or attribute assignments are no longer appropriate.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-2.8
+  title: Dynamic Account Management
+  objective: 'Create, activate, manage, and deactivate {{ insert: param, ac-02.08_odp }} dynamically.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-2.9
+  title: Restrictions on Use of Shared and Group Accounts
+  objective: 'Only permit the use of shared and group accounts that meet {{ insert: param, ac-02.09_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-2.10
+  title: Shared and Group Account Credential Change
+  objective: Shared and Group Account Credential Change
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-2.11
+  title: Usage Conditions
+  objective: 'Enforce {{ insert: param, ac-02.11_odp.01 }} for {{ insert: param, ac-02.11_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ac-2.12
+  title: Account Monitoring for Atypical Usage
+  objective: 'Monitor system accounts for {{ insert: param, ac-02.12_odp.01 }} ; and Report atypical usage of system accounts to {{ insert: param, ac-02.12_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ac-2.13
+  title: Disable Accounts for High-risk Individuals
+  objective: 'Disable accounts of individuals within {{ insert: param, ac-02.13_odp.01 }} of discovery of {{ insert: param, ac-02.13_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-2
+  title: Account Management
+  objective: 'Define and document the types of accounts allowed and specifically prohibited for use within the system; Assign account managers; Require {{ insert: param, ac-02_odp.01 }} for group and role membership; Specify: Require approvals by {{ insert: param, ac-02_odp.03 }} for requests to create accounts; Create, enable, modify, disable, and remove accounts in accordance with {{ insert: param, ac-02_odp.04 }}; Monitor the use of accounts; Notify account managers and {{ insert: param, ac-02_odp.05 }} within: Authorize access to the system based on: Review accounts for compliance with account management requirements {{ insert: param, ac-02_odp.10 }}; Establish and implement a process for changing shared or group account authenticators (if deployed) when individuals are removed from the group; and Align account management processes with personnel termination and transfer processes.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.1
+  title: Restricted Access to Privileged Functions
+  objective: Restricted Access to Privileged Functions
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.2
+  title: Dual Authorization
+  objective: 'Enforce dual authorization for {{ insert: param, ac-03.02_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.3
+  title: Mandatory Access Control
+  objective: 'Enforce {{ insert: param, ac-3.3_prm_1 }} over the set of covered subjects and objects specified in the policy, and where the policy:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.4
+  title: Discretionary Access Control
+  objective: 'Enforce {{ insert: param, ac-3.4_prm_1 }} over the set of covered subjects and objects specified in the policy, and where the policy specifies that a subject that has been granted access to information can do one or more of the following:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.5
+  title: Security-relevant Information
+  objective: 'Prevent access to {{ insert: param, ac-03.05_odp }} except during secure, non-operable system states.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.6
+  title: Protection of User and System Information
+  objective: Protection of User and System Information
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.7
+  title: Role-based Access Control
+  objective: 'Enforce a role-based access control policy over defined subjects and objects and control access based upon {{ insert: param, ac-3.7_prm_1 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.8
+  title: Revocation of Access Authorizations
+  objective: 'Enforce the revocation of access authorizations resulting from changes to the security attributes of subjects and objects based on {{ insert: param, ac-03.08_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.9
+  title: Controlled Release
+  objective: 'Release information outside of the system only if:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.10
+  title: Audited Override of Access Control Mechanisms
+  objective: 'Employ an audited override of automated access control mechanisms under {{ insert: param, ac-03.10_odp.01 }} by {{ insert: param, ac-03.10_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.11
+  title: Restrict Access to Specific Information Types
+  objective: 'Restrict access to data repositories containing {{ insert: param, ac-03.11_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.12
+  title: Assert and Enforce Application Access
+  objective: 'Require applications to assert, as part of the installation process, the access needed to the following system applications and functions: {{ insert: param, ac-03.12_odp }}; Provide an enforcement mechanism to prevent unauthorized access; and Approve access changes after initial installation of the application.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.13
+  title: Attribute-based Access Control
+  objective: 'Enforce attribute-based access control policy over defined subjects and objects and control access based upon {{ insert: param, ac-03.13_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.14
+  title: Individual Access
+  objective: 'Provide {{ insert: param, ac-03.14_odp.01 }} to enable individuals to have access to the following elements of their personally identifiable information: {{ insert: param, ac-03.14_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3.15
+  title: Discretionary and Mandatory Access Control
+  objective: 'Enforce {{ insert: param, ac-3.15_prm_1 }} over the set of covered subjects and objects specified in the policy; and Enforce {{ insert: param, ac-3.15_prm_2 }} over the set of covered subjects and objects specified in the policy.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-3
+  title: Access Enforcement
+  objective: Enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.
+  group: ac
+  assessment-requirements:
+  - id: accounts_umask_etc_bashrc
+    state: Active
+    text: Rule 'accounts_umask_etc_bashrc' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: accounts_umask_etc_login_defs
+    state: Active
+    text: Rule 'accounts_umask_etc_login_defs' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: accounts_umask_etc_profile
+    state: Active
+    text: Rule 'accounts_umask_etc_profile' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: accounts_umask_root
+    state: Active
+    text: Rule 'accounts_umask_root' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: audit_rules_immutable
+    state: Active
+    text: Rule 'audit_rules_immutable' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: dir_perms_world_writable_sticky_bits
+    state: Active
+    text: Rule 'dir_perms_world_writable_sticky_bits' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: ensure_pam_wheel_group_empty
+    state: Active
+    text: Rule 'ensure_pam_wheel_group_empty' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_at_allow_exists
+    state: Active
+    text: Rule 'file_at_allow_exists' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_at_deny_not_exist
+    state: Active
+    text: Rule 'file_at_deny_not_exist' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_cron_allow_exists
+    state: Active
+    text: Rule 'file_cron_allow_exists' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_cron_deny_not_exist
+    state: Active
+    text: Rule 'file_cron_deny_not_exist' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_at_allow
+    state: Active
+    text: Rule 'file_groupowner_at_allow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_backup_etc_group
+    state: Active
+    text: Rule 'file_groupowner_backup_etc_group' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_backup_etc_gshadow
+    state: Active
+    text: Rule 'file_groupowner_backup_etc_gshadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_backup_etc_passwd
+    state: Active
+    text: Rule 'file_groupowner_backup_etc_passwd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_backup_etc_shadow
+    state: Active
+    text: Rule 'file_groupowner_backup_etc_shadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_cron_allow
+    state: Active
+    text: Rule 'file_groupowner_cron_allow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_cron_d
+    state: Active
+    text: Rule 'file_groupowner_cron_d' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_cron_daily
+    state: Active
+    text: Rule 'file_groupowner_cron_daily' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_cron_hourly
+    state: Active
+    text: Rule 'file_groupowner_cron_hourly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_cron_monthly
+    state: Active
+    text: Rule 'file_groupowner_cron_monthly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_cron_weekly
+    state: Active
+    text: Rule 'file_groupowner_cron_weekly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_cron_yearly
+    state: Active
+    text: Rule 'file_groupowner_cron_yearly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_crontab
+    state: Active
+    text: Rule 'file_groupowner_crontab' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_group
+    state: Active
+    text: Rule 'file_groupowner_etc_group' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_gshadow
+    state: Active
+    text: Rule 'file_groupowner_etc_gshadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_issue
+    state: Active
+    text: Rule 'file_groupowner_etc_issue' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_issue_net
+    state: Active
+    text: Rule 'file_groupowner_etc_issue_net' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_motd
+    state: Active
+    text: Rule 'file_groupowner_etc_motd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_passwd
+    state: Active
+    text: Rule 'file_groupowner_etc_passwd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_security_opasswd
+    state: Active
+    text: Rule 'file_groupowner_etc_security_opasswd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_security_opasswd_old
+    state: Active
+    text: Rule 'file_groupowner_etc_security_opasswd_old' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_shadow
+    state: Active
+    text: Rule 'file_groupowner_etc_shadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_shells
+    state: Active
+    text: Rule 'file_groupowner_etc_shells' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_etc_sysconfig_sshd
+    state: Active
+    text: Rule 'file_groupowner_etc_sysconfig_sshd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_grub2_cfg
+    state: Active
+    text: Rule 'file_groupowner_grub2_cfg' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_sshd_config
+    state: Active
+    text: Rule 'file_groupowner_sshd_config' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupowner_user_cfg
+    state: Active
+    text: Rule 'file_groupowner_user_cfg' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupownership_sshd_private_key
+    state: Active
+    text: Rule 'file_groupownership_sshd_private_key' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_groupownership_sshd_pub_key
+    state: Active
+    text: Rule 'file_groupownership_sshd_pub_key' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_at_allow
+    state: Active
+    text: Rule 'file_owner_at_allow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_backup_etc_group
+    state: Active
+    text: Rule 'file_owner_backup_etc_group' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_backup_etc_gshadow
+    state: Active
+    text: Rule 'file_owner_backup_etc_gshadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_backup_etc_passwd
+    state: Active
+    text: Rule 'file_owner_backup_etc_passwd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_backup_etc_shadow
+    state: Active
+    text: Rule 'file_owner_backup_etc_shadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_cron_allow
+    state: Active
+    text: Rule 'file_owner_cron_allow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_cron_d
+    state: Active
+    text: Rule 'file_owner_cron_d' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_cron_daily
+    state: Active
+    text: Rule 'file_owner_cron_daily' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_cron_hourly
+    state: Active
+    text: Rule 'file_owner_cron_hourly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_cron_monthly
+    state: Active
+    text: Rule 'file_owner_cron_monthly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_cron_weekly
+    state: Active
+    text: Rule 'file_owner_cron_weekly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_cron_yearly
+    state: Active
+    text: Rule 'file_owner_cron_yearly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_crontab
+    state: Active
+    text: Rule 'file_owner_crontab' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_group
+    state: Active
+    text: Rule 'file_owner_etc_group' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_gshadow
+    state: Active
+    text: Rule 'file_owner_etc_gshadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_issue
+    state: Active
+    text: Rule 'file_owner_etc_issue' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_issue_net
+    state: Active
+    text: Rule 'file_owner_etc_issue_net' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_motd
+    state: Active
+    text: Rule 'file_owner_etc_motd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_passwd
+    state: Active
+    text: Rule 'file_owner_etc_passwd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_security_opasswd
+    state: Active
+    text: Rule 'file_owner_etc_security_opasswd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_security_opasswd_old
+    state: Active
+    text: Rule 'file_owner_etc_security_opasswd_old' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_shadow
+    state: Active
+    text: Rule 'file_owner_etc_shadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_shells
+    state: Active
+    text: Rule 'file_owner_etc_shells' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_etc_sysconfig_sshd
+    state: Active
+    text: Rule 'file_owner_etc_sysconfig_sshd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_grub2_cfg
+    state: Active
+    text: Rule 'file_owner_grub2_cfg' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_sshd_config
+    state: Active
+    text: Rule 'file_owner_sshd_config' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_owner_user_cfg
+    state: Active
+    text: Rule 'file_owner_user_cfg' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_ownership_sshd_private_key
+    state: Active
+    text: Rule 'file_ownership_sshd_private_key' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_ownership_sshd_pub_key
+    state: Active
+    text: Rule 'file_ownership_sshd_pub_key' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_at_allow
+    state: Active
+    text: Rule 'file_permissions_at_allow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_backup_etc_group
+    state: Active
+    text: Rule 'file_permissions_backup_etc_group' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_backup_etc_gshadow
+    state: Active
+    text: Rule 'file_permissions_backup_etc_gshadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_backup_etc_passwd
+    state: Active
+    text: Rule 'file_permissions_backup_etc_passwd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_backup_etc_shadow
+    state: Active
+    text: Rule 'file_permissions_backup_etc_shadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_cron_allow
+    state: Active
+    text: Rule 'file_permissions_cron_allow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_cron_d
+    state: Active
+    text: Rule 'file_permissions_cron_d' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_cron_daily
+    state: Active
+    text: Rule 'file_permissions_cron_daily' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_cron_hourly
+    state: Active
+    text: Rule 'file_permissions_cron_hourly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_cron_monthly
+    state: Active
+    text: Rule 'file_permissions_cron_monthly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_cron_weekly
+    state: Active
+    text: Rule 'file_permissions_cron_weekly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_cron_yearly
+    state: Active
+    text: Rule 'file_permissions_cron_yearly' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_crontab
+    state: Active
+    text: Rule 'file_permissions_crontab' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_group
+    state: Active
+    text: Rule 'file_permissions_etc_group' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_gshadow
+    state: Active
+    text: Rule 'file_permissions_etc_gshadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_issue
+    state: Active
+    text: Rule 'file_permissions_etc_issue' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_issue_net
+    state: Active
+    text: Rule 'file_permissions_etc_issue_net' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_motd
+    state: Active
+    text: Rule 'file_permissions_etc_motd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_passwd
+    state: Active
+    text: Rule 'file_permissions_etc_passwd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_security_opasswd
+    state: Active
+    text: Rule 'file_permissions_etc_security_opasswd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_security_opasswd_old
+    state: Active
+    text: Rule 'file_permissions_etc_security_opasswd_old' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_shadow
+    state: Active
+    text: Rule 'file_permissions_etc_shadow' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_shells
+    state: Active
+    text: Rule 'file_permissions_etc_shells' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_etc_sysconfig_sshd
+    state: Active
+    text: Rule 'file_permissions_etc_sysconfig_sshd' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_grub2_cfg
+    state: Active
+    text: Rule 'file_permissions_grub2_cfg' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_sshd_config
+    state: Active
+    text: Rule 'file_permissions_sshd_config' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_sshd_private_key
+    state: Active
+    text: Rule 'file_permissions_sshd_private_key' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_sshd_pub_key
+    state: Active
+    text: Rule 'file_permissions_sshd_pub_key' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_unauthorized_world_writable
+    state: Active
+    text: Rule 'file_permissions_unauthorized_world_writable' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: file_permissions_user_cfg
+    state: Active
+    text: Rule 'file_permissions_user_cfg' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: grub2_enable_selinux
+    state: Active
+    text: Rule 'grub2_enable_selinux' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: grub2_password
+    state: Active
+    text: Rule 'grub2_password' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: grub2_uefi_password
+    state: Active
+    text: Rule 'grub2_uefi_password' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_dev_shm_nodev
+    state: Active
+    text: Rule 'mount_option_dev_shm_nodev' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_dev_shm_noexec
+    state: Active
+    text: Rule 'mount_option_dev_shm_noexec' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_dev_shm_nosuid
+    state: Active
+    text: Rule 'mount_option_dev_shm_nosuid' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_home_nodev
+    state: Active
+    text: Rule 'mount_option_home_nodev' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_home_nosuid
+    state: Active
+    text: Rule 'mount_option_home_nosuid' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_tmp_noexec
+    state: Active
+    text: Rule 'mount_option_tmp_noexec' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_tmp_nosuid
+    state: Active
+    text: Rule 'mount_option_tmp_nosuid' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_log_audit_nodev
+    state: Active
+    text: Rule 'mount_option_var_log_audit_nodev' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_log_audit_noexec
+    state: Active
+    text: Rule 'mount_option_var_log_audit_noexec' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_log_audit_nosuid
+    state: Active
+    text: Rule 'mount_option_var_log_audit_nosuid' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_log_nodev
+    state: Active
+    text: Rule 'mount_option_var_log_nodev' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_log_noexec
+    state: Active
+    text: Rule 'mount_option_var_log_noexec' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_log_nosuid
+    state: Active
+    text: Rule 'mount_option_var_log_nosuid' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_nodev
+    state: Active
+    text: Rule 'mount_option_var_nodev' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_nosuid
+    state: Active
+    text: Rule 'mount_option_var_nosuid' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_tmp_nodev
+    state: Active
+    text: Rule 'mount_option_var_tmp_nodev' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_tmp_noexec
+    state: Active
+    text: Rule 'mount_option_var_tmp_noexec' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: mount_option_var_tmp_nosuid
+    state: Active
+    text: Rule 'mount_option_var_tmp_nosuid' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: package_libselinux_installed
+    state: Active
+    text: Rule 'package_libselinux_installed' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: package_mcstrans_removed
+    state: Active
+    text: Rule 'package_mcstrans_removed' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: package_setroubleshoot_removed
+    state: Active
+    text: Rule 'package_setroubleshoot_removed' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: rsyslog_filecreatemode
+    state: Active
+    text: Rule 'rsyslog_filecreatemode' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: rsyslog_files_groupownership
+    state: Active
+    text: Rule 'rsyslog_files_groupownership' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: rsyslog_files_ownership
+    state: Active
+    text: Rule 'rsyslog_files_ownership' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: rsyslog_files_permissions
+    state: Active
+    text: Rule 'rsyslog_files_permissions' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: selinux_not_disabled
+    state: Active
+    text: Rule 'selinux_not_disabled' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: selinux_policytype
+    state: Active
+    text: Rule 'selinux_policytype' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: sshd_limit_user_access
+    state: Active
+    text: Rule 'sshd_limit_user_access' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: sysctl_fs_protected_hardlinks
+    state: Active
+    text: Rule 'sysctl_fs_protected_hardlinks' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: sysctl_fs_protected_symlinks
+    state: Active
+    text: Rule 'sysctl_fs_protected_symlinks' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: use_pam_wheel_group_for_su
+    state: Active
+    text: Rule 'use_pam_wheel_group_for_su' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: var_accounts_user_umask
+    state: Active
+    text: Variable 'var_accounts_user_umask' is set to '027'
+    applicability:
+    - rhel8-low
+  - id: var_pam_wheel_group_for_su
+    state: Active
+    text: Variable 'var_pam_wheel_group_for_su' is set to 'cis'
+    applicability:
+    - rhel8-low
+  - id: var_selinux_policy_name
+    state: Active
+    text: Variable 'var_selinux_policy_name' is set to 'targeted'
+    applicability:
+    - rhel8-low
+  state: Active
+- id: ac-4.1
+  title: Object Security and Privacy Attributes
+  objective: 'Use {{ insert: param, ac-4.1_prm_1 }} associated with {{ insert: param, ac-4.1_prm_2 }} to enforce {{ insert: param, ac-04.01_odp.09 }} as a basis for flow control decisions.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.2
+  title: Processing Domains
+  objective: 'Use protected processing domains to enforce {{ insert: param, ac-04.02_odp }} as a basis for flow control decisions.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.3
+  title: Dynamic Information Flow Control
+  objective: 'Enforce {{ insert: param, ac-04.03_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.4
+  title: Flow Control of Encrypted Information
+  objective: 'Prevent encrypted information from bypassing {{ insert: param, ac-04.04_odp.01 }} by {{ insert: param, ac-04.04_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ac-4.5
+  title: Embedded Data Types
+  objective: 'Enforce {{ insert: param, ac-04.05_odp }} on embedding data types within other data types.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.6
+  title: Metadata
+  objective: 'Enforce information flow control based on {{ insert: param, ac-04.06_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.7
+  title: One-way Flow Mechanisms
+  objective: Enforce one-way information flows through hardware-based flow control mechanisms.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.8
+  title: Security and Privacy Policy Filters
+  objective: 'Enforce information flow control using {{ insert: param, ac-4.8_prm_1 }} as a basis for flow control decisions for {{ insert: param, ac-4.8_prm_2 }} ; and {{ insert: param, ac-04.08_odp.05 }} data after a filter processing failure in accordance with {{ insert: param, ac-4.8_prm_4 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.9
+  title: Human Reviews
+  objective: 'Enforce the use of human reviews for {{ insert: param, ac-04.09_odp.01 }} under the following conditions: {{ insert: param, ac-04.09_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.10
+  title: Enable and Disable Security or Privacy Policy Filters
+  objective: 'Provide the capability for privileged administrators to enable and disable {{ insert: param, ac-4.10_prm_1 }} under the following conditions: {{ insert: param, ac-4.10_prm_2 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.11
+  title: Configuration of Security or Privacy Policy Filters
+  objective: 'Provide the capability for privileged administrators to configure {{ insert: param, ac-4.11_prm_1 }} to support different security or privacy policies.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.12
+  title: Data Type Identifiers
+  objective: 'When transferring information between different security domains, use {{ insert: param, ac-04.12_odp }} to validate data essential for information flow decisions.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.13
+  title: Decomposition into Policy-relevant Subcomponents
+  objective: 'When transferring information between different security domains, decompose information into {{ insert: param, ac-04.13_odp }} for submission to policy enforcement mechanisms.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.14
+  title: Security or Privacy Policy Filter Constraints
+  objective: 'When transferring information between different security domains, implement {{ insert: param, ac-4.14_prm_1 }} requiring fully enumerated formats that restrict data structure and content.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.15
+  title: Detection of Unsanctioned Information
+  objective: 'When transferring information between different security domains, examine the information for the presence of {{ insert: param, ac-04.15_odp.01 }} and prohibit the transfer of such information in accordance with the {{ insert: param, ac-4.15_prm_2 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.16
+  title: Information Transfers on Interconnected Systems
+  objective: Information Transfers on Interconnected Systems
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.17
+  title: Domain Authentication
+  objective: 'Uniquely identify and authenticate source and destination points by {{ insert: param, ac-04.17_odp }} for information transfer.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.18
+  title: Security Attribute Binding
+  objective: Security Attribute Binding
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.19
+  title: Validation of Metadata
+  objective: 'When transferring information between different security domains, implement {{ insert: param, ac-4.19_prm_1 }} on metadata.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.20
+  title: Approved Solutions
+  objective: 'Employ {{ insert: param, ac-04.20_odp.01 }} to control the flow of {{ insert: param, ac-04.20_odp.02 }} across security domains.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.21
+  title: Physical or Logical Separation of Information Flows
+  objective: 'Separate information flows logically or physically using {{ insert: param, ac-4.21_prm_1 }} to accomplish {{ insert: param, ac-04.21_odp.03 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.22
+  title: Access Only
+  objective: Provide access from a single device to computing platforms, applications, or data residing in multiple different security domains, while preventing information flow between the different security domains.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.23
+  title: Modify Non-releasable Information
+  objective: 'When transferring information between different security domains, modify non-releasable information by implementing {{ insert: param, ac-04.23_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.24
+  title: Internal Normalized Format
+  objective: When transferring information between different security domains, parse incoming data into an internal normalized format and regenerate the data to be consistent with its intended specification.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.25
+  title: Data Sanitization
+  objective: 'When transferring information between different security domains, sanitize data to minimize {{ insert: param, ac-04.25_odp.01 }} in accordance with {{ insert: param, ac-04.25_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.26
+  title: Audit Filtering Actions
+  objective: When transferring information between different security domains, record and audit content filtering actions and results for the information being filtered.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.27
+  title: Redundant/Independent Filtering Mechanisms
+  objective: When transferring information between different security domains, implement content filtering solutions that provide redundant and independent filtering mechanisms for each data type.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.28
+  title: Linear Filter Pipelines
+  objective: When transferring information between different security domains, implement a linear content filter pipeline that is enforced with discretionary and mandatory access controls.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.29
+  title: Filter Orchestration Engines
+  objective: 'When transferring information between different security domains, employ content filter orchestration engines to ensure that:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.30
+  title: Filter Mechanisms Using Multiple Processes
+  objective: When transferring information between different security domains, implement content filtering mechanisms using multiple processes.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.31
+  title: Failed Content Transfer Prevention
+  objective: When transferring information between different security domains, prevent the transfer of failed content to the receiving domain.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4.32
+  title: Process Requirements for Information Transfer
+  objective: 'When transferring information between different security domains, the process that transfers information between filter pipelines:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-4
+  title: Information Flow Enforcement
+  objective: 'Enforce approved authorizations for controlling the flow of information within the system and between connected systems based on {{ insert: param, ac-04_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-5
+  title: Separation of Duties
+  objective: 'Identify and document {{ insert: param, ac-05_odp }} ; and Define system access authorizations to support separation of duties.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6.1
+  title: Authorize Access to Security Functions
+  objective: 'Authorize access for {{ insert: param, ac-06.01_odp.01 }} to:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6.2
+  title: Non-privileged Access for Nonsecurity Functions
+  objective: 'Require that users of system accounts (or roles) with access to {{ insert: param, ac-06.02_odp }} use non-privileged accounts or roles, when accessing nonsecurity functions.'
+  group: ac
+  assessment-requirements:
+  - id: package_sudo_installed
+    state: Active
+    text: Rule 'package_sudo_installed' MUST be verified
+    applicability:
+    - rhel8-moderate
+  state: Active
+- id: ac-6.3
+  title: Network Access to Privileged Commands
+  objective: 'Authorize network access to {{ insert: param, ac-06.03_odp.01 }} only for {{ insert: param, ac-06.03_odp.02 }} and document the rationale for such access in the security plan for the system.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ac-6.4
+  title: Separate Processing Domains
+  objective: Provide separate processing domains to enable finer-grained allocation of user privileges.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6.5
+  title: Privileged Accounts
+  objective: 'Restrict privileged accounts on the system to {{ insert: param, ac-06.05_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6.6
+  title: Privileged Access by Non-organizational Users
+  objective: Prohibit privileged access to the system by non-organizational users.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6.7
+  title: Review of User Privileges
+  objective: 'Review {{ insert: param, ac-06.07_odp.01 }} the privileges assigned to {{ insert: param, ac-06.07_odp.02 }} to validate the need for such privileges; and Reassign or remove privileges, if necessary, to correctly reflect organizational mission and business needs.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6.8
+  title: Privilege Levels for Code Execution
+  objective: 'Prevent the following software from executing at higher privilege levels than users executing the software: {{ insert: param, ac-06.08_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6.9
+  title: Log Use of Privileged Functions
+  objective: Log the execution of privileged functions.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6.10
+  title: Prohibit Non-privileged Users from Executing Privileged Functions
+  objective: Prevent non-privileged users from executing privileged functions.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-6
+  title: Least Privilege
+  objective: Employ the principle of least privilege, allowing only authorized accesses for users (or processes acting on behalf of users) that are necessary to accomplish assigned organizational tasks.
+  group: ac
+  assessment-requirements:
+  - id: sshd_disable_root_login
+    state: Active
+    text: Rule 'sshd_disable_root_login' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: sudo_add_use_pty
+    state: Active
+    text: Rule 'sudo_add_use_pty' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: sudo_remove_no_authenticate
+    state: Active
+    text: Rule 'sudo_remove_no_authenticate' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: sudo_remove_nopasswd
+    state: Active
+    text: Rule 'sudo_remove_nopasswd' MUST be verified
+    applicability:
+    - rhel8-moderate
+  state: Active
+- id: ac-7.1
+  title: Automatic Account Lock
+  objective: Automatic Account Lock
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-7.2
+  title: Purge or Wipe Mobile Device
+  objective: 'Purge or wipe information from {{ insert: param, ac-07.02_odp.01 }} based on {{ insert: param, ac-07.02_odp.02 }} after {{ insert: param, ac-07.02_odp.03 }} consecutive, unsuccessful device logon attempts.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-7.3
+  title: Biometric Attempt Limiting
+  objective: 'Limit the number of unsuccessful biometric logon attempts to {{ insert: param, ac-07.03_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-7.4
+  title: Use of Alternate Authentication Factor
+  objective: 'Allow the use of {{ insert: param, ac-07.04_odp.01 }} that are different from the primary authentication factors after the number of organization-defined consecutive invalid logon attempts have been exceeded; and Enforce a limit of {{ insert: param, ac-07.04_odp.02 }} consecutive invalid logon attempts through use of the alternative factors by a user during a {{ insert: param, ac-07.04_odp.03 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-7
+  title: Unsuccessful Logon Attempts
+  objective: 'Enforce a limit of {{ insert: param, ac-07_odp.01 }} consecutive invalid logon attempts by a user during a {{ insert: param, ac-07_odp.02 }} ; and Automatically {{ insert: param, ac-07_odp.03 }} when the maximum number of unsuccessful attempts is exceeded.'
+  group: ac
+  assessment-requirements:
+  - id: account_password_pam_faillock_password_auth
+    state: Active
+    text: Rule 'account_password_pam_faillock_password_auth' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: account_password_pam_faillock_system_auth
+    state: Active
+    text: Rule 'account_password_pam_faillock_system_auth' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: accounts_passwords_pam_faillock_deny
+    state: Active
+    text: Rule 'accounts_passwords_pam_faillock_deny' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: accounts_passwords_pam_faillock_even_deny_root_or_root_unlock_time
+    state: Active
+    text: Rule 'accounts_passwords_pam_faillock_even_deny_root_or_root_unlock_time' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: accounts_passwords_pam_faillock_unlock_time_with_zero
+    state: Active
+    text: Rule 'accounts_passwords_pam_faillock_unlock_time_with_zero' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: var_accounts_passwords_pam_faillock_deny
+    state: Active
+    text: Variable 'var_accounts_passwords_pam_faillock_deny' is set to '5'
+    applicability:
+    - rhel8-low
+  - id: var_accounts_passwords_pam_faillock_dir
+    state: Active
+    text: Variable 'var_accounts_passwords_pam_faillock_dir' is set to 'run'
+    applicability:
+    - rhel8-low
+  - id: var_accounts_passwords_pam_faillock_root_unlock_time
+    state: Active
+    text: Variable 'var_accounts_passwords_pam_faillock_root_unlock_time' is set to '60'
+    applicability:
+    - rhel8-low
+  - id: var_accounts_passwords_pam_faillock_unlock_time
+    state: Active
+    text: Variable 'var_accounts_passwords_pam_faillock_unlock_time' is set to '900'
+    applicability:
+    - rhel8-low
+  state: Active
+- id: ac-8
+  title: System Use Notification
+  objective: 'Display {{ insert: param, ac-08_odp.01 }} to users before granting access to the system that provides privacy and security notices consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines and state that: Retain the notification message or banner on the screen until users acknowledge the usage conditions and take explicit actions to log on to or further access the system; and For publicly accessible systems:'
+  group: ac
+  assessment-requirements:
+  - id: dconf_gnome_banner_enabled
+    state: Active
+    text: Rule 'dconf_gnome_banner_enabled' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: dconf_gnome_login_banner_text
+    state: Active
+    text: Rule 'dconf_gnome_login_banner_text' MUST be verified
+    applicability:
+    - rhel8-low
+  state: Active
+- id: ac-9.1
+  title: Unsuccessful Logons
+  objective: Notify the user, upon successful logon, of the number of unsuccessful logon attempts since the last successful logon.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-9.2
+  title: Successful and Unsuccessful Logons
+  objective: 'Notify the user, upon successful logon, of the number of {{ insert: param, ac-09.02_odp.01 }} during {{ insert: param, ac-09.02_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-9.3
+  title: Notification of Account Changes
+  objective: 'Notify the user, upon successful logon, of changes to {{ insert: param, ac-09.03_odp.01 }} during {{ insert: param, ac-09.03_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-9.4
+  title: Additional Logon Information
+  objective: 'Notify the user, upon successful logon, of the following additional information: {{ insert: param, ac-09.04_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-9
+  title: Previous Logon Notification
+  objective: Notify the user, upon successful logon to the system, of the date and time of the last logon.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-10
+  title: Concurrent Session Control
+  objective: 'Limit the number of concurrent sessions for each {{ insert: param, ac-10_odp.01 }} to {{ insert: param, ac-10_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ac-11.1
+  title: Pattern-hiding Displays
+  objective: Conceal, via the device lock, information previously visible on the display with a publicly viewable image.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-11
+  title: Device Lock
+  objective: 'Prevent further access to the system by {{ insert: param, ac-11_odp.01 }} ; and Retain the device lock until the user reestablishes access using established identification and authentication procedures.'
+  group: ac
+  assessment-requirements:
+  - id: dconf_gnome_screensaver_idle_delay
+    state: Active
+    text: Rule 'dconf_gnome_screensaver_idle_delay' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: dconf_gnome_screensaver_lock_delay
+    state: Active
+    text: Rule 'dconf_gnome_screensaver_lock_delay' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: dconf_gnome_screensaver_user_locks
+    state: Active
+    text: Rule 'dconf_gnome_screensaver_user_locks' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: dconf_gnome_session_idle_user_locks
+    state: Active
+    text: Rule 'dconf_gnome_session_idle_user_locks' MUST be verified
+    applicability:
+    - rhel8-moderate
+  - id: var_screensaver_lock_delay
+    state: Active
+    text: Variable 'var_screensaver_lock_delay' is set to '5_seconds'
+    applicability:
+    - rhel8-moderate
+  state: Active
+- id: ac-12.1
+  title: User-initiated Logouts
+  objective: 'Provide a logout capability for user-initiated communications sessions whenever authentication is used to gain access to {{ insert: param, ac-12.01_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-12.2
+  title: Termination Message
+  objective: Display an explicit logout message to users indicating the termination of authenticated communications sessions.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-12.3
+  title: Timeout Warning Message
+  objective: 'Display an explicit message to users indicating that the session will end in {{ insert: param, ac-12.03_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-12
+  title: Session Termination
+  objective: 'Automatically terminate a user session after {{ insert: param, ac-12_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-13
+  title: Supervision and Review — Access Control
+  objective: Supervision and Review — Access Control
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-14.1
+  title: Necessary Uses
+  objective: Necessary Uses
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-14
+  title: Permitted Actions Without Identification or Authentication
+  objective: 'Identify {{ insert: param, ac-14_odp }} that can be performed on the system without identification or authentication consistent with organizational mission and business functions; and Document and provide supporting rationale in the security plan for the system, user actions not requiring identification or authentication.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-15
+  title: Automated Marking
+  objective: Automated Marking
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.1
+  title: Dynamic Attribute Association
+  objective: 'Dynamically associate security and privacy attributes with {{ insert: param, ac-16.1_prm_1 }} in accordance with the following security and privacy policies as information is created and combined: {{ insert: param, ac-16.1_prm_2 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.2
+  title: Attribute Value Changes by Authorized Individuals
+  objective: Provide authorized individuals (or processes acting on behalf of individuals) the capability to define or change the value of associated security and privacy attributes.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.3
+  title: Maintenance of Attribute Associations by System
+  objective: 'Maintain the association and integrity of {{ insert: param, ac-16.3_prm_1 }} to {{ insert: param, ac-16.3_prm_2 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.4
+  title: Association of Attributes by Authorized Individuals
+  objective: 'Provide the capability to associate {{ insert: param, ac-16.4_prm_1 }} with {{ insert: param, ac-16.4_prm_2 }} by authorized individuals (or processes acting on behalf of individuals).'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.5
+  title: Attribute Displays on Objects to Be Output
+  objective: 'Display security and privacy attributes in human-readable form on each object that the system transmits to output devices to identify {{ insert: param, ac-16.05_odp.01 }} using {{ insert: param, ac-16.05_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.6
+  title: Maintenance of Attribute Association
+  objective: 'Require personnel to associate and maintain the association of {{ insert: param, ac-16.6_prm_1 }} with {{ insert: param, ac-16.6_prm_2 }} in accordance with {{ insert: param, ac-16.6_prm_3 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.7
+  title: Consistent Attribute Interpretation
+  objective: Provide a consistent interpretation of security and privacy attributes transmitted between distributed system components.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.8
+  title: Association Techniques and Technologies
+  objective: 'Implement {{ insert: param, ac-16.8_prm_1 }} in associating security and privacy attributes to information.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.9
+  title: Attribute Reassignment — Regrading Mechanisms
+  objective: 'Change security and privacy attributes associated with information only via regrading mechanisms validated using {{ insert: param, ac-16.9_prm_1 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16.10
+  title: Attribute Configuration by Authorized Individuals
+  objective: Provide authorized individuals the capability to define or change the type and value of security and privacy attributes available for association with subjects and objects.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-16
+  title: Security and Privacy Attributes
+  objective: 'Provide the means to associate {{ insert: param, ac-16_prm_1 }} with {{ insert: param, ac-16_prm_2 }} for information in storage, in process, and/or in transmission; Ensure that the attribute associations are made and retained with the information; Establish the following permitted security and privacy attributes from the attributes defined in [AC-16a](#ac-16_smt.a) for {{ insert: param, ac-16_prm_3 }}: {{ insert: param, ac-16_prm_4 }}; Determine the following permitted attribute values or ranges for each of the established attributes: {{ insert: param, ac-16_odp.09 }}; Audit changes to attributes; and Review {{ insert: param, ac-16_prm_6 }} for applicability {{ insert: param, ac-16_prm_7 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-17.1
+  title: Monitoring and Control
+  objective: Employ automated mechanisms to monitor and control remote access methods.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-17.2
+  title: Protection of Confidentiality and Integrity Using Encryption
+  objective: Implement cryptographic mechanisms to protect the confidentiality and integrity of remote access sessions.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-17.3
+  title: Managed Access Control Points
+  objective: Route remote accesses through authorized and managed network access control points.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-17.4
+  title: Privileged Commands and Access
+  objective: 'Authorize the execution of privileged commands and access to security-relevant information via remote access only in a format that provides assessable evidence and for the following needs: {{ insert: param, ac-17.4_prm_1 }} ; and Document the rationale for remote access in the security plan for the system.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-17.5
+  title: Monitoring for Unauthorized Connections
+  objective: Monitoring for Unauthorized Connections
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-17.6
+  title: Protection of Mechanism Information
+  objective: Protect information about remote access mechanisms from unauthorized use and disclosure.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-17.7
+  title: Additional Protection for Security Function Access
+  objective: Additional Protection for Security Function Access
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-17.8
+  title: Disable Nonsecure Network Protocols
+  objective: Disable Nonsecure Network Protocols
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-17.9
+  title: Disconnect or Disable Access
+  objective: 'Provide the capability to disconnect or disable remote access to the system within {{ insert: param, ac-17.09_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-17.10
+  title: Authenticate Remote Commands
+  objective: 'Implement {{ insert: param, ac-17.10_odp.01 }} to authenticate {{ insert: param, ac-17.10_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-17
+  title: Remote Access
+  objective: Establish and document usage restrictions, configuration/connection requirements, and implementation guidance for each type of remote access allowed; and Authorize each type of remote access to the system prior to allowing such connections.
+  group: ac
+  assessment-requirements:
+  - id: configure_custom_crypto_policy_cis
+    state: Active
+    text: Rule 'configure_custom_crypto_policy_cis' MUST be verified
+    applicability:
+    - rhel8-low
+  - id: configure_ssh_crypto_policy
+    state: Active
+    text: Rule 'configure_ssh_crypto_policy' MUST be verified
+    applicability:
+    - rhel8-low
+  state: Active
+- id: ac-18.1
+  title: Authentication and Encryption
+  objective: 'Protect wireless access to the system using authentication of {{ insert: param, ac-18.01_odp }} and encryption.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-18.2
+  title: Monitoring Unauthorized Connections
+  objective: Monitoring Unauthorized Connections
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-18.3
+  title: Disable Wireless Networking
+  objective: Disable, when not intended for use, wireless networking capabilities embedded within system components prior to issuance and deployment.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-18.4
+  title: Restrict Configurations by Users
+  objective: Identify and explicitly authorize users allowed to independently configure wireless networking capabilities.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ac-18.5
+  title: Antennas and Transmission Power Levels
+  objective: Select radio antennas and calibrate transmission power levels to reduce the probability that signals from wireless access points can be received outside of organization-controlled boundaries.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ac-18
+  title: Wireless Access
+  objective: Establish configuration requirements, connection requirements, and implementation guidance for each type of wireless access; and Authorize each type of wireless access to the system prior to allowing such connections.
+  group: ac
+  assessment-requirements:
+  - id: wireless_disable_interfaces
+    state: Active
+    text: Rule 'wireless_disable_interfaces' MUST be verified
+    applicability:
+    - rhel8-low
+  state: Active
+- id: ac-19.1
+  title: Use of Writable and Portable Storage Devices
+  objective: Use of Writable and Portable Storage Devices
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-19.2
+  title: Use of Personally Owned Portable Storage Devices
+  objective: Use of Personally Owned Portable Storage Devices
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-19.3
+  title: Use of Portable Storage Devices with No Identifiable Owner
+  objective: Use of Portable Storage Devices with No Identifiable Owner
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-19.4
+  title: Restrictions for Classified Information
+  objective: 'Prohibit the use of unclassified mobile devices in facilities containing systems processing, storing, or transmitting classified information unless specifically permitted by the authorizing official; and Enforce the following restrictions on individuals permitted by the authorizing official to use unclassified mobile devices in facilities containing systems processing, storing, or transmitting classified information: Restrict the connection of classified mobile devices to classified systems in accordance with {{ insert: param, ac-19.04_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-19.5
+  title: Full Device or Container-based Encryption
+  objective: 'Employ {{ insert: param, ac-19.05_odp.01 }} to protect the confidentiality and integrity of information on {{ insert: param, ac-19.05_odp.02 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-19
+  title: Access Control for Mobile Devices
+  objective: Establish configuration requirements, connection requirements, and implementation guidance for organization-controlled mobile devices, to include when such devices are outside of controlled areas; and Authorize the connection of mobile devices to organizational systems.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-20.1
+  title: Limits on Authorized Use
+  objective: 'Permit authorized individuals to use an external system to access the system or to process, store, or transmit organization-controlled information only after:'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-20.2
+  title: Portable Storage Devices — Restricted Use
+  objective: 'Restrict the use of organization-controlled portable storage devices by authorized individuals on external systems using {{ insert: param, ac-20.02_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-20.3
+  title: Non-organizationally Owned Systems — Restricted Use
+  objective: 'Restrict the use of non-organizationally owned systems or system components to process, store, or transmit organizational information using {{ insert: param, ac-20.03_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-20.4
+  title: Network Accessible Storage Devices — Prohibited Use
+  objective: 'Prohibit the use of {{ insert: param, ac-20.04_odp }} in external systems.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-20.5
+  title: Portable Storage Devices — Prohibited Use
+  objective: Prohibit the use of organization-controlled portable storage devices by authorized individuals on external systems.
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-20
+  title: Use of External Systems
+  objective: '{{ insert: param, ac-20_odp.01 }} , consistent with the trust relationships established with other organizations owning, operating, and/or maintaining external systems, allowing authorized individuals to: Prohibit the use of {{ insert: param, ac-20_odp.04 }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-21.1
+  title: Automated Decision Support
+  objective: 'Employ {{ insert: param, ac-21.01_odp }} to enforce information-sharing decisions by authorized users based on access authorizations of sharing partners and access restrictions on information to be shared.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-21.2
+  title: Information Search and Retrieval
+  objective: 'Implement information search and retrieval services that enforce {{ insert: param, ac-21.02_odp }}.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-21
+  title: Information Sharing
+  objective: 'Enable authorized users to determine whether access authorizations assigned to a sharing partner match the information’s access and use restrictions for {{ insert: param, ac-21_odp.01 }} ; and Employ {{ insert: param, ac-21_odp.02 }} to assist users in making information sharing and collaboration decisions.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ac-22
+  title: Publicly Accessible Content
+  objective: 'Designate individuals authorized to make information publicly accessible; Train authorized individuals to ensure that publicly accessible information does not contain nonpublic information; Review the proposed content of information prior to posting onto the publicly accessible system to ensure that nonpublic information is not included; and Review the content on the publicly accessible system for nonpublic information {{ insert: param, ac-22_odp }} and remove such information, if discovered.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-23
+  title: Data Mining Protection
+  objective: 'Employ {{ insert: param, ac-23_odp.01 }} for {{ insert: param, ac-23_odp.02 }} to detect and protect against unauthorized data mining.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-24.1
+  title: Transmit Access Authorization Information
+  objective: 'Transmit {{ insert: param, ac-24.01_odp.01 }} using {{ insert: param, ac-24.01_odp.02 }} to {{ insert: param, ac-24.01_odp.03 }} that enforce access control decisions.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-24.2
+  title: No User or Process Identity
+  objective: 'Enforce access control decisions based on {{ insert: param, ac-24.2_prm_1 }} that do not include the identity of the user or process acting on behalf of the user.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-24
+  title: Access Control Decisions
+  objective: '{{ insert: param, ac-24_odp.01 }} to ensure {{ insert: param, ac-24_odp.02 }} are applied to each access request prior to access enforcement.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ac-25
+  title: Reference Monitor
+  objective: 'Implement a reference monitor for {{ insert: param, ac-25_odp }} that is tamperproof, always invoked, and small enough to be subject to analysis and testing, the completeness of which can be assured.'
+  group: ac
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft

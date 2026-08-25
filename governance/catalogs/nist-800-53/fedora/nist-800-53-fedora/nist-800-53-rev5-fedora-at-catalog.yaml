@@ -1,0 +1,215 @@
+metadata:
+  id: nist-800-53-rev5-fedora-at
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for FEDORA, generated from ComplianceAsCode (AT family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-08-21T12:23:27Z'
+  applicability-groups:
+  - id: fedora-low
+    title: FEDORA Low Baseline
+    description: NIST 800-53 Low impact baseline for FEDORA
+  - id: fedora-moderate
+    title: FEDORA Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for FEDORA (inherits Low)
+  - id: fedora-high
+    title: FEDORA High Baseline
+    description: NIST 800-53 High impact baseline for FEDORA (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for Fedora - Awareness and Training
+groups:
+- id: at
+  title: Awareness and Training
+  description: 'NIST 800-53 AT family: Awareness and Training'
+controls:
+- id: at-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, at-1_prm_1 }}: Designate an {{ insert: param, at-01_odp.04 }} to manage the development, documentation, and dissemination of the awareness and training policy and procedures; and Review and update the current awareness and training:'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-2.1
+  title: Practical Exercises
+  objective: Provide practical exercises in literacy training that simulate events and incidents.
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-2.2
+  title: Insider Threat
+  objective: Provide literacy training on recognizing and reporting potential indicators of insider threat.
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-2.3
+  title: Social Engineering and Mining
+  objective: Provide literacy training on recognizing and reporting potential and actual instances of social engineering and social mining.
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: at-2.4
+  title: Suspicious Communications and Anomalous System Behavior
+  objective: 'Provide literacy training on recognizing suspicious communications and anomalous behavior in organizational systems using {{ insert: param, at-02.04_odp }}.'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-2.5
+  title: Advanced Persistent Threat
+  objective: Provide literacy training on the advanced persistent threat.
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-2.6
+  title: Cyber Threat Environment
+  objective: Provide literacy training on the cyber threat environment; and Reflect current cyber threat information in system operations.
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-2
+  title: Literacy Training and Awareness
+  objective: 'Provide security and privacy literacy training to system users (including managers, senior executives, and contractors): Employ the following techniques to increase the security and privacy awareness of system users {{ insert: param, at-02_odp.05 }}; Update literacy training and awareness content {{ insert: param, at-02_odp.06 }} and following {{ insert: param, at-02_odp.07 }} ; and Incorporate lessons learned from internal or external security incidents or breaches into literacy training and awareness techniques.'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-3.1
+  title: Environmental Controls
+  objective: 'Provide {{ insert: param, at-03.01_odp.01 }} with initial and {{ insert: param, at-03.01_odp.02 }} training in the employment and operation of environmental controls.'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-3.2
+  title: Physical Security Controls
+  objective: 'Provide {{ insert: param, at-03.02_odp.01 }} with initial and {{ insert: param, at-03.02_odp.02 }} training in the employment and operation of physical security controls.'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-3.3
+  title: Practical Exercises
+  objective: Provide practical exercises in security and privacy training that reinforce training objectives.
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-3.4
+  title: Suspicious Communications and Anomalous System Behavior
+  objective: Suspicious Communications and Anomalous System Behavior
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-3.5
+  title: Processing Personally Identifiable Information
+  objective: 'Provide {{ insert: param, at-03.05_odp.01 }} with initial and {{ insert: param, at-03.05_odp.02 }} training in the employment and operation of personally identifiable information processing and transparency controls.'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-3
+  title: Role-based Training
+  objective: 'Provide role-based security and privacy training to personnel with the following roles and responsibilities: {{ insert: param, at-3_prm_1 }}: Update role-based training content {{ insert: param, at-03_odp.04 }} and following {{ insert: param, at-03_odp.05 }} ; and Incorporate lessons learned from internal or external security incidents or breaches into role-based training.'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-4
+  title: Training Records
+  objective: 'Document and monitor information security and privacy training activities, including security and privacy awareness training and specific role-based security and privacy training; and Retain individual training records for {{ insert: param, at-04_odp }}.'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-5
+  title: Contacts with Security Groups and Associations
+  objective: Contacts with Security Groups and Associations
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: at-6
+  title: Training Feedback
+  objective: 'Provide feedback on organizational training results to the following personnel {{ insert: param, at-06_odp.01 }}: {{ insert: param, at-06_odp.02 }}.'
+  group: at
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft

@@ -1,0 +1,685 @@
+title: CIS Fedora Linux - Level 1 Workstation - Initial Setup
+metadata:
+  id: cis-fedora-l1-workstation-initial-setup
+  type: ControlCatalog
+  gemara-version: 0.24.0
+  description: Control catalog derived from the CIS Fedora Linux Level 1 Workstation Benchmark (Initial Setup)
+  author:
+    id: complytime
+    name: ComplyTime
+    type: Software
+  applicability-groups:
+  - id: fedora-linux
+    title: Fedora Linux
+    description: Fedora Linux operating system
+groups:
+- id: initial-setup
+  title: Initial Setup
+  description: Filesystem, software updates, SELinux, boot, kernel, crypto, and banner configuration
+controls:
+- id: cis_fedora_1-1.1.1
+  title: Ensure Cramfs Kernel Module Is Not Available
+  objective: Ensure Cramfs Kernel Module Is Not Available
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_cramfs_disabled
+    state: Active
+    text: Cramfs Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.1.2
+  title: Ensure Freevxfs Kernel Module Is Not Available
+  objective: Ensure Freevxfs Kernel Module Is Not Available
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_freevxfs_disabled
+    state: Active
+    text: Freevxfs Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.1.3
+  title: Ensure Hfs Kernel Module Is Not Available
+  objective: Ensure Hfs Kernel Module Is Not Available
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_hfs_disabled
+    state: Active
+    text: Hfs Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.1.4
+  title: Ensure Hfsplus Kernel Module Is Not Available
+  objective: Ensure Hfsplus Kernel Module Is Not Available
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_hfsplus_disabled
+    state: Active
+    text: Hfsplus Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.1.5
+  title: Ensure Jffs2 Kernel Module Is Not Available
+  objective: Ensure Jffs2 Kernel Module Is Not Available
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_jffs2_disabled
+    state: Active
+    text: Jffs2 Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.1.1
+  title: CIS Fedora 1 - 1.2.1.1
+  objective: CIS Fedora 1 - 1.2.1.1
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: partition_for_tmp
+    state: Active
+    text: CIS Fedora 1 - 1.2.1.1 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.1.2
+  title: CIS Fedora 1 - 1.2.1.2
+  objective: CIS Fedora 1 - 1.2.1.2
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_tmp_nodev
+    state: Active
+    text: CIS Fedora 1 - 1.2.1.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.1.3
+  title: CIS Fedora 1 - 1.2.1.3
+  objective: CIS Fedora 1 - 1.2.1.3
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_tmp_nosuid
+    state: Active
+    text: CIS Fedora 1 - 1.2.1.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.1.4
+  title: CIS Fedora 1 - 1.2.1.4
+  objective: CIS Fedora 1 - 1.2.1.4
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_tmp_noexec
+    state: Active
+    text: CIS Fedora 1 - 1.2.1.4 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.2.1
+  title: CIS Fedora 1 - 1.2.2.1
+  objective: CIS Fedora 1 - 1.2.2.1
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: partition_for_dev_shm
+    state: Active
+    text: CIS Fedora 1 - 1.2.2.1 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.2.2
+  title: CIS Fedora 1 - 1.2.2.2
+  objective: CIS Fedora 1 - 1.2.2.2
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_dev_shm_nodev
+    state: Active
+    text: CIS Fedora 1 - 1.2.2.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.2.3
+  title: CIS Fedora 1 - 1.2.2.3
+  objective: CIS Fedora 1 - 1.2.2.3
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_dev_shm_nosuid
+    state: Active
+    text: CIS Fedora 1 - 1.2.2.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.2.4
+  title: CIS Fedora 1 - 1.2.2.4
+  objective: CIS Fedora 1 - 1.2.2.4
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_dev_shm_noexec
+    state: Active
+    text: CIS Fedora 1 - 1.2.2.4 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.3.2
+  title: CIS Fedora 1 - 1.2.3.2
+  objective: CIS Fedora 1 - 1.2.3.2
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_home_nodev
+    state: Active
+    text: CIS Fedora 1 - 1.2.3.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.3.3
+  title: CIS Fedora 1 - 1.2.3.3
+  objective: CIS Fedora 1 - 1.2.3.3
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_home_nosuid
+    state: Active
+    text: CIS Fedora 1 - 1.2.3.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.4.2
+  title: CIS Fedora 1 - 1.2.4.2
+  objective: CIS Fedora 1 - 1.2.4.2
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_nodev
+    state: Active
+    text: CIS Fedora 1 - 1.2.4.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.4.3
+  title: CIS Fedora 1 - 1.2.4.3
+  objective: CIS Fedora 1 - 1.2.4.3
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_nosuid
+    state: Active
+    text: CIS Fedora 1 - 1.2.4.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.5.2
+  title: CIS Fedora 1 - 1.2.5.2
+  objective: CIS Fedora 1 - 1.2.5.2
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_tmp_nodev
+    state: Active
+    text: CIS Fedora 1 - 1.2.5.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.5.3
+  title: CIS Fedora 1 - 1.2.5.3
+  objective: CIS Fedora 1 - 1.2.5.3
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_tmp_nosuid
+    state: Active
+    text: CIS Fedora 1 - 1.2.5.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.5.4
+  title: CIS Fedora 1 - 1.2.5.4
+  objective: CIS Fedora 1 - 1.2.5.4
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_tmp_noexec
+    state: Active
+    text: CIS Fedora 1 - 1.2.5.4 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.6.2
+  title: CIS Fedora 1 - 1.2.6.2
+  objective: CIS Fedora 1 - 1.2.6.2
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_log_nodev
+    state: Active
+    text: CIS Fedora 1 - 1.2.6.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.6.3
+  title: CIS Fedora 1 - 1.2.6.3
+  objective: CIS Fedora 1 - 1.2.6.3
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_log_nosuid
+    state: Active
+    text: CIS Fedora 1 - 1.2.6.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.6.4
+  title: CIS Fedora 1 - 1.2.6.4
+  objective: CIS Fedora 1 - 1.2.6.4
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_log_noexec
+    state: Active
+    text: CIS Fedora 1 - 1.2.6.4 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.7.2
+  title: CIS Fedora 1 - 1.2.7.2
+  objective: CIS Fedora 1 - 1.2.7.2
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_log_audit_nodev
+    state: Active
+    text: CIS Fedora 1 - 1.2.7.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.7.3
+  title: CIS Fedora 1 - 1.2.7.3
+  objective: CIS Fedora 1 - 1.2.7.3
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_log_audit_nosuid
+    state: Active
+    text: CIS Fedora 1 - 1.2.7.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-1.2.7.4
+  title: CIS Fedora 1 - 1.2.7.4
+  objective: CIS Fedora 1 - 1.2.7.4
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: mount_option_var_log_audit_noexec
+    state: Active
+    text: CIS Fedora 1 - 1.2.7.4 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-2.1.2
+  title: Ensure Gpgcheck Is Configured
+  objective: Ensure Gpgcheck Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: ensure_gpgcheck_globally_activated
+    state: Active
+    text: Gpgcheck Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-3.1.1
+  title: Ensure Selinux Is Installed
+  objective: Ensure Selinux Is Installed
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: package_libselinux_installed
+    state: Active
+    text: Selinux Is Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-3.1.2
+  title: Ensure Selinux Is Not Disabled In Bootloader Configuration
+  objective: Ensure Selinux Is Not Disabled In Bootloader Configuration
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: grub2_enable_selinux
+    state: Active
+    text: Selinux Is Not Disabled In Bootloader Configuration MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-3.1.3
+  title: Ensure Selinux Policy Is Configured
+  objective: Ensure Selinux Policy Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: selinux_policytype
+    state: Active
+    text: Selinux Policy Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-3.1.4
+  title: Ensure The Selinux Mode Is Not Disabled
+  objective: Ensure The Selinux Mode Is Not Disabled
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: selinux_not_disabled
+    state: Active
+    text: The Selinux Mode Is Not Disabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-3.1.7
+  title: Ensure The Mcs Translation Service (Mcstrans) Is Not Installed
+  objective: Ensure The Mcs Translation Service (Mcstrans) Is Not Installed
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: package_mcstrans_removed
+    state: Active
+    text: The Mcs Translation Service (Mcstrans) Is Not Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-4.1
+  title: Ensure Bootloader Password Is Set
+  objective: Ensure Bootloader Password Is Set
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: grub2_password
+    state: Active
+    text: Bootloader Password Is Set MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.1
+  title: Ensure Core File Size Is Configured
+  objective: Ensure Core File Size Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: disable_users_coredumps
+    state: Active
+    text: Core File Size Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.10
+  title: Ensure Systemd-Coredump Storage Is Configured
+  objective: Ensure Systemd-Coredump Storage Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: coredump_disable_storage
+    state: Active
+    text: Systemd-Coredump Storage Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.2
+  title: Ensure Fs.Protected_Hardlinks Is Configured
+  objective: Ensure Fs.Protected_Hardlinks Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: sysctl_fs_protected_hardlinks
+    state: Active
+    text: Fs.Protected_Hardlinks Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.3
+  title: Ensure Fs.Protected_Symlinks Is Configured
+  objective: Ensure Fs.Protected_Symlinks Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: sysctl_fs_protected_symlinks
+    state: Active
+    text: Fs.Protected_Symlinks Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.4
+  title: Ensure Fs.Suid_Dumpable Is Configured
+  objective: Ensure Fs.Suid_Dumpable Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: sysctl_fs_suid_dumpable
+    state: Active
+    text: Fs.Suid_Dumpable Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.5
+  title: Ensure Kernel.Dmesg_Restrict Is Configured
+  objective: Ensure Kernel.Dmesg_Restrict Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: sysctl_kernel_dmesg_restrict
+    state: Active
+    text: Kernel.Dmesg_Restrict Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.6
+  title: Ensure Kernel.Kptr_Restrict Is Configured
+  objective: Ensure Kernel.Kptr_Restrict Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: sysctl_kernel_kptr_restrict
+    state: Active
+    text: Kernel.Kptr_Restrict Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.7
+  title: Ensure Kernel.Yama.Ptrace_Scope Is Configured
+  objective: Ensure Kernel.Yama.Ptrace_Scope Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: sysctl_kernel_yama_ptrace_scope
+    state: Active
+    text: Kernel.Yama.Ptrace_Scope Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.8
+  title: Ensure Kernel.Randomize_Va_Space Is Configured
+  objective: Ensure Kernel.Randomize_Va_Space Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: sysctl_kernel_randomize_va_space
+    state: Active
+    text: Kernel.Randomize_Va_Space Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-5.9
+  title: Ensure Systemd-Coredump Processsizemax Is Configured
+  objective: Ensure Systemd-Coredump Processsizemax Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: coredump_disable_backtraces
+    state: Active
+    text: Systemd-Coredump Processsizemax Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-6.2
+  title: Ensure System Wide Crypto Policy Disables Sha1 Hash And Signature Support
+  objective: Ensure System Wide Crypto Policy Disables Sha1 Hash And Signature Support
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: cis_fedora_1-6.2-ar
+    state: Active
+    text: System Wide Crypto Policy Disables Sha1 Hash And Signature Support MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-6.3
+  title: Ensure System Wide Crypto Policy Macs Are Configured
+  objective: Ensure System Wide Crypto Policy Macs Are Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: cis_fedora_1-6.3-ar
+    state: Active
+    text: System Wide Crypto Policy Macs Are Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-6.4
+  title: Ensure System Wide Crypto Policy Disables Cbc For Ssh
+  objective: Ensure System Wide Crypto Policy Disables Cbc For Ssh
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: cis_fedora_1-6.4-ar
+    state: Active
+    text: System Wide Crypto Policy Disables Cbc For Ssh MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-7.1
+  title: Ensure /Etc/Motd Is Configured
+  objective: Ensure /Etc/Motd Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: banner_etc_motd_cis
+    state: Active
+    text: /Etc/Motd Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-7.2
+  title: Ensure /Etc/Issue Is Configured
+  objective: Ensure /Etc/Issue Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: banner_etc_issue_cis
+    state: Active
+    text: /Etc/Issue Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-7.3
+  title: Ensure /Etc/Issue.Net Is Configured
+  objective: Ensure /Etc/Issue.Net Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: banner_etc_issue_net_cis
+    state: Active
+    text: /Etc/Issue.Net Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-7.4
+  title: Ensure Access To /Etc/Motd Is Configured
+  objective: Ensure Access To /Etc/Motd Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_etc_motd
+    state: Active
+    text: Access To /Etc/Motd Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_etc_motd
+    state: Active
+    text: Access To /Etc/Motd Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_etc_motd
+    state: Active
+    text: Access To /Etc/Motd Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-7.5
+  title: Ensure Access To /Etc/Issue Is Configured
+  objective: Ensure Access To /Etc/Issue Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_etc_issue
+    state: Active
+    text: Access To /Etc/Issue Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_etc_issue
+    state: Active
+    text: Access To /Etc/Issue Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_etc_issue
+    state: Active
+    text: Access To /Etc/Issue Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-7.6
+  title: Ensure Access To /Etc/Issue.Net Is Configured
+  objective: Ensure Access To /Etc/Issue.Net Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_etc_issue_net
+    state: Active
+    text: Access To /Etc/Issue.Net Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_etc_issue_net
+    state: Active
+    text: Access To /Etc/Issue.Net Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_etc_issue_net
+    state: Active
+    text: Access To /Etc/Issue.Net Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-8.1
+  title: Ensure Gdm Login Banner Is Configured
+  objective: Ensure Gdm Login Banner Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: dconf_gnome_banner_enabled
+    state: Active
+    text: Gdm Login Banner Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: dconf_gnome_login_banner_text
+    state: Active
+    text: Gdm Login Banner Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-8.2
+  title: Ensure Gdm Disable-User-List Is Configured
+  objective: Ensure Gdm Disable-User-List Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: dconf_gnome_disable_user_list
+    state: Active
+    text: Gdm Disable-User-List Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-8.3
+  title: Ensure Gdm Screen Lock Is Configured
+  objective: Ensure Gdm Screen Lock Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: dconf_gnome_screensaver_idle_delay
+    state: Active
+    text: Gdm Screen Lock Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: dconf_gnome_screensaver_lock_delay
+    state: Active
+    text: Gdm Screen Lock Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: dconf_gnome_screensaver_user_locks
+    state: Active
+    text: Gdm Screen Lock Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: dconf_gnome_session_idle_user_locks
+    state: Active
+    text: Gdm Screen Lock Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_1-8.5
+  title: Ensure Gdm Autorun-Never Is Configured
+  objective: Ensure Gdm Autorun-Never Is Configured
+  group: initial-setup
+  state: Active
+  assessment-requirements:
+  - id: dconf_gnome_disable_autorun
+    state: Active
+    text: Gdm Autorun-Never Is Configured MUST be verified
+    applicability:
+    - fedora-linux
