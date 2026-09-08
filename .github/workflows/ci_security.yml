@@ -1,0 +1,37 @@
+name: Security Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  actions: none
+  id-token: none
+  security-events: none
+  packages: none
+
+jobs:
+  call_reusable_vuln_scan:
+    name: OSV-Scanner
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+    uses: complytime/org-infra/.github/workflows/reusable_vuln_scan.yml@0c784711926c9864f027ec565fd7c06a382d80f8 # v0.7.1
+    with:
+      # OSV focuses on known CVEs in dependencies; Trivy adds broader coverage
+      enable_trivy_source: false
+      trivy_ignorefile: ''
+
+  call_reusable_security:
+    name: OpenSSF Scorecards
+    permissions:
+      contents: read
+      id-token: write
+      security-events: write
+    uses: complytime/org-infra/.github/workflows/reusable_security.yml@0c784711926c9864f027ec565fd7c06a382d80f8 # v0.7.1
