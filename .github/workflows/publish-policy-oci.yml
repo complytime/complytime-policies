@@ -160,7 +160,7 @@ jobs:
       - name: Publish bundle, sign, verify, and promote
         id: publish
         if: steps.gate.outputs.proceed == 'true'
-        uses: gemaraproj/gemara-publish-action@027e6093fc8f8f968f9cde814ebbae8c25add166  # v0.1.1
+        uses: gemaraproj/gemara-publish-action@49c89f444fb8ca411ab1d2cc85d103a11101526c  # v0.2.1
         with:
           registry: ghcr.io
           repository: ${{ steps.repos.outputs.ghcr_repo }}
