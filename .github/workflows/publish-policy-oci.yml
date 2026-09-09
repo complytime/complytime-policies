@@ -45,17 +45,19 @@ concurrency:
 
 permissions:
   contents: read
-  id-token: write
-  packages: write
 
 jobs:
   discover:
     name: Discover bundles
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       matrix: ${{ steps.bundles.outputs.matrix }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Build bundle matrix from bundles/
         id: bundles
@@ -84,6 +86,10 @@ jobs:
     name: "Publish ${{ matrix.bundle.name }}"
     needs: discover
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
     if: needs.discover.outputs.matrix != '[]'
     strategy:
       fail-fast: false
@@ -103,6 +109,8 @@ jobs:
           fi
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Restore last published content hash
         id: last_bundle_hash
@@ -151,11 +159,12 @@ jobs:
           DEST_NS: ${{ inputs.dest_namespace || 'complytime' }}
         run: |
           set -euo pipefail
-          r='${{ github.repository }}'
           repo_name="policies-${BUNDLE_NAME}"
-          echo "ghcr_repo=${r,,}/${repo_name}" >> "$GITHUB_OUTPUT"
-          echo "dest_repo=${DEST_NS}/${repo_name}" >> "$GITHUB_OUTPUT"
-          echo "bundle_tag=latest" >> "$GITHUB_OUTPUT"
+          {
+            echo "ghcr_repo=${GITHUB_REPOSITORY,,}/${repo_name}"
+            echo "dest_repo=${DEST_NS}/${repo_name}"
+            echo "bundle_tag=latest"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Publish bundle, sign, verify, and promote
         id: publish
@@ -186,11 +195,16 @@ jobs:
 
       - name: Print release refs
         if: steps.gate.outputs.proceed == 'true'
+        env:
+          BUNDLE_NAME: ${{ matrix.bundle.name }}
+          SOURCE_REF: ${{ steps.publish.outputs.source_ref }}
+          DESTINATION_REF: ${{ steps.publish.outputs.destination_ref }}
+          VERIFIED_DEST: ${{ steps.publish.outputs.verified_destination }}
         run: |
-          echo "bundle=${{ matrix.bundle.name }}"
-          echo "source_ref=${{ steps.publish.outputs.source_ref }}"
-          echo "destination_ref=${{ steps.publish.outputs.destination_ref }}"
-          echo "verified_destination=${{ steps.publish.outputs.verified_destination }}"
+          echo "bundle=${BUNDLE_NAME}"
+          echo "source_ref=${SOURCE_REF}"
+          echo "destination_ref=${DESTINATION_REF}"
+          echo "verified_destination=${VERIFIED_DEST}"
 
       - name: Install ORAS
         if: steps.gate.outputs.proceed == 'true'

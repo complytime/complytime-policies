@@ -71,16 +71,20 @@ jobs:
             if ! output=$(cue vet -c -d "${SCHEMA_DEF}" "github.com/gemaraproj/gemara@${GEMARA_VERSION}" "$f" 2>&1); then
               echo "::error file=$f::CUE validation failed for ${TYPE_VALUE}"
               if [ "$failed" -eq 0 ]; then
-                echo "### Failed: ${SCHEMA_NAME} (\`${SCHEMA_DEF}\`)" >> "${GITHUB_STEP_SUMMARY}"
-                echo "" >> "${GITHUB_STEP_SUMMARY}"
+                {
+                  echo "### Failed: ${SCHEMA_NAME} (\`${SCHEMA_DEF}\`)"
+                  echo ""
+                } >> "${GITHUB_STEP_SUMMARY}"
               fi
-              echo "<details><summary><code>$f</code></summary>" >> "${GITHUB_STEP_SUMMARY}"
-              echo "" >> "${GITHUB_STEP_SUMMARY}"
-              echo '```' >> "${GITHUB_STEP_SUMMARY}"
-              echo "$output" >> "${GITHUB_STEP_SUMMARY}"
-              echo '```' >> "${GITHUB_STEP_SUMMARY}"
-              echo "</details>" >> "${GITHUB_STEP_SUMMARY}"
-              echo "" >> "${GITHUB_STEP_SUMMARY}"
+              {
+                echo "<details><summary><code>$f</code></summary>"
+                echo ""
+                echo '```'
+                echo "$output"
+                echo '```'
+                echo "</details>"
+                echo ""
+              } >> "${GITHUB_STEP_SUMMARY}"
               failed=1
             else
               echo "✓ $f"
