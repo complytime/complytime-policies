@@ -1,0 +1,314 @@
+metadata:
+  id: nist-800-53-rev5-rhel8-ra
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for RHEL8, generated from ComplianceAsCode (RA family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-07-30T14:11:25Z'
+  applicability-groups:
+  - id: rhel8-low
+    title: RHEL8 Low Baseline
+    description: NIST 800-53 Low impact baseline for RHEL8
+  - id: rhel8-moderate
+    title: RHEL8 Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for RHEL8 (inherits Low)
+  - id: rhel8-high
+    title: RHEL8 High Baseline
+    description: NIST 800-53 High impact baseline for RHEL8 (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for RHEL8 - Risk Assessment
+groups:
+- id: ra
+  title: Risk Assessment
+  description: 'NIST 800-53 RA family: Risk Assessment'
+controls:
+- id: ra-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, ra-1_prm_1 }}: Designate an {{ insert: param, ra-01_odp.04 }} to manage the development, documentation, and dissemination of the risk assessment policy and procedures; and Review and update the current risk assessment:'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-2.1
+  title: Impact-level Prioritization
+  objective: Conduct an impact-level prioritization of organizational systems to obtain additional granularity on system impact levels.
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-2
+  title: Security Categorization
+  objective: Categorize the system and information it processes, stores, and transmits; Document the security categorization results, including supporting rationale, in the security plan for the system; and Verify that the authorizing official or authorizing official designated representative reviews and approves the security categorization decision.
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-3.1
+  title: Supply Chain Risk Assessment
+  objective: 'Assess supply chain risks associated with {{ insert: param, ra-03.01_odp.01 }} ; and Update the supply chain risk assessment {{ insert: param, ra-03.01_odp.02 }} , when there are significant changes to the relevant supply chain, or when changes to the system, environments of operation, or other conditions may necessitate a change in the supply chain.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-3.2
+  title: Use of All-source Intelligence
+  objective: Use all-source intelligence to assist in the analysis of risk.
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-3.3
+  title: Dynamic Threat Awareness
+  objective: 'Determine the current cyber threat environment on an ongoing basis using {{ insert: param, ra-03.03_odp }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-3.4
+  title: Predictive Cyber Analytics
+  objective: 'Employ the following advanced automation and analytics capabilities to predict and identify risks to {{ insert: param, ra-03.04_odp.02 }}: {{ insert: param, ra-3.4_prm_2 }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-3
+  title: Risk Assessment
+  objective: 'Conduct a risk assessment, including: Integrate risk assessment results and risk management decisions from the organization and mission or business process perspectives with system-level risk assessments; Document risk assessment results in {{ insert: param, ra-03_odp.01 }}; Review risk assessment results {{ insert: param, ra-03_odp.03 }}; Disseminate risk assessment results to {{ insert: param, ra-03_odp.04 }} ; and Update the risk assessment {{ insert: param, ra-03_odp.05 }} or when there are significant changes to the system, its environment of operation, or other conditions that may impact the security or privacy state of the system.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-4
+  title: Risk Assessment Update
+  objective: Risk Assessment Update
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.1
+  title: Update Tool Capability
+  objective: Update Tool Capability
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.2
+  title: Update Vulnerabilities to Be Scanned
+  objective: 'Update the system vulnerabilities to be scanned {{ insert: param, ra-05.02_odp.01 }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.3
+  title: Breadth and Depth of Coverage
+  objective: Define the breadth and depth of vulnerability scanning coverage.
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.4
+  title: Discoverable Information
+  objective: 'Determine information about the system that is discoverable and take {{ insert: param, ra-05.04_odp }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ra-5.5
+  title: Privileged Access
+  objective: 'Implement privileged access authorization to {{ insert: param, ra-05.05_odp.01 }} for {{ insert: param, ra-05.05_odp.02 }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ra-5.6
+  title: Automated Trend Analyses
+  objective: 'Compare the results of multiple vulnerability scans using {{ insert: param, ra-05.06_odp }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.7
+  title: Automated Detection and Notification of Unauthorized Components
+  objective: Automated Detection and Notification of Unauthorized Components
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.8
+  title: Review Historic Audit Logs
+  objective: 'Review historic audit logs to determine if a vulnerability identified in a {{ insert: param, ra-05.08_odp.01 }} has been previously exploited within an {{ insert: param, ra-05.08_odp.02 }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.9
+  title: Penetration Testing and Analyses
+  objective: Penetration Testing and Analyses
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.10
+  title: Correlate Scanning Information
+  objective: Correlate the output from vulnerability scanning tools to determine the presence of multi-vulnerability and multi-hop attack vectors.
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5.11
+  title: Public Disclosure Program
+  objective: Establish a public reporting channel for receiving reports of vulnerabilities in organizational systems and system components.
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-5
+  title: Vulnerability Monitoring and Scanning
+  objective: 'Monitor and scan for vulnerabilities in the system and hosted applications {{ insert: param, ra-5_prm_1 }} and when new vulnerabilities potentially affecting the system are identified and reported; Employ vulnerability monitoring tools and techniques that facilitate interoperability among tools and automate parts of the vulnerability management process by using standards for: Analyze vulnerability scan reports and results from vulnerability monitoring; Remediate legitimate vulnerabilities {{ insert: param, ra-05_odp.03 }} in accordance with an organizational assessment of risk; Share information obtained from the vulnerability monitoring process and control assessments with {{ insert: param, ra-05_odp.04 }} to help eliminate similar vulnerabilities in other systems; and Employ vulnerability monitoring tools that include the capability to readily update the vulnerabilities to be scanned.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-6
+  title: Technical Surveillance Countermeasures Survey
+  objective: 'Employ a technical surveillance countermeasures survey at {{ insert: param, ra-06_odp.01 }} {{ insert: param, ra-06_odp.02 }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-7
+  title: Risk Response
+  objective: Respond to findings from security and privacy assessments, monitoring, and audits in accordance with organizational risk tolerance.
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-8
+  title: Privacy Impact Assessments
+  objective: 'Conduct privacy impact assessments for systems, programs, or other activities before:'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ra-9
+  title: Criticality Analysis
+  objective: 'Identify critical system components and functions by performing a criticality analysis for {{ insert: param, ra-09_odp.01 }} at {{ insert: param, ra-09_odp.02 }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-moderate
+  state: Draft
+- id: ra-10
+  title: Threat Hunting
+  objective: 'Establish and maintain a cyber threat hunting capability to: Employ the threat hunting capability {{ insert: param, ra-10_odp }}.'
+  group: ra
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft

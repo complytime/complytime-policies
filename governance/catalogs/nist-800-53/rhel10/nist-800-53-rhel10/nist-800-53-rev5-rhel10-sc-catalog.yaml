@@ -1,0 +1,1825 @@
+metadata:
+  id: nist-800-53-rev5-rhel10-sc
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for RHEL10, generated from ComplianceAsCode (SC family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-07-30T14:11:28Z'
+  applicability-groups:
+  - id: rhel10-low
+    title: RHEL10 Low Baseline
+    description: NIST 800-53 Low impact baseline for RHEL10
+  - id: rhel10-moderate
+    title: RHEL10 Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for RHEL10 (inherits Low)
+  - id: rhel10-high
+    title: RHEL10 High Baseline
+    description: NIST 800-53 High impact baseline for RHEL10 (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for RHEL10 - System and Communications Protection
+groups:
+- id: sc
+  title: System and Communications Protection
+  description: 'NIST 800-53 SC family: System and Communications Protection'
+controls:
+- id: sc-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, sc-1_prm_1 }}: Designate an {{ insert: param, sc-01_odp.04 }} to manage the development, documentation, and dissemination of the system and communications protection policy and procedures; and Review and update the current system and communications protection:'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-2.1
+  title: Interfaces for Non-privileged Users
+  objective: Prevent the presentation of system management functionality at interfaces to non-privileged users.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-2.2
+  title: Disassociability
+  objective: Store state information from applications and software separately.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-2
+  title: Separation of System and User Functionality
+  objective: Separate user functionality, including user interface services, from system management functionality.
+  group: sc
+  assessment-requirements:
+  - id: sysctl_kernel_dmesg_restrict
+    state: Active
+    text: Rule 'sysctl_kernel_dmesg_restrict' MUST be verified
+    applicability:
+    - rhel10-moderate
+  state: Active
+- id: sc-3.1
+  title: Hardware Separation
+  objective: Employ hardware separation mechanisms to implement security function isolation.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-high
+  state: Draft
+- id: sc-3.2
+  title: Access and Flow Control Functions
+  objective: Isolate security functions enforcing access and information flow control from nonsecurity functions and from other security functions.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-high
+  state: Draft
+- id: sc-3.3
+  title: Minimize Nonsecurity Functionality
+  objective: Minimize the number of nonsecurity functions included within the isolation boundary containing security functions.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-high
+  state: Draft
+- id: sc-3.4
+  title: Module Coupling and Cohesiveness
+  objective: Implement security functions as largely independent modules that maximize internal cohesiveness within modules and minimize coupling between modules.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-high
+  state: Draft
+- id: sc-3.5
+  title: Layered Structures
+  objective: Implement security functions as a layered structure minimizing interactions between layers of the design and avoiding any dependence by lower layers on the functionality or correctness of higher layers.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-high
+  state: Draft
+- id: sc-3
+  title: Security Function Isolation
+  objective: Isolate security functions from nonsecurity functions.
+  group: sc
+  assessment-requirements:
+  - id: selinux_not_disabled
+    state: Active
+    text: Rule 'selinux_not_disabled' MUST be verified
+    applicability:
+    - rhel10-high
+  - id: selinux_state
+    state: Active
+    text: Rule 'selinux_state' MUST be verified
+    applicability:
+    - rhel10-high
+  - id: var_selinux_state
+    state: Active
+    text: Variable 'var_selinux_state' is set to 'enforcing'
+    applicability:
+    - rhel10-high
+  state: Active
+- id: sc-4.1
+  title: Security Levels
+  objective: Security Levels
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-4.2
+  title: Multilevel or Periods Processing
+  objective: 'Prevent unauthorized information transfer via shared resources in accordance with {{ insert: param, sc-04.02_odp }} when system processing explicitly switches between different information classification levels or security categories.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-4
+  title: Information in Shared System Resources
+  objective: Prevent unauthorized and unintended information transfer via shared system resources.
+  group: sc
+  assessment-requirements:
+  - id: dir_perms_world_writable_sticky_bits
+    state: Active
+    text: Rule 'dir_perms_world_writable_sticky_bits' MUST be verified
+    applicability:
+    - rhel10-moderate
+  - id: file_permissions_unauthorized_world_writable
+    state: Active
+    text: Rule 'file_permissions_unauthorized_world_writable' MUST be verified
+    applicability:
+    - rhel10-moderate
+  state: Active
+- id: sc-5.1
+  title: Restrict Ability to Attack Other Systems
+  objective: 'Restrict the ability of individuals to launch the following denial-of-service attacks against other systems: {{ insert: param, sc-05.01_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-5.2
+  title: Capacity, Bandwidth, and Redundancy
+  objective: Manage capacity, bandwidth, or other redundancy to limit the effects of information flooding denial-of-service attacks.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-5.3
+  title: Detection and Monitoring
+  objective: 'Employ the following monitoring tools to detect indicators of denial-of-service attacks against, or launched from, the system: {{ insert: param, sc-05.03_odp.01 }} ; and Monitor the following system resources to determine if sufficient resources exist to prevent effective denial-of-service attacks: {{ insert: param, sc-05.03_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-5
+  title: Denial-of-service Protection
+  objective: '{{ insert: param, sc-05_odp.02 }} the effects of the following types of denial-of-service events: {{ insert: param, sc-05_odp.01 }} ; and Employ the following controls to achieve the denial-of-service objective: {{ insert: param, sc-05_odp.03 }}.'
+  group: sc
+  assessment-requirements:
+  - id: sysctl_net_ipv4_tcp_syncookies
+    state: Active
+    text: Rule 'sysctl_net_ipv4_tcp_syncookies' MUST be verified
+    applicability:
+    - rhel10-low
+  state: Active
+- id: sc-6
+  title: Resource Availability
+  objective: 'Protect the availability of resources by allocating {{ insert: param, sc-06_odp.01 }} by {{ insert: param, sc-06_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.1
+  title: Physically Separated Subnetworks
+  objective: Physically Separated Subnetworks
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.2
+  title: Public Access
+  objective: Public Access
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.3
+  title: Access Points
+  objective: Limit the number of external network connections to the system.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-7.4
+  title: External Telecommunications Services
+  objective: 'Implement a managed interface for each external telecommunication service; Establish a traffic flow policy for each managed interface; Protect the confidentiality and integrity of the information being transmitted across each interface; Document each exception to the traffic flow policy with a supporting mission or business need and duration of that need; Review exceptions to the traffic flow policy {{ insert: param, sc-07.04_odp }} and remove exceptions that are no longer supported by an explicit mission or business need; Prevent unauthorized exchange of control plane traffic with external networks; Publish information to enable remote networks to detect unauthorized control plane traffic from internal networks; and Filter unauthorized control plane traffic from external networks.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-7.5
+  title: Deny by Default — Allow by Exception
+  objective: 'Deny network communications traffic by default and allow network communications traffic by exception {{ insert: param, sc-07.05_odp.01 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-7.6
+  title: Response to Recognized Failures
+  objective: Response to Recognized Failures
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.7
+  title: Split Tunneling for Remote Devices
+  objective: 'Prevent split tunneling for remote devices connecting to organizational systems unless the split tunnel is securely provisioned using {{ insert: param, sc-07.07_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-7.8
+  title: Route Traffic to Authenticated Proxy Servers
+  objective: 'Route {{ insert: param, sc-07.08_odp.01 }} to {{ insert: param, sc-07.08_odp.02 }} through authenticated proxy servers at managed interfaces.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-7.9
+  title: Restrict Threatening Outgoing Communications Traffic
+  objective: Detect and deny outgoing communications traffic posing a threat to external systems; and Audit the identity of internal users associated with denied communications.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.10
+  title: Prevent Exfiltration
+  objective: 'Prevent the exfiltration of information; and Conduct exfiltration tests {{ insert: param, sc-07.10_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.11
+  title: Restrict Incoming Communications Traffic
+  objective: 'Only allow incoming communications from {{ insert: param, sc-07.11_odp.01 }} to be routed to {{ insert: param, sc-07.11_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.12
+  title: Host-based Protection
+  objective: 'Implement {{ insert: param, sc-07.12_odp.01 }} at {{ insert: param, sc-07.12_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.13
+  title: Isolation of Security Tools, Mechanisms, and Support Components
+  objective: 'Isolate {{ insert: param, sc-07.13_odp }} from other internal system components by implementing physically separate subnetworks with managed interfaces to other components of the system.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.14
+  title: Protect Against Unauthorized Physical Connections
+  objective: 'Protect against unauthorized physical connections at {{ insert: param, sc-07.14_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.15
+  title: Networked Privileged Accesses
+  objective: Route networked, privileged accesses through a dedicated, managed interface for purposes of access control and auditing.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.16
+  title: Prevent Discovery of System Components
+  objective: Prevent the discovery of specific system components that represent a managed interface.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.17
+  title: Automated Enforcement of Protocol Formats
+  objective: Enforce adherence to protocol formats.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.18
+  title: Fail Secure
+  objective: Prevent systems from entering unsecure states in the event of an operational failure of a boundary protection device.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-high
+  state: Draft
+- id: sc-7.19
+  title: Block Communication from Non-organizationally Configured Hosts
+  objective: 'Block inbound and outbound communications traffic between {{ insert: param, sc-07.19_odp }} that are independently configured by end users and external service providers.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.20
+  title: Dynamic Isolation and Segregation
+  objective: 'Provide the capability to dynamically isolate {{ insert: param, sc-07.20_odp }} from other system components.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.21
+  title: Isolation of System Components
+  objective: 'Employ boundary protection mechanisms to isolate {{ insert: param, sc-07.21_odp.01 }} supporting {{ insert: param, sc-07.21_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-high
+  state: Draft
+- id: sc-7.22
+  title: Separate Subnets for Connecting to Different Security Domains
+  objective: Implement separate network addresses to connect to systems in different security domains.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.23
+  title: Disable Sender Feedback on Protocol Validation Failure
+  objective: Disable feedback to senders on protocol format validation failure.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.24
+  title: Personally Identifiable Information
+  objective: 'For systems that process personally identifiable information:'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.25
+  title: Unclassified National Security System Connections
+  objective: 'Prohibit the direct connection of {{ insert: param, sc-07.25_odp.01 }} to an external network without the use of {{ insert: param, sc-07.25_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.26
+  title: Classified National Security System Connections
+  objective: 'Prohibit the direct connection of a classified national security system to an external network without the use of {{ insert: param, sc-07.26_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.27
+  title: Unclassified Non-national Security System Connections
+  objective: 'Prohibit the direct connection of {{ insert: param, sc-07.27_odp.01 }} to an external network without the use of {{ insert: param, sc-07.27_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.28
+  title: Connections to Public Networks
+  objective: 'Prohibit the direct connection of {{ insert: param, sc-07.28_odp }} to a public network.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7.29
+  title: Separate Subnets to Isolate Functions
+  objective: 'Implement {{ insert: param, sc-07.29_odp.01 }} separate subnetworks to isolate the following critical system components and functions: {{ insert: param, sc-07.29_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-7
+  title: Boundary Protection
+  objective: 'Monitor and control communications at the external managed interfaces to the system and at key internal managed interfaces within the system; Implement subnetworks for publicly accessible system components that are {{ insert: param, sc-07_odp }} separated from internal organizational networks; and Connect to external networks or systems only through managed interfaces consisting of boundary protection devices arranged in accordance with an organizational security and privacy architecture.'
+  group: sc
+  assessment-requirements:
+  - id: service_firewalld_enabled
+    state: Active
+    text: Rule 'service_firewalld_enabled' MUST be verified
+    applicability:
+    - rhel10-low
+  state: Active
+- id: sc-8.1
+  title: Cryptographic Protection
+  objective: 'Implement cryptographic mechanisms to {{ insert: param, sc-08.01_odp }} during transmission.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-8.2
+  title: Pre- and Post-transmission Handling
+  objective: 'Maintain the {{ insert: param, sc-08.02_odp }} of information during preparation for transmission and during reception.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-8.3
+  title: Cryptographic Protection for Message Externals
+  objective: 'Implement cryptographic mechanisms to protect message externals unless otherwise protected by {{ insert: param, sc-08.03_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-8.4
+  title: Conceal or Randomize Communications
+  objective: 'Implement cryptographic mechanisms to conceal or randomize communication patterns unless otherwise protected by {{ insert: param, sc-08.04_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-8.5
+  title: Protected Distribution System
+  objective: 'Implement {{ insert: param, sc-08.05_odp.01 }} to {{ insert: param, sc-08.05_odp.02 }} during transmission.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-8
+  title: Transmission Confidentiality and Integrity
+  objective: 'Protect the {{ insert: param, sc-08_odp }} of transmitted information.'
+  group: sc
+  assessment-requirements:
+  - id: configure_custom_crypto_policy_cis
+    state: Active
+    text: Rule 'configure_custom_crypto_policy_cis' MUST be verified
+    applicability:
+    - rhel10-moderate
+  state: Active
+- id: sc-9
+  title: Transmission Confidentiality
+  objective: Transmission Confidentiality
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-10
+  title: Network Disconnect
+  objective: 'Terminate the network connection associated with a communications session at the end of the session or after {{ insert: param, sc-10_odp }} of inactivity.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-11.1
+  title: Irrefutable Communications Path
+  objective: 'Provide a trusted communications path that is irrefutably distinguishable from other communications paths; and Initiate the trusted communications path for communications between the {{ insert: param, sc-11.01_odp }} of the system and the user.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-11
+  title: Trusted Path
+  objective: 'Provide a {{ insert: param, sc-11_odp.01 }} isolated trusted communications path for communications between the user and the trusted components of the system; and Permit users to invoke the trusted communications path for communications between the user and the following security functions of the system, including at a minimum, authentication and re-authentication: {{ insert: param, sc-11_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-12.1
+  title: Availability
+  objective: Maintain availability of information in the event of the loss of cryptographic keys by users.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-high
+  state: Draft
+- id: sc-12.2
+  title: Symmetric Keys
+  objective: 'Produce, control, and distribute symmetric cryptographic keys using {{ insert: param, sc-12.02_odp }} key management technology and processes.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-12.3
+  title: Asymmetric Keys
+  objective: 'Produce, control, and distribute asymmetric cryptographic keys using {{ insert: param, sc-12.03_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-12.4
+  title: PKI Certificates
+  objective: PKI Certificates
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-12.5
+  title: PKI Certificates / Hardware Tokens
+  objective: PKI Certificates / Hardware Tokens
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-12.6
+  title: Physical Control of Keys
+  objective: Maintain physical control of cryptographic keys when stored information is encrypted by external service providers.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-12
+  title: Cryptographic Key Establishment and Management
+  objective: 'Establish and manage cryptographic keys when cryptography is employed within the system in accordance with the following key management requirements: {{ insert: param, sc-12_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-13.1
+  title: FIPS-validated Cryptography
+  objective: FIPS-validated Cryptography
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-13.2
+  title: NSA-approved Cryptography
+  objective: NSA-approved Cryptography
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-13.3
+  title: Individuals Without Formal Access Approvals
+  objective: Individuals Without Formal Access Approvals
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-13.4
+  title: Digital Signatures
+  objective: Digital Signatures
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-13
+  title: Cryptographic Protection
+  objective: 'Determine the {{ insert: param, sc-13_odp.01 }} ; and Implement the following types of cryptography required for each specified cryptographic use: {{ insert: param, sc-13_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-14
+  title: Public Access Protections
+  objective: Public Access Protections
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-15.1
+  title: Physical or Logical Disconnect
+  objective: 'Provide {{ insert: param, sc-15.01_odp }} disconnect of collaborative computing devices in a manner that supports ease of use.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-15.2
+  title: Blocking Inbound and Outbound Communications Traffic
+  objective: Blocking Inbound and Outbound Communications Traffic
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-15.3
+  title: Disabling and Removal in Secure Work Areas
+  objective: 'Disable or remove collaborative computing devices and applications from {{ insert: param, sc-15.03_odp.01 }} in {{ insert: param, sc-15.03_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-15.4
+  title: Explicitly Indicate Current Participants
+  objective: 'Provide an explicit indication of current participants in {{ insert: param, sc-15.04_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-15
+  title: Collaborative Computing Devices and Applications
+  objective: 'Prohibit remote activation of collaborative computing devices and applications with the following exceptions: {{ insert: param, sc-15_odp }} ; and Provide an explicit indication of use to users physically present at the devices.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-16.1
+  title: Integrity Verification
+  objective: Verify the integrity of transmitted security and privacy attributes.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-16.2
+  title: Anti-spoofing Mechanisms
+  objective: Implement anti-spoofing mechanisms to prevent adversaries from falsifying the security attributes indicating the successful application of the security process.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-16.3
+  title: Cryptographic Binding
+  objective: 'Implement {{ insert: param, sc-16.03_odp }} to bind security and privacy attributes to transmitted information.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-16
+  title: Transmission of Security and Privacy Attributes
+  objective: 'Associate {{ insert: param, sc-16_prm_1 }} with information exchanged between systems and between system components.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-17
+  title: Public Key Infrastructure Certificates
+  objective: 'Issue public key certificates under an {{ insert: param, sc-17_odp }} or obtain public key certificates from an approved service provider; and Include only approved trust anchors in trust stores or certificate stores managed by the organization.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-18.1
+  title: Identify Unacceptable Code and Take Corrective Actions
+  objective: 'Identify {{ insert: param, sc-18.01_odp.01 }} and take {{ insert: param, sc-18.01_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-18.2
+  title: Acquisition, Development, and Use
+  objective: 'Verify that the acquisition, development, and use of mobile code to be deployed in the system meets {{ insert: param, sc-18.02_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-18.3
+  title: Prevent Downloading and Execution
+  objective: 'Prevent the download and execution of {{ insert: param, sc-18.03_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-18.4
+  title: Prevent Automatic Execution
+  objective: 'Prevent the automatic execution of mobile code in {{ insert: param, sc-18.04_odp.01 }} and enforce {{ insert: param, sc-18.04_odp.02 }} prior to executing the code.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-18.5
+  title: Allow Execution Only in Confined Environments
+  objective: Allow execution of permitted mobile code only in confined virtual machine environments.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-18
+  title: Mobile Code
+  objective: Define acceptable and unacceptable mobile code and mobile code technologies; and Authorize, monitor, and control the use of mobile code within the system.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-19
+  title: Voice Over Internet Protocol
+  objective: Technology-specific; addressed as any other technology or protocol.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-20.1
+  title: Child Subspaces
+  objective: Child Subspaces
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-20.2
+  title: Data Origin and Integrity
+  objective: Provide data origin and integrity protection artifacts for internal name/address resolution queries.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-20
+  title: Secure Name/Address Resolution Service (Authoritative Source)
+  objective: Provide additional data origin authentication and integrity verification artifacts along with the authoritative name resolution data the system returns in response to external name/address resolution queries; and Provide the means to indicate the security status of child zones and (if the child supports secure resolution services) to enable verification of a chain of trust among parent and child domains, when operating as part of a distributed, hierarchical namespace.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-21.1
+  title: Data Origin and Integrity
+  objective: Data Origin and Integrity
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-21
+  title: Secure Name/Address Resolution Service (Recursive or Caching Resolver)
+  objective: Request and perform data origin authentication and data integrity verification on the name/address resolution responses the system receives from authoritative sources.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-22
+  title: Architecture and Provisioning for Name/Address Resolution Service
+  objective: Ensure the systems that collectively provide name/address resolution service for an organization are fault-tolerant and implement internal and external role separation.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-23.1
+  title: Invalidate Session Identifiers at Logout
+  objective: Invalidate session identifiers upon user logout or other session termination.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-23.2
+  title: User-initiated Logouts and Message Displays
+  objective: User-initiated Logouts and Message Displays
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-23.3
+  title: Unique System-generated Session Identifiers
+  objective: 'Generate a unique session identifier for each session with {{ insert: param, sc-23.03_odp }} and recognize only session identifiers that are system-generated.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-23.4
+  title: Unique Session Identifiers with Randomization
+  objective: Unique Session Identifiers with Randomization
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-23.5
+  title: Allowed Certificate Authorities
+  objective: 'Only allow the use of {{ insert: param, sc-23.05_odp }} for verification of the establishment of protected sessions.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-23
+  title: Session Authenticity
+  objective: Protect the authenticity of communications sessions.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-24
+  title: Fail in Known State
+  objective: 'Fail to a {{ insert: param, sc-24_odp.02 }} for the following failures on the indicated components while preserving {{ insert: param, sc-24_odp.03 }} in failure: {{ insert: param, sc-24_odp.01 }}.'
+  group: sc
+  assessment-requirements:
+  - id: service_systemd-journald_enabled
+    state: Active
+    text: Rule 'service_systemd-journald_enabled' MUST be verified
+    applicability:
+    - rhel10-high
+  state: Active
+- id: sc-25
+  title: Thin Nodes
+  objective: 'Employ minimal functionality and information storage on the following system components: {{ insert: param, sc-25_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-26.1
+  title: Detection of Malicious Code
+  objective: Detection of Malicious Code
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-26
+  title: Decoys
+  objective: Include components within organizational systems specifically designed to be the target of malicious attacks for detecting, deflecting, and analyzing such attacks.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-27
+  title: Platform-independent Applications
+  objective: 'Include within organizational systems the following platform independent applications: {{ insert: param, sc-27_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-28.1
+  title: Cryptographic Protection
+  objective: 'Implement cryptographic mechanisms to prevent unauthorized disclosure and modification of the following information at rest on {{ insert: param, sc-28.01_odp.02 }}: {{ insert: param, sc-28.01_odp.01 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-28.2
+  title: Offline Storage
+  objective: 'Remove the following information from online storage and store offline in a secure location: {{ insert: param, sc-28.02_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-28.3
+  title: Cryptographic Keys
+  objective: 'Provide protected storage for cryptographic keys {{ insert: param, sc-28.03_odp.01 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-28
+  title: Protection of Information at Rest
+  objective: 'Protect the {{ insert: param, sc-28_odp.01 }} of the following information at rest: {{ insert: param, sc-28_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-moderate
+  state: Draft
+- id: sc-29.1
+  title: Virtualization Techniques
+  objective: 'Employ virtualization techniques to support the deployment of a diversity of operating systems and applications that are changed {{ insert: param, sc-29.01_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-29
+  title: Heterogeneity
+  objective: 'Employ a diverse set of information technologies for the following system components in the implementation of the system: {{ insert: param, sc-29_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-30.1
+  title: Virtualization Techniques
+  objective: Virtualization Techniques
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-30.2
+  title: Randomness
+  objective: 'Employ {{ insert: param, sc-30.02_odp }} to introduce randomness into organizational operations and assets.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-30.3
+  title: Change Processing and Storage Locations
+  objective: 'Change the location of {{ insert: param, sc-30.03_odp.01 }} {{ insert: param, sc-30.03_odp.02 }}].'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-30.4
+  title: Misleading Information
+  objective: 'Employ realistic, but misleading information in {{ insert: param, sc-30.04_odp }} about its security state or posture.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-30.5
+  title: Concealment of System Components
+  objective: 'Employ the following techniques to hide or conceal {{ insert: param, sc-30.05_odp.02 }}: {{ insert: param, sc-30.05_odp.01 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-30
+  title: Concealment and Misdirection
+  objective: 'Employ the following concealment and misdirection techniques for {{ insert: param, sc-30_odp.02 }} at {{ insert: param, sc-30_odp.03 }} to confuse and mislead adversaries: {{ insert: param, sc-30_odp.01 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-31.1
+  title: Test Covert Channels for Exploitability
+  objective: Test a subset of the identified covert channels to determine the channels that are exploitable.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-31.2
+  title: Maximum Bandwidth
+  objective: 'Reduce the maximum bandwidth for identified covert {{ insert: param, sc-31.02_odp.01 }} channels to {{ insert: param, sc-31.02_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-31.3
+  title: Measure Bandwidth in Operational Environments
+  objective: 'Measure the bandwidth of {{ insert: param, sc-31.03_odp }} in the operational environment of the system.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-31
+  title: Covert Channel Analysis
+  objective: 'Perform a covert channel analysis to identify those aspects of communications within the system that are potential avenues for covert {{ insert: param, sc-31_odp }} channels; and Estimate the maximum bandwidth of those channels.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-32.1
+  title: Separate Physical Domains for Privileged Functions
+  objective: Partition privileged functions into separate physical domains.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-32
+  title: System Partitioning
+  objective: 'Partition the system into {{ insert: param, sc-32_odp.01 }} residing in separate {{ insert: param, sc-32_odp.02 }} domains or environments based on {{ insert: param, sc-32_odp.03 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-33
+  title: Transmission Preparation Integrity
+  objective: Transmission Preparation Integrity
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-34.1
+  title: No Writable Storage
+  objective: 'Employ {{ insert: param, sc-34.01_odp }} with no writeable storage that is persistent across component restart or power on/off.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-34.2
+  title: Integrity Protection on Read-only Media
+  objective: Protect the integrity of information prior to storage on read-only media and control the media after such information has been recorded onto the media.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-34.3
+  title: Hardware-based Protection
+  objective: Hardware-based Protection
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-34
+  title: Non-modifiable Executable Programs
+  objective: 'For {{ insert: param, sc-34_odp.01 }} , load and execute:'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-35
+  title: External Malicious Code Identification
+  objective: Include system components that proactively seek to identify network-based malicious code or malicious websites.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-36.1
+  title: Polling Techniques
+  objective: 'Employ polling techniques to identify potential faults, errors, or compromises to the following processing and storage components: {{ insert: param, sc-36.01_odp.01 }} ; and Take the following actions in response to identified faults, errors, or compromises: {{ insert: param, sc-36.01_odp.02 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-36.2
+  title: Synchronization
+  objective: 'Synchronize the following duplicate systems or system components: {{ insert: param, sc-36.02_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-36
+  title: Distributed Processing and Storage
+  objective: 'Distribute the following processing and storage components across multiple {{ insert: param, sc-36_prm_1 }}: {{ insert: param, sc-36_prm_2 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-37.1
+  title: Ensure Delivery and Transmission
+  objective: 'Employ {{ insert: param, sc-37.01_odp.01 }} to ensure that only {{ insert: param, sc-37.01_odp.02 }} receive the following information, system components, or devices: {{ insert: param, sc-37.01_odp.03 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-37
+  title: Out-of-band Channels
+  objective: 'Employ the following out-of-band channels for the physical delivery or electronic transmission of {{ insert: param, sc-37_odp.02 }} to {{ insert: param, sc-37_odp.03 }}: {{ insert: param, sc-37_odp.01 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-38
+  title: Operations Security
+  objective: 'Employ the following operations security controls to protect key organizational information throughout the system development life cycle: {{ insert: param, sc-38_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-39.1
+  title: Hardware Separation
+  objective: Implement hardware separation mechanisms to facilitate process isolation.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-39.2
+  title: Separate Execution Domain Per Thread
+  objective: 'Maintain a separate execution domain for each thread in {{ insert: param, sc-39.02_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-39
+  title: Process Isolation
+  objective: Maintain a separate execution domain for each executing system process.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-40.1
+  title: Electromagnetic Interference
+  objective: 'Implement cryptographic mechanisms that achieve {{ insert: param, sc-40.01_odp }} against the effects of intentional electromagnetic interference.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-40.2
+  title: Reduce Detection Potential
+  objective: 'Implement cryptographic mechanisms to reduce the detection potential of wireless links to {{ insert: param, sc-40.02_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-40.3
+  title: Imitative or Manipulative Communications Deception
+  objective: Implement cryptographic mechanisms to identify and reject wireless transmissions that are deliberate attempts to achieve imitative or manipulative communications deception based on signal parameters.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-40.4
+  title: Signal Parameter Identification
+  objective: 'Implement cryptographic mechanisms to prevent the identification of {{ insert: param, sc-40.04_odp }} by using the transmitter signal parameters.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-40
+  title: Wireless Link Protection
+  objective: 'Protect external and internal {{ insert: param, sc-40_prm_1 }} from the following signal parameter attacks: {{ insert: param, sc-40_prm_2 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-41
+  title: Port and I/O Device Access
+  objective: '{{ insert: param, sc-41_odp.02 }} disable or remove {{ insert: param, sc-41_odp.01 }} on the following systems or system components: {{ insert: param, sc-41_odp.03 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-42.1
+  title: Reporting to Authorized Individuals or Roles
+  objective: 'Verify that the system is configured so that data or information collected by the {{ insert: param, sc-42.01_odp }} is only reported to authorized individuals or roles.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-42.2
+  title: Authorized Use
+  objective: 'Employ the following measures so that data or information collected by {{ insert: param, sc-42.01_odp }} is only used for authorized purposes: {{ insert: param, sc-42.02_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-42.3
+  title: Prohibit Use of Devices
+  objective: Prohibit Use of Devices
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-42.4
+  title: Notice of Collection
+  objective: 'Employ the following measures to facilitate an individual’s awareness that personally identifiable information is being collected by {{ insert: param, sc-42.04_odp.02 }}: {{ insert: param, sc-42.04_odp.01 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-42.5
+  title: Collection Minimization
+  objective: 'Employ {{ insert: param, sc-42.05_odp }} that are configured to minimize the collection of information about individuals that is not needed.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-42
+  title: Sensor Capability and Data
+  objective: 'Prohibit {{ insert: param, sc-42_odp.01 }} ; and Provide an explicit indication of sensor use to {{ insert: param, sc-42_odp.05 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-43
+  title: Usage Restrictions
+  objective: 'Establish usage restrictions and implementation guidelines for the following system components: {{ insert: param, sc-43_odp }} ; and Authorize, monitor, and control the use of such components within the system.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-44
+  title: Detonation Chambers
+  objective: 'Employ a detonation chamber capability within {{ insert: param, sc-44_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-45.1
+  title: Synchronization with Authoritative Time Source
+  objective: 'Compare the internal system clocks {{ insert: param, sc-45.01_odp.01 }} with {{ insert: param, sc-45.01_odp.02 }} ; and Synchronize the internal system clocks to the authoritative time source when the time difference is greater than {{ insert: param, sc-45.01_odp.03 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-45.2
+  title: Secondary Authoritative Time Source
+  objective: Identify a secondary authoritative time source that is in a different geographic region than the primary authoritative time source; and Synchronize the internal system clocks to the secondary authoritative time source if the primary authoritative time source is unavailable.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-45
+  title: System Time Synchronization
+  objective: Synchronize system clocks within and between systems and system components.
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-46
+  title: Cross Domain Policy Enforcement
+  objective: 'Implement a policy enforcement mechanism {{ insert: param, sc-46_odp }} between the physical and/or network interfaces for the connecting security domains.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-47
+  title: Alternate Communications Paths
+  objective: 'Establish {{ insert: param, sc-47_odp }} for system operations organizational command and control.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-48.1
+  title: Dynamic Relocation of Sensors or Monitoring Capabilities
+  objective: 'Dynamically relocate {{ insert: param, sc-48.01_odp.01 }} to {{ insert: param, sc-48.01_odp.02 }} under the following conditions or circumstances: {{ insert: param, sc-48.01_odp.03 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-48
+  title: Sensor Relocation
+  objective: 'Relocate {{ insert: param, sc-48_odp.01 }} to {{ insert: param, sc-48_odp.02 }} under the following conditions or circumstances: {{ insert: param, sc-48_odp.03 }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-49
+  title: Hardware-enforced Separation and Policy Enforcement
+  objective: 'Implement hardware-enforced separation and policy enforcement mechanisms between {{ insert: param, sc-49_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-50
+  title: Software-enforced Separation and Policy Enforcement
+  objective: 'Implement software-enforced separation and policy enforcement mechanisms between {{ insert: param, sc-50_odp }}.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft
+- id: sc-51
+  title: Hardware-based Protection
+  objective: 'Employ hardware-based, write-protect for {{ insert: param, sc-51_odp.01 }} ; and Implement specific procedures for {{ insert: param, sc-51_odp.02 }} to manually disable hardware write-protect for firmware modifications and re-enable the write-protect prior to returning to operational mode.'
+  group: sc
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel10-low
+  state: Draft

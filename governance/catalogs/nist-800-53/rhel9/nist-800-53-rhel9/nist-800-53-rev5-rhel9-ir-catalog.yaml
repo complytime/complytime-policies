@@ -1,0 +1,490 @@
+metadata:
+  id: nist-800-53-rev5-rhel9-ir
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for RHEL9, generated from ComplianceAsCode (IR family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-07-30T14:11:26Z'
+  applicability-groups:
+  - id: rhel9-low
+    title: RHEL9 Low Baseline
+    description: NIST 800-53 Low impact baseline for RHEL9
+  - id: rhel9-moderate
+    title: RHEL9 Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for RHEL9 (inherits Low)
+  - id: rhel9-high
+    title: RHEL9 High Baseline
+    description: NIST 800-53 High impact baseline for RHEL9 (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for RHEL9 - Incident Response
+groups:
+- id: ir
+  title: Incident Response
+  description: 'NIST 800-53 IR family: Incident Response'
+controls:
+- id: ir-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, ir-1_prm_1 }}: Designate an {{ insert: param, ir-01_odp.04 }} to manage the development, documentation, and dissemination of the incident response policy and procedures; and Review and update the current incident response:'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-2.1
+  title: Simulated Events
+  objective: Incorporate simulated events into incident response training to facilitate the required response by personnel in crisis situations.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: ir-2.2
+  title: Automated Training Environments
+  objective: 'Provide an incident response training environment using {{ insert: param, ir-02.02_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: ir-2.3
+  title: Breach
+  objective: Provide incident response training on how to identify and respond to a breach, including the organization’s process for reporting a breach.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-2
+  title: Incident Response Training
+  objective: 'Provide incident response training to system users consistent with assigned roles and responsibilities: Review and update incident response training content {{ insert: param, ir-02_odp.03 }} and following {{ insert: param, ir-02_odp.04 }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-3.1
+  title: Automated Testing
+  objective: 'Test the incident response capability using {{ insert: param, ir-03.01_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: ir-3.2
+  title: Coordination with Related Plans
+  objective: Coordinate incident response testing with organizational elements responsible for related plans.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: ir-3.3
+  title: Continuous Improvement
+  objective: 'Use qualitative and quantitative data from testing to:'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: ir-3
+  title: Incident Response Testing
+  objective: 'Test the effectiveness of the incident response capability for the system {{ insert: param, ir-03_odp.01 }} using the following tests: {{ insert: param, ir-03_odp.02 }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: ir-4.1
+  title: Automated Incident Handling Processes
+  objective: 'Support the incident handling process using {{ insert: param, ir-04.01_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: ir-4.2
+  title: Dynamic Reconfiguration
+  objective: 'Include the following types of dynamic reconfiguration for {{ insert: param, ir-04.02_odp.02 }} as part of the incident response capability: {{ insert: param, ir-04.02_odp.01 }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.3
+  title: Continuity of Operations
+  objective: 'Identify {{ insert: param, ir-04.03_odp.01 }} and take the following actions in response to those incidents to ensure continuation of organizational mission and business functions: {{ insert: param, ir-04.03_odp.02 }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.4
+  title: Information Correlation
+  objective: Correlate incident information and individual incident responses to achieve an organization-wide perspective on incident awareness and response.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: ir-4.5
+  title: Automatic Disabling of System
+  objective: 'Implement a configurable capability to automatically disable the system if {{ insert: param, ir-04.05_odp }} are detected.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.6
+  title: Insider Threats
+  objective: Implement an incident handling capability for incidents involving insider threats.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.7
+  title: Insider Threats — Intra-organization Coordination
+  objective: 'Coordinate an incident handling capability for insider threats that includes the following organizational entities {{ insert: param, ir-04.07_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.8
+  title: Correlation with External Organizations
+  objective: 'Coordinate with {{ insert: param, ir-04.08_odp.01 }} to correlate and share {{ insert: param, ir-04.08_odp.02 }} to achieve a cross-organization perspective on incident awareness and more effective incident responses.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.9
+  title: Dynamic Response Capability
+  objective: 'Employ {{ insert: param, ir-04.09_odp }} to respond to incidents.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.10
+  title: Supply Chain Coordination
+  objective: Coordinate incident handling activities involving supply chain events with other organizations involved in the supply chain.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.11
+  title: Integrated Incident Response Team
+  objective: 'Establish and maintain an integrated incident response team that can be deployed to any location identified by the organization in {{ insert: param, ir-04.11_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: ir-4.12
+  title: Malicious Code and Forensic Analysis
+  objective: Analyze malicious code and/or other residual artifacts remaining in the system after the incident.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.13
+  title: Behavior Analysis
+  objective: 'Analyze anomalous or suspected adversarial behavior in or related to {{ insert: param, ir-04.13_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.14
+  title: Security Operations Center
+  objective: Establish and maintain a security operations center.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4.15
+  title: Public Relations and Reputation Repair
+  objective: Manage public relations associated with an incident; and Employ measures to repair the reputation of the organization.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-4
+  title: Incident Handling
+  objective: Implement an incident handling capability for incidents that is consistent with the incident response plan and includes preparation, detection and analysis, containment, eradication, and recovery; Coordinate incident handling activities with contingency planning activities; Incorporate lessons learned from ongoing incident handling activities into incident response procedures, training, and testing, and implement the resulting changes accordingly; and Ensure the rigor, intensity, scope, and results of incident handling activities are comparable and predictable across the organization.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-5.1
+  title: Automated Tracking, Data Collection, and Analysis
+  objective: 'Track incidents and collect and analyze incident information using {{ insert: param, ir-5.1_prm_1 }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: ir-5
+  title: Incident Monitoring
+  objective: Track and document incidents.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-6.1
+  title: Automated Reporting
+  objective: 'Report incidents using {{ insert: param, ir-06.01_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: ir-6.2
+  title: Vulnerabilities Related to Incidents
+  objective: 'Report system vulnerabilities associated with reported incidents to {{ insert: param, ir-06.02_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-6.3
+  title: Supply Chain Coordination
+  objective: Provide incident information to the provider of the product or service and other organizations involved in the supply chain or supply chain governance for systems or system components related to the incident.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: ir-6
+  title: Incident Reporting
+  objective: 'Require personnel to report suspected incidents to the organizational incident response capability within {{ insert: param, ir-06_odp.01 }} ; and Report incident information to {{ insert: param, ir-06_odp.02 }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-7.1
+  title: Automation Support for Availability of Information and Support
+  objective: 'Increase the availability of incident response information and support using {{ insert: param, ir-07.01_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: ir-7.2
+  title: Coordination with External Providers
+  objective: Establish a direct, cooperative relationship between its incident response capability and external providers of system protection capability; and Identify organizational incident response team members to the external providers.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-7
+  title: Incident Response Assistance
+  objective: Provide an incident response support resource, integral to the organizational incident response capability, that offers advice and assistance to users of the system for the handling and reporting of incidents.
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-8.1
+  title: Breaches
+  objective: 'Include the following in the Incident Response Plan for breaches involving personally identifiable information:'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-8
+  title: Incident Response Plan
+  objective: 'Develop an incident response plan that: Distribute copies of the incident response plan to {{ insert: param, ir-08_odp.04 }}; Update the incident response plan to address system and organizational changes or problems encountered during plan implementation, execution, or testing; Communicate incident response plan changes to {{ insert: param, ir-8_prm_5 }} ; and Protect the incident response plan from unauthorized disclosure and modification.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-9.1
+  title: Responsible Personnel
+  objective: Responsible Personnel
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-9.2
+  title: Training
+  objective: 'Provide information spillage response training {{ insert: param, ir-09.02_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-9.3
+  title: Post-spill Operations
+  objective: 'Implement the following procedures to ensure that organizational personnel impacted by information spills can continue to carry out assigned tasks while contaminated systems are undergoing corrective actions: {{ insert: param, ir-09.03_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-9.4
+  title: Exposure to Unauthorized Personnel
+  objective: 'Employ the following controls for personnel exposed to information not within assigned access authorizations: {{ insert: param, ir-09.04_odp }}.'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-9
+  title: Information Spillage Response
+  objective: 'Respond to information spills by:'
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: ir-10
+  title: Integrated Information Security Analysis Team
+  objective: Integrated Information Security Analysis Team
+  group: ir
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft

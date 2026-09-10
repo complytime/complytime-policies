@@ -1,0 +1,1372 @@
+metadata:
+  id: nist-800-53-rev5-rhel9-si
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for RHEL9, generated from ComplianceAsCode (SI family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-07-30T14:11:26Z'
+  applicability-groups:
+  - id: rhel9-low
+    title: RHEL9 Low Baseline
+    description: NIST 800-53 Low impact baseline for RHEL9
+  - id: rhel9-moderate
+    title: RHEL9 Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for RHEL9 (inherits Low)
+  - id: rhel9-high
+    title: RHEL9 High Baseline
+    description: NIST 800-53 High impact baseline for RHEL9 (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for RHEL9 - System and Information Integrity
+groups:
+- id: si
+  title: System and Information Integrity
+  description: 'NIST 800-53 SI family: System and Information Integrity'
+controls:
+- id: si-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, si-1_prm_1 }}: Designate an {{ insert: param, si-01_odp.04 }} to manage the development, documentation, and dissemination of the system and information integrity policy and procedures; and Review and update the current system and information integrity:'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-2.1
+  title: Central Management
+  objective: Central Management
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-2.2
+  title: Automated Flaw Remediation Status
+  objective: 'Determine if system components have applicable security-relevant software and firmware updates installed using {{ insert: param, si-02.02_odp.01 }} {{ insert: param, si-02.02_odp.02 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-2.3
+  title: Time to Remediate Flaws and Benchmarks for Corrective Actions
+  objective: 'Measure the time between flaw identification and flaw remediation; and Establish the following benchmarks for taking corrective actions: {{ insert: param, si-02.03_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-2.4
+  title: Automated Patch Management Tools
+  objective: 'Employ automated patch management tools to facilitate flaw remediation to the following system components: {{ insert: param, si-02.04_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-2.5
+  title: Automatic Software and Firmware Updates
+  objective: 'Install {{ insert: param, si-02.05_odp.01 }} automatically to {{ insert: param, si-02.05_odp.02 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-2.6
+  title: Removal of Previous Versions of Software and Firmware
+  objective: 'Remove previous versions of {{ insert: param, si-02.06_odp }} after updated versions have been installed.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-2.7
+  title: Root Cause Analysis
+  objective: Conduct root cause analysis to identify underlying causes of issues or failures. Develop actions to address the root cause of the issue or failure. Implement the actions and monitor the implementation for effectiveness.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-2
+  title: Flaw Remediation
+  objective: 'Identify, report, and correct system flaws; Test software and firmware updates related to flaw remediation for effectiveness and potential side effects before installation; Install security-relevant software and firmware updates within {{ insert: param, si-02_odp }} of the release of the updates; and Incorporate flaw remediation into the organizational configuration management process.'
+  group: si
+  assessment-requirements:
+  - id: ensure_gpgcheck_globally_activated
+    state: Active
+    text: Rule 'ensure_gpgcheck_globally_activated' MUST be verified
+    applicability:
+    - rhel9-low
+  - id: ensure_gpgcheck_never_disabled
+    state: Active
+    text: Rule 'ensure_gpgcheck_never_disabled' MUST be verified
+    applicability:
+    - rhel9-low
+  - id: ensure_redhat_gpgkey_installed
+    state: Active
+    text: Rule 'ensure_redhat_gpgkey_installed' MUST be verified
+    applicability:
+    - rhel9-low
+  state: Active
+- id: si-3.1
+  title: Central Management
+  objective: Central Management
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.2
+  title: Automatic Updates
+  objective: Automatic Updates
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.3
+  title: Non-privileged Users
+  objective: Non-privileged Users
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.4
+  title: Updates Only by Privileged Users
+  objective: Update malicious code protection mechanisms only when directed by a privileged user.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.5
+  title: Portable Storage Devices
+  objective: Portable Storage Devices
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.6
+  title: Testing and Verification
+  objective: 'Test malicious code protection mechanisms {{ insert: param, si-03.06_odp }} by introducing known benign code into the system; and Verify that the detection of the code and the associated incident reporting occur.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.7
+  title: Nonsignature-based Detection
+  objective: Nonsignature-based Detection
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.8
+  title: Detect Unauthorized Commands
+  objective: 'Detect the following unauthorized operating system commands through the kernel application programming interface on {{ insert: param, si-03.08_odp.02 }}: {{ insert: param, si-03.08_odp.01 }} ; and {{ insert: param, si-03.08_odp.03 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.9
+  title: Authenticate Remote Commands
+  objective: Authenticate Remote Commands
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3.10
+  title: Malicious Code Analysis
+  objective: 'Employ the following tools and techniques to analyze the characteristics and behavior of malicious code: {{ insert: param, si-03.10_odp }} ; and Incorporate the results from malicious code analysis into organizational incident response and flaw remediation processes.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-3
+  title: Malicious Code Protection
+  objective: 'Implement {{ insert: param, si-03_odp.01 }} malicious code protection mechanisms at system entry and exit points to detect and eradicate malicious code; Automatically update malicious code protection mechanisms as new releases are available in accordance with organizational configuration management policy and procedures; Configure malicious code protection mechanisms to: Address the receipt of false positives during malicious code detection and eradication and the resulting potential impact on the availability of the system.'
+  group: si
+  assessment-requirements:
+  - id: kernel_module_usb-storage_disabled
+    state: Active
+    text: Rule 'kernel_module_usb-storage_disabled' MUST be verified
+    applicability:
+    - rhel9-low
+  - id: service_autofs_disabled
+    state: Active
+    text: Rule 'service_autofs_disabled' MUST be verified
+    applicability:
+    - rhel9-low
+  state: Active
+- id: si-4.1
+  title: System-wide Intrusion Detection System
+  objective: Connect and configure individual intrusion detection tools into a system-wide intrusion detection system.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.2
+  title: Automated Tools and Mechanisms for Real-time Analysis
+  objective: Employ automated tools and mechanisms to support near real-time analysis of events.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-4.3
+  title: Automated Tool and Mechanism Integration
+  objective: Employ automated tools and mechanisms to integrate intrusion detection tools and mechanisms into access control and flow control mechanisms.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.4
+  title: Inbound and Outbound Communications Traffic
+  objective: 'Determine criteria for unusual or unauthorized activities or conditions for inbound and outbound communications traffic; Monitor inbound and outbound communications traffic {{ insert: param, si-4.4_prm_1 }} for {{ insert: param, si-4.4_prm_2 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-4.5
+  title: System-generated Alerts
+  objective: 'Alert {{ insert: param, si-04.05_odp.01 }} when the following system-generated indications of compromise or potential compromise occur: {{ insert: param, si-04.05_odp.02 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-4.6
+  title: Restrict Non-privileged Users
+  objective: Restrict Non-privileged Users
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.7
+  title: Automated Response to Suspicious Events
+  objective: 'Notify {{ insert: param, si-04.07_odp.01 }} of detected suspicious events; and Take the following actions upon detection: {{ insert: param, si-04.07_odp.02 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.8
+  title: Protection of Monitoring Information
+  objective: Protection of Monitoring Information
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.9
+  title: Testing of Monitoring Tools and Mechanisms
+  objective: 'Test intrusion-monitoring tools and mechanisms {{ insert: param, si-04.09_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.10
+  title: Visibility of Encrypted Communications
+  objective: 'Make provisions so that {{ insert: param, si-04.10_odp.01 }} is visible to {{ insert: param, si-04.10_odp.02 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-4.11
+  title: Analyze Communications Traffic Anomalies
+  objective: 'Analyze outbound communications traffic at the external interfaces to the system and selected {{ insert: param, si-04.11_odp }} to discover anomalies.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.12
+  title: Automated Organization-generated Alerts
+  objective: 'Alert {{ insert: param, si-04.12_odp.01 }} using {{ insert: param, si-04.12_odp.02 }} when the following indications of inappropriate or unusual activities with security or privacy implications occur: {{ insert: param, si-04.12_odp.03 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-4.13
+  title: Analyze Traffic and Event Patterns
+  objective: Analyze communications traffic and event patterns for the system; Develop profiles representing common traffic and event patterns; and Use the traffic and event profiles in tuning system-monitoring devices.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.14
+  title: Wireless Intrusion Detection
+  objective: Employ a wireless intrusion detection system to identify rogue wireless devices and to detect attack attempts and potential compromises or breaches to the system.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-4.15
+  title: Wireless to Wireline Communications
+  objective: Employ an intrusion detection system to monitor wireless communications traffic as the traffic passes from wireless to wireline networks.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.16
+  title: Correlate Monitoring Information
+  objective: Correlate information from monitoring tools and mechanisms employed throughout the system.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.17
+  title: Integrated Situational Awareness
+  objective: Correlate information from monitoring physical, cyber, and supply chain activities to achieve integrated, organization-wide situational awareness.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.18
+  title: Analyze Traffic and Covert Exfiltration
+  objective: 'Analyze outbound communications traffic at external interfaces to the system and at the following interior points to detect covert exfiltration of information: {{ insert: param, si-04.18_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.19
+  title: Risk for Individuals
+  objective: 'Implement {{ insert: param, si-04.19_odp.01 }} of individuals who have been identified by {{ insert: param, si-04.19_odp.02 }} as posing an increased level of risk.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.20
+  title: Privileged Users
+  objective: 'Implement the following additional monitoring of privileged users: {{ insert: param, si-04.20_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-4.21
+  title: Probationary Periods
+  objective: 'Implement the following additional monitoring of individuals during {{ insert: param, si-04.21_odp.02 }}: {{ insert: param, si-04.21_odp.01 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.22
+  title: Unauthorized Network Services
+  objective: 'Detect network services that have not been authorized or approved by {{ insert: param, si-04.22_odp.01 }} ; and {{ insert: param, si-04.22_odp.02 }} when detected.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-4.23
+  title: Host-based Devices
+  objective: 'Implement the following host-based monitoring mechanisms at {{ insert: param, si-04.23_odp.02 }}: {{ insert: param, si-04.23_odp.01 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.24
+  title: Indicators of Compromise
+  objective: 'Discover, collect, and distribute to {{ insert: param, si-04.24_odp.02 }} , indicators of compromise provided by {{ insert: param, si-04.24_odp.01 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4.25
+  title: Optimize Network Traffic Analysis
+  objective: Provide visibility into network traffic at external and key internal system interfaces to optimize the effectiveness of monitoring devices.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-4
+  title: System Monitoring
+  objective: 'Monitor the system to detect: Identify unauthorized use of the system through the following techniques and methods: {{ insert: param, si-04_odp.02 }}; Invoke internal monitoring capabilities or deploy monitoring devices: Analyze detected events and anomalies; Adjust the level of system monitoring activity when there is a change in risk to organizational operations and assets, individuals, other organizations, or the Nation; Obtain legal opinion regarding system monitoring activities; and Provide {{ insert: param, si-04_odp.03 }} to {{ insert: param, si-04_odp.04 }} {{ insert: param, si-04_odp.05 }}.'
+  group: si
+  assessment-requirements:
+  - id: kernel_module_dccp_disabled
+    state: Active
+    text: Rule 'kernel_module_dccp_disabled' MUST be verified
+    applicability:
+    - rhel9-low
+  - id: kernel_module_rds_disabled
+    state: Active
+    text: Rule 'kernel_module_rds_disabled' MUST be verified
+    applicability:
+    - rhel9-low
+  - id: kernel_module_sctp_disabled
+    state: Active
+    text: Rule 'kernel_module_sctp_disabled' MUST be verified
+    applicability:
+    - rhel9-low
+  - id: kernel_module_tipc_disabled
+    state: Active
+    text: Rule 'kernel_module_tipc_disabled' MUST be verified
+    applicability:
+    - rhel9-low
+  - id: service_avahi-daemon_disabled
+    state: Active
+    text: Rule 'service_avahi-daemon_disabled' MUST be verified
+    applicability:
+    - rhel9-low
+  state: Active
+- id: si-5.1
+  title: Automated Alerts and Advisories
+  objective: 'Broadcast security alert and advisory information throughout the organization using {{ insert: param, si-05.01_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-5
+  title: Security Alerts, Advisories, and Directives
+  objective: 'Receive system security alerts, advisories, and directives from {{ insert: param, si-05_odp.01 }} on an ongoing basis; Generate internal security alerts, advisories, and directives as deemed necessary; Disseminate security alerts, advisories, and directives to: {{ insert: param, si-05_odp.02 }} ; and Implement security directives in accordance with established time frames, or notify the issuing organization of the degree of noncompliance.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-6.1
+  title: Notification of Failed Security Tests
+  objective: Notification of Failed Security Tests
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-6.2
+  title: Automation Support for Distributed Testing
+  objective: Implement automated mechanisms to support the management of distributed security and privacy function testing.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-6.3
+  title: Report Verification Results
+  objective: 'Report the results of security and privacy function verification to {{ insert: param, si-06.03_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-6
+  title: Security and Privacy Function Verification
+  objective: 'Verify the correct operation of {{ insert: param, si-6_prm_1 }}; Perform the verification of the functions specified in SI-6a {{ insert: param, si-06_odp.03 }}; Alert {{ insert: param, si-06_odp.06 }} to failed security and privacy verification tests; and {{ insert: param, si-06_odp.07 }} when anomalies are discovered.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-7.1
+  title: Integrity Checks
+  objective: 'Perform an integrity check of {{ insert: param, si-7.1_prm_1 }} {{ insert: param, si-7.1_prm_2 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.2
+  title: Automated Notifications of Integrity Violations
+  objective: 'Employ automated tools that provide notification to {{ insert: param, si-07.02_odp }} upon discovering discrepancies during integrity verification.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-7.3
+  title: Centrally Managed Integrity Tools
+  objective: Employ centrally managed integrity verification tools.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.4
+  title: Tamper-evident Packaging
+  objective: Tamper-evident Packaging
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.5
+  title: Automated Response to Integrity Violations
+  objective: 'Automatically {{ insert: param, si-07.05_odp.01 }} when integrity violations are discovered.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-7.6
+  title: Cryptographic Protection
+  objective: Implement cryptographic mechanisms to detect unauthorized changes to software, firmware, and information.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.7
+  title: Integration of Detection and Response
+  objective: 'Incorporate the detection of the following unauthorized changes into the organizational incident response capability: {{ insert: param, si-07.07_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.8
+  title: Auditing Capability for Significant Events
+  objective: 'Upon detection of a potential integrity violation, provide the capability to audit the event and initiate the following actions: {{ insert: param, si-07.08_odp.01 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.9
+  title: Verify Boot Process
+  objective: 'Verify the integrity of the boot process of the following system components: {{ insert: param, si-07.09_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.10
+  title: Protection of Boot Firmware
+  objective: 'Implement the following mechanisms to protect the integrity of boot firmware in {{ insert: param, si-07.10_odp.02 }}: {{ insert: param, si-07.10_odp.01 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.11
+  title: Confined Environments with Limited Privileges
+  objective: Confined Environments with Limited Privileges
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.12
+  title: Integrity Verification
+  objective: 'Require that the integrity of the following user-installed software be verified prior to execution: {{ insert: param, si-07.12_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.13
+  title: Code Execution in Protected Environments
+  objective: Code Execution in Protected Environments
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.14
+  title: Binary or Machine Executable Code
+  objective: Binary or Machine Executable Code
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.15
+  title: Code Authentication
+  objective: 'Implement cryptographic mechanisms to authenticate the following software or firmware components prior to installation: {{ insert: param, si-07.15_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-high
+  state: Draft
+- id: si-7.16
+  title: Time Limit on Process Execution Without Supervision
+  objective: 'Prohibit processes from executing without supervision for more than {{ insert: param, si-07.16_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7.17
+  title: Runtime Application Self-protection
+  objective: 'Implement {{ insert: param, si-07.17_odp }} for application self-protection at runtime.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-7
+  title: Software, Firmware, and Information Integrity
+  objective: 'Employ integrity verification tools to detect unauthorized changes to the following software, firmware, and information: {{ insert: param, si-7_prm_1 }} ; and Take the following actions when unauthorized changes to the software, firmware, and information are detected: {{ insert: param, si-7_prm_2 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-8.1
+  title: Central Management
+  objective: Central Management
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-8.2
+  title: Automatic Updates
+  objective: 'Automatically update spam protection mechanisms {{ insert: param, si-08.02_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-8.3
+  title: Continuous Learning Capability
+  objective: Implement spam protection mechanisms with a learning capability to more effectively identify legitimate communications traffic.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-8
+  title: Spam Protection
+  objective: Employ spam protection mechanisms at system entry and exit points to detect and act on unsolicited messages; and Update spam protection mechanisms when new releases are available in accordance with organizational configuration management policy and procedures.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-9
+  title: Information Input Restrictions
+  objective: Information Input Restrictions
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-10.1
+  title: Manual Override Capability
+  objective: 'Provide a manual override capability for input validation of the following information inputs: {{ insert: param, si-10_odp }}; Restrict the use of the manual override capability to only {{ insert: param, si-10.01_odp }} ; and Audit the use of the manual override capability.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-10.2
+  title: Review and Resolve Errors
+  objective: 'Review and resolve input validation errors within {{ insert: param, si-10.2_prm_1 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-10.3
+  title: Predictable Behavior
+  objective: Verify that the system behaves in a predictable and documented manner when invalid inputs are received.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-10.4
+  title: Timing Interactions
+  objective: Account for timing interactions among system components in determining appropriate responses for invalid inputs.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-10.5
+  title: Restrict Inputs to Trusted Sources and Approved Formats
+  objective: 'Restrict the use of information inputs to {{ insert: param, si-10.05_odp.01 }} and/or {{ insert: param, si-10.05_odp.02 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-10.6
+  title: Injection Prevention
+  objective: Prevent untrusted data injections.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-10
+  title: Information Input Validation
+  objective: 'Check the validity of the following information inputs: {{ insert: param, si-10_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-11
+  title: Error Handling
+  objective: 'Generate error messages that provide information necessary for corrective actions without revealing information that could be exploited; and Reveal error messages only to {{ insert: param, si-11_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-moderate
+  state: Draft
+- id: si-12.1
+  title: Limit Personally Identifiable Information Elements
+  objective: 'Limit personally identifiable information being processed in the information life cycle to the following elements of personally identifiable information: {{ insert: param, si-12.01_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-12.2
+  title: Minimize Personally Identifiable Information in Testing, Training, and Research
+  objective: 'Use the following techniques to minimize the use of personally identifiable information for research, testing, or training: {{ insert: param, si-12.2_prm_1 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-12.3
+  title: Information Disposal
+  objective: 'Use the following techniques to dispose of, destroy, or erase information following the retention period: {{ insert: param, si-12.3_prm_1 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-12
+  title: Information Management and Retention
+  objective: Manage and retain information within the system and information output from the system in accordance with applicable laws, executive orders, directives, regulations, policies, standards, guidelines and operational requirements.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-13.1
+  title: Transferring Component Responsibilities
+  objective: 'Take system components out of service by transferring component responsibilities to substitute components no later than {{ insert: param, si-13.01_odp }} of mean time to failure.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-13.2
+  title: Time Limit on Process Execution Without Supervision
+  objective: Time Limit on Process Execution Without Supervision
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-13.3
+  title: Manual Transfer Between Components
+  objective: 'Manually initiate transfers between active and standby system components when the use of the active component reaches {{ insert: param, si-13.03_odp }} of the mean time to failure.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-13.4
+  title: Standby Component Installation and Notification
+  objective: 'If system component failures are detected:'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-13.5
+  title: Failover Capability
+  objective: 'Provide {{ insert: param, si-13.05_odp.01 }} {{ insert: param, si-13.05_odp.02 }} for the system.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-13
+  title: Predictable Failure Prevention
+  objective: 'Determine mean time to failure (MTTF) for the following system components in specific environments of operation: {{ insert: param, si-13_odp.01 }} ; and Provide substitute system components and a means to exchange active and standby components in accordance with the following criteria: {{ insert: param, si-13_odp.02 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-14.1
+  title: Refresh from Trusted Sources
+  objective: 'Obtain software and data employed during system component and service refreshes from the following trusted sources: {{ insert: param, si-14.01_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-14.2
+  title: Non-persistent Information
+  objective: '{{ insert: param, si-14.02_odp.01 }} ; and Delete information when no longer needed.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-14.3
+  title: Non-persistent Connectivity
+  objective: 'Establish connections to the system on demand and terminate connections after {{ insert: param, si-14.03_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-14
+  title: Non-persistence
+  objective: 'Implement non-persistent {{ insert: param, si-14_odp.01 }} that are initiated in a known state and terminated {{ insert: param, si-14_odp.02 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-15
+  title: Information Output Filtering
+  objective: 'Validate information output from the following software programs and/or applications to ensure that the information is consistent with the expected content: {{ insert: param, si-15_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-16
+  title: Memory Protection
+  objective: 'Implement the following controls to protect the system memory from unauthorized code execution: {{ insert: param, si-16_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: sysctl_kernel_randomize_va_space
+    state: Active
+    text: Rule 'sysctl_kernel_randomize_va_space' MUST be verified
+    applicability:
+    - rhel9-moderate
+  state: Active
+- id: si-17
+  title: Fail-safe Procedures
+  objective: 'Implement the indicated fail-safe procedures when the indicated failures occur: {{ insert: param, si-17_prm_1 }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-18.1
+  title: Automation Support
+  objective: 'Correct or delete personally identifiable information that is inaccurate or outdated, incorrectly determined regarding impact, or incorrectly de-identified using {{ insert: param, si-18.01_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-18.2
+  title: Data Tags
+  objective: Employ data tags to automate the correction or deletion of personally identifiable information across the information life cycle within organizational systems.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-18.3
+  title: Collection
+  objective: Collect personally identifiable information directly from the individual.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-18.4
+  title: Individual Requests
+  objective: Correct or delete personally identifiable information upon request by individuals or their designated representatives.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-18.5
+  title: Notice of Correction or Deletion
+  objective: 'Notify {{ insert: param, si-18.05_odp }} and individuals that the personally identifiable information has been corrected or deleted.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-18
+  title: Personally Identifiable Information Quality Operations
+  objective: 'Check the accuracy, relevance, timeliness, and completeness of personally identifiable information across the information life cycle {{ insert: param, si-18_prm_1 }} ; and Correct or delete inaccurate or outdated personally identifiable information.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19.1
+  title: Collection
+  objective: De-identify the dataset upon collection by not collecting personally identifiable information.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19.2
+  title: Archiving
+  objective: Prohibit archiving of personally identifiable information elements if those elements in a dataset will not be needed after the dataset is archived.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19.3
+  title: Release
+  objective: Remove personally identifiable information elements from a dataset prior to its release if those elements in the dataset do not need to be part of the data release.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19.4
+  title: Removal, Masking, Encryption, Hashing, or Replacement of Direct Identifiers
+  objective: Remove, mask, encrypt, hash, or replace direct identifiers in a dataset.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19.5
+  title: Statistical Disclosure Control
+  objective: Manipulate numerical data, contingency tables, and statistical findings so that no individual or organization is identifiable in the results of the analysis.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19.6
+  title: Differential Privacy
+  objective: Prevent disclosure of personally identifiable information by adding non-deterministic noise to the results of mathematical operations before the results are reported.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19.7
+  title: Validated Algorithms and Software
+  objective: Perform de-identification using validated algorithms and software that is validated to implement the algorithms.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19.8
+  title: Motivated Intruder
+  objective: Perform a motivated intruder test on the de-identified dataset to determine if the identified data remains or if the de-identified data can be re-identified.
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-19
+  title: De-identification
+  objective: 'Remove the following elements of personally identifiable information from datasets: {{ insert: param, si-19_odp.01 }} ; and Evaluate {{ insert: param, si-19_odp.02 }} for effectiveness of de-identification.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-20
+  title: Tainting
+  objective: 'Embed data or capabilities in the following systems or system components to determine if organizational data has been exfiltrated or improperly removed from the organization: {{ insert: param, si-20_odp }}.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-21
+  title: Information Refresh
+  objective: 'Refresh {{ insert: param, si-21_odp.01 }} at {{ insert: param, si-21_odp.02 }} or generate the information on demand and delete the information when no longer needed.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-22
+  title: Information Diversity
+  objective: 'Identify the following alternative sources of information for {{ insert: param, si-22_odp.02 }}: {{ insert: param, si-22_odp.01 }} ; and Use an alternative information source for the execution of essential functions or services on {{ insert: param, si-22_odp.03 }} when the primary source of information is corrupted or unavailable.'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: si-23
+  title: Information Fragmentation
+  objective: 'Based on {{ insert: param, si-23_odp.01 }}:'
+  group: si
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft

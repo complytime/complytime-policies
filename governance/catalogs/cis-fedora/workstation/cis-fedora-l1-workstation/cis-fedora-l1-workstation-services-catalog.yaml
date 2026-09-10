@@ -1,0 +1,453 @@
+title: CIS Fedora Linux - Level 1 Workstation - Services
+metadata:
+  id: cis-fedora-l1-workstation-services
+  type: ControlCatalog
+  gemara-version: 0.24.0
+  description: Control catalog derived from the CIS Fedora Linux Level 1 Workstation Benchmark (Services)
+  author:
+    id: complytime
+    name: ComplyTime
+    type: Software
+  applicability-groups:
+  - id: fedora-linux
+    title: Fedora Linux
+    description: Fedora Linux operating system
+groups:
+- id: services
+  title: Services
+  description: Network services, client packages, and time synchronization configuration
+controls:
+- id: cis_fedora_2-1.12
+  title: Ensure Rpcbind Services Are Not In Use
+  objective: Ensure Rpcbind Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: service_rpcbind_disabled
+    state: Active
+    text: Rpcbind Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.13
+  title: Ensure Rsync Services Are Not In Use
+  objective: Ensure Rsync Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_rsync_removed
+    state: Active
+    text: Rsync Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.14
+  title: Ensure Samba File Server Services Are Not In Use
+  objective: Ensure Samba File Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_samba_removed
+    state: Active
+    text: Samba File Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.15
+  title: Ensure Snmp Services Are Not In Use
+  objective: Ensure Snmp Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_net-snmp_removed
+    state: Active
+    text: Snmp Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.16
+  title: Ensure Telnet Server Services Are Not In Use
+  objective: Ensure Telnet Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_telnet-server_removed
+    state: Active
+    text: Telnet Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.17
+  title: Ensure Tftp Server Services Are Not In Use
+  objective: Ensure Tftp Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_tftp-server_removed
+    state: Active
+    text: Tftp Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.18
+  title: Ensure Web Proxy Server Services Are Not In Use
+  objective: Ensure Web Proxy Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_squid_removed
+    state: Active
+    text: Web Proxy Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.19
+  title: Ensure Web Server Services Are Not In Use
+  objective: Ensure Web Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_httpd_removed
+    state: Active
+    text: Web Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+  - id: package_nginx_removed
+    state: Active
+    text: Web Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.23
+  title: Ensure Mail Transfer Agents Are Configured For Local-Only Mode
+  objective: Ensure Mail Transfer Agents Are Configured For Local-Only Mode
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: has_nonlocal_mta
+    state: Active
+    text: Mail Transfer Agents Are Configured For Local-Only Mode MUST be verified
+    applicability:
+    - fedora-linux
+  - id: postfix_network_listening_disabled
+    state: Active
+    text: Mail Transfer Agents Are Configured For Local-Only Mode MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.4
+  title: Ensure Dhcp Server Services Are Not In Use
+  objective: Ensure Dhcp Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_kea_removed
+    state: Active
+    text: Dhcp Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.5
+  title: Ensure Dns Server Services Are Not In Use
+  objective: Ensure Dns Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_bind_removed
+    state: Active
+    text: Dns Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.6
+  title: Ensure Dnsmasq Services Are Not In Use
+  objective: Ensure Dnsmasq Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_dnsmasq_removed
+    state: Active
+    text: Dnsmasq Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.7
+  title: Ensure Ftp Server Services Are Not In Use
+  objective: Ensure Ftp Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_vsftpd_removed
+    state: Active
+    text: Ftp Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.8
+  title: Ensure Message Access Server Services Are Not In Use
+  objective: Ensure Message Access Server Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_cyrus-imapd_removed
+    state: Active
+    text: Message Access Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+  - id: package_dovecot_removed
+    state: Active
+    text: Message Access Server Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-1.9
+  title: Ensure Network File System Services Are Not In Use
+  objective: Ensure Network File System Services Are Not In Use
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: service_nfs_disabled
+    state: Active
+    text: Network File System Services Are Not In Use MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-2.1
+  title: Ensure Ftp Client Is Not Installed
+  objective: Ensure Ftp Client Is Not Installed
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_ftp_removed
+    state: Active
+    text: Ftp Client Is Not Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-2.4
+  title: Ensure Telnet Client Is Not Installed
+  objective: Ensure Telnet Client Is Not Installed
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_telnet_removed
+    state: Active
+    text: Telnet Client Is Not Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-2.5
+  title: Ensure Tftp Client Is Not Installed
+  objective: Ensure Tftp Client Is Not Installed
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_tftp_removed
+    state: Active
+    text: Tftp Client Is Not Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-3.2
+  title: Ensure Chrony Is Configured
+  objective: Ensure Chrony Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: chronyd_specify_remote_server
+    state: Active
+    text: Chrony Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-3.3
+  title: Ensure Chrony Is Not Run As The Root User
+  objective: Ensure Chrony Is Not Run As The Root User
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: chronyd_run_as_chrony_user
+    state: Active
+    text: Chrony Is Not Run As The Root User MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.1.1
+  title: Ensure Cron Daemon Is Enabled And Active
+  objective: Ensure Cron Daemon Is Enabled And Active
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: package_cron_installed
+    state: Active
+    text: Cron Daemon Is Enabled And Active MUST be verified
+    applicability:
+    - fedora-linux
+  - id: service_crond_enabled
+    state: Active
+    text: Cron Daemon Is Enabled And Active MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.1.2
+  title: Ensure Access To /Etc/Crontab Is Configured
+  objective: Ensure Access To /Etc/Crontab Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_crontab
+    state: Active
+    text: Access To /Etc/Crontab Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_crontab
+    state: Active
+    text: Access To /Etc/Crontab Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_crontab
+    state: Active
+    text: Access To /Etc/Crontab Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.1.3
+  title: Ensure Access To /Etc/Cron.Hourly Is Configured
+  objective: Ensure Access To /Etc/Cron.Hourly Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_cron_hourly
+    state: Active
+    text: Access To /Etc/Cron.Hourly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_cron_hourly
+    state: Active
+    text: Access To /Etc/Cron.Hourly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_cron_hourly
+    state: Active
+    text: Access To /Etc/Cron.Hourly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.1.4
+  title: Ensure Access To /Etc/Cron.Daily Is Configured
+  objective: Ensure Access To /Etc/Cron.Daily Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_cron_daily
+    state: Active
+    text: Access To /Etc/Cron.Daily Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_cron_daily
+    state: Active
+    text: Access To /Etc/Cron.Daily Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_cron_daily
+    state: Active
+    text: Access To /Etc/Cron.Daily Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.1.5
+  title: Ensure Access To /Etc/Cron.Weekly Is Configured
+  objective: Ensure Access To /Etc/Cron.Weekly Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_cron_weekly
+    state: Active
+    text: Access To /Etc/Cron.Weekly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_cron_weekly
+    state: Active
+    text: Access To /Etc/Cron.Weekly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_cron_weekly
+    state: Active
+    text: Access To /Etc/Cron.Weekly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.1.6
+  title: Ensure Access To /Etc/Cron.Monthly Is Configured
+  objective: Ensure Access To /Etc/Cron.Monthly Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_cron_monthly
+    state: Active
+    text: Access To /Etc/Cron.Monthly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_cron_monthly
+    state: Active
+    text: Access To /Etc/Cron.Monthly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_cron_monthly
+    state: Active
+    text: Access To /Etc/Cron.Monthly Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.1.8
+  title: Ensure Access To /Etc/Cron.D Is Configured
+  objective: Ensure Access To /Etc/Cron.D Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_cron_d
+    state: Active
+    text: Access To /Etc/Cron.D Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_cron_d
+    state: Active
+    text: Access To /Etc/Cron.D Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_cron_d
+    state: Active
+    text: Access To /Etc/Cron.D Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.1.9
+  title: Ensure Access To Crontab Is Configured
+  objective: Ensure Access To Crontab Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: file_cron_allow_exists
+    state: Active
+    text: Access To Crontab Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_cron_deny_not_exist
+    state: Active
+    text: Access To Crontab Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_groupowner_cron_allow
+    state: Active
+    text: Access To Crontab Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_cron_allow
+    state: Active
+    text: Access To Crontab Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_cron_allow
+    state: Active
+    text: Access To Crontab Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_2-4.2.1
+  title: Ensure Access To At Is Configured
+  objective: Ensure Access To At Is Configured
+  group: services
+  state: Active
+  assessment-requirements:
+  - id: file_at_deny_not_exist
+    state: Active
+    text: Access To At Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_groupowner_at_allow
+    state: Active
+    text: Access To At Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_at_allow
+    state: Active
+    text: Access To At Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_at_allow
+    state: Active
+    text: Access To At Is Configured MUST be verified
+    applicability:
+    - fedora-linux
