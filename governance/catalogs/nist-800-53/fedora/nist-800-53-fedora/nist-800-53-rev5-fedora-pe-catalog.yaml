@@ -1,0 +1,677 @@
+metadata:
+  id: nist-800-53-rev5-fedora-pe
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for FEDORA, generated from ComplianceAsCode (PE family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-08-21T12:23:27Z'
+  applicability-groups:
+  - id: fedora-low
+    title: FEDORA Low Baseline
+    description: NIST 800-53 Low impact baseline for FEDORA
+  - id: fedora-moderate
+    title: FEDORA Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for FEDORA (inherits Low)
+  - id: fedora-high
+    title: FEDORA High Baseline
+    description: NIST 800-53 High impact baseline for FEDORA (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for Fedora - Physical and Environmental Protection
+groups:
+- id: pe
+  title: Physical and Environmental Protection
+  description: 'NIST 800-53 PE family: Physical and Environmental Protection'
+controls:
+- id: pe-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, pe-1_prm_1 }}: Designate an {{ insert: param, pe-01_odp.04 }} to manage the development, documentation, and dissemination of the physical and environmental protection policy and procedures; and Review and update the current physical and environmental protection:'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-2.1
+  title: Access by Position or Role
+  objective: Authorize physical access to the facility where the system resides based on position or role.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-2.2
+  title: Two Forms of Identification
+  objective: 'Require two forms of identification from the following forms of identification for visitor access to the facility where the system resides: {{ insert: param, pe-02.02_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-2.3
+  title: Restrict Unescorted Access
+  objective: 'Restrict unescorted access to the facility where the system resides to personnel with {{ insert: param, pe-02.03_odp.01 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-2
+  title: Physical Access Authorizations
+  objective: 'Develop, approve, and maintain a list of individuals with authorized access to the facility where the system resides; Issue authorization credentials for facility access; Review the access list detailing authorized facility access by individuals {{ insert: param, pe-02_odp }} ; and Remove individuals from the facility access list when access is no longer required.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-3.1
+  title: System Access
+  objective: 'Enforce physical access authorizations to the system in addition to the physical access controls for the facility at {{ insert: param, pe-03.01_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: pe-3.2
+  title: Facility and Systems
+  objective: 'Perform security checks {{ insert: param, pe-03.02_odp }} at the physical perimeter of the facility or system for exfiltration of information or removal of system components.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-3.3
+  title: Continuous Guards
+  objective: 'Employ guards to control {{ insert: param, pe-03.03_odp }} to the facility where the system resides 24 hours per day, 7 days per week.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-3.4
+  title: Lockable Casings
+  objective: 'Use lockable physical casings to protect {{ insert: param, pe-03.04_odp }} from unauthorized physical access.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-3.5
+  title: Tamper Protection
+  objective: 'Employ {{ insert: param, pe-03.05_odp.01 }} to {{ insert: param, pe-03.05_odp.02 }} physical tampering or alteration of {{ insert: param, pe-03.05_odp.03 }} within the system.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-3.6
+  title: Facility Penetration Testing
+  objective: Facility Penetration Testing
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-3.7
+  title: Physical Barriers
+  objective: Limit access using physical barriers.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-3.8
+  title: Access Control Vestibules
+  objective: 'Employ access control vestibules at {{ insert: param, pe-03.08_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-3
+  title: Physical Access Control
+  objective: 'Enforce physical access authorizations at {{ insert: param, pe-03_odp.01 }} by: Maintain physical access audit logs for {{ insert: param, pe-03_odp.04 }}; Control access to areas within the facility designated as publicly accessible by implementing the following controls: {{ insert: param, pe-03_odp.05 }}; Escort visitors and control visitor activity {{ insert: param, pe-03_odp.06 }}; Secure keys, combinations, and other physical access devices; Inventory {{ insert: param, pe-03_odp.07 }} every {{ insert: param, pe-03_odp.08 }} ; and Change combinations and keys {{ insert: param, pe-3_prm_9 }} and/or when keys are lost, combinations are compromised, or when individuals possessing the keys or combinations are transferred or terminated.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-4
+  title: Access Control for Transmission
+  objective: 'Control physical access to {{ insert: param, pe-04_odp.01 }} within organizational facilities using {{ insert: param, pe-04_odp.02 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-5.1
+  title: Access to Output by Authorized Individuals
+  objective: Access to Output by Authorized Individuals
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-5.2
+  title: Link to Individual Identity
+  objective: Link individual identity to receipt of output from output devices.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-5.3
+  title: Marking Output Devices
+  objective: Marking Output Devices
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-5
+  title: Access Control for Output Devices
+  objective: 'Control physical access to output from {{ insert: param, pe-05_odp }} to prevent unauthorized individuals from obtaining the output.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-6.1
+  title: Intrusion Alarms and Surveillance Equipment
+  objective: Monitor physical access to the facility where the system resides using physical intrusion alarms and surveillance equipment.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-6.2
+  title: Automated Intrusion Recognition and Responses
+  objective: 'Recognize {{ insert: param, pe-06.02_odp.01 }} and initiate {{ insert: param, pe-06.02_odp.02 }} using {{ insert: param, pe-06.02_odp.03 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-6.3
+  title: Video Surveillance
+  objective: 'Employ video surveillance of {{ insert: param, pe-06.03_odp.01 }}; Review video recordings {{ insert: param, pe-06.03_odp.02 }} ; and Retain video recordings for {{ insert: param, pe-06.03_odp.03 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-6.4
+  title: Monitoring Physical Access to Systems
+  objective: 'Monitor physical access to the system in addition to the physical access monitoring of the facility at {{ insert: param, pe-06.04_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: pe-6
+  title: Monitoring Physical Access
+  objective: 'Monitor physical access to the facility where the system resides to detect and respond to physical security incidents; Review physical access logs {{ insert: param, pe-06_odp.01 }} and upon occurrence of {{ insert: param, pe-06_odp.02 }} ; and Coordinate results of reviews and investigations with the organizational incident response capability.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-7
+  title: Visitor Control
+  objective: Visitor Control
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-8.1
+  title: Automated Records Maintenance and Review
+  objective: 'Maintain and review visitor access records using {{ insert: param, pe-8.1_prm_1 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: pe-8.2
+  title: Physical Access Records
+  objective: Physical Access Records
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-8.3
+  title: Limit Personally Identifiable Information Elements
+  objective: 'Limit personally identifiable information contained in visitor access records to the following elements identified in the privacy risk assessment: {{ insert: param, pe-08.03_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-8
+  title: Visitor Access Records
+  objective: 'Maintain visitor access records to the facility where the system resides for {{ insert: param, pe-08_odp.01 }}; Review visitor access records {{ insert: param, pe-08_odp.02 }} ; and Report anomalies in visitor access records to {{ insert: param, pe-08_odp.03 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-9.1
+  title: Redundant Cabling
+  objective: 'Employ redundant power cabling paths that are physically separated by {{ insert: param, pe-09.01_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-9.2
+  title: Automatic Voltage Controls
+  objective: 'Employ automatic voltage controls for {{ insert: param, pe-09.02_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-9
+  title: Power Equipment and Cabling
+  objective: Protect power equipment and power cabling for the system from damage and destruction.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-10.1
+  title: Accidental and Unauthorized Activation
+  objective: Accidental and Unauthorized Activation
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-10
+  title: Emergency Shutoff
+  objective: 'Provide the capability of shutting off power to {{ insert: param, pe-10_odp.01 }} in emergency situations; Place emergency shutoff switches or devices in {{ insert: param, pe-10_odp.02 }} to facilitate access for authorized personnel; and Protect emergency power shutoff capability from unauthorized activation.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-11.1
+  title: Alternate Power Supply — Minimal Operational Capability
+  objective: 'Provide an alternate power supply for the system that is activated {{ insert: param, pe-11.01_odp }} and that can maintain minimally required operational capability in the event of an extended loss of the primary power source.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: pe-11.2
+  title: Alternate Power Supply — Self-contained
+  objective: 'Provide an alternate power supply for the system that is activated {{ insert: param, pe-11.02_odp.01 }} and that is:'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-11
+  title: Emergency Power
+  objective: 'Provide an uninterruptible power supply to facilitate {{ insert: param, pe-11_odp }} in the event of a primary power source loss.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-12.1
+  title: Essential Mission and Business Functions
+  objective: Provide emergency lighting for all areas within the facility supporting essential mission and business functions.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-12
+  title: Emergency Lighting
+  objective: Employ and maintain automatic emergency lighting for the system that activates in the event of a power outage or disruption and that covers emergency exits and evacuation routes within the facility.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-13.1
+  title: Detection Systems — Automatic Activation and Notification
+  objective: 'Employ fire detection systems that activate automatically and notify {{ insert: param, pe-13.01_odp.01 }} and {{ insert: param, pe-13.01_odp.02 }} in the event of a fire.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-13.2
+  title: Suppression Systems — Automatic Activation and Notification
+  objective: 'Employ fire suppression systems that activate automatically and notify {{ insert: param, pe-13.02_odp.01 }} and {{ insert: param, pe-13.02_odp.02 }} ; and Employ an automatic fire suppression capability when the facility is not staffed on a continuous basis.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: pe-13.3
+  title: Automatic Fire Suppression
+  objective: Automatic Fire Suppression
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-13.4
+  title: Inspections
+  objective: 'Ensure that the facility undergoes {{ insert: param, pe-13.04_odp.01 }} fire protection inspections by authorized and qualified inspectors and identified deficiencies are resolved within {{ insert: param, pe-13.04_odp.02 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-13
+  title: Fire Protection
+  objective: Employ and maintain fire detection and suppression systems that are supported by an independent energy source.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-14.1
+  title: Automatic Controls
+  objective: 'Employ the following automatic environmental controls in the facility to prevent fluctuations potentially harmful to the system: {{ insert: param, pe-14.01_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-14.2
+  title: Monitoring with Alarms and Notifications
+  objective: 'Employ environmental control monitoring that provides an alarm or notification of changes potentially harmful to personnel or equipment to {{ insert: param, pe-14.02_odp }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-14
+  title: Environmental Controls
+  objective: 'Maintain {{ insert: param, pe-14_odp.01 }} levels within the facility where the system resides at {{ insert: param, pe-14_odp.03 }} ; and Monitor environmental control levels {{ insert: param, pe-14_odp.04 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-15.1
+  title: Automation Support
+  objective: 'Detect the presence of water near the system and alert {{ insert: param, pe-15.01_odp.01 }} using {{ insert: param, pe-15.01_odp.02 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: pe-15
+  title: Water Damage Protection
+  objective: Protect the system from damage resulting from water leakage by providing master shutoff or isolation valves that are accessible, working properly, and known to key personnel.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-16
+  title: Delivery and Removal
+  objective: 'Authorize and control {{ insert: param, pe-16_prm_1 }} entering and exiting the facility; and Maintain records of the system components.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-17
+  title: Alternate Work Site
+  objective: 'Determine and document the {{ insert: param, pe-17_odp.01 }} allowed for use by employees; Employ the following controls at alternate work sites: {{ insert: param, pe-17_odp.02 }}; Assess the effectiveness of controls at alternate work sites; and Provide a means for employees to communicate with information security and privacy personnel in case of incidents.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: pe-18.1
+  title: Facility Site
+  objective: Facility Site
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: pe-18
+  title: Location of System Components
+  objective: 'Position system components within the facility to minimize potential damage from {{ insert: param, pe-18_odp }} and to minimize the opportunity for unauthorized access.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: pe-19.1
+  title: National Emissions Policies and Procedures
+  objective: Protect system components, associated data communications, and networks in accordance with national Emissions Security policies and procedures based on the security category or classification of the information.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-19
+  title: Information Leakage
+  objective: Protect the system from information leakage due to electromagnetic signals emanations.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-20
+  title: Asset Monitoring and Tracking
+  objective: 'Employ {{ insert: param, pe-20_odp.01 }} to track and monitor the location and movement of {{ insert: param, pe-20_odp.02 }} within {{ insert: param, pe-20_odp.03 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-21
+  title: Electromagnetic Pulse Protection
+  objective: 'Employ {{ insert: param, pe-21_odp.01 }} against electromagnetic pulse damage for {{ insert: param, pe-21_odp.02 }}.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-22
+  title: Component Marking
+  objective: 'Mark {{ insert: param, pe-22_odp }} indicating the impact level or classification level of the information permitted to be processed, stored, or transmitted by the hardware component.'
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pe-23
+  title: Facility Location
+  objective: Plan the location or site of the facility where the system resides considering physical and environmental hazards; and For existing facilities, consider the physical and environmental hazards in the organizational risk management strategy.
+  group: pe
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft

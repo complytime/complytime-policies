@@ -1,0 +1,226 @@
+metadata:
+  id: nist-800-53-rev5-rhel8-ps
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for RHEL8, generated from ComplianceAsCode (PS family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-07-30T14:11:25Z'
+  applicability-groups:
+  - id: rhel8-low
+    title: RHEL8 Low Baseline
+    description: NIST 800-53 Low impact baseline for RHEL8
+  - id: rhel8-moderate
+    title: RHEL8 Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for RHEL8 (inherits Low)
+  - id: rhel8-high
+    title: RHEL8 High Baseline
+    description: NIST 800-53 High impact baseline for RHEL8 (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for RHEL8 - Personnel Security
+groups:
+- id: ps
+  title: Personnel Security
+  description: 'NIST 800-53 PS family: Personnel Security'
+controls:
+- id: ps-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, ps-1_prm_1 }}: Designate an {{ insert: param, ps-01_odp.04 }} to manage the development, documentation, and dissemination of the personnel security policy and procedures; and Review and update the current personnel security:'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-2
+  title: Position Risk Designation
+  objective: 'Assign a risk designation to all organizational positions; Establish screening criteria for individuals filling those positions; and Review and update position risk designations {{ insert: param, ps-02_odp }}.'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-3.1
+  title: Classified Information
+  objective: Verify that individuals accessing a system processing, storing, or transmitting classified information are cleared and indoctrinated to the highest classification level of the information to which they have access on the system.
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-3.2
+  title: Formal Indoctrination
+  objective: Verify that individuals accessing a system processing, storing, or transmitting types of classified information that require formal indoctrination, are formally indoctrinated for all the relevant types of information to which they have access on the system.
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-3.3
+  title: Information Requiring Special Protective Measures
+  objective: 'Verify that individuals accessing a system processing, storing, or transmitting information requiring special protection:'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-3.4
+  title: Citizenship Requirements
+  objective: 'Verify that individuals accessing a system processing, storing, or transmitting {{ insert: param, ps-03.04_odp.01 }} meet {{ insert: param, ps-03.04_odp.02 }}.'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-3
+  title: Personnel Screening
+  objective: 'Screen individuals prior to authorizing access to the system; and Rescreen individuals in accordance with {{ insert: param, ps-3_prm_1 }}.'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-4.1
+  title: Post-employment Requirements
+  objective: Notify terminated individuals of applicable, legally binding post-employment requirements for the protection of organizational information; and Require terminated individuals to sign an acknowledgment of post-employment requirements as part of the organizational termination process.
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-4.2
+  title: Automated Actions
+  objective: 'Use {{ insert: param, ps-04.02_odp.01 }} to {{ insert: param, ps-04.02_odp.02 }}.'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-high
+  state: Draft
+- id: ps-4
+  title: Personnel Termination
+  objective: 'Upon termination of individual employment:'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-5
+  title: Personnel Transfer
+  objective: 'Review and confirm ongoing operational need for current logical and physical access authorizations to systems and facilities when individuals are reassigned or transferred to other positions within the organization; Initiate {{ insert: param, ps-05_odp.01 }} within {{ insert: param, ps-05_odp.02 }}; Modify access authorization as needed to correspond with any changes in operational need due to reassignment or transfer; and Notify {{ insert: param, ps-05_odp.03 }} within {{ insert: param, ps-05_odp.04 }}.'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-6.1
+  title: Information Requiring Special Protection
+  objective: Information Requiring Special Protection
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-6.2
+  title: Classified Information Requiring Special Protection
+  objective: 'Verify that access to classified information requiring special protection is granted only to individuals who:'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-6.3
+  title: Post-employment Requirements
+  objective: Notify individuals of applicable, legally binding post-employment requirements for protection of organizational information; and Require individuals to sign an acknowledgment of these requirements, if applicable, as part of granting initial access to covered information.
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-6
+  title: Access Agreements
+  objective: 'Develop and document access agreements for organizational systems; Review and update the access agreements {{ insert: param, ps-06_odp.01 }} ; and Verify that individuals requiring access to organizational information and systems:'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-7
+  title: External Personnel Security
+  objective: 'Establish personnel security requirements, including security roles and responsibilities for external providers; Require external providers to comply with personnel security policies and procedures established by the organization; Document personnel security requirements; Require external providers to notify {{ insert: param, ps-07_odp.01 }} of any personnel transfers or terminations of external personnel who possess organizational credentials and/or badges, or who have system privileges within {{ insert: param, ps-07_odp.02 }} ; and Monitor provider compliance with personnel security requirements.'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-8
+  title: Personnel Sanctions
+  objective: 'Employ a formal sanctions process for individuals failing to comply with established information security and privacy policies and procedures; and Notify {{ insert: param, ps-08_odp.01 }} within {{ insert: param, ps-08_odp.02 }} when a formal employee sanctions process is initiated, identifying the individual sanctioned and the reason for the sanction.'
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft
+- id: ps-9
+  title: Position Descriptions
+  objective: Incorporate security and privacy roles and responsibilities into organizational position descriptions.
+  group: ps
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel8-low
+  state: Draft

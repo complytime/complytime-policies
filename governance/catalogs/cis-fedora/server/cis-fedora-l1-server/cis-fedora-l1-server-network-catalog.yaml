@@ -1,0 +1,327 @@
+title: CIS Fedora Linux - Level 1 Server - Network Configuration
+metadata:
+  id: cis-fedora-l1-server-network
+  type: ControlCatalog
+  gemara-version: 0.24.0
+  description: Control catalog derived from the CIS Fedora Linux Level 1 Server Benchmark (Network Configuration)
+  author:
+    id: complytime
+    name: ComplyTime
+    type: Software
+  applicability-groups:
+  - id: fedora-linux
+    title: Fedora Linux
+    description: Fedora Linux operating system
+groups:
+- id: network
+  title: Network Configuration
+  description: Kernel modules, IPv4, and IPv6 network stack configuration
+controls:
+- id: cis_fedora_3-1.2
+  title: Ensure Wireless Interfaces Are Disabled
+  objective: Ensure Wireless Interfaces Are Disabled
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: wireless_disable_interfaces
+    state: Active
+    text: Wireless Interfaces Are Disabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-2.1
+  title: Ensure Atm Kernel Module Is Not Available
+  objective: Ensure Atm Kernel Module Is Not Available
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_atm_disabled
+    state: Active
+    text: Atm Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-2.2
+  title: Ensure Can Kernel Module Is Not Available
+  objective: Ensure Can Kernel Module Is Not Available
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_can_disabled
+    state: Active
+    text: Can Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-2.3
+  title: Ensure Dccp Kernel Module Is Not Available
+  objective: Ensure Dccp Kernel Module Is Not Available
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_dccp_disabled
+    state: Active
+    text: Dccp Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-2.4
+  title: Ensure Tipc Kernel Module Is Not Available
+  objective: Ensure Tipc Kernel Module Is Not Available
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_tipc_disabled
+    state: Active
+    text: Tipc Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-2.5
+  title: Ensure Rds Kernel Module Is Not Available
+  objective: Ensure Rds Kernel Module Is Not Available
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: kernel_module_rds_disabled
+    state: Active
+    text: Rds Kernel Module Is Not Available MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.4
+  title: Ensure Net.Ipv4.Conf.All.Send_Redirects Is Configured
+  objective: Ensure Net.Ipv4.Conf.All.Send_Redirects Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_all_send_redirects
+    state: Active
+    text: Net.Ipv4.Conf.All.Send_Redirects Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.5
+  title: Ensure Net.Ipv4.Conf.Default.Send_Redirects Is Configured
+  objective: Ensure Net.Ipv4.Conf.Default.Send_Redirects Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_default_send_redirects
+    state: Active
+    text: Net.Ipv4.Conf.Default.Send_Redirects Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.6
+  title: Ensure Net.Ipv4.Icmp_Ignore_Bogus_Error_Responses Is Configured
+  objective: Ensure Net.Ipv4.Icmp_Ignore_Bogus_Error_Responses Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_icmp_ignore_bogus_error_responses
+    state: Active
+    text: Net.Ipv4.Icmp_Ignore_Bogus_Error_Responses Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.7
+  title: Ensure Net.Ipv4.Icmp_Echo_Ignore_Broadcasts Is Configured
+  objective: Ensure Net.Ipv4.Icmp_Echo_Ignore_Broadcasts Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_icmp_echo_ignore_broadcasts
+    state: Active
+    text: Net.Ipv4.Icmp_Echo_Ignore_Broadcasts Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.8
+  title: Ensure Net.Ipv4.Conf.All.Accept_Redirects Is Configured
+  objective: Ensure Net.Ipv4.Conf.All.Accept_Redirects Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_all_accept_redirects
+    state: Active
+    text: Net.Ipv4.Conf.All.Accept_Redirects Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.9
+  title: Ensure Net.Ipv4.Conf.Default.Accept_Redirects Is Configured
+  objective: Ensure Net.Ipv4.Conf.Default.Accept_Redirects Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_default_accept_redirects
+    state: Active
+    text: Net.Ipv4.Conf.Default.Accept_Redirects Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.10
+  title: Ensure Net.Ipv4.Conf.All.Secure_Redirects Is Configured
+  objective: Ensure Net.Ipv4.Conf.All.Secure_Redirects Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_all_secure_redirects
+    state: Active
+    text: Net.Ipv4.Conf.All.Secure_Redirects Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.11
+  title: Ensure Net.Ipv4.Conf.Default.Secure_Redirects Is Configured
+  objective: Ensure Net.Ipv4.Conf.Default.Secure_Redirects Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_default_secure_redirects
+    state: Active
+    text: Net.Ipv4.Conf.Default.Secure_Redirects Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.12
+  title: Ensure Net.Ipv4.Conf.All.Rp_Filter Is Configured
+  objective: Ensure Net.Ipv4.Conf.All.Rp_Filter Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_all_rp_filter
+    state: Active
+    text: Net.Ipv4.Conf.All.Rp_Filter Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.13
+  title: Ensure Net.Ipv4.Conf.Default.Rp_Filter Is Configured
+  objective: Ensure Net.Ipv4.Conf.Default.Rp_Filter Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_default_rp_filter
+    state: Active
+    text: Net.Ipv4.Conf.Default.Rp_Filter Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.14
+  title: Ensure Net.Ipv4.Conf.All.Accept_Source_Route Is Configured
+  objective: Ensure Net.Ipv4.Conf.All.Accept_Source_Route Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_all_accept_source_route
+    state: Active
+    text: Net.Ipv4.Conf.All.Accept_Source_Route Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.15
+  title: Ensure Net.Ipv4.Conf.Default.Accept_Source_Route Is Configured
+  objective: Ensure Net.Ipv4.Conf.Default.Accept_Source_Route Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_default_accept_source_route
+    state: Active
+    text: Net.Ipv4.Conf.Default.Accept_Source_Route Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.16
+  title: Ensure Net.Ipv4.Conf.All.Log_Martians Is Configured
+  objective: Ensure Net.Ipv4.Conf.All.Log_Martians Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_all_log_martians
+    state: Active
+    text: Net.Ipv4.Conf.All.Log_Martians Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.17
+  title: Ensure Net.Ipv4.Conf.Default.Log_Martians Is Configured
+  objective: Ensure Net.Ipv4.Conf.Default.Log_Martians Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_conf_default_log_martians
+    state: Active
+    text: Net.Ipv4.Conf.Default.Log_Martians Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.1.18
+  title: Ensure Net.Ipv4.Tcp_Syncookies Is Configured
+  objective: Ensure Net.Ipv4.Tcp_Syncookies Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv4_tcp_syncookies
+    state: Active
+    text: Net.Ipv4.Tcp_Syncookies Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.2.1
+  title: Ensure Net.Ipv6.Conf.All.Forwarding Is Configured
+  objective: Ensure Net.Ipv6.Conf.All.Forwarding Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv6_conf_all_forwarding
+    state: Active
+    text: Net.Ipv6.Conf.All.Forwarding Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.2.3
+  title: Ensure Net.Ipv6.Conf.All.Accept_Redirects Is Configured
+  objective: Ensure Net.Ipv6.Conf.All.Accept_Redirects Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv6_conf_all_accept_redirects
+    state: Active
+    text: Net.Ipv6.Conf.All.Accept_Redirects Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.2.4
+  title: Ensure Net.Ipv6.Conf.Default.Accept_Redirects Is Configured
+  objective: Ensure Net.Ipv6.Conf.Default.Accept_Redirects Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv6_conf_default_accept_redirects
+    state: Active
+    text: Net.Ipv6.Conf.Default.Accept_Redirects Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.2.5
+  title: Ensure Net.Ipv6.Conf.All.Accept_Source_Route Is Configured
+  objective: Ensure Net.Ipv6.Conf.All.Accept_Source_Route Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv6_conf_all_accept_source_route
+    state: Active
+    text: Net.Ipv6.Conf.All.Accept_Source_Route Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.2.6
+  title: Ensure Net.Ipv6.Conf.Default.Accept_Source_Route Is Configured
+  objective: Ensure Net.Ipv6.Conf.Default.Accept_Source_Route Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv6_conf_default_accept_source_route
+    state: Active
+    text: Net.Ipv6.Conf.Default.Accept_Source_Route Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.2.7
+  title: Ensure Net.Ipv6.Conf.All.Accept_Ra Is Configured
+  objective: Ensure Net.Ipv6.Conf.All.Accept_Ra Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv6_conf_all_accept_ra
+    state: Active
+    text: Net.Ipv6.Conf.All.Accept_Ra Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_3-3.2.8
+  title: Ensure Net.Ipv6.Conf.Default.Accept_Ra Is Configured
+  objective: Ensure Net.Ipv6.Conf.Default.Accept_Ra Is Configured
+  group: network
+  state: Active
+  assessment-requirements:
+  - id: sysctl_net_ipv6_conf_default_accept_ra
+    state: Active
+    text: Net.Ipv6.Conf.Default.Accept_Ra Is Configured MUST be verified
+    applicability:
+    - fedora-linux

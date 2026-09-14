@@ -1,0 +1,644 @@
+metadata:
+  id: nist-800-53-rev5-fedora-cp
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for FEDORA, generated from ComplianceAsCode (CP family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-08-21T12:23:27Z'
+  applicability-groups:
+  - id: fedora-low
+    title: FEDORA Low Baseline
+    description: NIST 800-53 Low impact baseline for FEDORA
+  - id: fedora-moderate
+    title: FEDORA Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for FEDORA (inherits Low)
+  - id: fedora-high
+    title: FEDORA High Baseline
+    description: NIST 800-53 High impact baseline for FEDORA (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for Fedora - Contingency Planning
+groups:
+- id: cp
+  title: Contingency Planning
+  description: 'NIST 800-53 CP family: Contingency Planning'
+controls:
+- id: cp-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, cp-1_prm_1 }}: Designate an {{ insert: param, cp-01_odp.04 }} to manage the development, documentation, and dissemination of the contingency planning policy and procedures; and Review and update the current contingency planning:'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-2.1
+  title: Coordinate with Related Plans
+  objective: Coordinate contingency plan development with organizational elements responsible for related plans.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-2.2
+  title: Capacity Planning
+  objective: Conduct capacity planning so that necessary capacity for information processing, telecommunications, and environmental support exists during contingency operations.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-2.3
+  title: Resume Mission and Business Functions
+  objective: 'Plan for the resumption of {{ insert: param, cp-02.03_odp.01 }} mission and business functions within {{ insert: param, cp-02.03_odp.02 }} of contingency plan activation.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-2.4
+  title: Resume All Mission and Business Functions
+  objective: Resume All Mission and Business Functions
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-2.5
+  title: Continue Mission and Business Functions
+  objective: 'Plan for the continuance of {{ insert: param, cp-02.05_odp }} mission and business functions with minimal or no loss of operational continuity and sustains that continuity until full system restoration at primary processing and/or storage sites.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-2.6
+  title: Alternate Processing and Storage Sites
+  objective: 'Plan for the transfer of {{ insert: param, cp-02.06_odp }} mission and business functions to alternate processing and/or storage sites with minimal or no loss of operational continuity and sustain that continuity through system restoration to primary processing and/or storage sites.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-2.7
+  title: Coordinate with External Service Providers
+  objective: Coordinate the contingency plan with the contingency plans of external service providers to ensure that contingency requirements can be satisfied.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-2.8
+  title: Identify Critical Assets
+  objective: 'Identify critical system assets supporting {{ insert: param, cp-02.08_odp }} mission and business functions.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-2
+  title: Contingency Plan
+  objective: 'Develop a contingency plan for the system that: Distribute copies of the contingency plan to {{ insert: param, cp-2_prm_2 }}; Coordinate contingency planning activities with incident handling activities; Review the contingency plan for the system {{ insert: param, cp-02_odp.05 }}; Update the contingency plan to address changes to the organization, system, or environment of operation and problems encountered during contingency plan implementation, execution, or testing; Communicate contingency plan changes to {{ insert: param, cp-2_prm_4 }}; Incorporate lessons learned from contingency plan testing, training, or actual contingency activities into contingency testing and training; and Protect the contingency plan from unauthorized disclosure and modification.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-3.1
+  title: Simulated Events
+  objective: Incorporate simulated events into contingency training to facilitate effective response by personnel in crisis situations.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-3.2
+  title: Mechanisms Used in Training Environments
+  objective: Employ mechanisms used in operations to provide a more thorough and realistic contingency training environment.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-3
+  title: Contingency Training
+  objective: 'Provide contingency training to system users consistent with assigned roles and responsibilities: Review and update contingency training content {{ insert: param, cp-03_odp.03 }} and following {{ insert: param, cp-03_odp.04 }}.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-4.1
+  title: Coordinate with Related Plans
+  objective: Coordinate contingency plan testing with organizational elements responsible for related plans.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-4.2
+  title: Alternate Processing Site
+  objective: 'Test the contingency plan at the alternate processing site:'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-4.3
+  title: Automated Testing
+  objective: 'Test the contingency plan using {{ insert: param, cp-04.03_odp }}.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-4.4
+  title: Full Recovery and Reconstitution
+  objective: Include a full recovery and reconstitution of the system to a known state as part of contingency plan testing.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-4.5
+  title: Self-challenge
+  objective: 'Employ {{ insert: param, cp-04.05_odp.01 }} to {{ insert: param, cp-04.05_odp.02 }} to disrupt and adversely affect the system or system component.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-4
+  title: Contingency Plan Testing
+  objective: 'Test the contingency plan for the system {{ insert: param, cp-04_odp.01 }} using the following tests to determine the effectiveness of the plan and the readiness to execute the plan: {{ insert: param, cp-4_prm_2 }}. Review the contingency plan test results; and Initiate corrective actions, if needed.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-5
+  title: Contingency Plan Update
+  objective: Contingency Plan Update
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-6.1
+  title: Separation from Primary Site
+  objective: Identify an alternate storage site that is sufficiently separated from the primary storage site to reduce susceptibility to the same threats.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-6.2
+  title: Recovery Time and Recovery Point Objectives
+  objective: Configure the alternate storage site to facilitate recovery operations in accordance with recovery time and recovery point objectives.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-6.3
+  title: Accessibility
+  objective: Identify potential accessibility problems to the alternate storage site in the event of an area-wide disruption or disaster and outline explicit mitigation actions.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-6
+  title: Alternate Storage Site
+  objective: Establish an alternate storage site, including necessary agreements to permit the storage and retrieval of system backup information; and Ensure that the alternate storage site provides controls equivalent to that of the primary site.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-7.1
+  title: Separation from Primary Site
+  objective: Identify an alternate processing site that is sufficiently separated from the primary processing site to reduce susceptibility to the same threats.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-7.2
+  title: Accessibility
+  objective: Identify potential accessibility problems to alternate processing sites in the event of an area-wide disruption or disaster and outlines explicit mitigation actions.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-7.3
+  title: Priority of Service
+  objective: Develop alternate processing site agreements that contain priority-of-service provisions in accordance with availability requirements (including recovery time objectives).
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-7.4
+  title: Preparation for Use
+  objective: Prepare the alternate processing site so that the site can serve as the operational site supporting essential mission and business functions.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-7.5
+  title: Equivalent Information Security Safeguards
+  objective: Equivalent Information Security Safeguards
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-7.6
+  title: Inability to Return to Primary Site
+  objective: Plan and prepare for circumstances that preclude returning to the primary processing site.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-7
+  title: Alternate Processing Site
+  objective: 'Establish an alternate processing site, including necessary agreements to permit the transfer and resumption of {{ insert: param, cp-07_odp.01 }} for essential mission and business functions within {{ insert: param, cp-07_odp.02 }} when the primary processing capabilities are unavailable; Make available at the alternate processing site, the equipment and supplies required to transfer and resume operations or put contracts in place to support delivery to the site within the organization-defined time period for transfer and resumption; and Provide controls at the alternate processing site that are equivalent to those at the primary site.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-8.1
+  title: Priority of Service Provisions
+  objective: Develop primary and alternate telecommunications service agreements that contain priority-of-service provisions in accordance with availability requirements (including recovery time objectives); and Request Telecommunications Service Priority for all telecommunications services used for national security emergency preparedness if the primary and/or alternate telecommunications services are provided by a common carrier.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-8.2
+  title: Single Points of Failure
+  objective: Obtain alternate telecommunications services to reduce the likelihood of sharing a single point of failure with primary telecommunications services.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-8.3
+  title: Separation of Primary and Alternate Providers
+  objective: Obtain alternate telecommunications services from providers that are separated from primary service providers to reduce susceptibility to the same threats.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-8.4
+  title: Provider Contingency Plan
+  objective: 'Require primary and alternate telecommunications service providers to have contingency plans; Review provider contingency plans to ensure that the plans meet organizational contingency requirements; and Obtain evidence of contingency testing and training by providers {{ insert: param, cp-8.4_prm_1 }}.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-8.5
+  title: Alternate Telecommunication Service Testing
+  objective: 'Test alternate telecommunication services {{ insert: param, cp-08.05_odp }}.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-8
+  title: Telecommunications Services
+  objective: 'Establish alternate telecommunications services, including necessary agreements to permit the resumption of {{ insert: param, cp-08_odp.01 }} for essential mission and business functions within {{ insert: param, cp-08_odp.02 }} when the primary telecommunications capabilities are unavailable at either the primary or alternate processing or storage sites.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-9.1
+  title: Testing for Reliability and Integrity
+  objective: 'Test backup information {{ insert: param, cp-9.1_prm_1 }} to verify media reliability and information integrity.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-9.2
+  title: Test Restoration Using Sampling
+  objective: Use a sample of backup information in the restoration of selected system functions as part of contingency plan testing.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-9.3
+  title: Separate Storage for Critical Information
+  objective: 'Store backup copies of {{ insert: param, cp-09.03_odp }} in a separate facility or in a fire rated container that is not collocated with the operational system.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-9.4
+  title: Protection from Unauthorized Modification
+  objective: Protection from Unauthorized Modification
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-9.5
+  title: Transfer to Alternate Storage Site
+  objective: 'Transfer system backup information to the alternate storage site {{ insert: param, cp-9.5_prm_1 }}.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-9.6
+  title: Redundant Secondary System
+  objective: Conduct system backup by maintaining a redundant secondary system that is not collocated with the primary system and that can be activated without loss of information or disruption to operations.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-9.7
+  title: Dual Authorization for Deletion or Destruction
+  objective: 'Enforce dual authorization for the deletion or destruction of {{ insert: param, cp-09.07_odp }}.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-9.8
+  title: Cryptographic Protection
+  objective: 'Implement cryptographic mechanisms to prevent unauthorized disclosure and modification of {{ insert: param, cp-09.08_odp }}.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-9
+  title: System Backup
+  objective: 'Conduct backups of user-level information contained in {{ insert: param, cp-09_odp.01 }} {{ insert: param, cp-09_odp.02 }}; Conduct backups of system-level information contained in the system {{ insert: param, cp-09_odp.03 }}; Conduct backups of system documentation, including security- and privacy-related documentation {{ insert: param, cp-09_odp.04 }} ; and Protect the confidentiality, integrity, and availability of backup information.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-10.1
+  title: Contingency Plan Testing
+  objective: Contingency Plan Testing
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-10.2
+  title: Transaction Recovery
+  objective: Implement transaction recovery for systems that are transaction-based.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: cp-10.3
+  title: Compensating Security Controls
+  objective: Addressed through tailoring.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-10.4
+  title: Restore Within Time Period
+  objective: 'Provide the capability to restore system components within {{ insert: param, cp-10.04_odp }} from configuration-controlled and integrity-protected information representing a known, operational state for the components.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: cp-10.5
+  title: Failover Capability
+  objective: Failover Capability
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-10.6
+  title: Component Protection
+  objective: Protect system components used for recovery and reconstitution.
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-10
+  title: System Recovery and Reconstitution
+  objective: 'Provide for the recovery and reconstitution of the system to a known state within {{ insert: param, cp-10_prm_1 }} after a disruption, compromise, or failure.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-11
+  title: Alternate Communications Protocols
+  objective: 'Provide the capability to employ {{ insert: param, cp-11_odp }} in support of maintaining continuity of operations.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-12
+  title: Safe Mode
+  objective: 'When {{ insert: param, cp-12_odp.02 }} are detected, enter a safe mode of operation with {{ insert: param, cp-12_odp.01 }}.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: cp-13
+  title: Alternative Security Mechanisms
+  objective: 'Employ {{ insert: param, cp-13_odp.01 }} for satisfying {{ insert: param, cp-13_odp.02 }} when the primary means of implementing the security function is unavailable or compromised.'
+  group: cp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft

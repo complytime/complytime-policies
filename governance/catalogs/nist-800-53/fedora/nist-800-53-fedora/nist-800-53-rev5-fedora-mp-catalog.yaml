@@ -1,0 +1,358 @@
+metadata:
+  id: nist-800-53-rev5-fedora-mp
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for FEDORA, generated from ComplianceAsCode (MP family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-08-21T12:23:27Z'
+  applicability-groups:
+  - id: fedora-low
+    title: FEDORA Low Baseline
+    description: NIST 800-53 Low impact baseline for FEDORA
+  - id: fedora-moderate
+    title: FEDORA Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for FEDORA (inherits Low)
+  - id: fedora-high
+    title: FEDORA High Baseline
+    description: NIST 800-53 High impact baseline for FEDORA (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for Fedora - Media Protection
+groups:
+- id: mp
+  title: Media Protection
+  description: 'NIST 800-53 MP family: Media Protection'
+controls:
+- id: mp-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, mp-1_prm_1 }}: Designate an {{ insert: param, mp-01_odp.04 }} to manage the development, documentation, and dissemination of the media protection policy and procedures; and Review and update the current media protection:'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-2.1
+  title: Automated Restricted Access
+  objective: Automated Restricted Access
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-2.2
+  title: Cryptographic Protection
+  objective: Cryptographic Protection
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-2
+  title: Media Access
+  objective: 'Restrict access to {{ insert: param, mp-2_prm_1 }} to {{ insert: param, mp-2_prm_2 }}.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-3
+  title: Media Marking
+  objective: 'Mark system media indicating the distribution limitations, handling caveats, and applicable security markings (if any) of the information; and Exempt {{ insert: param, mp-03_odp.01 }} from marking if the media remain within {{ insert: param, mp-03_odp.02 }}.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-4.1
+  title: Cryptographic Protection
+  objective: Cryptographic Protection
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-4.2
+  title: Automated Restricted Access
+  objective: 'Restrict access to media storage areas and log access attempts and access granted using {{ insert: param, mp-4.2_prm_1 }}.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-4
+  title: Media Storage
+  objective: 'Physically control and securely store {{ insert: param, mp-4_prm_1 }} within {{ insert: param, mp-4_prm_2 }} ; and Protect system media types defined in MP-4a until the media are destroyed or sanitized using approved equipment, techniques, and procedures.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-5.1
+  title: Protection Outside of Controlled Areas
+  objective: Protection Outside of Controlled Areas
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-5.2
+  title: Documentation of Activities
+  objective: Documentation of Activities
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-5.3
+  title: Custodians
+  objective: Employ an identified custodian during transport of system media outside of controlled areas.
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-5.4
+  title: Cryptographic Protection
+  objective: Cryptographic Protection
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-5
+  title: Media Transport
+  objective: 'Protect and control {{ insert: param, mp-05_odp.01 }} during transport outside of controlled areas using {{ insert: param, mp-5_prm_2 }}; Maintain accountability for system media during transport outside of controlled areas; Document activities associated with the transport of system media; and Restrict the activities associated with the transport of system media to authorized personnel.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: mp-6.1
+  title: Review, Approve, Track, Document, and Verify
+  objective: Review, approve, track, document, and verify media sanitization and disposal actions.
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: mp-6.2
+  title: Equipment Testing
+  objective: 'Test sanitization equipment and procedures {{ insert: param, mp-6.2_prm_1 }} to ensure that the intended sanitization is being achieved.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: mp-6.3
+  title: Nondestructive Techniques
+  objective: 'Apply nondestructive sanitization techniques to portable storage devices prior to connecting such devices to the system under the following circumstances: {{ insert: param, mp-06.03_odp }}.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: mp-6.4
+  title: Controlled Unclassified Information
+  objective: Controlled Unclassified Information
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-6.5
+  title: Classified Information
+  objective: Classified Information
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-6.6
+  title: Media Destruction
+  objective: Media Destruction
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-6.7
+  title: Dual Authorization
+  objective: 'Enforce dual authorization for the sanitization of {{ insert: param, mp-06.07_odp }}.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-6.8
+  title: Remote Purging or Wiping of Information
+  objective: 'Provide the capability to purge or wipe information from {{ insert: param, mp-06.08_odp.01 }} {{ insert: param, mp-06.08_odp.02 }}.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-6
+  title: Media Sanitization
+  objective: 'Sanitize {{ insert: param, mp-6_prm_1 }} prior to disposal, release out of organizational control, or release for reuse using {{ insert: param, mp-6_prm_2 }} ; and Employ sanitization mechanisms with the strength and integrity commensurate with the security category or classification of the information.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-7.1
+  title: Prohibit Use Without Owner
+  objective: Prohibit Use Without Owner
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-7.2
+  title: Prohibit Use of Sanitization-resistant Media
+  objective: Prohibit the use of sanitization-resistant media in organizational systems.
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-7
+  title: Media Use
+  objective: '{{ insert: param, mp-07_odp.02 }} the use of {{ insert: param, mp-07_odp.01 }} on {{ insert: param, mp-07_odp.03 }} using {{ insert: param, mp-07_odp.04 }} ; and Prohibit the use of portable storage devices in organizational systems when such devices have no identifiable owner.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-8.1
+  title: Documentation of Process
+  objective: Document system media downgrading actions.
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-8.2
+  title: Equipment Testing
+  objective: 'Test downgrading equipment and procedures {{ insert: param, mp-8.2_prm_1 }} to ensure that downgrading actions are being achieved.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-8.3
+  title: Controlled Unclassified Information
+  objective: Downgrade system media containing controlled unclassified information prior to public release.
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-8.4
+  title: Classified Information
+  objective: Downgrade system media containing classified information prior to release to individuals without required access authorizations.
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: mp-8
+  title: Media Downgrading
+  objective: 'Establish {{ insert: param, mp-08_odp.01 }} that includes employing downgrading mechanisms with strength and integrity commensurate with the security category or classification of the information; Verify that the system media downgrading process is commensurate with the security category and/or classification level of the information to be removed and the access authorizations of the potential recipients of the downgraded information; Identify {{ insert: param, mp-08_odp.02 }} ; and Downgrade the identified system media using the established process.'
+  group: mp
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft

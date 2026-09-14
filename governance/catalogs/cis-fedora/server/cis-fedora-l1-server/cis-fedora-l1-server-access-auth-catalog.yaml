@@ -1,0 +1,686 @@
+title: CIS Fedora Linux - Level 1 Server - Access, Authentication, and Authorization
+metadata:
+  id: cis-fedora-l1-server-access-auth
+  type: ControlCatalog
+  gemara-version: 0.24.0
+  description: Control catalog derived from the CIS Fedora Linux Level 1 Server Benchmark (Access, Authentication, and Authorization)
+  author:
+    id: complytime
+    name: ComplyTime
+    type: Software
+  applicability-groups:
+  - id: fedora-linux
+    title: Fedora Linux
+    description: Fedora Linux operating system
+groups:
+- id: access-auth
+  title: Access, Authentication, and Authorization
+  description: SSH, sudo, PAM, password, user account, and shell configuration
+controls:
+- id: cis_fedora_5-1.1
+  title: Ensure Access To /Etc/Ssh/Sshd_Config Is Configured
+  objective: Ensure Access To /Etc/Ssh/Sshd_Config Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: file_groupowner_sshd_config
+    state: Active
+    text: Access To /Etc/Ssh/Sshd_Config Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_owner_sshd_config
+    state: Active
+    text: Access To /Etc/Ssh/Sshd_Config Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_sshd_config
+    state: Active
+    text: Access To /Etc/Ssh/Sshd_Config Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.2
+  title: Ensure Access To Ssh Private Host Key Files Is Configured
+  objective: Ensure Access To Ssh Private Host Key Files Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: file_groupownership_sshd_private_key
+    state: Active
+    text: Access To Ssh Private Host Key Files Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_ownership_sshd_private_key
+    state: Active
+    text: Access To Ssh Private Host Key Files Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_sshd_private_key
+    state: Active
+    text: Access To Ssh Private Host Key Files Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.3
+  title: Ensure Access To Ssh Public Host Key Files Is Configured
+  objective: Ensure Access To Ssh Public Host Key Files Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: file_groupownership_sshd_pub_key
+    state: Active
+    text: Access To Ssh Public Host Key Files Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_ownership_sshd_pub_key
+    state: Active
+    text: Access To Ssh Public Host Key Files Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: file_permissions_sshd_pub_key
+    state: Active
+    text: Access To Ssh Public Host Key Files Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.4
+  title: Ensure Sshd Ciphers Are Configured
+  objective: Ensure Sshd Ciphers Are Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: cis_fedora_5-1.4-ar
+    state: Active
+    text: Sshd Ciphers Are Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.5
+  title: Ensure Sshd Kexalgorithms Is Configured
+  objective: Ensure Sshd Kexalgorithms Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: cis_fedora_5-1.5-ar
+    state: Active
+    text: Sshd Kexalgorithms Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.6
+  title: Ensure Sshd Macs Are Configured
+  objective: Ensure Sshd Macs Are Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: cis_fedora_5-1.6-ar
+    state: Active
+    text: Sshd Macs Are Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.7
+  title: Ensure Sshd Access Is Configured
+  objective: Ensure Sshd Access Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_limit_user_access
+    state: Active
+    text: Sshd Access Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.8
+  title: Ensure Sshd Banner Is Configured
+  objective: Ensure Sshd Banner Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_enable_warning_banner_net
+    state: Active
+    text: Sshd Banner Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.9
+  title: Ensure Sshd Clientaliveinterval And Clientalivecountmax Are Configured
+  objective: Ensure Sshd Clientaliveinterval And Clientalivecountmax Are Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_set_idle_timeout
+    state: Active
+    text: Sshd Clientaliveinterval And Clientalivecountmax Are Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: sshd_set_keepalive
+    state: Active
+    text: Sshd Clientaliveinterval And Clientalivecountmax Are Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.12
+  title: Ensure Sshd Hostbasedauthentication Is Disabled
+  objective: Ensure Sshd Hostbasedauthentication Is Disabled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: disable_host_auth
+    state: Active
+    text: Sshd Hostbasedauthentication Is Disabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.13
+  title: Ensure Sshd Ignorerhosts Is Enabled
+  objective: Ensure Sshd Ignorerhosts Is Enabled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_disable_rhosts
+    state: Active
+    text: Sshd Ignorerhosts Is Enabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.14
+  title: Ensure Sshd Logingracetime Is Configured
+  objective: Ensure Sshd Logingracetime Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_set_login_grace_time
+    state: Active
+    text: Sshd Logingracetime Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.15
+  title: Ensure Sshd Loglevel Is Configured
+  objective: Ensure Sshd Loglevel Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_set_loglevel_verbose
+    state: Active
+    text: Sshd Loglevel Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.16
+  title: Ensure Sshd Maxauthtries Is Configured
+  objective: Ensure Sshd Maxauthtries Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_set_max_auth_tries
+    state: Active
+    text: Sshd Maxauthtries Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.17
+  title: Ensure Sshd Maxstartups Is Configured
+  objective: Ensure Sshd Maxstartups Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_set_maxstartups
+    state: Active
+    text: Sshd Maxstartups Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.18
+  title: Ensure Sshd Maxsessions Is Configured
+  objective: Ensure Sshd Maxsessions Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_set_max_sessions
+    state: Active
+    text: Sshd Maxsessions Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.19
+  title: Ensure Sshd Permitemptypasswords Is Disabled
+  objective: Ensure Sshd Permitemptypasswords Is Disabled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_disable_empty_passwords
+    state: Active
+    text: Sshd Permitemptypasswords Is Disabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.20
+  title: Ensure Sshd Permitrootlogin Is Disabled
+  objective: Ensure Sshd Permitrootlogin Is Disabled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_disable_root_login
+    state: Active
+    text: Sshd Permitrootlogin Is Disabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.21
+  title: Ensure Sshd Permituserenvironment Is Disabled
+  objective: Ensure Sshd Permituserenvironment Is Disabled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_do_not_permit_user_env
+    state: Active
+    text: Sshd Permituserenvironment Is Disabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-1.22
+  title: Ensure Sshd Usepam Is Enabled
+  objective: Ensure Sshd Usepam Is Enabled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sshd_enable_pam
+    state: Active
+    text: Sshd Usepam Is Enabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-2.1
+  title: Ensure Sudo Is Installed
+  objective: Ensure Sudo Is Installed
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: package_sudo_installed
+    state: Active
+    text: Sudo Is Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-2.2
+  title: Ensure Sudo Commands Use Pty
+  objective: Ensure Sudo Commands Use Pty
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sudo_add_use_pty
+    state: Active
+    text: Sudo Commands Use Pty MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-2.3
+  title: Ensure Sudo Log File Exists
+  objective: Ensure Sudo Log File Exists
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sudo_custom_logfile
+    state: Active
+    text: Sudo Log File Exists MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-2.5
+  title: Ensure Re-Authentication For Privilege Escalation Is Not Disabled Globally
+  objective: Ensure Re-Authentication For Privilege Escalation Is Not Disabled Globally
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sudo_remove_no_authenticate
+    state: Active
+    text: Re-Authentication For Privilege Escalation Is Not Disabled Globally MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-2.6
+  title: Ensure Sudo Timestamp_Timeout Is Configured
+  objective: Ensure Sudo Timestamp_Timeout Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: sudo_require_reauthentication
+    state: Active
+    text: Sudo Timestamp_Timeout Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-2.7
+  title: Ensure Access To The Su Command Is Restricted
+  objective: Ensure Access To The Su Command Is Restricted
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: ensure_pam_wheel_group_empty
+    state: Active
+    text: Access To The Su Command Is Restricted MUST be verified
+    applicability:
+    - fedora-linux
+  - id: use_pam_wheel_group_for_su
+    state: Active
+    text: Access To The Su Command Is Restricted MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.1.3
+  title: Ensure Latest Version Of Libpwquality Is Installed
+  objective: Ensure Latest Version Of Libpwquality Is Installed
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: package_pam_pwquality_installed
+    state: Active
+    text: Latest Version Of Libpwquality Is Installed MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.2.2
+  title: Ensure Pam_Faillock Module Is Enabled
+  objective: Ensure Pam_Faillock Module Is Enabled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: account_password_pam_faillock_password_auth
+    state: Active
+    text: Pam_Faillock Module Is Enabled MUST be verified
+    applicability:
+    - fedora-linux
+  - id: account_password_pam_faillock_system_auth
+    state: Active
+    text: Pam_Faillock Module Is Enabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.2.3
+  title: Ensure Pam_Pwquality Module Is Enabled
+  objective: Ensure Pam_Pwquality Module Is Enabled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_pam_pwquality_password_auth
+    state: Active
+    text: Pam_Pwquality Module Is Enabled MUST be verified
+    applicability:
+    - fedora-linux
+  - id: accounts_password_pam_pwquality_system_auth
+    state: Active
+    text: Pam_Pwquality Module Is Enabled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.1.1
+  title: CIS Fedora 5 - 3.3.1.1
+  objective: CIS Fedora 5 - 3.3.1.1
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_passwords_pam_faillock_deny
+    state: Active
+    text: CIS Fedora 5 - 3.3.1.1 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.1.2
+  title: CIS Fedora 5 - 3.3.1.2
+  objective: CIS Fedora 5 - 3.3.1.2
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_passwords_pam_faillock_unlock_time
+    state: Active
+    text: CIS Fedora 5 - 3.3.1.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.2.1
+  title: CIS Fedora 5 - 3.3.2.1
+  objective: CIS Fedora 5 - 3.3.2.1
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_pam_difok
+    state: Active
+    text: CIS Fedora 5 - 3.3.2.1 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.2.2
+  title: CIS Fedora 5 - 3.3.2.2
+  objective: CIS Fedora 5 - 3.3.2.2
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_pam_minlen
+    state: Active
+    text: CIS Fedora 5 - 3.3.2.2 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.2.3
+  title: CIS Fedora 5 - 3.3.2.3
+  objective: CIS Fedora 5 - 3.3.2.3
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_pam_minclass
+    state: Active
+    text: CIS Fedora 5 - 3.3.2.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.2.4
+  title: CIS Fedora 5 - 3.3.2.4
+  objective: CIS Fedora 5 - 3.3.2.4
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_pam_maxrepeat
+    state: Active
+    text: CIS Fedora 5 - 3.3.2.4 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.2.6
+  title: CIS Fedora 5 - 3.3.2.6
+  objective: CIS Fedora 5 - 3.3.2.6
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_pam_dictcheck
+    state: Active
+    text: CIS Fedora 5 - 3.3.2.6 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.2.7
+  title: CIS Fedora 5 - 3.3.2.7
+  objective: CIS Fedora 5 - 3.3.2.7
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_pam_enforce_root
+    state: Active
+    text: CIS Fedora 5 - 3.3.2.7 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.3.1
+  title: CIS Fedora 5 - 3.3.3.1
+  objective: CIS Fedora 5 - 3.3.3.1
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_pam_pwhistory_remember_password_auth
+    state: Active
+    text: CIS Fedora 5 - 3.3.3.1 MUST be verified
+    applicability:
+    - fedora-linux
+  - id: accounts_password_pam_pwhistory_remember_system_auth
+    state: Active
+    text: CIS Fedora 5 - 3.3.3.1 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.4.1
+  title: CIS Fedora 5 - 3.3.4.1
+  objective: CIS Fedora 5 - 3.3.4.1
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: no_empty_passwords
+    state: Active
+    text: CIS Fedora 5 - 3.3.4.1 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-3.3.4.3
+  title: CIS Fedora 5 - 3.3.4.3
+  objective: CIS Fedora 5 - 3.3.4.3
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: set_password_hashing_algorithm_passwordauth
+    state: Active
+    text: CIS Fedora 5 - 3.3.4.3 MUST be verified
+    applicability:
+    - fedora-linux
+  - id: set_password_hashing_algorithm_systemauth
+    state: Active
+    text: CIS Fedora 5 - 3.3.4.3 MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.1.1
+  title: Ensure Password Expiration Is Configured
+  objective: Ensure Password Expiration Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_maximum_age_login_defs
+    state: Active
+    text: Password Expiration Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: accounts_password_set_max_life_existing
+    state: Active
+    text: Password Expiration Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.1.3
+  title: Ensure Password Expiration Warning Days Is Configured
+  objective: Ensure Password Expiration Warning Days Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_set_warn_age_existing
+    state: Active
+    text: Password Expiration Warning Days Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: accounts_password_warn_age_login_defs
+    state: Active
+    text: Password Expiration Warning Days Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.1.4
+  title: Ensure Strong Password Hashing Algorithm Is Configured
+  objective: Ensure Strong Password Hashing Algorithm Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: set_password_hashing_algorithm_logindefs
+    state: Active
+    text: Strong Password Hashing Algorithm Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.1.5
+  title: Ensure Inactive Password Lock Is Configured
+  objective: Ensure Inactive Password Lock Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: account_disable_post_pw_expiration
+    state: Active
+    text: Inactive Password Lock Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: accounts_set_post_pw_existing
+    state: Active
+    text: Inactive Password Lock Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.1.6
+  title: Ensure All Users Last Password Change Date Is In The Past
+  objective: Ensure All Users Last Password Change Date Is In The Past
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_password_last_change_is_in_past
+    state: Active
+    text: All Users Last Password Change Date Is In The Past MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.2.1
+  title: Ensure Root Is The Only Uid 0 Account
+  objective: Ensure Root Is The Only Uid 0 Account
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_no_uid_except_zero
+    state: Active
+    text: Root Is The Only Uid 0 Account MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.2.2
+  title: Ensure Root Is The Only Gid 0 Account
+  objective: Ensure Root Is The Only Gid 0 Account
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_root_gid_zero
+    state: Active
+    text: Root Is The Only Gid 0 Account MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.2.4
+  title: Ensure Root Account Access Is Controlled
+  objective: Ensure Root Account Access Is Controlled
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: ensure_root_password_configured
+    state: Active
+    text: Root Account Access Is Controlled MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.2.5
+  title: Ensure Root Path Integrity
+  objective: Ensure Root Path Integrity
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_root_path_dirs_no_write
+    state: Active
+    text: Root Path Integrity MUST be verified
+    applicability:
+    - fedora-linux
+  - id: root_path_no_dot
+    state: Active
+    text: Root Path Integrity MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.2.7
+  title: Ensure System Accounts Do Not Have A Valid Login Shell
+  objective: Ensure System Accounts Do Not Have A Valid Login Shell
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: no_password_auth_for_systemaccounts
+    state: Active
+    text: System Accounts Do Not Have A Valid Login Shell MUST be verified
+    applicability:
+    - fedora-linux
+  - id: no_shelllogin_for_systemaccounts
+    state: Active
+    text: System Accounts Do Not Have A Valid Login Shell MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.3.2
+  title: Ensure Default User Shell Timeout Is Configured
+  objective: Ensure Default User Shell Timeout Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_tmout
+    state: Active
+    text: Default User Shell Timeout Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+- id: cis_fedora_5-4.3.3
+  title: Ensure Default User Umask Is Configured
+  objective: Ensure Default User Umask Is Configured
+  group: access-auth
+  state: Active
+  assessment-requirements:
+  - id: accounts_umask_etc_bashrc
+    state: Active
+    text: Default User Umask Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: accounts_umask_etc_login_defs
+    state: Active
+    text: Default User Umask Is Configured MUST be verified
+    applicability:
+    - fedora-linux
+  - id: accounts_umask_etc_profile
+    state: Active
+    text: Default User Umask Is Configured MUST be verified
+    applicability:
+    - fedora-linux

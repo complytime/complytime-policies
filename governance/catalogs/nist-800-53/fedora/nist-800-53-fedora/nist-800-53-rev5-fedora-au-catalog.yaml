@@ -1,0 +1,1532 @@
+metadata:
+  id: nist-800-53-rev5-fedora-au
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for FEDORA, generated from ComplianceAsCode (AU family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-08-21T12:23:27Z'
+  applicability-groups:
+  - id: fedora-low
+    title: FEDORA Low Baseline
+    description: NIST 800-53 Low impact baseline for FEDORA
+  - id: fedora-moderate
+    title: FEDORA Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for FEDORA (inherits Low)
+  - id: fedora-high
+    title: FEDORA High Baseline
+    description: NIST 800-53 High impact baseline for FEDORA (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for Fedora - Audit and Accountability
+groups:
+- id: au
+  title: Audit and Accountability
+  description: 'NIST 800-53 AU family: Audit and Accountability'
+controls:
+- id: au-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, au-1_prm_1 }}: Designate an {{ insert: param, au-01_odp.04 }} to manage the development, documentation, and dissemination of the audit and accountability policy and procedures; and Review and update the current audit and accountability:'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-2.1
+  title: Compilation of Audit Records from Multiple Sources
+  objective: Compilation of Audit Records from Multiple Sources
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-2.2
+  title: Selection of Audit Events by Component
+  objective: Selection of Audit Events by Component
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-2.3
+  title: Reviews and Updates
+  objective: Reviews and Updates
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-2.4
+  title: Privileged Functions
+  objective: Privileged Functions
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-2
+  title: Event Logging
+  objective: 'Identify the types of events that the system is capable of logging in support of the audit function: {{ insert: param, au-02_odp.01 }}; Coordinate the event logging function with other organizational entities requiring audit-related information to guide and inform the selection criteria for events to be logged; Specify the following event types for logging within the system: {{ insert: param, au-2_prm_2 }}; Provide a rationale for why the event types selected for logging are deemed to be adequate to support after-the-fact investigations of incidents; and Review and update the event types selected for logging {{ insert: param, au-02_odp.04 }}.'
+  group: au
+  assessment-requirements:
+  - id: aide_build_database
+    state: Active
+    text: Rule 'aide_build_database' MUST be verified
+    applicability:
+    - fedora-low
+  - id: aide_periodic_cron_checking
+    state: Active
+    text: Rule 'aide_periodic_cron_checking' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_execution_chacl
+    state: Active
+    text: Rule 'audit_rules_execution_chacl' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_execution_chcon
+    state: Active
+    text: Rule 'audit_rules_execution_chcon' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_execution_setfacl
+    state: Active
+    text: Rule 'audit_rules_execution_setfacl' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_privileged_commands_usermod
+    state: Active
+    text: Rule 'audit_rules_privileged_commands_usermod' MUST be verified
+    applicability:
+    - fedora-low
+  - id: auditd_data_disk_error_action
+    state: Active
+    text: Rule 'auditd_data_disk_error_action' MUST be verified
+    applicability:
+    - fedora-low
+  - id: auditd_data_disk_full_action
+    state: Active
+    text: Rule 'auditd_data_disk_full_action' MUST be verified
+    applicability:
+    - fedora-low
+  - id: auditd_data_retention_action_mail_acct
+    state: Active
+    text: Rule 'auditd_data_retention_action_mail_acct' MUST be verified
+    applicability:
+    - fedora-low
+  - id: auditd_data_retention_admin_space_left_action
+    state: Active
+    text: Rule 'auditd_data_retention_admin_space_left_action' MUST be verified
+    applicability:
+    - fedora-low
+  - id: auditd_data_retention_space_left_action
+    state: Active
+    text: Rule 'auditd_data_retention_space_left_action' MUST be verified
+    applicability:
+    - fedora-low
+  - id: grub2_audit_backlog_limit_argument
+    state: Active
+    text: Rule 'grub2_audit_backlog_limit_argument' MUST be verified
+    applicability:
+    - fedora-low
+  - id: journald_disable_forward_to_syslog
+    state: Active
+    text: Rule 'journald_disable_forward_to_syslog' MUST be verified
+    applicability:
+    - fedora-low
+  - id: package_aide_installed
+    state: Active
+    text: Rule 'package_aide_installed' MUST be verified
+    applicability:
+    - fedora-low
+  - id: package_audit-libs_installed
+    state: Active
+    text: Rule 'package_audit-libs_installed' MUST be verified
+    applicability:
+    - fedora-low
+  - id: package_audit_installed
+    state: Active
+    text: Rule 'package_audit_installed' MUST be verified
+    applicability:
+    - fedora-low
+  - id: package_systemd-journal-remote_installed
+    state: Active
+    text: Rule 'package_systemd-journal-remote_installed' MUST be verified
+    applicability:
+    - fedora-low
+  - id: service_auditd_enabled
+    state: Active
+    text: Rule 'service_auditd_enabled' MUST be verified
+    applicability:
+    - fedora-low
+  - id: service_systemd-journal-upload_enabled
+    state: Active
+    text: Rule 'service_systemd-journal-upload_enabled' MUST be verified
+    applicability:
+    - fedora-low
+  - id: service_systemd-journald_enabled
+    state: Active
+    text: Rule 'service_systemd-journald_enabled' MUST be verified
+    applicability:
+    - fedora-low
+  - id: socket_systemd-journal-remote_disabled
+    state: Active
+    text: Rule 'socket_systemd-journal-remote_disabled' MUST be verified
+    applicability:
+    - fedora-low
+  - id: ensure_journald_and_rsyslog_not_active_together
+    state: Active
+    text: Rule 'ensure_journald_and_rsyslog_not_active_together' MUST be verified
+    applicability:
+    - fedora-low
+  - id: var_audit_backlog_limit
+    state: Active
+    text: Variable 'var_audit_backlog_limit' is set to '8192'
+    applicability:
+    - fedora-low
+  - id: var_auditd_action_mail_acct
+    state: Active
+    text: Variable 'var_auditd_action_mail_acct' is set to 'root'
+    applicability:
+    - fedora-low
+  - id: var_auditd_admin_space_left_action
+    state: Active
+    text: Variable 'var_auditd_admin_space_left_action' is set to 'cis_fedora'
+    applicability:
+    - fedora-low
+  - id: var_auditd_space_left_action
+    state: Active
+    text: Variable 'var_auditd_space_left_action' is set to 'cis_fedora'
+    applicability:
+    - fedora-low
+  state: Active
+- id: au-3.1
+  title: Additional Audit Information
+  objective: 'Generate audit records containing the following additional information: {{ insert: param, au-03.01_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: au-3.2
+  title: Centralized Management of Planned Audit Record Content
+  objective: Centralized Management of Planned Audit Record Content
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-3.3
+  title: Limit Personally Identifiable Information Elements
+  objective: 'Limit personally identifiable information contained in audit records to the following elements identified in the privacy risk assessment: {{ insert: param, au-03.03_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-3
+  title: Content of Audit Records
+  objective: 'Ensure that audit records contain information that establishes the following:'
+  group: au
+  assessment-requirements:
+  - id: audit_rules_dac_modification_chmod
+    state: Active
+    text: Rule 'audit_rules_dac_modification_chmod' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_chown
+    state: Active
+    text: Rule 'audit_rules_dac_modification_chown' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchmod
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchmod' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchmodat
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchmodat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchown
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchown' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchownat
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchownat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fremovexattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fremovexattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fsetxattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fsetxattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_lchown
+    state: Active
+    text: Rule 'audit_rules_dac_modification_lchown' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_lremovexattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_lremovexattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_lsetxattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_lsetxattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_removexattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_removexattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_setxattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_setxattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_kernel_module_loading_delete
+    state: Active
+    text: Rule 'audit_rules_kernel_module_loading_delete' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_kernel_module_loading_finit
+    state: Active
+    text: Rule 'audit_rules_kernel_module_loading_finit' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_kernel_module_loading_init
+    state: Active
+    text: Rule 'audit_rules_kernel_module_loading_init' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_kernel_module_loading_query
+    state: Active
+    text: Rule 'audit_rules_kernel_module_loading_query' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_login_events_faillock
+    state: Active
+    text: Rule 'audit_rules_login_events_faillock' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_login_events_lastlog
+    state: Active
+    text: Rule 'audit_rules_login_events_lastlog' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_mac_modification_etc_selinux
+    state: Active
+    text: Rule 'audit_rules_mac_modification_etc_selinux' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_mac_modification_usr_share
+    state: Active
+    text: Rule 'audit_rules_mac_modification_usr_share' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_etc_hosts
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_etc_hosts' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_etc_issue
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_etc_issue' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_etc_issue_net
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_etc_issue_net' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_etc_networkmanager_system_connections
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_etc_networkmanager_system_connections' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_etc_sysconfig_network
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_etc_sysconfig_network' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_hostname_file
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_hostname_file' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_networkmanager
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_networkmanager' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_setdomainname
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_setdomainname' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_networkconfig_modification_sethostname
+    state: Active
+    text: Rule 'audit_rules_networkconfig_modification_sethostname' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_privileged_commands
+    state: Active
+    text: Rule 'audit_rules_privileged_commands' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_privileged_commands_kmod
+    state: Active
+    text: Rule 'audit_rules_privileged_commands_kmod' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_session_events_btmp
+    state: Active
+    text: Rule 'audit_rules_session_events_btmp' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_session_events_utmp
+    state: Active
+    text: Rule 'audit_rules_session_events_utmp' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_session_events_wtmp
+    state: Active
+    text: Rule 'audit_rules_session_events_wtmp' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_suid_auid_privilege_function
+    state: Active
+    text: Rule 'audit_rules_suid_auid_privilege_function' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_sysadmin_actions
+    state: Active
+    text: Rule 'audit_rules_sysadmin_actions' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_time_adjtimex
+    state: Active
+    text: Rule 'audit_rules_time_adjtimex' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_time_clock_settime
+    state: Active
+    text: Rule 'audit_rules_time_clock_settime' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_time_settimeofday
+    state: Active
+    text: Rule 'audit_rules_time_settimeofday' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_time_watch_localtime
+    state: Active
+    text: Rule 'audit_rules_time_watch_localtime' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_creat
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_creat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_ftruncate
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_ftruncate' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_open
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_open' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_openat
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_openat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_truncate
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_truncate' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_group
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_group' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_gshadow
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_gshadow' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_nsswitch_conf
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_nsswitch_conf' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_opasswd
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_opasswd' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_pam_conf
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_pam_conf' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_pamd
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_pamd' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_passwd
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_passwd' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_shadow
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_shadow' MUST be verified
+    applicability:
+    - fedora-low
+  - id: chronyd_specify_remote_server
+    state: Active
+    text: Rule 'chronyd_specify_remote_server' MUST be verified
+    applicability:
+    - fedora-low
+  - id: directory_permissions_var_log_audit
+    state: Active
+    text: Rule 'directory_permissions_var_log_audit' MUST be verified
+    applicability:
+    - fedora-low
+  - id: file_groupownership_audit_binaries
+    state: Active
+    text: Rule 'file_groupownership_audit_binaries' MUST be verified
+    applicability:
+    - fedora-low
+  - id: file_ownership_var_log_audit_stig
+    state: Active
+    text: Rule 'file_ownership_var_log_audit_stig' MUST be verified
+    applicability:
+    - fedora-low
+  - id: file_permissions_audit_binaries
+    state: Active
+    text: Rule 'file_permissions_audit_binaries' MUST be verified
+    applicability:
+    - fedora-low
+  - id: journald_storage
+    state: Active
+    text: Rule 'journald_storage' MUST be verified
+    applicability:
+    - fedora-low
+  - id: sshd_set_loglevel_verbose
+    state: Active
+    text: Rule 'sshd_set_loglevel_verbose' MUST be verified
+    applicability:
+    - fedora-low
+  - id: sshd_set_max_auth_tries
+    state: Active
+    text: Rule 'sshd_set_max_auth_tries' MUST be verified
+    applicability:
+    - fedora-low
+  - id: sudo_custom_logfile
+    state: Active
+    text: Rule 'sudo_custom_logfile' MUST be verified
+    applicability:
+    - fedora-low
+  - id: sysctl_net_ipv4_conf_all_log_martians
+    state: Active
+    text: Rule 'sysctl_net_ipv4_conf_all_log_martians' MUST be verified
+    applicability:
+    - fedora-low
+  - id: sysctl_net_ipv4_conf_default_log_martians
+    state: Active
+    text: Rule 'sysctl_net_ipv4_conf_default_log_martians' MUST be verified
+    applicability:
+    - fedora-low
+  - id: chronyd_run_as_chrony_user
+    state: Active
+    text: Rule 'chronyd_run_as_chrony_user' MUST be verified
+    applicability:
+    - fedora-low
+  - id: sshd_max_auth_tries_value
+    state: Active
+    text: Variable 'sshd_max_auth_tries_value' is set to '4'
+    applicability:
+    - fedora-low
+  - id: var_multiple_time_servers
+    state: Active
+    text: Variable 'var_multiple_time_servers' is set to 'fedora'
+    applicability:
+    - fedora-low
+  state: Active
+- id: au-4.1
+  title: Transfer to Alternate Storage
+  objective: 'Transfer audit logs {{ insert: param, au-04.01_odp }} to a different system, system component, or media other than the system or system component conducting the logging.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-4
+  title: Audit Log Storage Capacity
+  objective: 'Allocate audit log storage capacity to accommodate {{ insert: param, au-04_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: journald_compress
+    state: Active
+    text: Rule 'journald_compress' MUST be verified
+    applicability:
+    - fedora-low
+  state: Active
+- id: au-5.1
+  title: Storage Capacity Warning
+  objective: 'Provide a warning to {{ insert: param, au-05.01_odp.01 }} within {{ insert: param, au-05.01_odp.02 }} when allocated audit log storage volume reaches {{ insert: param, au-05.01_odp.03 }} of repository maximum audit log storage capacity.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-5.2
+  title: Real-time Alerts
+  objective: 'Provide an alert within {{ insert: param, au-05.02_odp.01 }} to {{ insert: param, au-05.02_odp.02 }} when the following audit failure events occur: {{ insert: param, au-05.02_odp.03 }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-5.3
+  title: Configurable Traffic Volume Thresholds
+  objective: 'Enforce configurable network communications traffic volume thresholds reflecting limits on audit log storage capacity and {{ insert: param, au-05.03_odp }} network traffic above those thresholds.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-5.4
+  title: Shutdown on Failure
+  objective: 'Invoke a {{ insert: param, au-05.04_odp.01 }} in the event of {{ insert: param, au-05.04_odp.02 }} , unless an alternate audit logging capability exists.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-5.5
+  title: Alternate Audit Logging Capability
+  objective: 'Provide an alternate audit logging capability in the event of a failure in primary audit logging capability that implements {{ insert: param, au-05.05_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-5
+  title: Response to Audit Logging Process Failures
+  objective: 'Alert {{ insert: param, au-05_odp.01 }} within {{ insert: param, au-05_odp.02 }} in the event of an audit logging process failure; and Take the following additional actions: {{ insert: param, au-05_odp.03 }}.'
+  group: au
+  assessment-requirements:
+  - id: auditd_data_disk_error_action
+    state: Active
+    text: Rule 'auditd_data_disk_error_action' MUST be verified
+    applicability:
+    - fedora-low
+  - id: auditd_data_disk_full_action
+    state: Active
+    text: Rule 'auditd_data_disk_full_action' MUST be verified
+    applicability:
+    - fedora-low
+  - id: var_auditd_disk_error_action
+    state: Active
+    text: Variable 'var_auditd_disk_error_action' is set to 'cis_fedora'
+    applicability:
+    - fedora-low
+  - id: var_auditd_disk_full_action
+    state: Active
+    text: Variable 'var_auditd_disk_full_action' is set to 'cis_fedora'
+    applicability:
+    - fedora-low
+  state: Active
+- id: au-6.1
+  title: Automated Process Integration
+  objective: 'Integrate audit record review, analysis, and reporting processes using {{ insert: param, au-06.01_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: au-6.2
+  title: Automated Security Alerts
+  objective: Automated Security Alerts
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-6.3
+  title: Correlate Audit Record Repositories
+  objective: Analyze and correlate audit records across different repositories to gain organization-wide situational awareness.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: au-6.4
+  title: Central Review and Analysis
+  objective: Provide and implement the capability to centrally review and analyze audit records from multiple components within the system.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-6.5
+  title: Integrated Analysis of Audit Records
+  objective: 'Integrate analysis of audit records with analysis of {{ insert: param, au-06.05_odp.01 }} to further enhance the ability to identify inappropriate or unusual activity.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-6.6
+  title: Correlation with Physical Monitoring
+  objective: Correlate information from audit records with information obtained from monitoring physical access to further enhance the ability to identify suspicious, inappropriate, unusual, or malevolent activity.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-6.7
+  title: Permitted Actions
+  objective: 'Specify the permitted actions for each {{ insert: param, au-06.07_odp }} associated with the review, analysis, and reporting of audit record information.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-6.8
+  title: Full Text Analysis of Privileged Commands
+  objective: Perform a full text analysis of logged privileged commands in a physically distinct component or subsystem of the system, or other system that is dedicated to that analysis.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-6.9
+  title: Correlation with Information from Nontechnical Sources
+  objective: Correlate information from nontechnical sources with audit record information to enhance organization-wide situational awareness.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-6.10
+  title: Audit Level Adjustment
+  objective: Audit Level Adjustment
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-6
+  title: Audit Record Review, Analysis, and Reporting
+  objective: 'Review and analyze system audit records {{ insert: param, au-06_odp.01 }} for indications of {{ insert: param, au-06_odp.02 }} and the potential impact of the inappropriate or unusual activity; Report findings to {{ insert: param, au-06_odp.03 }} ; and Adjust the level of audit record review, analysis, and reporting within the system when there is a change in risk based on law enforcement information, intelligence information, or other credible sources of information.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-7.1
+  title: Automatic Processing
+  objective: 'Provide and implement the capability to process, sort, and search audit records for events of interest based on the following content: {{ insert: param, au-07.01_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: au-7.2
+  title: Automatic Sort and Search
+  objective: Automatic Sort and Search
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: au-7
+  title: Audit Record Reduction and Report Generation
+  objective: 'Provide and implement an audit record reduction and report generation capability that:'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: au-8.1
+  title: Synchronization with Authoritative Time Source
+  objective: Synchronization with Authoritative Time Source
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-8.2
+  title: Secondary Authoritative Time Source
+  objective: Secondary Authoritative Time Source
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-8
+  title: Time Stamps
+  objective: 'Use internal system clocks to generate time stamps for audit records; and Record time stamps for audit records that meet {{ insert: param, au-08_odp }} and that use Coordinated Universal Time, have a fixed local time offset from Coordinated Universal Time, or that include the local time offset as part of the time stamp.'
+  group: au
+  assessment-requirements:
+  - id: auditd_data_retention_max_log_file
+    state: Active
+    text: Rule 'auditd_data_retention_max_log_file' MUST be verified
+    applicability:
+    - fedora-low
+  - id: auditd_data_retention_max_log_file_action
+    state: Active
+    text: Rule 'auditd_data_retention_max_log_file_action' MUST be verified
+    applicability:
+    - fedora-low
+  - id: var_auditd_max_log_file
+    state: Active
+    text: Variable 'var_auditd_max_log_file' is set to '8'
+    applicability:
+    - fedora-low
+  - id: var_auditd_max_log_file_action
+    state: Active
+    text: Variable 'var_auditd_max_log_file_action' is set to 'keep_logs'
+    applicability:
+    - fedora-low
+  state: Active
+- id: au-9.1
+  title: Hardware Write-once Media
+  objective: Write audit trails to hardware-enforced, write-once media.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-9.2
+  title: Store on Separate Physical Systems or Components
+  objective: 'Store audit records {{ insert: param, au-09.02_odp }} in a repository that is part of a physically different system or system component than the system or component being audited.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-9.3
+  title: Cryptographic Protection
+  objective: Implement cryptographic mechanisms to protect the integrity of audit information and audit tools.
+  group: au
+  assessment-requirements:
+  - id: aide_check_audit_tools
+    state: Active
+    text: Rule 'aide_check_audit_tools' MUST be verified
+    applicability:
+    - fedora-high
+  state: Active
+- id: au-9.4
+  title: Access by Subset of Privileged Users
+  objective: 'Authorize access to management of audit logging functionality to only {{ insert: param, au-09.04_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: file_group_ownership_var_log_audit
+    state: Active
+    text: Rule 'file_group_ownership_var_log_audit' MUST be verified
+    applicability:
+    - fedora-moderate
+  - id: file_permissions_var_log_audit
+    state: Active
+    text: Rule 'file_permissions_var_log_audit' MUST be verified
+    applicability:
+    - fedora-moderate
+  state: Active
+- id: au-9.5
+  title: Dual Authorization
+  objective: 'Enforce dual authorization for {{ insert: param, au-09.05_odp.01 }} of {{ insert: param, au-09.05_odp.02 }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-9.6
+  title: Read-only Access
+  objective: 'Authorize read-only access to audit information to {{ insert: param, au-09.06_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-9.7
+  title: Store on Component with Different Operating System
+  objective: Store audit information on a component running a different operating system than the system or component being audited.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-9
+  title: Protection of Audit Information
+  objective: 'Protect audit information and audit logging tools from unauthorized access, modification, and deletion; and Alert {{ insert: param, au-09_odp }} upon detection of unauthorized access, modification, or deletion of audit information.'
+  group: au
+  assessment-requirements:
+  - id: audit_rules_immutable
+    state: Active
+    text: Rule 'audit_rules_immutable' MUST be verified
+    applicability:
+    - fedora-low
+  - id: file_groupownership_audit_configuration
+    state: Active
+    text: Rule 'file_groupownership_audit_configuration' MUST be verified
+    applicability:
+    - fedora-low
+  - id: file_ownership_audit_binaries
+    state: Active
+    text: Rule 'file_ownership_audit_binaries' MUST be verified
+    applicability:
+    - fedora-low
+  - id: file_ownership_audit_configuration
+    state: Active
+    text: Rule 'file_ownership_audit_configuration' MUST be verified
+    applicability:
+    - fedora-low
+  state: Active
+- id: au-10.1
+  title: Association of Identities
+  objective: 'Bind the identity of the information producer with the information to {{ insert: param, au-10.01_odp }} ; and Provide the means for authorized individuals to determine the identity of the producer of the information.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-10.2
+  title: Validate Binding of Information Producer Identity
+  objective: 'Validate the binding of the information producer identity to the information at {{ insert: param, au-10.02_odp.01 }} ; and Perform {{ insert: param, au-10.02_odp.02 }} in the event of a validation error.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-10.3
+  title: Chain of Custody
+  objective: Maintain reviewer or releaser credentials within the established chain of custody for information reviewed or released.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-10.4
+  title: Validate Binding of Information Reviewer Identity
+  objective: 'Validate the binding of the information reviewer identity to the information at the transfer or release points prior to release or transfer between {{ insert: param, au-10.04_odp.01 }} ; and Perform {{ insert: param, au-10.04_odp.02 }} in the event of a validation error.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-10.5
+  title: Digital Signatures
+  objective: Digital Signatures
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-10
+  title: Non-repudiation
+  objective: 'Provide irrefutable evidence that an individual (or process acting on behalf of an individual) has performed {{ insert: param, au-10_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-11.1
+  title: Long-term Retrieval Capability
+  objective: 'Employ {{ insert: param, au-11.01_odp }} to ensure that long-term audit records generated by the system can be retrieved.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-11
+  title: Audit Record Retention
+  objective: 'Retain audit records for {{ insert: param, au-11_odp }} to provide support for after-the-fact investigations of incidents and to meet regulatory and organizational information retention requirements.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-12.1
+  title: System-wide and Time-correlated Audit Trail
+  objective: 'Compile audit records from {{ insert: param, au-12.01_odp.01 }} into a system-wide (logical or physical) audit trail that is time-correlated to within {{ insert: param, au-12.01_odp.02 }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-12.2
+  title: Standardized Formats
+  objective: Produce a system-wide (logical or physical) audit trail composed of audit records in a standardized format.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-12.3
+  title: Changes by Authorized Individuals
+  objective: 'Provide and implement the capability for {{ insert: param, au-12.03_odp.01 }} to change the logging to be performed on {{ insert: param, au-12.03_odp.02 }} based on {{ insert: param, au-12.03_odp.03 }} within {{ insert: param, au-12.03_odp.04 }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: au-12.4
+  title: Query Parameter Audits of Personally Identifiable Information
+  objective: Provide and implement the capability for auditing the parameters of user query events for data sets containing personally identifiable information.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-12
+  title: Audit Record Generation
+  objective: 'Provide audit record generation capability for the event types the system is capable of auditing as defined in [AU-2a](#au-2_smt.a) on {{ insert: param, au-12_odp.01 }}; Allow {{ insert: param, au-12_odp.02 }} to select the event types that are to be logged by specific components of the system; and Generate audit records for the event types defined in [AU-2c](#au-2_smt.c) that include the audit record content defined in [AU-3](#au-3).'
+  group: au
+  assessment-requirements:
+  - id: audit_rules_dac_modification_chmod
+    state: Active
+    text: Rule 'audit_rules_dac_modification_chmod' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_chown
+    state: Active
+    text: Rule 'audit_rules_dac_modification_chown' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchmod
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchmod' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchmodat
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchmodat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchmodat2
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchmodat2' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchown
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchown' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fchownat
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fchownat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fremovexattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fremovexattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_fsetxattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_fsetxattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_lchown
+    state: Active
+    text: Rule 'audit_rules_dac_modification_lchown' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_lremovexattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_lremovexattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_lsetxattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_lsetxattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_removexattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_removexattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_dac_modification_setxattr
+    state: Active
+    text: Rule 'audit_rules_dac_modification_setxattr' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_continue_loading
+    state: Active
+    text: Rule 'audit_rules_continue_loading' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_execution_chcon
+    state: Active
+    text: Rule 'audit_rules_execution_chcon' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_file_deletion_events_rename
+    state: Active
+    text: Rule 'audit_rules_file_deletion_events_rename' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_file_deletion_events_renameat
+    state: Active
+    text: Rule 'audit_rules_file_deletion_events_renameat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_file_deletion_events_renameat2
+    state: Active
+    text: Rule 'audit_rules_file_deletion_events_renameat2' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_file_deletion_events_unlink
+    state: Active
+    text: Rule 'audit_rules_file_deletion_events_unlink' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_file_deletion_events_unlinkat
+    state: Active
+    text: Rule 'audit_rules_file_deletion_events_unlinkat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_kernel_module_loading_delete
+    state: Active
+    text: Rule 'audit_rules_kernel_module_loading_delete' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_kernel_module_loading_finit
+    state: Active
+    text: Rule 'audit_rules_kernel_module_loading_finit' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_kernel_module_loading_init
+    state: Active
+    text: Rule 'audit_rules_kernel_module_loading_init' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_kernel_module_loading_query
+    state: Active
+    text: Rule 'audit_rules_kernel_module_loading_query' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_login_events_faillock
+    state: Active
+    text: Rule 'audit_rules_login_events_faillock' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_login_events_lastlog
+    state: Active
+    text: Rule 'audit_rules_login_events_lastlog' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_media_export
+    state: Active
+    text: Rule 'audit_rules_media_export' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_privileged_commands_kmod
+    state: Active
+    text: Rule 'audit_rules_privileged_commands_kmod' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_privileged_commands_usermod
+    state: Active
+    text: Rule 'audit_rules_privileged_commands_usermod' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_sysadmin_actions
+    state: Active
+    text: Rule 'audit_rules_sysadmin_actions' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_creat
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_creat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_ftruncate
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_ftruncate' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_open
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_open' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_openat
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_openat' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_unsuccessful_file_modification_truncate
+    state: Active
+    text: Rule 'audit_rules_unsuccessful_file_modification_truncate' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_group
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_group' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_gshadow
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_gshadow' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_nsswitch_conf
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_nsswitch_conf' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_opasswd
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_opasswd' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_pam_conf
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_pam_conf' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_pamd
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_pamd' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_passwd
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_passwd' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_rules_usergroup_modification_shadow
+    state: Active
+    text: Rule 'audit_rules_usergroup_modification_shadow' MUST be verified
+    applicability:
+    - fedora-low
+  - id: audit_sudo_log_events
+    state: Active
+    text: Rule 'audit_sudo_log_events' MUST be verified
+    applicability:
+    - fedora-low
+  - id: file_permissions_audit_configuration
+    state: Active
+    text: Rule 'file_permissions_audit_configuration' MUST be verified
+    applicability:
+    - fedora-low
+  - id: grub2_audit_argument
+    state: Active
+    text: Rule 'grub2_audit_argument' MUST be verified
+    applicability:
+    - fedora-low
+  - id: service_auditd_enabled
+    state: Active
+    text: Rule 'service_auditd_enabled' MUST be verified
+    applicability:
+    - fedora-low
+  state: Active
+- id: au-13.1
+  title: Use of Automated Tools
+  objective: 'Monitor open-source information and information sites using {{ insert: param, au-13.01_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-13.2
+  title: Review of Monitored Sites
+  objective: 'Review the list of open-source information sites being monitored {{ insert: param, au-13.02_odp }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-13.3
+  title: Unauthorized Replication of Information
+  objective: Employ discovery techniques, processes, and tools to determine if external entities are replicating organizational information in an unauthorized manner.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-13
+  title: Monitoring for Information Disclosure
+  objective: 'Monitor {{ insert: param, au-13_odp.01 }} {{ insert: param, au-13_odp.02 }} for evidence of unauthorized disclosure of organizational information; and If an information disclosure is discovered:'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-14.1
+  title: System Start-up
+  objective: Initiate session audits automatically at system start-up.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-14.2
+  title: Capture and Record Content
+  objective: Capture and Record Content
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-14.3
+  title: Remote Viewing and Listening
+  objective: Provide and implement the capability for authorized users to remotely view and hear content related to an established user session in real time.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-14
+  title: Session Audit
+  objective: 'Provide and implement the capability for {{ insert: param, au-14_odp.01 }} to {{ insert: param, au-14_odp.02 }} the content of a user session under {{ insert: param, au-14_odp.03 }} ; and Develop, integrate, and use session auditing activities in consultation with legal counsel and in accordance with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-15
+  title: Alternate Audit Logging Capability
+  objective: Alternate Audit Logging Capability
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-16.1
+  title: Identity Preservation
+  objective: Preserve the identity of individuals in cross-organizational audit trails.
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-16.2
+  title: Sharing of Audit Information
+  objective: 'Provide cross-organizational audit information to {{ insert: param, au-16.02_odp.01 }} based on {{ insert: param, au-16.02_odp.02 }}.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-16.3
+  title: Disassociability
+  objective: 'Implement {{ insert: param, au-16.03_odp }} to disassociate individuals from audit information transmitted across organizational boundaries.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: au-16
+  title: Cross-organizational Audit Logging
+  objective: 'Employ {{ insert: param, au-16_odp.01 }} for coordinating {{ insert: param, au-16_odp.02 }} among external organizations when audit information is transmitted across organizational boundaries.'
+  group: au
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft

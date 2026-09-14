@@ -1,0 +1,259 @@
+metadata:
+  id: nist-800-53-rev5-fedora-pt
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for FEDORA, generated from ComplianceAsCode (PT family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-08-21T12:23:27Z'
+  applicability-groups:
+  - id: fedora-low
+    title: FEDORA Low Baseline
+    description: NIST 800-53 Low impact baseline for FEDORA
+  - id: fedora-moderate
+    title: FEDORA Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for FEDORA (inherits Low)
+  - id: fedora-high
+    title: FEDORA High Baseline
+    description: NIST 800-53 High impact baseline for FEDORA (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for Fedora - PII Processing and Transparency
+groups:
+- id: pt
+  title: PII Processing and Transparency
+  description: 'NIST 800-53 PT family: PII Processing and Transparency'
+controls:
+- id: pt-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, pt-1_prm_1 }}: Designate an {{ insert: param, pt-01_odp.04 }} to manage the development, documentation, and dissemination of the personally identifiable information processing and transparency policy and procedures; and Review and update the current personally identifiable information processing and transparency:'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-2.1
+  title: Data Tagging
+  objective: 'Attach data tags containing {{ insert: param, pt-02.01_odp.01 }} to {{ insert: param, pt-02.01_odp.02 }}.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-2.2
+  title: Automation
+  objective: 'Manage enforcement of the authorized processing of personally identifiable information using {{ insert: param, pt-02.02_odp }}.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-2
+  title: Authority to Process Personally Identifiable Information
+  objective: 'Determine and document the {{ insert: param, pt-02_odp.01 }} that permits the {{ insert: param, pt-02_odp.02 }} of personally identifiable information; and Restrict the {{ insert: param, pt-02_odp.03 }} of personally identifiable information to only that which is authorized.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-3.1
+  title: Data Tagging
+  objective: 'Attach data tags containing the following purposes to {{ insert: param, pt-03.01_odp.02 }}: {{ insert: param, pt-03.01_odp.01 }}.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-3.2
+  title: Automation
+  objective: 'Track processing purposes of personally identifiable information using {{ insert: param, pt-03.02_odp }}.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-3
+  title: Personally Identifiable Information Processing Purposes
+  objective: 'Identify and document the {{ insert: param, pt-03_odp.01 }} for processing personally identifiable information; Describe the purpose(s) in the public privacy notices and policies of the organization; Restrict the {{ insert: param, pt-03_odp.02 }} of personally identifiable information to only that which is compatible with the identified purpose(s); and Monitor changes in processing personally identifiable information and implement {{ insert: param, pt-03_odp.03 }} to ensure that any changes are made in accordance with {{ insert: param, pt-03_odp.04 }}.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-4.1
+  title: Tailored Consent
+  objective: 'Provide {{ insert: param, pt-04.01_odp }} to allow individuals to tailor processing permissions to selected elements of personally identifiable information.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-4.2
+  title: Just-in-time Consent
+  objective: 'Present {{ insert: param, pt-04.02_odp.01 }} to individuals at {{ insert: param, pt-04.02_odp.02 }} and in conjunction with {{ insert: param, pt-04.02_odp.03 }}.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-4.3
+  title: Revocation
+  objective: 'Implement {{ insert: param, pt-04.03_odp }} for individuals to revoke consent to the processing of their personally identifiable information.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-4
+  title: Consent
+  objective: 'Implement {{ insert: param, pt-04_odp }} for individuals to consent to the processing of their personally identifiable information prior to its collection that facilitate individuals’ informed decision-making.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-5.1
+  title: Just-in-time Notice
+  objective: 'Present notice of personally identifiable information processing to individuals at a time and location where the individual provides personally identifiable information or in conjunction with a data action, or {{ insert: param, pt-05.01_odp }}.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-5.2
+  title: Privacy Act Statements
+  objective: Include Privacy Act statements on forms that collect information that will be maintained in a Privacy Act system of records, or provide Privacy Act statements on separate forms that can be retained by individuals.
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-5
+  title: Privacy Notice
+  objective: 'Provide notice to individuals about the processing of personally identifiable information that:'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-6.1
+  title: Routine Uses
+  objective: 'Review all routine uses published in the system of records notice at {{ insert: param, pt-06.01_odp }} to ensure continued accuracy, and to ensure that routine uses continue to be compatible with the purpose for which the information was collected.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-6.2
+  title: Exemption Rules
+  objective: 'Review all Privacy Act exemptions claimed for the system of records at {{ insert: param, pt-06.02_odp }} to ensure they remain appropriate and necessary in accordance with law, that they have been promulgated as regulations, and that they are accurately described in the system of records notice.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-6
+  title: System of Records Notice
+  objective: 'For systems that process information that will be maintained in a Privacy Act system of records:'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-7.1
+  title: Social Security Numbers
+  objective: 'When a system processes Social Security numbers:'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-7.2
+  title: First Amendment Information
+  objective: Prohibit the processing of information describing how any individual exercises rights guaranteed by the First Amendment unless expressly authorized by statute or by the individual or unless pertinent to and within the scope of an authorized law enforcement activity.
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-7
+  title: Specific Categories of Personally Identifiable Information
+  objective: 'Apply {{ insert: param, pt-07_odp }} for specific categories of personally identifiable information.'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: pt-8
+  title: Computer Matching Requirements
+  objective: 'When a system or organization processes information for the purpose of conducting a matching program:'
+  group: pt
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft

@@ -1,0 +1,390 @@
+metadata:
+  id: nist-800-53-rev5-fedora-ca
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for FEDORA, generated from ComplianceAsCode (CA family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-08-21T12:23:27Z'
+  applicability-groups:
+  - id: fedora-low
+    title: FEDORA Low Baseline
+    description: NIST 800-53 Low impact baseline for FEDORA
+  - id: fedora-moderate
+    title: FEDORA Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for FEDORA (inherits Low)
+  - id: fedora-high
+    title: FEDORA High Baseline
+    description: NIST 800-53 High impact baseline for FEDORA (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for Fedora - Assessment, Authorization, and Monitoring
+groups:
+- id: ca
+  title: Assessment, Authorization, and Monitoring
+  description: 'NIST 800-53 CA family: Assessment, Authorization, and Monitoring'
+controls:
+- id: ca-1
+  title: Policy and Procedures
+  objective: 'Develop, document, and disseminate to {{ insert: param, ca-1_prm_1 }}: Designate an {{ insert: param, ca-01_odp.04 }} to manage the development, documentation, and dissemination of the assessment, authorization, and monitoring policy and procedures; and Review and update the current assessment, authorization, and monitoring:'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-2.1
+  title: Independent Assessors
+  objective: Employ independent assessors or assessment teams to conduct control assessments.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: ca-2.2
+  title: Specialized Assessments
+  objective: 'Include as part of control assessments, {{ insert: param, ca-02.02_odp.01 }}, {{ insert: param, ca-02.02_odp.02 }}, {{ insert: param, ca-02.02_odp.03 }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: ca-2.3
+  title: Leveraging Results from External Organizations
+  objective: 'Leverage the results of control assessments performed by {{ insert: param, ca-02.03_odp.01 }} on {{ insert: param, ca-02.03_odp.02 }} when the assessment meets {{ insert: param, ca-02.03_odp.03 }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-2
+  title: Control Assessments
+  objective: 'Select the appropriate assessor or assessment team for the type of assessment to be conducted; Develop a control assessment plan that describes the scope of the assessment including: Ensure the control assessment plan is reviewed and approved by the authorizing official or designated representative prior to conducting the assessment; Assess the controls in the system and its environment of operation {{ insert: param, ca-02_odp.01 }} to determine the extent to which the controls are implemented correctly, operating as intended, and producing the desired outcome with respect to meeting established security and privacy requirements; Produce a control assessment report that document the results of the assessment; and Provide the results of the control assessment to {{ insert: param, ca-02_odp.02 }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-3.1
+  title: Unclassified National Security System Connections
+  objective: Unclassified National Security System Connections
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-3.2
+  title: Classified National Security System Connections
+  objective: Classified National Security System Connections
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-3.3
+  title: Unclassified Non-national Security System Connections
+  objective: Unclassified Non-national Security System Connections
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-3.4
+  title: Connections to Public Networks
+  objective: Connections to Public Networks
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-3.5
+  title: Restrictions on External System Connections
+  objective: Restrictions on External System Connections
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-3.6
+  title: Transfer Authorizations
+  objective: Verify that individuals or systems transferring data between interconnecting systems have the requisite authorizations (i.e., write permissions or privileges) prior to accepting such data.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: ca-3.7
+  title: Transitive Information Exchanges
+  objective: Identify transitive (downstream) information exchanges with other systems through the systems identified in [CA-3a](#ca-3_smt.a) ; and Take measures to ensure that transitive (downstream) information exchanges cease when the controls on identified transitive (downstream) systems cannot be verified or validated.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-3
+  title: Information Exchange
+  objective: 'Approve and manage the exchange of information between the system and other systems using {{ insert: param, ca-03_odp.01 }}; Document, as part of each exchange agreement, the interface characteristics, security and privacy requirements, controls, and responsibilities for each system, and the impact level of the information communicated; and Review and update the agreements {{ insert: param, ca-03_odp.03 }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-4
+  title: Security Certification
+  objective: Security Certification
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-5.1
+  title: Automation Support for Accuracy and Currency
+  objective: 'Ensure the accuracy, currency, and availability of the plan of action and milestones for the system using {{ insert: param, ca-05.01_odp }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-5
+  title: Plan of Action and Milestones
+  objective: 'Develop a plan of action and milestones for the system to document the planned remediation actions of the organization to correct weaknesses or deficiencies noted during the assessment of the controls and to reduce or eliminate known vulnerabilities in the system; and Update existing plan of action and milestones {{ insert: param, ca-05_odp }} based on the findings from control assessments, independent audits or reviews, and continuous monitoring activities.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-6.1
+  title: Joint Authorization — Intra-organization
+  objective: Employ a joint authorization process for the system that includes multiple authorizing officials from the same organization conducting the authorization.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-6.2
+  title: Joint Authorization — Inter-organization
+  objective: Employ a joint authorization process for the system that includes multiple authorizing officials with at least one authorizing official from an organization external to the organization conducting the authorization.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-6
+  title: Authorization
+  objective: 'Assign a senior official as the authorizing official for the system; Assign a senior official as the authorizing official for common controls available for inheritance by organizational systems; Ensure that the authorizing official for the system, before commencing operations: Ensure that the authorizing official for common controls authorizes the use of those controls for inheritance by organizational systems; Update the authorizations {{ insert: param, ca-06_odp }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-7.1
+  title: Independent Assessment
+  objective: Employ independent assessors or assessment teams to monitor the controls in the system on an ongoing basis.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-moderate
+  state: Draft
+- id: ca-7.2
+  title: Types of Assessments
+  objective: Types of Assessments
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-7.3
+  title: Trend Analyses
+  objective: Employ trend analyses to determine if control implementations, the frequency of continuous monitoring activities, and the types of activities used in the continuous monitoring process need to be modified based on empirical data.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-7.4
+  title: Risk Monitoring
+  objective: 'Ensure risk monitoring is an integral part of the continuous monitoring strategy that includes the following:'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-7.5
+  title: Consistency Analysis
+  objective: 'Employ the following actions to validate that policies are established and implemented controls are operating in a consistent manner: {{ insert: param, ca-7.5_prm_1 }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-7.6
+  title: Automation Support for Monitoring
+  objective: 'Ensure the accuracy, currency, and availability of monitoring results for the system using {{ insert: param, ca-07.06_odp }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-7
+  title: Continuous Monitoring
+  objective: 'Develop a system-level continuous monitoring strategy and implement continuous monitoring in accordance with the organization-level continuous monitoring strategy that includes:'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-8.1
+  title: Independent Penetration Testing Agent or Team
+  objective: Employ an independent penetration testing agent or team to perform penetration testing on the system or system components.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: ca-8.2
+  title: Red Team Exercises
+  objective: 'Employ the following red-team exercises to simulate attempts by adversaries to compromise organizational systems in accordance with applicable rules of engagement: {{ insert: param, ca-08.02_odp }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: ca-8.3
+  title: Facility Penetration Testing
+  objective: 'Employ a penetration testing process that includes {{ insert: param, ca-08.03_odp.01 }} {{ insert: param, ca-08.03_odp.02 }} attempts to bypass or circumvent controls associated with physical access points to the facility.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: ca-8
+  title: Penetration Testing
+  objective: 'Conduct penetration testing {{ insert: param, ca-08_odp.01 }} on {{ insert: param, ca-08_odp.02 }}.'
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-high
+  state: Draft
+- id: ca-9.1
+  title: Compliance Checks
+  objective: Perform security and privacy compliance checks on constituent system components prior to the establishment of the internal connection.
+  group: ca
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - fedora-low
+  state: Draft
+- id: ca-9
+  title: Internal System Connections
+  objective: 'Authorize internal connections of {{ insert: param, ca-09_odp.01 }} to the system; Document, for each internal connection, the interface characteristics, security and privacy requirements, and the nature of the information communicated; Terminate internal system connections after {{ insert: param, ca-09_odp.02 }} ; and Review {{ insert: param, ca-09_odp.03 }} the continued need for each internal connection.'
+  group: ca
+  assessment-requirements:
+  - id: firewalld-backend
+    state: Active
+    text: Rule 'firewalld-backend' MUST be verified
+    applicability:
+    - fedora-low
+  - id: firewalld_loopback_traffic_trusted
+    state: Active
+    text: Rule 'firewalld_loopback_traffic_trusted' MUST be verified
+    applicability:
+    - fedora-low
+  - id: package_firewalld_installed
+    state: Active
+    text: Rule 'package_firewalld_installed' MUST be verified
+    applicability:
+    - fedora-low
+  state: Active

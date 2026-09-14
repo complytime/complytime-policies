@@ -1,0 +1,435 @@
+metadata:
+  id: nist-800-53-rev5-rhel9-pm
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-53 Revision 5 controls for RHEL9, generated from ComplianceAsCode (PM family)
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 5
+  date: '2026-07-30T14:11:26Z'
+  applicability-groups:
+  - id: rhel9-low
+    title: RHEL9 Low Baseline
+    description: NIST 800-53 Low impact baseline for RHEL9
+  - id: rhel9-moderate
+    title: RHEL9 Moderate Baseline
+    description: NIST 800-53 Moderate impact baseline for RHEL9 (inherits Low)
+  - id: rhel9-high
+    title: RHEL9 High Baseline
+    description: NIST 800-53 High impact baseline for RHEL9 (inherits Moderate)
+title: NIST Special Publication 800-53 Revision 5 for RHEL9 - Program Management
+groups:
+- id: pm
+  title: Program Management
+  description: 'NIST 800-53 PM family: Program Management'
+controls:
+- id: pm-1
+  title: Information Security Program Plan
+  objective: 'Develop and disseminate an organization-wide information security program plan that: Review and update the organization-wide information security program plan {{ insert: param, pm-01_odp.01 }} and following {{ insert: param, pm-01_odp.02 }} ; and Protect the information security program plan from unauthorized disclosure and modification.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-2
+  title: Information Security Program Leadership Role
+  objective: Appoint a senior agency information security officer with the mission and resources to coordinate, develop, implement, and maintain an organization-wide information security program.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-3
+  title: Information Security and Privacy Resources
+  objective: Include the resources needed to implement the information security and privacy programs in capital planning and investment requests and document all exceptions to this requirement; Prepare documentation required for addressing information security and privacy programs in capital planning and investment requests in accordance with applicable laws, executive orders, directives, policies, regulations, standards; and Make available for expenditure, the planned information security and privacy resources.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-4
+  title: Plan of Action and Milestones Process
+  objective: 'Implement a process to ensure that plans of action and milestones for the information security, privacy, and supply chain risk management programs and associated organizational systems: Review plans of action and milestones for consistency with the organizational risk management strategy and organization-wide priorities for risk response actions.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-5.1
+  title: Inventory of Personally Identifiable Information
+  objective: 'Establish, maintain, and update {{ insert: param, pm-05.01_odp }} an inventory of all systems, applications, and projects that process personally identifiable information.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-5
+  title: System Inventory
+  objective: 'Develop and update {{ insert: param, pm-05_odp }} an inventory of organizational systems.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-6
+  title: Measures of Performance
+  objective: Develop, monitor, and report on the results of information security and privacy measures of performance.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-7.1
+  title: Offloading
+  objective: 'Offload {{ insert: param, pm-07.01_odp }} to other systems, system components, or an external provider.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-7
+  title: Enterprise Architecture
+  objective: Develop and maintain an enterprise architecture with consideration for information security, privacy, and the resulting risk to organizational operations and assets, individuals, other organizations, and the Nation.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-8
+  title: Critical Infrastructure Plan
+  objective: Address information security and privacy issues in the development, documentation, and updating of a critical infrastructure and key resources protection plan.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-9
+  title: Risk Management Strategy
+  objective: 'Develops a comprehensive strategy to manage: Implement the risk management strategy consistently across the organization; and Review and update the risk management strategy {{ insert: param, pm-09_odp }} or as required, to address organizational changes.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-10
+  title: Authorization Process
+  objective: Manage the security and privacy state of organizational systems and the environments in which those systems operate through authorization processes; Designate individuals to fulfill specific roles and responsibilities within the organizational risk management process; and Integrate the authorization processes into an organization-wide risk management program.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-11
+  title: Mission and Business Process Definition
+  objective: 'Define organizational mission and business processes with consideration for information security and privacy and the resulting risk to organizational operations, organizational assets, individuals, other organizations, and the Nation; and Determine information protection and personally identifiable information processing needs arising from the defined mission and business processes; and Review and revise the mission and business processes {{ insert: param, pm-11_odp }}.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-12
+  title: Insider Threat Program
+  objective: Implement an insider threat program that includes a cross-discipline insider threat incident handling team.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-13
+  title: Security and Privacy Workforce
+  objective: Establish a security and privacy workforce development and improvement program.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-14
+  title: Testing, Training, and Monitoring
+  objective: 'Implement a process for ensuring that organizational plans for conducting security and privacy testing, training, and monitoring activities associated with organizational systems: Review testing, training, and monitoring plans for consistency with the organizational risk management strategy and organization-wide priorities for risk response actions.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-15
+  title: Security and Privacy Groups and Associations
+  objective: 'Establish and institutionalize contact with selected groups and associations within the security and privacy communities:'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-16.1
+  title: Automated Means for Sharing Threat Intelligence
+  objective: Employ automated mechanisms to maximize the effectiveness of sharing threat intelligence information.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-16
+  title: Threat Awareness Program
+  objective: Implement a threat awareness program that includes a cross-organization information-sharing capability for threat intelligence.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-17
+  title: Protecting Controlled Unclassified Information on External Systems
+  objective: 'Establish policy and procedures to ensure that requirements for the protection of controlled unclassified information that is processed, stored or transmitted on external systems, are implemented in accordance with applicable laws, executive orders, directives, policies, regulations, and standards; and Review and update the policy and procedures {{ insert: param, pm-17_prm_1 }}.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-18
+  title: Privacy Program Plan
+  objective: 'Develop and disseminate an organization-wide privacy program plan that provides an overview of the agency’s privacy program, and: Update the plan {{ insert: param, pm-18_odp }} and to address changes in federal privacy laws and policy and organizational changes and problems identified during plan implementation or privacy control assessments.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-19
+  title: Privacy Program Leadership Role
+  objective: Appoint a senior agency official for privacy with the authority, mission, accountability, and resources to coordinate, develop, and implement, applicable privacy requirements and manage privacy risks through the organization-wide privacy program.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-20.1
+  title: Privacy Policies on Websites, Applications, and Digital Services
+  objective: 'Develop and post privacy policies on all external-facing websites, mobile applications, and other digital services, that:'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-20
+  title: Dissemination of Privacy Program Information
+  objective: 'Maintain a central resource webpage on the organization’s principal public website that serves as a central source of information about the organization’s privacy program and that:'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-21
+  title: Accounting of Disclosures
+  objective: 'Develop and maintain an accurate accounting of disclosures of personally identifiable information, including: Retain the accounting of disclosures for the length of the time the personally identifiable information is maintained or five years after the disclosure is made, whichever is longer; and Make the accounting of disclosures available to the individual to whom the personally identifiable information relates upon request.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-22
+  title: Personally Identifiable Information Quality Management
+  objective: 'Develop and document organization-wide policies and procedures for:'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-23
+  title: Data Governance Body
+  objective: 'Establish a Data Governance Body consisting of {{ insert: param, pm-23_odp.01 }} with {{ insert: param, pm-23_odp.02 }}.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-24
+  title: Data Integrity Board
+  objective: 'Establish a Data Integrity Board to:'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-25
+  title: Minimization of Personally Identifiable Information Used in Testing, Training, and Research
+  objective: 'Develop, document, and implement policies and procedures that address the use of personally identifiable information for internal testing, training, and research; Limit or minimize the amount of personally identifiable information used for internal testing, training, and research purposes; Authorize the use of personally identifiable information when such information is required for internal testing, training, and research; and Review and update policies and procedures {{ insert: param, pm-25_prm_1 }}.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-26
+  title: Complaint Management
+  objective: 'Implement a process for receiving and responding to complaints, concerns, or questions from individuals about the organizational security and privacy practices that includes:'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-27
+  title: Privacy Reporting
+  objective: 'Develop {{ insert: param, pm-27_odp.01 }} and disseminate to: Review and update privacy reports {{ insert: param, pm-27_odp.04 }}.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-28
+  title: Risk Framing
+  objective: 'Identify and document: Distribute the results of risk framing activities to {{ insert: param, pm-28_odp.01 }} ; and Review and update risk framing considerations {{ insert: param, pm-28_odp.02 }}.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-29
+  title: Risk Management Program Leadership Roles
+  objective: Appoint a Senior Accountable Official for Risk Management to align organizational information security and privacy management processes with strategic, operational, and budgetary planning processes; and Establish a Risk Executive (function) to view and analyze risk from an organization-wide perspective and ensure management of risk is consistent across the organization.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-30.1
+  title: Suppliers of Critical or Mission-essential Items
+  objective: Identify, prioritize, and assess suppliers of critical or mission-essential technologies, products, and services.
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-30
+  title: Supply Chain Risk Management Strategy
+  objective: 'Develop an organization-wide strategy for managing supply chain risks associated with the development, acquisition, maintenance, and disposal of systems, system components, and system services; Implement the supply chain risk management strategy consistently across the organization; and Review and update the supply chain risk management strategy on {{ insert: param, pm-30_odp }} or as required, to address organizational changes.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-31
+  title: Continuous Monitoring Strategy
+  objective: 'Develop an organization-wide continuous monitoring strategy and implement continuous monitoring programs that include:'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
+- id: pm-32
+  title: Purposing
+  objective: 'Analyze {{ insert: param, pm-32_odp }} supporting mission essential services or functions to ensure that the information resources are being used consistent with their intended purpose.'
+  group: pm
+  assessment-requirements:
+  - id: no-automated-check
+    state: Active
+    text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+    applicability:
+    - rhel9-low
+  state: Draft
