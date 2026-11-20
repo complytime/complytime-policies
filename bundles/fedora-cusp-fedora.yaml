@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/cusp-fedora-catalog.yaml
+  - governance/policies/fedora-cusp-fedora-policy.yaml

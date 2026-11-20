@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/pcidss_4-rhel8-catalog.yaml
+  - governance/policies/rhel8-pci-dss-policy.yaml

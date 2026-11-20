@@ -1,0 +1,1155 @@
+metadata:
+  id: nist_800_172-rhel10
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: NIST Special Publication 800-172 Revision 3 (Enhanced Security Requirements for Protecting CUI) controls for RHEL10, generated from ComplianceAsCode
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: Revision 3
+  date: '2026-11-20T12:59:39Z'
+  applicability-groups:
+    - id: rhel10-default
+      title: RHEL10 Default Baseline
+      description: NIST Special Publication 800-172 Revision 3 (Enhanced Security Requirements for Protecting CUI) Default level for RHEL10
+title: NIST Special Publication 800-172 Revision 3 (Enhanced Security Requirements for Protecting CUI)
+groups:
+  - id: controls
+    title: NIST Special Publication 800-172 Revision 3 (Enhanced Security Requirements for Protecting CUI)
+    description: NIST Special Publication 800-172 Revision 3 (Enhanced Security Requirements for Protecting CUI) controls
+controls:
+  - id: 03.01.01E
+    title: Dual Authorization
+    objective: Dual Authorization
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.02E
+    title: Non-Organizationally Owned Systems - Restricted Use
+    objective: Non-Organizationally Owned Systems - Restricted Use
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.04E
+    title: Concurrent Session Control
+    objective: Concurrent Session Control
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.05E
+    title: Automated Monitoring and Control for Remote Access
+    objective: Automated Monitoring and Control for Remote Access
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.06E
+    title: Protection of Remote Access Mechanism Information
+    objective: Protection of Remote Access Mechanism Information
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.07E
+    title: Automated Audit Actions for Account Management
+    objective: Automated Audit Actions for Account Management
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.08E
+    title: Account Monitoring for Atypical Usage
+    objective: Account Monitoring for Atypical Usage
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.09E
+    title: Attribute-Based Access Control
+    objective: Attribute-Based Access Control
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.10E
+    title: Object Security Attributes
+    objective: Object Security Attributes
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.11E
+    title: Role-Based Access Control
+    objective: Role-Based Access Control
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.12E
+    title: Physical or Logical Separation of CUI Flows
+    objective: Physical or Logical Separation of CUI Flows
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.13E
+    title: Metadata
+    objective: Metadata
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.14E
+    title: Security Policy Filters
+    objective: Security Policy Filters
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.15E
+    title: Data Type Identifiers
+    objective: Data Type Identifiers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.16E
+    title: Decomposition into Policy-Relevant Subcomponents
+    objective: Decomposition into Policy-Relevant Subcomponents
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.01.17E
+    title: Detection of Unsanctioned CUI
+    objective: Detection of Unsanctioned CUI
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.02.01E
+    title: Advanced Literacy and Awareness Training
+    objective: Advanced Literacy and Awareness Training
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.02.02E
+    title: Literacy and Awareness Training Practical Exercises
+    objective: Literacy and Awareness Training Practical Exercises
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.02.03E
+    title: Literacy and Awareness Training Feedback
+    objective: Literacy and Awareness Training Feedback
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.02.04E
+    title: Anti-Counterfeit Training
+    objective: Anti-Counterfeit Training
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.03.01E
+    title: Protection of Audit Record Storage in Separate Physical Systems or Components
+    objective: Protection of Audit Record Storage in Separate Physical Systems or Components
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.03.02E
+    title: Real-Time Alerts for Audit Processing Failures
+    objective: Real-Time Alerts for Audit Processing Failures
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.03.03E
+    title: Dual Authorization for Audit Information and Actions
+    objective: Dual Authorization for Audit Information and Actions
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.03.04E
+    title: Integrated Analysis of Audit Records
+    objective: Integrated Analysis of Audit Records
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.04.02E
+    title: Automated Unauthorized Component Detection
+    objective: Automated Unauthorized Component Detection
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.04.03E
+    title: Automation Maintenance of System Component Inventory
+    objective: Automation Maintenance of System Component Inventory
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.04.04E
+    title: Automation Support for Baseline Configuration
+    objective: Automation Support for Baseline Configuration
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.04.05E
+    title: Dual Authorization for System Changes
+    objective: Dual Authorization for System Changes
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.04.06E
+    title: Retention of Previous Configurations
+    objective: Retention of Previous Configurations
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.04.07E
+    title: Testing, Validation, and Documentation of Changes
+    objective: Testing, Validation, and Documentation of Changes
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.04.08E
+    title: Centralized Repository
+    objective: Centralized Repository
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.05.01E
+    title: Cryptographic Bidirectional Authentication
+    objective: Cryptographic Bidirectional Authentication
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.05.02E
+    title: Password Managers
+    objective: Password Managers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.05.03E
+    title: Device Attestation
+    objective: Device Attestation
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.05.04E
+    title: No Embedded Unencrypted Static Authenticators
+    objective: No Embedded Unencrypted Static Authenticators
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.05.05E
+    title: Expiration of Cached Authenticators
+    objective: Expiration of Cached Authenticators
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.05.06E
+    title: Identity Proofing
+    objective: Identity Proofing
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.05.07E
+    title: Identity Providers and Authorization Servers
+    objective: Identity Providers and Authorization Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.06.01E
+    title: Security Operations Center
+    objective: Security Operations Center
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.06.02E
+    title: Integrated Incident Response Team
+    objective: Integrated Incident Response Team
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.06.03E
+    title: Behavior Analysis
+    objective: Behavior Analysis
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.06.04E
+    title: Automated Tracking, Data Collection, and Analysis for Incident Monitoring
+    objective: Automated Tracking, Data Collection, and Analysis for Incident Monitoring
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.07.01E
+    title: Software Updates and Patches for Maintenance Tools
+    objective: Software Updates and Patches for Maintenance Tools
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.08.01E
+    title: Dual Authorization for Media Sanitization
+    objective: Dual Authorization for Media Sanitization
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.08.02E
+    title: Dual Authorization for System Backup Deletion and Destruction
+    objective: Dual Authorization for System Backup Deletion and Destruction
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.08.03E
+    title: Testing System Backups for Reliability and Integrity
+    objective: Testing System Backups for Reliability and Integrity
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.08.04E
+    title: System Recovery and Reconstitution
+    objective: System Recovery and Reconstitution
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.09.03E
+    title: Access Agreements
+    objective: Access Agreements
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.09.04E
+    title: Citizenship Requirements
+    objective: Citizenship Requirements
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.10.01E
+    title: Intrusion Alarms and Surveillance Equipment
+    objective: Intrusion Alarms and Surveillance Equipment
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.10.02E
+    title: Delivery and Removal of System Components
+    objective: Delivery and Removal of System Components
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.11.01E
+    title: Threat Awareness Program
+    objective: Threat Awareness Program
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.11.02E
+    title: Threat Hunting
+    objective: Threat Hunting
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.11.03E
+    title: Predictive Cyber Analytics
+    objective: Predictive Cyber Analytics
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.11.08E
+    title: Dynamic Threat Awareness
+    objective: Dynamic Threat Awareness
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.11.09E
+    title: Indicators of Compromise
+    objective: Indicators of Compromise
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.11.10E
+    title: Criticality Analysis
+    objective: Criticality Analysis
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.11.11E
+    title: Discoverable Information
+    objective: Discoverable Information
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.11.12E
+    title: Automated Means for Sharing Threat Intelligence
+    objective: Automated Means for Sharing Threat Intelligence
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.12.01E
+    title: Penetration Testing
+    objective: Penetration Testing
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.12.02E
+    title: Independent Assessors
+    objective: Independent Assessors
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.12.03E
+    title: Risk Monitoring
+    objective: Risk Monitoring
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.12.04E
+    title: Internal System Connections
+    objective: Internal System Connections
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: automated. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Active
+  - id: 03.13.01E
+    title: Heterogeneity
+    objective: Heterogeneity
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.02E
+    title: Randomness
+    objective: Randomness
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.03E
+    title: Concealment and Misdirection
+    objective: Concealment and Misdirection
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.04E
+    title: Isolation of System Components
+    objective: Isolation of System Components
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.05E
+    title: Change Processing and Storage Locations
+    objective: Change Processing and Storage Locations
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.06E
+    title: Platform-Independent Applications
+    objective: Platform-Independent Applications
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.07E
+    title: Virtualization Techniques
+    objective: Virtualization Techniques
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.08E
+    title: Decoys
+    objective: Decoys
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.09E
+    title: Isolation of Security Tool, Mechanism, and Support Component
+    objective: Isolation of Security Tool, Mechanism, and Support Component
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.10E
+    title: Separate Subnetworks
+    objective: Separate Subnetworks
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.11E
+    title: Thin Nodes
+    objective: Thin Nodes
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.12E
+    title: Denial-of-Service Protection
+    objective: Denial-of-Service Protection
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: automated. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Active
+  - id: 03.13.13E
+    title: Port and Input/Output Device Access
+    objective: Port and Input/Output Device Access
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.14E
+    title: Detonation Chambers
+    objective: Detonation Chambers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.15E
+    title: Separate Subnets to Isolate System Components and Functions
+    objective: Separate Subnets to Isolate System Components and Functions
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.13.16E
+    title: System Partitioning
+    objective: System Partitioning
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.01E
+    title: Software, Firmware, and Information Integrity
+    objective: Software, Firmware, and Information Integrity
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.04E
+    title: Refresh from Trusted Sources
+    objective: Refresh from Trusted Sources
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.05E
+    title: Non-Persistent Information
+    objective: Non-Persistent Information
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.08E
+    title: Integrity Checks
+    objective: Integrity Checks
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.09E
+    title: Cryptographic Protection
+    objective: Cryptographic Protection
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.10E
+    title: Protection of Boot Firmware
+    objective: Protection of Boot Firmware
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.11E
+    title: Integration of Detection and Response
+    objective: Integration of Detection and Response
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.12E
+    title: Information Input Validation
+    objective: Information Input Validation
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.13E
+    title: Error Handling
+    objective: Error Handling
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.14E
+    title: Memory Protection
+    objective: Memory Protection
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: automated. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Active
+  - id: 03.14.15E
+    title: Non-Persistent System Components and Services
+    objective: Non-Persistent System Components and Services
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.16E
+    title: Tainting
+    objective: Tainting
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.17E
+    title: System-Generated Alerts
+    objective: System-Generated Alerts
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.18E
+    title: Automated Organization-Generated Alerts
+    objective: Automated Organization-Generated Alerts
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.14.19E
+    title: Wireless Intrusion Detection
+    objective: Wireless Intrusion Detection
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.15.01E
+    title: Security Architecture
+    objective: Security Architecture
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.15.02E
+    title: Defense In Depth
+    objective: Defense In Depth
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.15.03E
+    title: Supplier Diversity
+    objective: Supplier Diversity
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.16.01E
+    title: Specialization
+    objective: Specialization
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.17.01E
+    title: Notification Agreements
+    objective: Notification Agreements
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.17.02E
+    title: Inspection of Systems or Components
+    objective: Inspection of Systems or Components
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.17.03E
+    title: Component Authenticity
+    objective: Component Authenticity
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.17.04E
+    title: Provenance
+    objective: Provenance
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft
+  - id: 03.17.05E
+    title: Supply Chain Integrity - Pedigree
+    objective: Supply Chain Integrity - Pedigree
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel10-default
+    state: Draft

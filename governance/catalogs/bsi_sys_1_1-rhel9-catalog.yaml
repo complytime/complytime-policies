@@ -1,0 +1,856 @@
+metadata:
+  id: bsi_sys_1_1-rhel9
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: SYS.1.1 General Server (RHEL9) controls for RHEL9, generated from ComplianceAsCode
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: '1.0'
+  date: '2026-11-20T12:59:34Z'
+  applicability-groups:
+    - id: rhel9-basic
+      title: RHEL9 Basic Baseline
+      description: SYS.1.1 General Server (RHEL9) Basic level for RHEL9
+    - id: rhel9-standard
+      title: RHEL9 Standard Baseline
+      description: SYS.1.1 General Server (RHEL9) Standard level for RHEL9 (inherits Basic)
+    - id: rhel9-elevated
+      title: RHEL9 Elevated Baseline
+      description: SYS.1.1 General Server (RHEL9) Elevated level for RHEL9 (inherits Standard)
+title: SYS.1.1 General Server (RHEL9)
+groups:
+  - id: controls
+    title: SYS.1.1 General Server (RHEL9)
+    description: SYS.1.1 General Server (RHEL9) controls
+controls:
+  - id: SYS.1.1.A1
+    title: Appropriate Installation
+    objective: Appropriate Installation
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-basic
+    state: Active
+  - id: SYS.1.1.A2
+    title: User Authentication on Servers
+    objective: User Authentication on Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel9-basic
+    state: Draft
+  - id: SYS.1.1.A3
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-basic
+    state: Retired
+  - id: SYS.1.1.A4
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-basic
+    state: Retired
+  - id: SYS.1.1.A5
+    title: Protection of Interfaces
+    objective: Protection of Interfaces
+    group: controls
+    assessment-requirements:
+      - id: grub2_nousb_argument
+        state: Active
+        text: Rule 'grub2_nousb_argument' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: bios_disable_usb_boot
+        state: Active
+        text: Rule 'bios_disable_usb_boot' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: kernel_module_usb-storage_disabled
+        state: Active
+        text: Rule 'kernel_module_usb-storage_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: service_autofs_disabled
+        state: Active
+        text: Rule 'service_autofs_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: kernel_module_firewire-core_disabled
+        state: Active
+        text: Rule 'kernel_module_firewire-core_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+    state: Active
+  - id: SYS.1.1.A6
+    title: Disabling Unnecessary Services
+    objective: Disabling Unnecessary Services
+    group: controls
+    assessment-requirements:
+      - id: mask_nonessential_services
+        state: Active
+        text: Rule 'mask_nonessential_services' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: configure_firewalld_ports
+        state: Active
+        text: Rule 'configure_firewalld_ports' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: kernel_module_bluetooth_disabled
+        state: Active
+        text: Rule 'kernel_module_bluetooth_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: kernel_module_cfg80211_disabled
+        state: Active
+        text: Rule 'kernel_module_cfg80211_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: kernel_module_iwlmvm_disabled
+        state: Active
+        text: Rule 'kernel_module_iwlmvm_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: kernel_module_iwlwifi_disabled
+        state: Active
+        text: Rule 'kernel_module_iwlwifi_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: kernel_module_mac80211_disabled
+        state: Active
+        text: Rule 'kernel_module_mac80211_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: service_bluetooth_disabled
+        state: Active
+        text: Rule 'service_bluetooth_disabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: wireless_disable_in_bios
+        state: Active
+        text: Rule 'wireless_disable_in_bios' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: wireless_disable_interfaces
+        state: Active
+        text: Rule 'wireless_disable_interfaces' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: partition_for_home
+        state: Active
+        text: Rule 'partition_for_home' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: partition_for_opt
+        state: Active
+        text: Rule 'partition_for_opt' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: partition_for_var
+        state: Active
+        text: Rule 'partition_for_var' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: partition_for_var_log
+        state: Active
+        text: Rule 'partition_for_var_log' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: partition_for_usr
+        state: Active
+        text: Rule 'partition_for_usr' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: partition_for_tmp
+        state: Active
+        text: Rule 'partition_for_tmp' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: partition_for_var_tmp
+        state: Active
+        text: Rule 'partition_for_var_tmp' MUST be verified
+        applicability:
+          - rhel9-basic
+    state: Active
+  - id: SYS.1.1.A7
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-basic
+    state: Retired
+  - id: SYS.1.1.A8
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-basic
+    state: Retired
+  - id: SYS.1.1.A9
+    title: Using Anti-Virus Programs on Servers
+    objective: Using Anti-Virus Programs on Servers
+    group: controls
+    assessment-requirements:
+      - id: install_antivirus
+        state: Active
+        text: Rule 'install_antivirus' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: install_endpoint_security_software
+        state: Active
+        text: Rule 'install_endpoint_security_software' MUST be verified
+        applicability:
+          - rhel9-basic
+    state: Active
+  - id: SYS.1.1.A10
+    title: Logging
+    objective: Logging
+    group: controls
+    assessment-requirements:
+      - id: package_audit_installed
+        state: Active
+        text: Rule 'package_audit_installed' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: package_audit-libs_installed
+        state: Active
+        text: Rule 'package_audit-libs_installed' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: service_auditd_enabled
+        state: Active
+        text: Rule 'service_auditd_enabled' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: grub2_audit_argument
+        state: Active
+        text: Rule 'grub2_audit_argument' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: grub2_audit_backlog_limit_argument
+        state: Active
+        text: Rule 'grub2_audit_backlog_limit_argument' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: var_audit_backlog_limit
+        state: Active
+        text: Variable 'var_audit_backlog_limit' is set to '8192'
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_session_events
+        state: Active
+        text: Rule 'audit_rules_session_events' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_login_events_faillock
+        state: Active
+        text: Rule 'audit_rules_login_events_faillock' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_login_events_lastlog
+        state: Active
+        text: Rule 'audit_rules_login_events_lastlog' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: var_accounts_passwords_pam_faillock_dir
+        state: Active
+        text: Variable 'var_accounts_passwords_pam_faillock_dir' is set to 'run'
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_sysadmin_actions
+        state: Active
+        text: Rule 'audit_rules_sysadmin_actions' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_suid_auid_privilege_function
+        state: Active
+        text: Rule 'audit_rules_suid_auid_privilege_function' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_sudo_log_events
+        state: Active
+        text: Rule 'audit_sudo_log_events' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_privileged_commands
+        state: Active
+        text: Rule 'audit_rules_privileged_commands' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_execution_chcon
+        state: Active
+        text: Rule 'audit_rules_execution_chcon' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_execution_setfacl
+        state: Active
+        text: Rule 'audit_rules_execution_setfacl' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_chmod
+        state: Active
+        text: Rule 'audit_rules_dac_modification_chmod' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_chown
+        state: Active
+        text: Rule 'audit_rules_dac_modification_chown' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_fchmod
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchmod' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_fchmodat
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchmodat' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_fchown
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchown' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_fchownat
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchownat' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_fremovexattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fremovexattr' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_fsetxattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fsetxattr' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_lchown
+        state: Active
+        text: Rule 'audit_rules_dac_modification_lchown' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_lremovexattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_lremovexattr' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_lsetxattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_lsetxattr' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_removexattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_removexattr' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_dac_modification_setxattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_setxattr' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_usergroup_modification_group
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_group' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_usergroup_modification_gshadow
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_gshadow' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_usergroup_modification_opasswd
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_opasswd' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_usergroup_modification_passwd
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_passwd' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_usergroup_modification_shadow
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_shadow' MUST be verified
+        applicability:
+          - rhel9-basic
+      - id: audit_rules_privileged_commands_usermod
+        state: Active
+        text: Rule 'audit_rules_privileged_commands_usermod' MUST be verified
+        applicability:
+          - rhel9-basic
+    state: Active
+  - id: SYS.1.1.A11
+    title: Defining a Security Policy for Servers
+    objective: Defining a Security Policy for Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A12
+    title: Planning the Use of Servers
+    objective: Planning the Use of Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A13
+    title: Procurement of Servers
+    objective: Procurement of Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A14
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Retired
+  - id: SYS.1.1.A15
+    title: Stable and Uninterruptible Power Supply [Building Services]
+    objective: Stable and Uninterruptible Power Supply [Building Services]
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A16
+    title: Secure Basic Configuration of Servers
+    objective: Secure Basic Configuration of Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: inherently met. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A17
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Retired
+  - id: SYS.1.1.A18
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Retired
+  - id: SYS.1.1.A19
+    title: Configuring Local Packet Filters
+    objective: Configuring Local Packet Filters
+    group: controls
+    assessment-requirements:
+      - id: service_firewalld_enabled
+        state: Active
+        text: Rule 'service_firewalld_enabled' MUST be verified
+        applicability:
+          - rhel9-standard
+      - id: package_firewalld_installed
+        state: Active
+        text: Rule 'package_firewalld_installed' MUST be verified
+        applicability:
+          - rhel9-standard
+      - id: unnecessary_firewalld_services_ports_disabled
+        state: Active
+        text: Rule 'unnecessary_firewalld_services_ports_disabled' MUST be verified
+        applicability:
+          - rhel9-standard
+      - id: set_firewalld_appropriate_zone
+        state: Active
+        text: Rule 'set_firewalld_appropriate_zone' MUST be verified
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A20
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Retired
+  - id: SYS.1.1.A21
+    title: Operational Documentation for Servers
+    objective: Operational Documentation for Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A22
+    title: Integration into Contingency Planning
+    objective: Integration into Contingency Planning
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A23
+    title: Monitoring Systems and Servers
+    objective: Monitoring Systems and Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A24
+    title: Security Checks for Servers
+    objective: Security Checks for Servers
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: inherently met. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A25
+    title: Controlled Decommissioning of a Server
+    objective: Controlled Decommissioning of a Server
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A35
+    title: Drawing Up and Maintaining an Operating Manual
+    objective: Drawing Up and Maintaining an Operating Manual
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A37
+    title: Encapsulation of Security-Critical Applications and Operating System Components
+    objective: Encapsulation of Security-Critical Applications and Operating System Components
+    group: controls
+    assessment-requirements:
+      - id: package_libselinux_installed
+        state: Active
+        text: Rule 'package_libselinux_installed' MUST be verified
+        applicability:
+          - rhel9-standard
+      - id: grub2_enable_selinux
+        state: Active
+        text: Rule 'grub2_enable_selinux' MUST be verified
+        applicability:
+          - rhel9-standard
+      - id: selinux_not_disabled
+        state: Active
+        text: Rule 'selinux_not_disabled' MUST be verified
+        applicability:
+          - rhel9-standard
+      - id: var_selinux_policy_name
+        state: Active
+        text: Variable 'var_selinux_policy_name' is set to 'targeted'
+        applicability:
+          - rhel9-standard
+      - id: selinux_policytype
+        state: Active
+        text: Rule 'selinux_policytype' MUST be verified
+        applicability:
+          - rhel9-standard
+      - id: var_selinux_state
+        state: Active
+        text: Variable 'var_selinux_state' is set to 'enforcing'
+        applicability:
+          - rhel9-standard
+      - id: selinux_state
+        state: Active
+        text: Rule 'selinux_state' MUST be verified
+        applicability:
+          - rhel9-standard
+      - id: selinux_confinement_of_daemons
+        state: Active
+        text: Rule 'selinux_confinement_of_daemons' MUST be verified
+        applicability:
+          - rhel9-standard
+    state: Active
+  - id: SYS.1.1.A26
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-elevated
+    state: Retired
+  - id: SYS.1.1.A27
+    title: Host-Based Attack Detection
+    objective: Host-Based Attack Detection
+    group: controls
+    assessment-requirements:
+      - id: install_hids
+        state: Active
+        text: Rule 'install_hids' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: package_aide_installed
+        state: Active
+        text: Rule 'package_aide_installed' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: aide_scan_notification
+        state: Active
+        text: Rule 'aide_scan_notification' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: aide_periodic_cron_checking
+        state: Active
+        text: Rule 'aide_periodic_cron_checking' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: aide_build_database
+        state: Active
+        text: Rule 'aide_build_database' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: rpm_verify_hashes
+        state: Active
+        text: Rule 'rpm_verify_hashes' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: rpm_verify_ownership
+        state: Active
+        text: Rule 'rpm_verify_ownership' MUST be verified
+        applicability:
+          - rhel9-elevated
+    state: Active
+  - id: SYS.1.1.A28
+    title: Increasing Availability Through Redundancy
+    objective: Increasing Availability Through Redundancy
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-elevated
+    state: Active
+  - id: SYS.1.1.A29
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-elevated
+    state: Retired
+  - id: SYS.1.1.A30
+    title: One Service per Server
+    objective: One Service per Server
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-elevated
+    state: Active
+  - id: SYS.1.1.A31
+    title: Using Execution Control
+    objective: Using Execution Control
+    group: controls
+    assessment-requirements:
+      - id: package_libselinux_installed
+        state: Active
+        text: Rule 'package_libselinux_installed' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: grub2_enable_selinux
+        state: Active
+        text: Rule 'grub2_enable_selinux' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: selinux_not_disabled
+        state: Active
+        text: Rule 'selinux_not_disabled' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: var_selinux_policy_name
+        state: Active
+        text: Variable 'var_selinux_policy_name' is set to 'targeted'
+        applicability:
+          - rhel9-elevated
+      - id: selinux_policytype
+        state: Active
+        text: Rule 'selinux_policytype' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: var_selinux_state
+        state: Active
+        text: Variable 'var_selinux_state' is set to 'enforcing'
+        applicability:
+          - rhel9-elevated
+      - id: selinux_state
+        state: Active
+        text: Rule 'selinux_state' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: selinux_confinement_of_daemons
+        state: Active
+        text: Rule 'selinux_confinement_of_daemons' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: fapolicy_default_deny
+        state: Active
+        text: Rule 'fapolicy_default_deny' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: package_fapolicyd_installed
+        state: Active
+        text: Rule 'package_fapolicyd_installed' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: service_fapolicyd_enabled
+        state: Active
+        text: Rule 'service_fapolicyd_enabled' MUST be verified
+        applicability:
+          - rhel9-elevated
+    state: Active
+  - id: SYS.1.1.A32
+    title: ELIMINATED
+    objective: ELIMINATED
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-elevated
+    state: Retired
+  - id: SYS.1.1.A33
+    title: Active Administration of Root Certificates
+    objective: Active Administration of Root Certificates
+    group: controls
+    assessment-requirements:
+      - id: only_allow_specific_certs
+        state: Active
+        text: Rule 'only_allow_specific_certs' MUST be verified
+        applicability:
+          - rhel9-elevated
+    state: Active
+  - id: SYS.1.1.A34
+    title: Hard Disk Encryption
+    objective: Hard Disk Encryption
+    group: controls
+    assessment-requirements:
+      - id: grub2_rng_core_default_quality_argument
+        state: Active
+        text: Rule 'grub2_rng_core_default_quality_argument' MUST be verified
+        applicability:
+          - rhel9-elevated
+      - id: encrypt_partitions
+        state: Active
+        text: Rule 'encrypt_partitions' MUST be verified
+        applicability:
+          - rhel9-elevated
+    state: Active
+  - id: SYS.1.1.A36
+    title: Protecting the Boot Process
+    objective: Protecting the Boot Process
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-elevated
+    state: Active
+  - id: SYS.1.1.A38
+    title: Hardening of the Host System by Means of a Read-Only File System
+    objective: Hardening of the Host System by Means of a Read-Only File System
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: does not meet. Manual assessment required.'
+        applicability:
+          - rhel9-elevated
+    state: Deprecated

@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/ospp-rhel8-catalog.yaml
+  - governance/policies/rhel8-ospp-policy.yaml

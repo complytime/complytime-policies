@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/nist_800_172-rhel8-catalog.yaml
+  - governance/policies/rhel8-cui-enhanced-policy.yaml

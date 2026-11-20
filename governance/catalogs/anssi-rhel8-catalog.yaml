@@ -1,0 +1,3101 @@
+metadata:
+  id: anssi-rhel8
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: ANSSI-BP-028 Recommendations controls for RHEL8, generated from ComplianceAsCode
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: '2.0'
+  date: '2026-11-20T12:59:29Z'
+  applicability-groups:
+    - id: rhel8-minimal
+      title: RHEL8 Minimal Baseline
+      description: ANSSI-BP-028 Minimal level for RHEL8
+    - id: rhel8-intermediary
+      title: RHEL8 Intermediary Baseline
+      description: ANSSI-BP-028 Intermediary level for RHEL8 (inherits Minimal)
+    - id: rhel8-enhanced
+      title: RHEL8 Enhanced Baseline
+      description: ANSSI-BP-028 Enhanced level for RHEL8 (inherits Intermediary)
+    - id: rhel8-high
+      title: RHEL8 High Baseline
+      description: ANSSI-BP-028 High level for RHEL8 (inherits Enhanced)
+title: Configuration Recommendations of a GNU/Linux System
+groups:
+  - id: controls
+    title: ANSSI-BP-028
+    description: ANSSI-BP-028 controls
+controls:
+  - id: R1
+    title: Hardware Support
+    objective: Hardware Support
+    group: controls
+    assessment-requirements:
+      - id: prefer_64bit_os
+        state: Active
+        text: Rule 'prefer_64bit_os' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: install_PAE_kernel_on_x86-32
+        state: Active
+        text: Rule 'install_PAE_kernel_on_x86-32' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: grub2_nosmep_argument_absent
+        state: Active
+        text: Rule 'grub2_nosmep_argument_absent' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: grub2_nosmap_argument_absent
+        state: Active
+        text: Rule 'grub2_nosmap_argument_absent' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: package_dracut-fips-aesni_installed
+        state: Active
+        text: Rule 'package_dracut-fips-aesni_installed' MUST be verified
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R2
+    title: Hardware configuration
+    objective: Hardware configuration
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R3
+    title: UEFI Secure boot activation
+    objective: UEFI Secure boot activation
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R4
+    title: Replacing of preloaded keys
+    objective: Replacing of preloaded keys
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R5
+    title: Boot loader password
+    objective: Boot loader password
+    group: controls
+    assessment-requirements:
+      - id: grub2_password
+        state: Active
+        text: Rule 'grub2_password' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_uefi_password
+        state: Active
+        text: Rule 'grub2_uefi_password' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R6
+    title: Protecting kernel command line parameters
+    objective: Protecting kernel command line parameters
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R7
+    title: IOMMU Configuration Guidelines
+    objective: IOMMU Configuration Guidelines
+    group: controls
+    assessment-requirements:
+      - id: grub2_enable_iommu_force
+        state: Active
+        text: Rule 'grub2_enable_iommu_force' MUST be verified
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R8
+    title: Memory configuration options
+    objective: Memory configuration options
+    group: controls
+    assessment-requirements:
+      - id: grub2_l1tf_argument
+        state: Active
+        text: Rule 'grub2_l1tf_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_l1tf_options
+        state: Active
+        text: Variable 'var_l1tf_options' is set to 'full_force'
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_page_poison_argument
+        state: Active
+        text: Rule 'grub2_page_poison_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_pti_argument
+        state: Active
+        text: Rule 'grub2_pti_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_slab_nomerge_argument
+        state: Active
+        text: Rule 'grub2_slab_nomerge_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_slub_debug_argument
+        state: Active
+        text: Rule 'grub2_slub_debug_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_slub_debug_options
+        state: Active
+        text: Variable 'var_slub_debug_options' is set to 'FZP'
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_spec_store_bypass_disable_argument
+        state: Active
+        text: Rule 'grub2_spec_store_bypass_disable_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_spec_store_bypass_disable_options
+        state: Active
+        text: Variable 'var_spec_store_bypass_disable_options' is set to 'seccomp'
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_spectre_v2_argument
+        state: Active
+        text: Rule 'grub2_spectre_v2_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_mds_argument
+        state: Active
+        text: Rule 'grub2_mds_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_mds_options
+        state: Active
+        text: Variable 'var_mds_options' is set to 'full_nosmt'
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_mce_argument
+        state: Active
+        text: Rule 'grub2_mce_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_page_alloc_shuffle_argument
+        state: Active
+        text: Rule 'grub2_page_alloc_shuffle_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: grub2_rng_core_default_quality_argument
+        state: Active
+        text: Rule 'grub2_rng_core_default_quality_argument' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_rng_core_default_quality
+        state: Active
+        text: Variable 'var_rng_core_default_quality' is set to '500'
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_vm_mmap_min_addr
+        state: Active
+        text: Rule 'sysctl_vm_mmap_min_addr' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R9
+    title: Kernel configuration options
+    objective: Kernel configuration options
+    group: controls
+    assessment-requirements:
+      - id: sysctl_kernel_dmesg_restrict
+        state: Active
+        text: Rule 'sysctl_kernel_dmesg_restrict' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_kptr_restrict
+        state: Active
+        text: Rule 'sysctl_kernel_kptr_restrict' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_kptr_restrict_value
+        state: Active
+        text: Variable 'sysctl_kernel_kptr_restrict_value' is set to '2'
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_pid_max
+        state: Active
+        text: Rule 'sysctl_kernel_pid_max' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_perf_event_max_sample_rate
+        state: Active
+        text: Rule 'sysctl_kernel_perf_event_max_sample_rate' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_perf_cpu_time_max_percent
+        state: Active
+        text: Rule 'sysctl_kernel_perf_cpu_time_max_percent' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_perf_event_paranoid
+        state: Active
+        text: Rule 'sysctl_kernel_perf_event_paranoid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_randomize_va_space
+        state: Active
+        text: Rule 'sysctl_kernel_randomize_va_space' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_sysrq
+        state: Active
+        text: Rule 'sysctl_kernel_sysrq' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_unprivileged_bpf_disabled
+        state: Active
+        text: Rule 'sysctl_kernel_unprivileged_bpf_disabled' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_kernel_panic_on_oops
+        state: Active
+        text: Rule 'sysctl_kernel_panic_on_oops' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R10
+    title: Disabling the loading of kernel modules
+    objective: Disabling the loading of kernel modules
+    group: controls
+    assessment-requirements:
+      - id: sysctl_kernel_modules_disabled
+        state: Active
+        text: Rule 'sysctl_kernel_modules_disabled' MUST be verified
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R11
+    title: Yama module sysctl configuration
+    objective: Yama module sysctl configuration
+    group: controls
+    assessment-requirements:
+      - id: sysctl_kernel_yama_ptrace_scope
+        state: Active
+        text: Rule 'sysctl_kernel_yama_ptrace_scope' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R12
+    title: IPv4 configuration options
+    objective: IPv4 configuration options
+    group: controls
+    assessment-requirements:
+      - id: sysctl_net_core_bpf_jit_harden
+        state: Active
+        text: Rule 'sysctl_net_core_bpf_jit_harden' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_ip_forward
+        state: Active
+        text: Rule 'sysctl_net_ipv4_ip_forward' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_accept_local
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_accept_local' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_accept_redirects_value
+        state: Active
+        text: Variable 'sysctl_net_ipv4_conf_all_accept_redirects_value' is set to 'disabled'
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_accept_redirects
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_accept_redirects' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_default_accept_redirects_value
+        state: Active
+        text: Variable 'sysctl_net_ipv4_conf_default_accept_redirects_value' is set to 'disabled'
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_default_accept_redirects
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_default_accept_redirects' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_secure_redirects
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_secure_redirects' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_default_secure_redirects
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_default_secure_redirects' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_shared_media
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_shared_media' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_shared_media_value
+        state: Active
+        text: Variable 'sysctl_net_ipv4_conf_all_shared_media_value' is set to 'disabled'
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_default_shared_media
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_default_shared_media' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_default_shared_media_value
+        state: Active
+        text: Variable 'sysctl_net_ipv4_conf_default_shared_media_value' is set to 'disabled'
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_accept_source_route
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_accept_source_route' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_default_accept_source_route
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_default_accept_source_route' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_arp_filter
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_arp_filter' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_arp_ignore
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_arp_ignore' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_arp_ignore_value
+        state: Active
+        text: Variable 'sysctl_net_ipv4_conf_all_arp_ignore_value' is set to '2'
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_route_localnet
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_route_localnet' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_drop_gratuitous_arp
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_drop_gratuitous_arp' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_rp_filter
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_rp_filter' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_default_rp_filter
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_default_rp_filter' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_all_send_redirects
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_all_send_redirects' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_conf_default_send_redirects
+        state: Active
+        text: Rule 'sysctl_net_ipv4_conf_default_send_redirects' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_icmp_ignore_bogus_error_responses
+        state: Active
+        text: Rule 'sysctl_net_ipv4_icmp_ignore_bogus_error_responses' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_ip_local_port_range
+        state: Active
+        text: Rule 'sysctl_net_ipv4_ip_local_port_range' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_tcp_rfc1337
+        state: Active
+        text: Rule 'sysctl_net_ipv4_tcp_rfc1337' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv4_tcp_syncookies
+        state: Active
+        text: Rule 'sysctl_net_ipv4_tcp_syncookies' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R13
+    title: Disabling IPv6
+    objective: Disabling IPv6
+    group: controls
+    assessment-requirements:
+      - id: sysctl_net_ipv6_conf_all_router_solicitations
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_all_router_solicitations' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_default_router_solicitations
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_default_router_solicitations' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_all_accept_ra_rtr_pref
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_all_accept_ra_rtr_pref' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_default_accept_ra_rtr_pref
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_default_accept_ra_rtr_pref' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_all_accept_ra_pinfo
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_all_accept_ra_pinfo' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_default_accept_ra_pinfo
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_default_accept_ra_pinfo' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_all_accept_ra_defrtr
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_all_accept_ra_defrtr' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_default_accept_ra_defrtr
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_default_accept_ra_defrtr' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_all_autoconf
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_all_autoconf' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_default_autoconf
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_default_autoconf' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_all_accept_redirects
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_all_accept_redirects' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_default_accept_redirects
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_default_accept_redirects' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_all_accept_source_route
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_all_accept_source_route' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_default_accept_source_route
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_default_accept_source_route' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_all_max_addresses
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_all_max_addresses' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_net_ipv6_conf_default_max_addresses
+        state: Active
+        text: Rule 'sysctl_net_ipv6_conf_default_max_addresses' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R14
+    title: File system configuration options
+    objective: File system configuration options
+    group: controls
+    assessment-requirements:
+      - id: sysctl_fs_suid_dumpable
+        state: Active
+        text: Rule 'sysctl_fs_suid_dumpable' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_fs_protected_fifos
+        state: Active
+        text: Rule 'sysctl_fs_protected_fifos' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_fs_protected_regular
+        state: Active
+        text: Rule 'sysctl_fs_protected_regular' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_fs_protected_symlinks
+        state: Active
+        text: Rule 'sysctl_fs_protected_symlinks' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sysctl_fs_protected_hardlinks
+        state: Active
+        text: Rule 'sysctl_fs_protected_hardlinks' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R15
+    title: Compile options for memory management
+    objective: Compile options for memory management
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_strict_kernel_rwx
+        state: Active
+        text: Rule 'kernel_config_strict_kernel_rwx' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_debug_wx
+        state: Active
+        text: Rule 'kernel_config_debug_wx' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_debug_fs
+        state: Active
+        text: Rule 'kernel_config_debug_fs' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_stackprotector
+        state: Active
+        text: Rule 'kernel_config_stackprotector' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_stackprotector_strong
+        state: Active
+        text: Rule 'kernel_config_stackprotector_strong' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_sched_stack_end_check
+        state: Active
+        text: Rule 'kernel_config_sched_stack_end_check' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_hardened_usercopy
+        state: Active
+        text: Rule 'kernel_config_hardened_usercopy' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_hardened_usercopy_fallback
+        state: Active
+        text: Rule 'kernel_config_hardened_usercopy_fallback' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_vmap_stack
+        state: Active
+        text: Rule 'kernel_config_vmap_stack' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_refcount_full
+        state: Active
+        text: Rule 'kernel_config_refcount_full' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_fortify_source
+        state: Active
+        text: Rule 'kernel_config_fortify_source' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_acpi_custom_method
+        state: Active
+        text: Rule 'kernel_config_acpi_custom_method' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_devkmem
+        state: Active
+        text: Rule 'kernel_config_devkmem' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_proc_kcore
+        state: Active
+        text: Rule 'kernel_config_proc_kcore' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_compat_vdso
+        state: Active
+        text: Rule 'kernel_config_compat_vdso' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_security_dmesg_restrict
+        state: Active
+        text: Rule 'kernel_config_security_dmesg_restrict' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_retpoline
+        state: Active
+        text: Rule 'kernel_config_retpoline' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_legacy_vsyscall_none
+        state: Active
+        text: Rule 'kernel_config_legacy_vsyscall_none' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_legacy_vsyscall_emulate
+        state: Active
+        text: Rule 'kernel_config_legacy_vsyscall_emulate' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_legacy_vsyscall_xonly
+        state: Active
+        text: Rule 'kernel_config_legacy_vsyscall_xonly' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_x86_vsyscall_emulation
+        state: Active
+        text: Rule 'kernel_config_x86_vsyscall_emulation' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R16
+    title: Compile options for kernel data structures
+    objective: Compile options for kernel data structures
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_debug_credentials
+        state: Active
+        text: Rule 'kernel_config_debug_credentials' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_debug_notifiers
+        state: Active
+        text: Rule 'kernel_config_debug_notifiers' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_debug_list
+        state: Active
+        text: Rule 'kernel_config_debug_list' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_debug_sg
+        state: Active
+        text: Rule 'kernel_config_debug_sg' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_bug_on_data_corruption
+        state: Active
+        text: Rule 'kernel_config_bug_on_data_corruption' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R17
+    title: Compile options for the memory allocator
+    objective: Compile options for the memory allocator
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_slab_freelist_random
+        state: Active
+        text: Rule 'kernel_config_slab_freelist_random' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_slab_freelist_hardened
+        state: Active
+        text: Rule 'kernel_config_slab_freelist_hardened' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_slab_merge_default
+        state: Active
+        text: Rule 'kernel_config_slab_merge_default' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_slub_debug
+        state: Active
+        text: Rule 'kernel_config_slub_debug' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_page_poisoning
+        state: Active
+        text: Rule 'kernel_config_page_poisoning' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_page_poisoning_no_sanity
+        state: Active
+        text: Rule 'kernel_config_page_poisoning_no_sanity' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_page_poisoning_zero
+        state: Active
+        text: Rule 'kernel_config_page_poisoning_zero' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_compat_brk
+        state: Active
+        text: Rule 'kernel_config_compat_brk' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R18
+    title: Compile options for the management of kernel module
+    objective: Compile options for the management of kernel module
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_strict_module_rwx
+        state: Active
+        text: Rule 'kernel_config_strict_module_rwx' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_module_sig
+        state: Active
+        text: Rule 'kernel_config_module_sig' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_module_sig_force
+        state: Active
+        text: Rule 'kernel_config_module_sig_force' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_module_sig_all
+        state: Active
+        text: Rule 'kernel_config_module_sig_all' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_module_sig_sha512
+        state: Active
+        text: Rule 'kernel_config_module_sig_sha512' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_module_sig_hash
+        state: Active
+        text: Rule 'kernel_config_module_sig_hash' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_module_sig_key
+        state: Active
+        text: Rule 'kernel_config_module_sig_key' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R19
+    title: Compile options for abnormal situations
+    objective: Compile options for abnormal situations
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_bug
+        state: Active
+        text: Rule 'kernel_config_bug' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_panic_on_oops
+        state: Active
+        text: Rule 'kernel_config_panic_on_oops' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_panic_timeout
+        state: Active
+        text: Rule 'kernel_config_panic_timeout' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R20
+    title: Compile options for kernel security functions
+    objective: Compile options for kernel security functions
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_seccomp
+        state: Active
+        text: Rule 'kernel_config_seccomp' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_seccomp_filter
+        state: Active
+        text: Rule 'kernel_config_seccomp_filter' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_security
+        state: Active
+        text: Rule 'kernel_config_security' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_security_yama
+        state: Active
+        text: Rule 'kernel_config_security_yama' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_security_writable_hooks
+        state: Active
+        text: Rule 'kernel_config_security_writable_hooks' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R21
+    title: Compile options for the compiler plugins
+    objective: Compile options for the compiler plugins
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_gcc_plugin_latent_entropy
+        state: Active
+        text: Rule 'kernel_config_gcc_plugin_latent_entropy' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_gcc_plugin_stackleak
+        state: Active
+        text: Rule 'kernel_config_gcc_plugin_stackleak' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_gcc_plugin_structleak
+        state: Active
+        text: Rule 'kernel_config_gcc_plugin_structleak' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_gcc_plugin_structleak_byref_all
+        state: Active
+        text: Rule 'kernel_config_gcc_plugin_structleak_byref_all' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_gcc_plugin_randstruct
+        state: Active
+        text: Rule 'kernel_config_gcc_plugin_randstruct' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R22
+    title: Compile options for the IP stack
+    objective: Compile options for the IP stack
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_syn_cookies
+        state: Active
+        text: Rule 'kernel_config_syn_cookies' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R23
+    title: Compile options for various kernel behaviors
+    objective: Compile options for various kernel behaviors
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_kexec
+        state: Active
+        text: Rule 'kernel_config_kexec' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_hibernation
+        state: Active
+        text: Rule 'kernel_config_hibernation' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_binfmt_misc
+        state: Active
+        text: Rule 'kernel_config_binfmt_misc' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_legacy_ptys
+        state: Active
+        text: Rule 'kernel_config_legacy_ptys' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R24
+    title: Compile options for 32-bit architectures
+    objective: Compile options for 32-bit architectures
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel8-high
+    state: Retired
+  - id: R25
+    title: Compile options for x86_64 architectures
+    objective: Compile options for x86_64 architectures
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_default_mmap_min_addr
+        state: Active
+        text: Rule 'kernel_config_default_mmap_min_addr' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_randomize_base
+        state: Active
+        text: Rule 'kernel_config_randomize_base' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_randomize_memory
+        state: Active
+        text: Rule 'kernel_config_randomize_memory' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_page_table_isolation
+        state: Active
+        text: Rule 'kernel_config_page_table_isolation' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_ia32_emulation
+        state: Active
+        text: Rule 'kernel_config_ia32_emulation' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_modify_ldt_syscall
+        state: Active
+        text: Rule 'kernel_config_modify_ldt_syscall' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R26
+    title: Compile options for ARM architectures
+    objective: Compile options for ARM architectures
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel8-high
+    state: Retired
+  - id: R27
+    title: Compile options for ARM 64 architectures
+    objective: Compile options for ARM 64 architectures
+    group: controls
+    assessment-requirements:
+      - id: kernel_config_default_mmap_min_addr
+        state: Active
+        text: Rule 'kernel_config_default_mmap_min_addr' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_randomize_base
+        state: Active
+        text: Rule 'kernel_config_randomize_base' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_arm64_sw_ttbr0_pan
+        state: Active
+        text: Rule 'kernel_config_arm64_sw_ttbr0_pan' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: kernel_config_unmap_kernel_at_el0
+        state: Active
+        text: Rule 'kernel_config_unmap_kernel_at_el0' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R28
+    title: Partitioning type
+    objective: Partitioning type
+    group: controls
+    assessment-requirements:
+      - id: mount_option_nodev_nonroot_local_partitions
+        state: Active
+        text: Rule 'mount_option_nodev_nonroot_local_partitions' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: partition_for_boot
+        state: Active
+        text: Rule 'partition_for_boot' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_boot_nosuid
+        state: Active
+        text: Rule 'mount_option_boot_nosuid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_boot_noexec
+        state: Active
+        text: Rule 'mount_option_boot_noexec' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: partition_for_opt
+        state: Active
+        text: Rule 'partition_for_opt' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_opt_nosuid
+        state: Active
+        text: Rule 'mount_option_opt_nosuid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: systemd_tmp_mount_enabled
+        state: Active
+        text: Rule 'systemd_tmp_mount_enabled' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_tmp_nosuid
+        state: Active
+        text: Rule 'mount_option_tmp_nosuid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_tmp_noexec
+        state: Active
+        text: Rule 'mount_option_tmp_noexec' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: partition_for_srv
+        state: Active
+        text: Rule 'partition_for_srv' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_srv_nosuid
+        state: Active
+        text: Rule 'mount_option_srv_nosuid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: partition_for_home
+        state: Active
+        text: Rule 'partition_for_home' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_home_nosuid
+        state: Active
+        text: Rule 'mount_option_home_nosuid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_home_noexec
+        state: Active
+        text: Rule 'mount_option_home_noexec' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: partition_for_usr
+        state: Active
+        text: Rule 'partition_for_usr' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: partition_for_var
+        state: Active
+        text: Rule 'partition_for_var' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_var_nosuid
+        state: Active
+        text: Rule 'mount_option_var_nosuid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_var_noexec
+        state: Active
+        text: Rule 'mount_option_var_noexec' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: partition_for_var_log
+        state: Active
+        text: Rule 'partition_for_var_log' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_var_log_noexec
+        state: Active
+        text: Rule 'mount_option_var_log_noexec' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_var_log_nosuid
+        state: Active
+        text: Rule 'mount_option_var_log_nosuid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: partition_for_var_tmp
+        state: Active
+        text: Rule 'partition_for_var_tmp' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_var_tmp_nosuid
+        state: Active
+        text: Rule 'mount_option_var_tmp_nosuid' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: mount_option_var_tmp_noexec
+        state: Active
+        text: Rule 'mount_option_var_tmp_noexec' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R29
+    title: Access Restrictions on /boot
+    objective: Access Restrictions on /boot
+    group: controls
+    assessment-requirements:
+      - id: file_groupowner_efi_grub2_cfg
+        state: Active
+        text: Rule 'file_groupowner_efi_grub2_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_groupowner_grub2_cfg
+        state: Active
+        text: Rule 'file_groupowner_grub2_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_owner_efi_grub2_cfg
+        state: Active
+        text: Rule 'file_owner_efi_grub2_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_owner_grub2_cfg
+        state: Active
+        text: Rule 'file_owner_grub2_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_permissions_efi_grub2_cfg
+        state: Active
+        text: Rule 'file_permissions_efi_grub2_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_permissions_grub2_cfg
+        state: Active
+        text: Rule 'file_permissions_grub2_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_groupowner_efi_user_cfg
+        state: Active
+        text: Rule 'file_groupowner_efi_user_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_groupowner_user_cfg
+        state: Active
+        text: Rule 'file_groupowner_user_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_owner_efi_user_cfg
+        state: Active
+        text: Rule 'file_owner_efi_user_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_owner_user_cfg
+        state: Active
+        text: Rule 'file_owner_user_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_permissions_efi_user_cfg
+        state: Active
+        text: Rule 'file_permissions_efi_user_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_permissions_user_cfg
+        state: Active
+        text: Rule 'file_permissions_user_cfg' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_groupowner_systemmap
+        state: Active
+        text: Rule 'file_groupowner_systemmap' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_owner_systemmap
+        state: Active
+        text: Rule 'file_owner_systemmap' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: file_permissions_systemmap
+        state: Active
+        text: Rule 'file_permissions_systemmap' MUST be verified
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R30
+    title: Removal of unused user accounts
+    objective: Removal of unused user accounts
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R31
+    title: User password strength
+    objective: User password strength
+    group: controls
+    assessment-requirements:
+      - id: enable_authselect
+        state: Active
+        text: Rule 'enable_authselect' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_accounts_maximum_age_root
+        state: Active
+        text: Variable 'var_accounts_maximum_age_root' is set to '365'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_set_max_life_root
+        state: Active
+        text: Rule 'accounts_password_set_max_life_root' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_minlen
+        state: Active
+        text: Variable 'var_password_pam_minlen' is set to '15'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_minlen
+        state: Active
+        text: Rule 'accounts_password_pam_minlen' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: cracklib_accounts_password_pam_minlen
+        state: Active
+        text: Rule 'cracklib_accounts_password_pam_minlen' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_accounts_password_minlen_login_defs
+        state: Active
+        text: Variable 'var_accounts_password_minlen_login_defs' is set to '15'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_minlen_login_defs
+        state: Active
+        text: Rule 'accounts_password_minlen_login_defs' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_ocredit
+        state: Active
+        text: Variable 'var_password_pam_ocredit' is set to '1'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_ocredit
+        state: Active
+        text: Rule 'accounts_password_pam_ocredit' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: cracklib_accounts_password_pam_ocredit
+        state: Active
+        text: Rule 'cracklib_accounts_password_pam_ocredit' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_dcredit
+        state: Active
+        text: Variable 'var_password_pam_dcredit' is set to '1'
+        applicability:
+          - rhel8-minimal
+      - id: cracklib_accounts_password_pam_dcredit
+        state: Active
+        text: Rule 'cracklib_accounts_password_pam_dcredit' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_dcredit
+        state: Active
+        text: Rule 'accounts_password_pam_dcredit' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_ucredit
+        state: Active
+        text: Variable 'var_password_pam_ucredit' is set to '1'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_ucredit
+        state: Active
+        text: Rule 'accounts_password_pam_ucredit' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: cracklib_accounts_password_pam_ucredit
+        state: Active
+        text: Rule 'cracklib_accounts_password_pam_ucredit' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_lcredit
+        state: Active
+        text: Variable 'var_password_pam_lcredit' is set to '1'
+        applicability:
+          - rhel8-minimal
+      - id: cracklib_accounts_password_pam_lcredit
+        state: Active
+        text: Rule 'cracklib_accounts_password_pam_lcredit' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_lcredit
+        state: Active
+        text: Rule 'accounts_password_pam_lcredit' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_accounts_passwords_pam_faillock_fail_interval
+        state: Active
+        text: Variable 'var_accounts_passwords_pam_faillock_fail_interval' is set to '900'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_passwords_pam_faillock_interval
+        state: Active
+        text: Rule 'accounts_passwords_pam_faillock_interval' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_accounts_passwords_pam_faillock_deny
+        state: Active
+        text: Variable 'var_accounts_passwords_pam_faillock_deny' is set to '3'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_passwords_pam_faillock_deny
+        state: Active
+        text: Rule 'accounts_passwords_pam_faillock_deny' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_passwords_pam_faillock_deny_root
+        state: Active
+        text: Rule 'accounts_passwords_pam_faillock_deny_root' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_passwords_pam_tally2_deny_root
+        state: Active
+        text: Rule 'accounts_passwords_pam_tally2_deny_root' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_tally2
+        state: Active
+        text: Variable 'var_password_pam_tally2' is set to '5'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_passwords_pam_tally2
+        state: Active
+        text: Rule 'accounts_passwords_pam_tally2' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_passwords_pam_tally2_unlock_time
+        state: Active
+        text: Rule 'accounts_passwords_pam_tally2_unlock_time' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_accounts_passwords_pam_tally2_unlock_time
+        state: Active
+        text: Variable 'var_accounts_passwords_pam_tally2_unlock_time' is set to '1800'
+        applicability:
+          - rhel8-minimal
+      - id: var_accounts_passwords_pam_faillock_unlock_time
+        state: Active
+        text: Variable 'var_accounts_passwords_pam_faillock_unlock_time' is set to '900'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_passwords_pam_faillock_unlock_time
+        state: Active
+        text: Rule 'accounts_passwords_pam_faillock_unlock_time' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_unix_remember
+        state: Active
+        text: Variable 'var_password_pam_unix_remember' is set to '2'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_unix_remember
+        state: Active
+        text: Rule 'accounts_password_pam_unix_remember' MUST be verified
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R32
+    title: Configuring a timeout on local user sessions
+    objective: Configuring a timeout on local user sessions
+    group: controls
+    assessment-requirements:
+      - id: logind_session_timeout
+        state: Active
+        text: Rule 'logind_session_timeout' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_logind_session_timeout
+        state: Active
+        text: Variable 'var_logind_session_timeout' is set to '10_minutes'
+        applicability:
+          - rhel8-intermediary
+      - id: accounts_tmout
+        state: Active
+        text: Rule 'accounts_tmout' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_accounts_tmout
+        state: Active
+        text: Variable 'var_accounts_tmout' is set to '10_min'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R33
+    title: Use of dedicated administration accounts
+    objective: Use of dedicated administration accounts
+    group: controls
+    assessment-requirements:
+      - id: no_direct_root_logins
+        state: Active
+        text: Rule 'no_direct_root_logins' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sshd_disable_root_login
+        state: Active
+        text: Rule 'sshd_disable_root_login' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: package_sudo_installed
+        state: Active
+        text: Rule 'package_sudo_installed' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: audit_rules_privileged_commands_sudo
+        state: Active
+        text: Rule 'audit_rules_privileged_commands_sudo' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: service_auditd_enabled
+        state: Active
+        text: Rule 'service_auditd_enabled' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: package_audit_installed
+        state: Active
+        text: Rule 'package_audit_installed' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R34
+    title: Deactivation of service accounts
+    objective: Deactivation of service accounts
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R35
+    title: Uniqueness and exclusivity of system service accounts
+    objective: Uniqueness and exclusivity of system service accounts
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R36
+    title: Changing the default value of UMASK
+    objective: Changing the default value of UMASK
+    group: controls
+    assessment-requirements:
+      - id: accounts_umask_etc_bashrc
+        state: Active
+        text: Rule 'accounts_umask_etc_bashrc' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: accounts_umask_etc_login_defs
+        state: Active
+        text: Rule 'accounts_umask_etc_login_defs' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: accounts_umask_etc_profile
+        state: Active
+        text: Rule 'accounts_umask_etc_profile' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: var_accounts_user_umask
+        state: Active
+        text: Variable 'var_accounts_user_umask' is set to '077'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R37
+    title: Using access control features
+    objective: Using access control features
+    group: controls
+    assessment-requirements:
+      - id: selinux_state
+        state: Active
+        text: Rule 'selinux_state' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: var_selinux_state
+        state: Active
+        text: Variable 'var_selinux_state' is set to 'enforcing'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R38
+    title: Group dedicated to the use of sudo
+    objective: Group dedicated to the use of sudo
+    group: controls
+    assessment-requirements:
+      - id: sudo_dedicated_group
+        state: Active
+        text: Rule 'sudo_dedicated_group' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: var_sudo_dedicated_group
+        state: Active
+        text: Variable 'var_sudo_dedicated_group' is set to 'sudogrp'
+        applicability:
+          - rhel8-enhanced
+      - id: file_permissions_sudo
+        state: Active
+        text: Rule 'file_permissions_sudo' MUST be verified
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R39
+    title: Sudo configuration guidelines
+    objective: Sudo configuration guidelines
+    group: controls
+    assessment-requirements:
+      - id: sudo_add_noexec
+        state: Active
+        text: Rule 'sudo_add_noexec' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sudo_add_requiretty
+        state: Active
+        text: Rule 'sudo_add_requiretty' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sudo_add_use_pty
+        state: Active
+        text: Rule 'sudo_add_use_pty' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sudo_add_umask
+        state: Active
+        text: Rule 'sudo_add_umask' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_sudo_umask
+        state: Active
+        text: Variable 'var_sudo_umask' is set to '0077'
+        applicability:
+          - rhel8-intermediary
+      - id: sudo_add_ignore_dot
+        state: Active
+        text: Rule 'sudo_add_ignore_dot' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sudo_add_env_reset
+        state: Active
+        text: Rule 'sudo_add_env_reset' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R40
+    title: Privileges of target sudo users
+    objective: Privileges of target sudo users
+    group: controls
+    assessment-requirements:
+      - id: sudoers_no_root_target
+        state: Active
+        text: Rule 'sudoers_no_root_target' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R41
+    title: Limiting the number of commands requiring the use of the EXEC option
+    objective: Limiting the number of commands requiring the use of the EXEC option
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R42
+    title: Good use of negation in a sudoers file
+    objective: Good use of negation in a sudoers file
+    group: controls
+    assessment-requirements:
+      - id: sudoers_no_command_negation
+        state: Active
+        text: Rule 'sudoers_no_command_negation' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R43
+    title: Explicit arguments in sudo specifications
+    objective: Explicit arguments in sudo specifications
+    group: controls
+    assessment-requirements:
+      - id: sudoers_explicit_command_args
+        state: Active
+        text: Rule 'sudoers_explicit_command_args' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R44
+    title: Editing files with sudo
+    objective: Editing files with sudo
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R45
+    title: Enable AppArmor security profiles
+    objective: Enable AppArmor security profiles
+    group: controls
+    assessment-requirements:
+      - id: apparmor_configured
+        state: Active
+        text: Rule 'apparmor_configured' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: all_apparmor_profiles_enforced
+        state: Active
+        text: Rule 'all_apparmor_profiles_enforced' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: grub2_enable_apparmor
+        state: Active
+        text: Rule 'grub2_enable_apparmor' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: package_apparmor_installed
+        state: Active
+        text: Rule 'package_apparmor_installed' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: package_pam_apparmor_installed
+        state: Active
+        text: Rule 'package_pam_apparmor_installed' MUST be verified
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R46
+    title: Activate SELinux with the Targeted Policy
+    objective: Activate SELinux with the Targeted Policy
+    group: controls
+    assessment-requirements:
+      - id: selinux_policytype
+        state: Active
+        text: Rule 'selinux_policytype' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: var_selinux_policy_name
+        state: Active
+        text: Variable 'var_selinux_policy_name' is set to 'targeted'
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R47
+    title: Containment of unprivileged interactive users
+    objective: Containment of unprivileged interactive users
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R48
+    title: Setting SELinux booleans
+    objective: Setting SELinux booleans
+    group: controls
+    assessment-requirements:
+      - id: var_selinuxuser_execheap
+        state: Active
+        text: Variable 'var_selinuxuser_execheap' is set to 'off'
+        applicability:
+          - rhel8-high
+      - id: sebool_selinuxuser_execheap
+        state: Active
+        text: Rule 'sebool_selinuxuser_execheap' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: var_deny_execmem
+        state: Active
+        text: Variable 'var_deny_execmem' is set to 'on'
+        applicability:
+          - rhel8-high
+      - id: sebool_deny_execmem
+        state: Active
+        text: Rule 'sebool_deny_execmem' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: var_selinuxuser_execstack
+        state: Active
+        text: Variable 'var_selinuxuser_execstack' is set to 'off'
+        applicability:
+          - rhel8-high
+      - id: sebool_selinuxuser_execstack
+        state: Active
+        text: Rule 'sebool_selinuxuser_execstack' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: var_secure_mode_insmod
+        state: Active
+        text: Variable 'var_secure_mode_insmod' is set to 'on'
+        applicability:
+          - rhel8-high
+      - id: sebool_secure_mode_insmod
+        state: Active
+        text: Rule 'sebool_secure_mode_insmod' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: sebool_ssh_sysadm_login
+        state: Active
+        text: Rule 'sebool_ssh_sysadm_login' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R49
+    title: Uninstalling SELinux Policy Debugging Tools
+    objective: Uninstalling SELinux Policy Debugging Tools
+    group: controls
+    assessment-requirements:
+      - id: package_setroubleshoot_removed
+        state: Active
+        text: Rule 'package_setroubleshoot_removed' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: package_setroubleshoot-server_removed
+        state: Active
+        text: Rule 'package_setroubleshoot-server_removed' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: package_setroubleshoot-plugins_removed
+        state: Active
+        text: Rule 'package_setroubleshoot-plugins_removed' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R50
+    title: Rights to access sensitive files and directories
+    objective: Rights to access sensitive files and directories
+    group: controls
+    assessment-requirements:
+      - id: file_owner_etc_shadow
+        state: Active
+        text: Rule 'file_owner_etc_shadow' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_shadow
+        state: Active
+        text: Rule 'file_groupowner_etc_shadow' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_shadow
+        state: Active
+        text: Rule 'file_permissions_etc_shadow' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_gshadow
+        state: Active
+        text: Rule 'file_owner_etc_gshadow' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_gshadow
+        state: Active
+        text: Rule 'file_groupowner_etc_gshadow' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_gshadow
+        state: Active
+        text: Rule 'file_permissions_etc_gshadow' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_passwd
+        state: Active
+        text: Rule 'file_owner_etc_passwd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_passwd
+        state: Active
+        text: Rule 'file_groupowner_etc_passwd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_passwd
+        state: Active
+        text: Rule 'file_permissions_etc_passwd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_group
+        state: Active
+        text: Rule 'file_owner_etc_group' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_group
+        state: Active
+        text: Rule 'file_groupowner_etc_group' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_group
+        state: Active
+        text: Rule 'file_permissions_etc_group' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_shells
+        state: Active
+        text: Rule 'file_owner_etc_shells' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_shells
+        state: Active
+        text: Rule 'file_groupowner_etc_shells' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_shells
+        state: Active
+        text: Rule 'file_permissions_etc_shells' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: accounts_user_dot_group_ownership
+        state: Active
+        text: Rule 'accounts_user_dot_group_ownership' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: accounts_user_dot_user_ownership
+        state: Active
+        text: Rule 'accounts_user_dot_user_ownership' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: accounts_users_home_files_groupownership
+        state: Active
+        text: Rule 'accounts_users_home_files_groupownership' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: accounts_users_home_files_ownership
+        state: Active
+        text: Rule 'accounts_users_home_files_ownership' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: accounts_users_home_files_permissions
+        state: Active
+        text: Rule 'accounts_users_home_files_permissions' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permission_user_init_files
+        state: Active
+        text: Rule 'file_permission_user_init_files' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: dir_system_commands_group_root_owned
+        state: Active
+        text: Rule 'dir_system_commands_group_root_owned' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: dir_system_commands_root_owned
+        state: Active
+        text: Rule 'dir_system_commands_root_owned' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupownership_system_commands_dirs
+        state: Active
+        text: Rule 'file_groupownership_system_commands_dirs' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_ownership_binary_dirs
+        state: Active
+        text: Rule 'file_ownership_binary_dirs' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_binary_dirs
+        state: Active
+        text: Rule 'file_permissions_binary_dirs' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_ownership_sshd_private_key
+        state: Active
+        text: Rule 'file_ownership_sshd_private_key' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupownership_sshd_private_key
+        state: Active
+        text: Rule 'file_groupownership_sshd_private_key' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_sshd_private_key
+        state: Active
+        text: Rule 'file_permissions_sshd_private_key' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_ownership_sshd_pub_key
+        state: Active
+        text: Rule 'file_ownership_sshd_pub_key' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupownership_sshd_pub_key
+        state: Active
+        text: Rule 'file_groupownership_sshd_pub_key' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_sshd_pub_key
+        state: Active
+        text: Rule 'file_permissions_sshd_pub_key' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_sshd_config
+        state: Active
+        text: Rule 'file_owner_sshd_config' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_sshd_config
+        state: Active
+        text: Rule 'file_groupowner_sshd_config' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_sshd_config
+        state: Active
+        text: Rule 'file_permissions_sshd_config' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_owner_etc_selinux
+        state: Active
+        text: Rule 'directory_owner_etc_selinux' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_groupowner_etc_selinux
+        state: Active
+        text: Rule 'directory_groupowner_etc_selinux' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_permissions_etc_selinux
+        state: Active
+        text: Rule 'directory_permissions_etc_selinux' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_sestatus_conf
+        state: Active
+        text: Rule 'file_owner_etc_sestatus_conf' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_sestatus_conf
+        state: Active
+        text: Rule 'file_groupowner_etc_sestatus_conf' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_sestatus_conf
+        state: Active
+        text: Rule 'file_permissions_etc_sestatus_conf' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_owner_etc_ipsecd
+        state: Active
+        text: Rule 'directory_owner_etc_ipsecd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_groupowner_etc_ipsecd
+        state: Active
+        text: Rule 'directory_groupowner_etc_ipsecd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_permissions_etc_ipsecd
+        state: Active
+        text: Rule 'directory_permissions_etc_ipsecd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_ipsec_conf
+        state: Active
+        text: Rule 'file_owner_etc_ipsec_conf' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_ipsec_conf
+        state: Active
+        text: Rule 'file_groupowner_etc_ipsec_conf' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_ipsec_conf
+        state: Active
+        text: Rule 'file_permissions_etc_ipsec_conf' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_ipsec_secrets
+        state: Active
+        text: Rule 'file_owner_etc_ipsec_secrets' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_ipsec_secrets
+        state: Active
+        text: Rule 'file_groupowner_etc_ipsec_secrets' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_ipsec_secrets
+        state: Active
+        text: Rule 'file_permissions_etc_ipsec_secrets' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_owner_etc_iptables
+        state: Active
+        text: Rule 'directory_owner_etc_iptables' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_groupowner_etc_iptables
+        state: Active
+        text: Rule 'directory_groupowner_etc_iptables' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_permissions_etc_iptables
+        state: Active
+        text: Rule 'directory_permissions_etc_iptables' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_owner_etc_nftables
+        state: Active
+        text: Rule 'directory_owner_etc_nftables' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_groupowner_etc_nftables
+        state: Active
+        text: Rule 'directory_groupowner_etc_nftables' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_permissions_etc_nftables
+        state: Active
+        text: Rule 'directory_permissions_etc_nftables' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_owner_etc_sysctld
+        state: Active
+        text: Rule 'directory_owner_etc_sysctld' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_groupowner_etc_sysctld
+        state: Active
+        text: Rule 'directory_groupowner_etc_sysctld' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_permissions_etc_sysctld
+        state: Active
+        text: Rule 'directory_permissions_etc_sysctld' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_sudoers
+        state: Active
+        text: Rule 'file_owner_etc_sudoers' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_sudoers
+        state: Active
+        text: Rule 'file_groupowner_etc_sudoers' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_sudoers
+        state: Active
+        text: Rule 'file_permissions_etc_sudoers' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_owner_etc_sudoersd
+        state: Active
+        text: Rule 'directory_owner_etc_sudoersd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_groupowner_etc_sudoersd
+        state: Active
+        text: Rule 'directory_groupowner_etc_sudoersd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: directory_permissions_etc_sudoersd
+        state: Active
+        text: Rule 'directory_permissions_etc_sudoersd' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_crypttab
+        state: Active
+        text: Rule 'file_owner_etc_crypttab' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_crypttab
+        state: Active
+        text: Rule 'file_groupowner_etc_crypttab' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_crypttab
+        state: Active
+        text: Rule 'file_permissions_etc_crypttab' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_owner_etc_chrony_keys
+        state: Active
+        text: Rule 'file_owner_etc_chrony_keys' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_groupowner_etc_chrony_keys
+        state: Active
+        text: Rule 'file_groupowner_etc_chrony_keys' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: file_permissions_etc_chrony_keys
+        state: Active
+        text: Rule 'file_permissions_etc_chrony_keys' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R51
+    title: Sensitive and trusted files
+    objective: Sensitive and trusted files
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: documentation. Manual assessment required.'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R52
+    title: Securing access for named sockets and pipes
+    objective: Securing access for named sockets and pipes
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R53
+    title: Files or directories without a known user or group
+    objective: Files or directories without a known user or group
+    group: controls
+    assessment-requirements:
+      - id: file_permissions_ungroupowned
+        state: Active
+        text: Rule 'file_permissions_ungroupowned' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: no_files_unowned_by_user
+        state: Active
+        text: Rule 'no_files_unowned_by_user' MUST be verified
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R54
+    title: Sticky bit and write access rights
+    objective: Sticky bit and write access rights
+    group: controls
+    assessment-requirements:
+      - id: dir_perms_world_writable_sticky_bits
+        state: Active
+        text: Rule 'dir_perms_world_writable_sticky_bits' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: dir_perms_world_writable_root_owned
+        state: Active
+        text: Rule 'dir_perms_world_writable_root_owned' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: file_permissions_unauthorized_world_writable
+        state: Active
+        text: Rule 'file_permissions_unauthorized_world_writable' MUST be verified
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R55
+    title: Temporary directories dedicated to accounts
+    objective: Temporary directories dedicated to accounts
+    group: controls
+    assessment-requirements:
+      - id: enable_pam_namespace
+        state: Active
+        text: Rule 'enable_pam_namespace' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: accounts_polyinstantiated_tmp
+        state: Active
+        text: Rule 'accounts_polyinstantiated_tmp' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: accounts_polyinstantiated_var_tmp
+        state: Active
+        text: Rule 'accounts_polyinstantiated_var_tmp' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_polyinstantiation_enabled
+        state: Active
+        text: Variable 'var_polyinstantiation_enabled' is set to 'on'
+        applicability:
+          - rhel8-intermediary
+      - id: sebool_polyinstantiation_enabled
+        state: Active
+        text: Rule 'sebool_polyinstantiation_enabled' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R56
+    title: Executables with setuid and setgid bits
+    objective: Executables with setuid and setgid bits
+    group: controls
+    assessment-requirements:
+      - id: file_permissions_unauthorized_suid
+        state: Active
+        text: Rule 'file_permissions_unauthorized_suid' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: file_permissions_unauthorized_sgid
+        state: Active
+        text: Rule 'file_permissions_unauthorized_sgid' MUST be verified
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R57
+    title: Executable with special rights setuid root and setgid root
+    objective: Executable with special rights setuid root and setgid root
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R58
+    title: Installation of packages reduced to the bare necessities
+    objective: Installation of packages reduced to the bare necessities
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R59
+    title: Official package repositories
+    objective: Official package repositories
+    group: controls
+    assessment-requirements:
+      - id: ensure_gpgcheck_never_disabled
+        state: Active
+        text: Rule 'ensure_gpgcheck_never_disabled' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: ensure_gpgcheck_globally_activated
+        state: Active
+        text: Rule 'ensure_gpgcheck_globally_activated' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: ensure_gpgcheck_local_packages
+        state: Active
+        text: Rule 'ensure_gpgcheck_local_packages' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: ensure_redhat_gpgkey_installed
+        state: Active
+        text: Rule 'ensure_redhat_gpgkey_installed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_sequoia-sq_installed
+        state: Active
+        text: Rule 'package_sequoia-sq_installed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: ensure_oracle_gpgkey_installed
+        state: Active
+        text: Rule 'ensure_oracle_gpgkey_installed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: ensure_almalinux_gpgkey_installed
+        state: Active
+        text: Rule 'ensure_almalinux_gpgkey_installed' MUST be verified
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R60
+    title: Hardened package repositories
+    objective: Hardened package repositories
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel8-enhanced
+    state: Retired
+  - id: R61
+    title: Regular updates
+    objective: Regular updates
+    group: controls
+    assessment-requirements:
+      - id: security_patches_up_to_date
+        state: Active
+        text: Rule 'security_patches_up_to_date' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_dnf-automatic_installed
+        state: Active
+        text: Rule 'package_dnf-automatic_installed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: timer_dnf-automatic_enabled
+        state: Active
+        text: Rule 'timer_dnf-automatic_enabled' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: dnf-automatic_apply_updates
+        state: Active
+        text: Rule 'dnf-automatic_apply_updates' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: dnf-automatic_security_updates_only
+        state: Active
+        text: Rule 'dnf-automatic_security_updates_only' MUST be verified
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R62
+    title: Minimization of installed services
+    objective: Minimization of installed services
+    group: controls
+    assessment-requirements:
+      - id: package_dhcp_removed
+        state: Active
+        text: Rule 'package_dhcp_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_kea_removed
+        state: Active
+        text: Rule 'package_kea_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_rsh_removed
+        state: Active
+        text: Rule 'package_rsh_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_rsh-server_removed
+        state: Active
+        text: Rule 'package_rsh-server_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_sendmail_removed
+        state: Active
+        text: Rule 'package_sendmail_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_talk_removed
+        state: Active
+        text: Rule 'package_talk_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_talk-server_removed
+        state: Active
+        text: Rule 'package_talk-server_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_telnet_removed
+        state: Active
+        text: Rule 'package_telnet_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_telnet-server_removed
+        state: Active
+        text: Rule 'package_telnet-server_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_tftp_removed
+        state: Active
+        text: Rule 'package_tftp_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_tftp-server_removed
+        state: Active
+        text: Rule 'package_tftp-server_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_xinetd_removed
+        state: Active
+        text: Rule 'package_xinetd_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_ypbind_removed
+        state: Active
+        text: Rule 'package_ypbind_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: package_ypserv_removed
+        state: Active
+        text: Rule 'package_ypserv_removed' MUST be verified
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R63
+    title: Minimization of services configuration
+    objective: Minimization of services configuration
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R64
+    title: Least privilege for the services
+    objective: Least privilege for the services
+    group: controls
+    assessment-requirements:
+      - id: selinux_policytype
+        state: Active
+        text: Rule 'selinux_policytype' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: var_selinux_policy_name
+        state: Active
+        text: Variable 'var_selinux_policy_name' is set to 'targeted'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R65
+    title: Services partitioning
+    objective: Services partitioning
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R66
+    title: Virtualization components hardening
+    objective: Virtualization components hardening
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R67
+    title: Secure remote authentication with PAM
+    objective: Secure remote authentication with PAM
+    group: controls
+    assessment-requirements:
+      - id: package_sssd_installed
+        state: Active
+        text: Rule 'package_sssd_installed' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: service_sssd_enabled
+        state: Active
+        text: Rule 'service_sssd_enabled' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sssd_enable_pam_services
+        state: Active
+        text: Rule 'sssd_enable_pam_services' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sssd_ldap_configure_tls_reqcert
+        state: Active
+        text: Rule 'sssd_ldap_configure_tls_reqcert' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: sssd_ldap_start_tls
+        state: Active
+        text: Rule 'sssd_ldap_start_tls' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: ldap_client_start_tls
+        state: Active
+        text: Rule 'ldap_client_start_tls' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: ldap_client_tls_cacertpath
+        state: Active
+        text: Rule 'ldap_client_tls_cacertpath' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R68
+    title: Protecting stored passwords
+    objective: Protecting stored passwords
+    group: controls
+    assessment-requirements:
+      - id: var_password_hashing_algorithm
+        state: Active
+        text: Variable 'var_password_hashing_algorithm' is set to 'yescrypt'
+        applicability:
+          - rhel8-minimal
+      - id: var_password_hashing_algorithm_pam
+        state: Active
+        text: Variable 'var_password_hashing_algorithm_pam' is set to 'sha512'
+        applicability:
+          - rhel8-minimal
+      - id: set_password_hashing_algorithm_systemauth
+        state: Active
+        text: Rule 'set_password_hashing_algorithm_systemauth' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_unix_rounds
+        state: Active
+        text: Variable 'var_password_pam_unix_rounds' is set to '11'
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_unix_rounds_system_auth
+        state: Active
+        text: Rule 'accounts_password_pam_unix_rounds_system_auth' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_unix_rounds_password_auth
+        state: Active
+        text: Rule 'accounts_password_pam_unix_rounds_password_auth' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_minclass
+        state: Active
+        text: Rule 'accounts_password_pam_minclass' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_minlen
+        state: Active
+        text: Rule 'accounts_password_pam_minlen' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: accounts_password_pam_retry
+        state: Active
+        text: Rule 'accounts_password_pam_retry' MUST be verified
+        applicability:
+          - rhel8-minimal
+      - id: var_password_pam_minclass
+        state: Active
+        text: Variable 'var_password_pam_minclass' is set to '4'
+        applicability:
+          - rhel8-minimal
+    state: Active
+  - id: R69
+    title: Securing access to remote user databases
+    objective: Securing access to remote user databases
+    group: controls
+    assessment-requirements:
+      - id: no_nis_in_nsswitch
+        state: Active
+        text: Rule 'no_nis_in_nsswitch' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Draft
+  - id: R70
+    title: Separation of System Accounts and Directory Administrator
+    objective: Separation of System Accounts and Directory Administrator
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R71
+    title: Implement a logging system
+    objective: Implement a logging system
+    group: controls
+    assessment-requirements:
+      - id: package_chrony_installed
+        state: Active
+        text: Rule 'package_chrony_installed' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: service_chronyd_or_ntpd_enabled
+        state: Active
+        text: Rule 'service_chronyd_or_ntpd_enabled' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: service_chronyd_enabled
+        state: Active
+        text: Rule 'service_chronyd_enabled' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: chronyd_specify_remote_server
+        state: Active
+        text: Rule 'chronyd_specify_remote_server' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: chronyd_configure_pool_and_server
+        state: Active
+        text: Rule 'chronyd_configure_pool_and_server' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: rsyslog_remote_loghost
+        state: Active
+        text: Rule 'rsyslog_remote_loghost' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: package_rsyslog-gnutls_installed
+        state: Active
+        text: Rule 'package_rsyslog-gnutls_installed' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: rsyslog_remote_tls
+        state: Active
+        text: Rule 'rsyslog_remote_tls' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: rsyslog_remote_tls_cacert
+        state: Active
+        text: Rule 'rsyslog_remote_tls_cacert' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: partition_for_var_log_audit
+        state: Active
+        text: Rule 'partition_for_var_log_audit' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: package_logrotate_installed
+        state: Active
+        text: Rule 'package_logrotate_installed' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: timer_logrotate_enabled
+        state: Active
+        text: Rule 'timer_logrotate_enabled' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: ensure_logrotate_activated
+        state: Active
+        text: Rule 'ensure_logrotate_activated' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: rsyslog_filecreatemode
+        state: Active
+        text: Rule 'rsyslog_filecreatemode' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: rsyslog_files_ownership
+        state: Active
+        text: Rule 'rsyslog_files_ownership' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: rsyslog_files_groupownership
+        state: Active
+        text: Rule 'rsyslog_files_groupownership' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: rsyslog_files_permissions
+        state: Active
+        text: Rule 'rsyslog_files_permissions' MUST be verified
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R72
+    title: Service Activity Logs
+    objective: Service Activity Logs
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: documentation. Manual assessment required.'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R73
+    title: Logging activity by auditd
+    objective: Logging activity by auditd
+    group: controls
+    assessment-requirements:
+      - id: audit_rules_sysadmin_actions
+        state: Active
+        text: Rule 'audit_rules_sysadmin_actions' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_sudo_log_events
+        state: Active
+        text: Rule 'audit_sudo_log_events' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_login_events_faillock
+        state: Active
+        text: Rule 'audit_rules_login_events_faillock' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_login_events_lastlog
+        state: Active
+        text: Rule 'audit_rules_login_events_lastlog' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_session_events_utmp
+        state: Active
+        text: Rule 'audit_rules_session_events_utmp' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_session_events_btmp
+        state: Active
+        text: Rule 'audit_rules_session_events_btmp' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_session_events_wtmp
+        state: Active
+        text: Rule 'audit_rules_session_events_wtmp' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_time_adjtimex
+        state: Active
+        text: Rule 'audit_rules_time_adjtimex' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_time_clock_settime
+        state: Active
+        text: Rule 'audit_rules_time_clock_settime' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_time_stime
+        state: Active
+        text: Rule 'audit_rules_time_stime' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_time_watch_localtime
+        state: Active
+        text: Rule 'audit_rules_time_watch_localtime' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_mac_modification
+        state: Active
+        text: Rule 'audit_rules_mac_modification' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_networkconfig_modification
+        state: Active
+        text: Rule 'audit_rules_networkconfig_modification' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_chmod
+        state: Active
+        text: Rule 'audit_rules_dac_modification_chmod' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_chown
+        state: Active
+        text: Rule 'audit_rules_dac_modification_chown' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_fchmod
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchmod' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_fchmodat
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchmodat' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_fchmodat2
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchmodat2' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_fchown
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchown' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_fchownat
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fchownat' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_fremovexattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fremovexattr' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_fsetxattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_fsetxattr' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_lchown
+        state: Active
+        text: Rule 'audit_rules_dac_modification_lchown' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_lremovexattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_lremovexattr' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_lsetxattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_lsetxattr' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_removexattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_removexattr' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_setxattr
+        state: Active
+        text: Rule 'audit_rules_dac_modification_setxattr' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_unsuccessful_file_modification_creat
+        state: Active
+        text: Rule 'audit_rules_unsuccessful_file_modification_creat' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_unsuccessful_file_modification_ftruncate
+        state: Active
+        text: Rule 'audit_rules_unsuccessful_file_modification_ftruncate' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_unsuccessful_file_modification_open
+        state: Active
+        text: Rule 'audit_rules_unsuccessful_file_modification_open' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_unsuccessful_file_modification_openat
+        state: Active
+        text: Rule 'audit_rules_unsuccessful_file_modification_openat' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_unsuccessful_file_modification_truncate
+        state: Active
+        text: Rule 'audit_rules_unsuccessful_file_modification_truncate' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_usergroup_modification_group
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_group' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_usergroup_modification_gshadow
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_gshadow' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_usergroup_modification_opasswd
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_opasswd' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_usergroup_modification_passwd
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_passwd' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_usergroup_modification_shadow
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_shadow' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_media_export
+        state: Active
+        text: Rule 'audit_rules_media_export' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_dac_modification_umount2
+        state: Active
+        text: Rule 'audit_rules_dac_modification_umount2' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_privileged_commands
+        state: Active
+        text: Rule 'audit_rules_privileged_commands' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_file_deletion_events_rename
+        state: Active
+        text: Rule 'audit_rules_file_deletion_events_rename' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_file_deletion_events_renameat
+        state: Active
+        text: Rule 'audit_rules_file_deletion_events_renameat' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_file_deletion_events_renameat2
+        state: Active
+        text: Rule 'audit_rules_file_deletion_events_renameat2' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_file_deletion_events_rmdir
+        state: Active
+        text: Rule 'audit_rules_file_deletion_events_rmdir' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_file_deletion_events_unlink
+        state: Active
+        text: Rule 'audit_rules_file_deletion_events_unlink' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_file_deletion_events_unlinkat
+        state: Active
+        text: Rule 'audit_rules_file_deletion_events_unlinkat' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_kernel_module_loading_delete
+        state: Active
+        text: Rule 'audit_rules_kernel_module_loading_delete' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_kernel_module_loading_init
+        state: Active
+        text: Rule 'audit_rules_kernel_module_loading_init' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_kernel_module_loading_finit
+        state: Active
+        text: Rule 'audit_rules_kernel_module_loading_finit' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_privileged_commands_insmod
+        state: Active
+        text: Rule 'audit_rules_privileged_commands_insmod' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_privileged_commands_modprobe
+        state: Active
+        text: Rule 'audit_rules_privileged_commands_modprobe' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_privileged_commands_rmmod
+        state: Active
+        text: Rule 'audit_rules_privileged_commands_rmmod' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_privileged_commands_kmod
+        state: Active
+        text: Rule 'audit_rules_privileged_commands_kmod' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_mac_modification_etc_selinux
+        state: Active
+        text: Rule 'audit_rules_mac_modification_etc_selinux' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: audit_rules_immutable
+        state: Active
+        text: Rule 'audit_rules_immutable' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: service_auditd_enabled
+        state: Active
+        text: Rule 'service_auditd_enabled' MUST be verified
+        applicability:
+          - rhel8-enhanced
+      - id: package_audit_installed
+        state: Active
+        text: Rule 'package_audit_installed' MUST be verified
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R74
+    title: Configuring the local messaging service
+    objective: Configuring the local messaging service
+    group: controls
+    assessment-requirements:
+      - id: postfix_network_listening_disabled
+        state: Active
+        text: Rule 'postfix_network_listening_disabled' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R75
+    title: Messaging Aliases for Service Accounts
+    objective: Messaging Aliases for Service Accounts
+    group: controls
+    assessment-requirements:
+      - id: postfix_client_configure_mail_alias
+        state: Active
+        text: Rule 'postfix_client_configure_mail_alias' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R76
+    title: Sealing and integrity of files
+    objective: Sealing and integrity of files
+    group: controls
+    assessment-requirements:
+      - id: package_aide_installed
+        state: Active
+        text: Rule 'package_aide_installed' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: aide_build_database
+        state: Active
+        text: Rule 'aide_build_database' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: aide_periodic_cron_checking
+        state: Active
+        text: Rule 'aide_periodic_cron_checking' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: aide_periodic_checking_systemd_timer
+        state: Active
+        text: Rule 'aide_periodic_checking_systemd_timer' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: aide_scan_notification
+        state: Active
+        text: Rule 'aide_scan_notification' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: aide_verify_acls
+        state: Active
+        text: Rule 'aide_verify_acls' MUST be verified
+        applicability:
+          - rhel8-high
+      - id: aide_verify_ext_attributes
+        state: Active
+        text: Rule 'aide_verify_ext_attributes' MUST be verified
+        applicability:
+          - rhel8-high
+    state: Active
+  - id: R77
+    title: Protection of the seals database
+    objective: Protection of the seals database
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: does not meet. Manual assessment required.'
+        applicability:
+          - rhel8-high
+    state: Deprecated
+  - id: R78
+    title: Network services partitioning
+    objective: Network services partitioning
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-enhanced
+    state: Active
+  - id: R79
+    title: Hardening and monitoring of exposed services
+    objective: Hardening and monitoring of exposed services
+    group: controls
+    assessment-requirements:
+      - id: selinux_state
+        state: Active
+        text: Rule 'selinux_state' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: var_selinux_state
+        state: Active
+        text: Variable 'var_selinux_state' is set to 'enforcing'
+        applicability:
+          - rhel8-intermediary
+      - id: package_aide_installed
+        state: Active
+        text: Rule 'package_aide_installed' MUST be verified
+        applicability:
+          - rhel8-intermediary
+      - id: aide_build_database
+        state: Active
+        text: Rule 'aide_build_database' MUST be verified
+        applicability:
+          - rhel8-intermediary
+    state: Active
+  - id: R80
+    title: Minimization of network services
+    objective: Minimization of network services
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel8-minimal
+    state: Active

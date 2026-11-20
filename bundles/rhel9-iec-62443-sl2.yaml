@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/rhel9-rules-catalog.yaml
+  - governance/policies/rhel9-iec-62443-sl2-policy.yaml

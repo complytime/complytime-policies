@@ -1,0 +1,610 @@
+metadata:
+  id: e8-rhel9
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: Australian Cyber Security Centre (ACSC) controls for RHEL9, generated from ComplianceAsCode
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: ''
+  date: '2026-11-20T12:59:35Z'
+  applicability-groups:
+    - id: rhel9-base
+      title: RHEL9 Base Baseline
+      description: Australian Cyber Security Centre (ACSC) Base level for RHEL9
+title: Australian Cyber Security Centre (ACSC)
+groups:
+  - id: controls
+    title: Australian Cyber Security Centre (ACSC)
+    description: Australian Cyber Security Centre (ACSC) controls
+controls:
+  - id: patching
+    title: Application and operating system patching
+    objective: Application and operating system patching
+    group: controls
+    assessment-requirements:
+      - id: package_talk_removed
+        state: Active
+        text: Rule 'package_talk_removed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_talk-server_removed
+        state: Active
+        text: Rule 'package_talk-server_removed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_ypbind_removed
+        state: Active
+        text: Rule 'package_ypbind_removed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_telnet_removed
+        state: Active
+        text: Rule 'package_telnet_removed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: service_telnet_disabled
+        state: Active
+        text: Rule 'service_telnet_disabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_telnet-server_removed
+        state: Active
+        text: Rule 'package_telnet-server_removed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_rsh_removed
+        state: Active
+        text: Rule 'package_rsh_removed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_rsh-server_removed
+        state: Active
+        text: Rule 'package_rsh-server_removed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: service_avahi-daemon_disabled
+        state: Active
+        text: Rule 'service_avahi-daemon_disabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_squid_removed
+        state: Active
+        text: Rule 'package_squid_removed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: service_squid_disabled
+        state: Active
+        text: Rule 'service_squid_disabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: ensure_redhat_gpgkey_installed
+        state: Active
+        text: Rule 'ensure_redhat_gpgkey_installed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_sequoia-sq_installed
+        state: Active
+        text: Rule 'package_sequoia-sq_installed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: ensure_gpgcheck_never_disabled
+        state: Active
+        text: Rule 'ensure_gpgcheck_never_disabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: ensure_gpgcheck_local_packages
+        state: Active
+        text: Rule 'ensure_gpgcheck_local_packages' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: ensure_gpgcheck_globally_activated
+        state: Active
+        text: Rule 'ensure_gpgcheck_globally_activated' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: security_patches_up_to_date
+        state: Active
+        text: Rule 'security_patches_up_to_date' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: dnf-automatic_security_updates_only
+        state: Active
+        text: Rule 'dnf-automatic_security_updates_only' MUST be verified
+        applicability:
+          - rhel9-base
+    state: Active
+  - id: mfa
+    title: Multi-factor authentication
+    objective: Multi-factor authentication
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-base
+    state: Active
+  - id: restrict_admin
+    title: Restricting administrative privileges
+    objective: Restricting administrative privileges
+    group: controls
+    assessment-requirements:
+      - id: accounts_no_uid_except_zero
+        state: Active
+        text: Rule 'accounts_no_uid_except_zero' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sudo_remove_nopasswd
+        state: Active
+        text: Rule 'sudo_remove_nopasswd' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sudo_remove_no_authenticate
+        state: Active
+        text: Rule 'sudo_remove_no_authenticate' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sudo_require_authentication
+        state: Active
+        text: Rule 'sudo_require_authentication' MUST be verified
+        applicability:
+          - rhel9-base
+    state: Active
+  - id: app_control
+    title: Application control
+    objective: Application control
+    group: controls
+    assessment-requirements:
+      - id: package_fapolicyd_installed
+        state: Active
+        text: Rule 'package_fapolicyd_installed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: service_fapolicyd_enabled
+        state: Active
+        text: Rule 'service_fapolicyd_enabled' MUST be verified
+        applicability:
+          - rhel9-base
+    state: Active
+  - id: restrict_macros
+    title: Restrict Microsoft Office macros
+    objective: Restrict Microsoft Office macros
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: not applicable. Manual assessment required.'
+        applicability:
+          - rhel9-base
+    state: Retired
+  - id: app_hardening
+    title: User application hardening
+    objective: User application hardening
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: pending. Manual assessment required.'
+        applicability:
+          - rhel9-base
+    state: Draft
+  - id: backups
+    title: Regular backups
+    objective: Regular backups
+    group: controls
+    assessment-requirements:
+      - id: no-automated-check
+        state: Active
+        text: 'This control has no automated checks. ComplianceAsCode status: manual. Manual assessment required.'
+        applicability:
+          - rhel9-base
+    state: Active
+  - id: hardening
+    title: General hardening
+    objective: General hardening
+    group: controls
+    assessment-requirements:
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'default_nosha1'
+        applicability:
+          - rhel9-base
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: configure_ssh_crypto_policy
+        state: Active
+        text: Rule 'configure_ssh_crypto_policy' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_use_directory_configuration
+        state: Active
+        text: Rule 'sshd_use_directory_configuration' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_disable_root_login
+        state: Active
+        text: Rule 'sshd_disable_root_login' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_disable_gssapi_auth
+        state: Active
+        text: Rule 'sshd_disable_gssapi_auth' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_print_last_log
+        state: Active
+        text: Rule 'sshd_print_last_log' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_do_not_permit_user_env
+        state: Active
+        text: Rule 'sshd_do_not_permit_user_env' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_disable_rhosts
+        state: Active
+        text: Rule 'sshd_disable_rhosts' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_set_loglevel_info
+        state: Active
+        text: Rule 'sshd_set_loglevel_info' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_disable_empty_passwords
+        state: Active
+        text: Rule 'sshd_disable_empty_passwords' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_disable_user_known_hosts
+        state: Active
+        text: Rule 'sshd_disable_user_known_hosts' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sshd_enable_strictmodes
+        state: Active
+        text: Rule 'sshd_enable_strictmodes' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_rsyslog_installed
+        state: Active
+        text: Rule 'package_rsyslog_installed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: service_rsyslog_enabled
+        state: Active
+        text: Rule 'service_rsyslog_enabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: service_auditd_enabled
+        state: Active
+        text: Rule 'service_auditd_enabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: var_auditd_flush
+        state: Active
+        text: Variable 'var_auditd_flush' is set to 'incremental_async'
+        applicability:
+          - rhel9-base
+      - id: auditd_data_retention_flush
+        state: Active
+        text: Rule 'auditd_data_retention_flush' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: auditd_local_events
+        state: Active
+        text: Rule 'auditd_local_events' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: auditd_write_logs
+        state: Active
+        text: Rule 'auditd_write_logs' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: auditd_log_format
+        state: Active
+        text: Rule 'auditd_log_format' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: auditd_freq
+        state: Active
+        text: Rule 'auditd_freq' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: auditd_name_format
+        state: Active
+        text: Rule 'auditd_name_format' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_login_events_tallylog
+        state: Active
+        text: Rule 'audit_rules_login_events_tallylog' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_login_events_faillock
+        state: Active
+        text: Rule 'audit_rules_login_events_faillock' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_login_events_lastlog
+        state: Active
+        text: Rule 'audit_rules_login_events_lastlog' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_time_adjtimex
+        state: Active
+        text: Rule 'audit_rules_time_adjtimex' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_time_clock_settime
+        state: Active
+        text: Rule 'audit_rules_time_clock_settime' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_time_watch_localtime
+        state: Active
+        text: Rule 'audit_rules_time_watch_localtime' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_time_settimeofday
+        state: Active
+        text: Rule 'audit_rules_time_settimeofday' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_time_stime
+        state: Active
+        text: Rule 'audit_rules_time_stime' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_execution_restorecon
+        state: Active
+        text: Rule 'audit_rules_execution_restorecon' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_execution_chcon
+        state: Active
+        text: Rule 'audit_rules_execution_chcon' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_execution_semanage
+        state: Active
+        text: Rule 'audit_rules_execution_semanage' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_execution_setsebool
+        state: Active
+        text: Rule 'audit_rules_execution_setsebool' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_execution_setfiles
+        state: Active
+        text: Rule 'audit_rules_execution_setfiles' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_execution_seunshare
+        state: Active
+        text: Rule 'audit_rules_execution_seunshare' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_sysadmin_actions
+        state: Active
+        text: Rule 'audit_rules_sysadmin_actions' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_networkconfig_modification
+        state: Active
+        text: Rule 'audit_rules_networkconfig_modification' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_usergroup_modification_group
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_group' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_usergroup_modification_gshadow
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_gshadow' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_usergroup_modification_opasswd
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_opasswd' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_usergroup_modification_passwd
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_passwd' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_usergroup_modification_shadow
+        state: Active
+        text: Rule 'audit_rules_usergroup_modification_shadow' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_dac_modification_chmod
+        state: Active
+        text: Rule 'audit_rules_dac_modification_chmod' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_dac_modification_chown
+        state: Active
+        text: Rule 'audit_rules_dac_modification_chown' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: audit_rules_kernel_module_loading
+        state: Active
+        text: Rule 'audit_rules_kernel_module_loading' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sysctl_kernel_randomize_va_space
+        state: Active
+        text: Rule 'sysctl_kernel_randomize_va_space' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sysctl_kernel_exec_shield
+        state: Active
+        text: Rule 'sysctl_kernel_exec_shield' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sysctl_kernel_kptr_restrict
+        state: Active
+        text: Rule 'sysctl_kernel_kptr_restrict' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sysctl_kernel_dmesg_restrict
+        state: Active
+        text: Rule 'sysctl_kernel_dmesg_restrict' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sysctl_kernel_kexec_load_disabled
+        state: Active
+        text: Rule 'sysctl_kernel_kexec_load_disabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sysctl_kernel_yama_ptrace_scope
+        state: Active
+        text: Rule 'sysctl_kernel_yama_ptrace_scope' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sysctl_kernel_unprivileged_bpf_disabled
+        state: Active
+        text: Rule 'sysctl_kernel_unprivileged_bpf_disabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: sysctl_net_core_bpf_jit_harden
+        state: Active
+        text: Rule 'sysctl_net_core_bpf_jit_harden' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: var_selinux_state
+        state: Active
+        text: Variable 'var_selinux_state' is set to 'enforcing'
+        applicability:
+          - rhel9-base
+      - id: selinux_state
+        state: Active
+        text: Rule 'selinux_state' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: var_selinux_policy_name
+        state: Active
+        text: Variable 'var_selinux_policy_name' is set to 'targeted'
+        applicability:
+          - rhel9-base
+      - id: selinux_policytype
+        state: Active
+        text: Rule 'selinux_policytype' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: rpm_verify_hashes
+        state: Active
+        text: Rule 'rpm_verify_hashes' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: rpm_verify_permissions
+        state: Active
+        text: Rule 'rpm_verify_permissions' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: rpm_verify_ownership
+        state: Active
+        text: Rule 'rpm_verify_ownership' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: file_permissions_unauthorized_sgid
+        state: Active
+        text: Rule 'file_permissions_unauthorized_sgid' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: file_permissions_unauthorized_suid
+        state: Active
+        text: Rule 'file_permissions_unauthorized_suid' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: file_permissions_unauthorized_world_writable
+        state: Active
+        text: Rule 'file_permissions_unauthorized_world_writable' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: dir_perms_world_writable_sticky_bits
+        state: Active
+        text: Rule 'dir_perms_world_writable_sticky_bits' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: file_permissions_library_dirs
+        state: Active
+        text: Rule 'file_permissions_library_dirs' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: file_ownership_binary_dirs
+        state: Active
+        text: Rule 'file_ownership_binary_dirs' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: file_permissions_binary_dirs
+        state: Active
+        text: Rule 'file_permissions_binary_dirs' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: file_ownership_library_dirs
+        state: Active
+        text: Rule 'file_ownership_library_dirs' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: var_authselect_profile
+        state: Active
+        text: Variable 'var_authselect_profile' is set to 'sssd'
+        applicability:
+          - rhel9-base
+      - id: enable_authselect
+        state: Active
+        text: Rule 'enable_authselect' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: no_empty_passwords
+        state: Active
+        text: Rule 'no_empty_passwords' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: mount_option_dev_shm_nodev
+        state: Active
+        text: Rule 'mount_option_dev_shm_nodev' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: mount_option_dev_shm_nosuid
+        state: Active
+        text: Rule 'mount_option_dev_shm_nosuid' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: mount_option_dev_shm_noexec
+        state: Active
+        text: Rule 'mount_option_dev_shm_noexec' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: package_firewalld_installed
+        state: Active
+        text: Rule 'package_firewalld_installed' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: service_firewalld_enabled
+        state: Active
+        text: Rule 'service_firewalld_enabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: network_sniffer_disabled
+        state: Active
+        text: Rule 'network_sniffer_disabled' MUST be verified
+        applicability:
+          - rhel9-base
+      - id: service_kdump_disabled
+        state: Active
+        text: Rule 'service_kdump_disabled' MUST be verified
+        applicability:
+          - rhel9-base
+    state: Active
