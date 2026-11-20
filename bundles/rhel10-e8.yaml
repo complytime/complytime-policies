@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/e8-rhel10-catalog.yaml
+  - governance/policies/rhel10-e8-policy.yaml
