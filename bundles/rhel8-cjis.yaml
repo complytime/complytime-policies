@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/rhel8-rules-catalog.yaml
+  - governance/policies/rhel8-cjis-policy.yaml
