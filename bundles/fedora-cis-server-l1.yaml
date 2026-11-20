@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/cis-fedora-catalog.yaml
+  - governance/policies/fedora-cis-server-l1-policy.yaml

@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/fedora-rules-catalog.yaml
+  - governance/policies/fedora-ospp-policy.yaml
