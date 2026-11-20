@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/ccn-rhel9-catalog.yaml
+  - governance/policies/rhel9-ccn-advanced-policy.yaml

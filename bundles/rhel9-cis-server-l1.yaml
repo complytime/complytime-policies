@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/cis-rhel9-catalog.yaml
+  - governance/policies/rhel9-cis-server-l1-policy.yaml

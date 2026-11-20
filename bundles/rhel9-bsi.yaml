@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/bsi_sys_1_1-rhel9-catalog.yaml
+  - governance/policies/rhel9-bsi-policy.yaml
