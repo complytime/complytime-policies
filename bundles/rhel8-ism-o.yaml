@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/ism_o-rhel8-catalog.yaml
+  - governance/policies/rhel8-ism-o-policy.yaml

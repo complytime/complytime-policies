@@ -1,0 +1,1483 @@
+metadata:
+  id: ospp-rhel8
+  type: ControlCatalog
+  gemara-version: 1.2.0
+  description: Protection Profile for General Purpose Operating Systems controls for RHEL8, generated from ComplianceAsCode
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  version: '4.3'
+  date: '2026-11-20T12:59:32Z'
+  applicability-groups:
+    - id: rhel8-base
+      title: RHEL8 Base Baseline
+      description: Protection Profile for General Purpose Operating Systems Base level for RHEL8
+title: Protection Profile for General Purpose Operating Systems
+groups:
+  - id: controls
+    title: Protection Profile for General Purpose Operating Systems
+    description: Protection Profile for General Purpose Operating Systems controls
+controls:
+  - id: AGD_OPE.1
+    title: Operational User Guidance
+    objective: Operational User Guidance
+    group: controls
+    assessment-requirements:
+      - id: package_openscap-scanner_installed
+        state: Active
+        text: Rule 'package_openscap-scanner_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_scap-security-guide_installed
+        state: Active
+        text: Rule 'package_scap-security-guide_installed' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: AGD_PRE.1
+    title: Preparative Procedures
+    objective: Preparative Procedures
+    group: controls
+    assessment-requirements:
+      - id: package_openscap-scanner_installed
+        state: Active
+        text: Rule 'package_openscap-scanner_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_scap-security-guide_installed
+        state: Active
+        text: Rule 'package_scap-security-guide_installed' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FAU_GEN.1
+    title: Audit Data Generation (Refined)
+    objective: Audit Data Generation (Refined)
+    group: controls
+    assessment-requirements:
+      - id: auditd_data_retention_flush
+        state: Active
+        text: Rule 'auditd_data_retention_flush' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: auditd_freq
+        state: Active
+        text: Rule 'auditd_freq' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: grub2_audit_argument
+        state: Active
+        text: Rule 'grub2_audit_argument' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_audit_installed
+        state: Active
+        text: Rule 'package_audit_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_basic_configuration
+        state: Active
+        text: Rule 'audit_basic_configuration' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: service_auditd_enabled
+        state: Active
+        text: Rule 'service_auditd_enabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_auditd_flush
+        state: Active
+        text: Variable 'var_auditd_flush' is set to 'incremental_async'
+        applicability:
+          - rhel8-base
+      - id: sshd_disable_root_login
+        state: Active
+        text: Rule 'sshd_disable_root_login' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: zipl_audit_argument
+        state: Active
+        text: Rule 'zipl_audit_argument' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FAU_GEN.1.1
+    title: Audit Data Generation - Event Types to be Audited
+    objective: Audit Data Generation - Event Types to be Audited
+    group: controls
+    assessment-requirements:
+      - id: audit_access_failed
+        state: Active
+        text: Rule 'audit_access_failed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_failed_aarch64
+        state: Active
+        text: Rule 'audit_access_failed_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_failed_ppc64le
+        state: Active
+        text: Rule 'audit_access_failed_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success
+        state: Active
+        text: Rule 'audit_access_success' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success.role=unscored
+        state: Active
+        text: Rule 'audit_access_success.role=unscored' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success.severity=info
+        state: Active
+        text: Rule 'audit_access_success.severity=info' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success_aarch64
+        state: Active
+        text: Rule 'audit_access_success_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success_aarch64.role=unscored
+        state: Active
+        text: Rule 'audit_access_success_aarch64.role=unscored' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success_aarch64.severity=info
+        state: Active
+        text: Rule 'audit_access_success_aarch64.severity=info' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success_ppc64le
+        state: Active
+        text: Rule 'audit_access_success_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success_ppc64le.role=unscored
+        state: Active
+        text: Rule 'audit_access_success_ppc64le.role=unscored' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_access_success_ppc64le.severity=info
+        state: Active
+        text: Rule 'audit_access_success_ppc64le.severity=info' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_create_failed
+        state: Active
+        text: Rule 'audit_create_failed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_create_failed_aarch64
+        state: Active
+        text: Rule 'audit_create_failed_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_create_failed_ppc64le
+        state: Active
+        text: Rule 'audit_create_failed_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_create_success
+        state: Active
+        text: Rule 'audit_create_success' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_create_success_aarch64
+        state: Active
+        text: Rule 'audit_create_success_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_create_success_ppc64le
+        state: Active
+        text: Rule 'audit_create_success_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_delete_failed
+        state: Active
+        text: Rule 'audit_delete_failed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_delete_failed_aarch64
+        state: Active
+        text: Rule 'audit_delete_failed_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_delete_failed_ppc64le
+        state: Active
+        text: Rule 'audit_delete_failed_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_delete_success
+        state: Active
+        text: Rule 'audit_delete_success' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_delete_success_aarch64
+        state: Active
+        text: Rule 'audit_delete_success_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_delete_success_ppc64le
+        state: Active
+        text: Rule 'audit_delete_success_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_modify_failed
+        state: Active
+        text: Rule 'audit_modify_failed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_modify_failed_aarch64
+        state: Active
+        text: Rule 'audit_modify_failed_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_modify_failed_ppc64le
+        state: Active
+        text: Rule 'audit_modify_failed_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_modify_success
+        state: Active
+        text: Rule 'audit_modify_success' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_modify_success_aarch64
+        state: Active
+        text: Rule 'audit_modify_success_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_modify_success_ppc64le
+        state: Active
+        text: Rule 'audit_modify_success_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_module_load
+        state: Active
+        text: Rule 'audit_module_load' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_module_load_ppc64le
+        state: Active
+        text: Rule 'audit_module_load_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_ospp_general
+        state: Active
+        text: Rule 'audit_ospp_general' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_ospp_general_aarch64
+        state: Active
+        text: Rule 'audit_ospp_general_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_ospp_general_ppc64le
+        state: Active
+        text: Rule 'audit_ospp_general_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_owner_change_failed
+        state: Active
+        text: Rule 'audit_owner_change_failed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_owner_change_failed_aarch64
+        state: Active
+        text: Rule 'audit_owner_change_failed_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_owner_change_failed_ppc64le
+        state: Active
+        text: Rule 'audit_owner_change_failed_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_owner_change_success
+        state: Active
+        text: Rule 'audit_owner_change_success' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_owner_change_success_aarch64
+        state: Active
+        text: Rule 'audit_owner_change_success_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_owner_change_success_ppc64le
+        state: Active
+        text: Rule 'audit_owner_change_success_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_perm_change_failed
+        state: Active
+        text: Rule 'audit_perm_change_failed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_perm_change_failed_aarch64
+        state: Active
+        text: Rule 'audit_perm_change_failed_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_perm_change_failed_ppc64le
+        state: Active
+        text: Rule 'audit_perm_change_failed_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_perm_change_success
+        state: Active
+        text: Rule 'audit_perm_change_success' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_perm_change_success_aarch64
+        state: Active
+        text: Rule 'audit_perm_change_success_aarch64' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_perm_change_success_ppc64le
+        state: Active
+        text: Rule 'audit_perm_change_success_ppc64le' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FAU_GEN.1.2
+    title: Audit Data Generation - Audit Event Format
+    objective: Audit Data Generation - Audit Event Format
+    group: controls
+    assessment-requirements:
+      - id: auditd_log_format
+        state: Active
+        text: Rule 'auditd_log_format' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: auditd_name_format
+        state: Active
+        text: Rule 'auditd_name_format' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: audit_immutable_login_uids
+        state: Active
+        text: Rule 'audit_immutable_login_uids' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: disable_ctrlaltdel_burstaction
+        state: Active
+        text: Rule 'disable_ctrlaltdel_burstaction' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: disable_ctrlaltdel_reboot
+        state: Active
+        text: Rule 'disable_ctrlaltdel_reboot' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FAU_STG.1
+    title: Protected audit trail storage
+    objective: Protected audit trail storage
+    group: controls
+    assessment-requirements:
+      - id: grub2_audit_backlog_limit_argument
+        state: Active
+        text: Rule 'grub2_audit_backlog_limit_argument' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_audit_backlog_limit
+        state: Active
+        text: Variable 'var_audit_backlog_limit' is set to '8192'
+        applicability:
+          - rhel8-base
+      - id: zipl_audit_backlog_limit_argument
+        state: Active
+        text: Rule 'zipl_audit_backlog_limit_argument' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_CKM.1
+    title: Cryptographic Key Generation
+    objective: Cryptographic Key Generation
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_CKM.1.1
+    title: Cryptographic Key Generation - asymmetric cryptographic
+    objective: Cryptographic Key Generation - asymmetric cryptographic
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_CKM.2
+    title: Cryptographic Key Establishment
+    objective: Cryptographic Key Establishment
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_COP.1/ENCRYPT
+    title: Cryptographic Operation - Encryption/Decryption
+    objective: Cryptographic Operation - Encryption/Decryption
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_COP.1/HASH
+    title: Cryptographic Operation - Hashing
+    objective: Cryptographic Operation - Hashing
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_COP.1/SIGN
+    title: Cryptographic Operation - Signing
+    objective: Cryptographic Operation - Signing
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_COP.1/KEYHMAC
+    title: Keyed-Hash Message Authentication
+    objective: Keyed-Hash Message Authentication
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_RBG_EXT.1
+    title: Random Bit Generation
+    objective: Random Bit Generation
+    group: controls
+    assessment-requirements:
+      - id: enable_dracut_fips_module
+        state: Active
+        text: Rule 'enable_dracut_fips_module' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_RBG_EXT.1.1
+    title: Random Bit Generation - deterministic random bit generation
+    objective: Random Bit Generation - deterministic random bit generation
+    group: controls
+    assessment-requirements:
+      - id: enable_dracut_fips_module
+        state: Active
+        text: Rule 'enable_dracut_fips_module' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_RBG_EXT.1.2
+    title: Random Bit Generation - entropy source
+    objective: Random Bit Generation - entropy source
+    group: controls
+    assessment-requirements:
+      - id: enable_dracut_fips_module
+        state: Active
+        text: Rule 'enable_dracut_fips_module' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_system_crypto_policy
+        state: Active
+        text: Variable 'var_system_crypto_policy' is set to 'fips_ospp'
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_SSHC_EXT.1
+    title: SSH Client Protocol
+    objective: SSH Client Protocol
+    group: controls
+    assessment-requirements:
+      - id: package_openssh-clients_installed
+        state: Active
+        text: Rule 'package_openssh-clients_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: configure_ssh_crypto_policy
+        state: Active
+        text: Rule 'configure_ssh_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_SSHS_EXT.1
+    title: SSH Server Protocol
+    objective: SSH Server Protocol
+    group: controls
+    assessment-requirements:
+      - id: package_openssh-server_installed
+        state: Active
+        text: Rule 'package_openssh-server_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: configure_ssh_crypto_policy
+        state: Active
+        text: Rule 'configure_ssh_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_SSH_EXT.1
+    title: SSH Protocol
+    objective: SSH Protocol
+    group: controls
+    assessment-requirements:
+      - id: package_openssh-clients_installed
+        state: Active
+        text: Rule 'package_openssh-clients_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_openssh-server_installed
+        state: Active
+        text: Rule 'package_openssh-server_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: configure_ssh_crypto_policy
+        state: Active
+        text: Rule 'configure_ssh_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sshd_use_directory_configuration
+        state: Active
+        text: Rule 'sshd_use_directory_configuration' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_SSH_EXT.1.2
+    title: SSH Protocol - Authentication Methods
+    objective: SSH Protocol - Authentication Methods
+    group: controls
+    assessment-requirements:
+      - id: sshd_disable_gssapi_auth
+        state: Active
+        text: Rule 'sshd_disable_gssapi_auth' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sshd_disable_kerb_auth
+        state: Active
+        text: Rule 'sshd_disable_kerb_auth' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_SSH_EXT.1.8
+    title: SSH Protocol - Session
+    objective: SSH Protocol - Session
+    group: controls
+    assessment-requirements:
+      - id: ssh_client_rekey_limit
+        state: Active
+        text: Rule 'ssh_client_rekey_limit' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_ssh_client_rekey_limit_size
+        state: Active
+        text: Variable 'var_ssh_client_rekey_limit_size' is set to '1G'
+        applicability:
+          - rhel8-base
+      - id: var_ssh_client_rekey_limit_time
+        state: Active
+        text: Variable 'var_ssh_client_rekey_limit_time' is set to '1hour'
+        applicability:
+          - rhel8-base
+      - id: sshd_rekey_limit
+        state: Active
+        text: Rule 'sshd_rekey_limit' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_rekey_limit_size
+        state: Active
+        text: Variable 'var_rekey_limit_size' is set to '1G'
+        applicability:
+          - rhel8-base
+      - id: var_rekey_limit_time
+        state: Active
+        text: Variable 'var_rekey_limit_time' is set to '1hour'
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_TLSC_EXT.1
+    title: TLS Client Protocol
+    objective: TLS Client Protocol
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FCS_TLSC_EXT.1.1
+    title: Allowed Cipher Suites
+    objective: Allowed Cipher Suites
+    group: controls
+    assessment-requirements:
+      - id: configure_crypto_policy
+        state: Active
+        text: Rule 'configure_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_crypto-policies_installed
+        state: Active
+        text: Rule 'package_crypto-policies_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: enable_fips_mode
+        state: Active
+        text: Rule 'enable_fips_mode' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: configure_openssl_crypto_policy
+        state: Active
+        text: Rule 'configure_openssl_crypto_policy' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FIA_AFL.1
+    title: Authentication failure handling
+    objective: Authentication failure handling
+    group: controls
+    assessment-requirements:
+      - id: accounts_passwords_pam_faillock_deny
+        state: Active
+        text: Rule 'accounts_passwords_pam_faillock_deny' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_accounts_passwords_pam_faillock_deny
+        state: Active
+        text: Variable 'var_accounts_passwords_pam_faillock_deny' is set to '3'
+        applicability:
+          - rhel8-base
+      - id: accounts_passwords_pam_faillock_interval
+        state: Active
+        text: Rule 'accounts_passwords_pam_faillock_interval' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_accounts_passwords_pam_faillock_fail_interval
+        state: Active
+        text: Variable 'var_accounts_passwords_pam_faillock_fail_interval' is set to '900'
+        applicability:
+          - rhel8-base
+      - id: accounts_passwords_pam_faillock_unlock_time
+        state: Active
+        text: Rule 'accounts_passwords_pam_faillock_unlock_time' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_accounts_passwords_pam_faillock_unlock_time
+        state: Active
+        text: Variable 'var_accounts_passwords_pam_faillock_unlock_time' is set to 'never'
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FIA_UAU.1
+    title: Timing of authentication
+    objective: Timing of authentication
+    group: controls
+    assessment-requirements:
+      - id: disable_host_auth
+        state: Active
+        text: Rule 'disable_host_auth' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sshd_disable_empty_passwords
+        state: Active
+        text: Rule 'sshd_disable_empty_passwords' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: require_singleuser_auth
+        state: Active
+        text: Rule 'require_singleuser_auth' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: service_debug-shell_disabled
+        state: Active
+        text: Rule 'service_debug-shell_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: no_empty_passwords
+        state: Active
+        text: Rule 'no_empty_passwords' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: grub2_disable_recovery
+        state: Active
+        text: Rule 'grub2_disable_recovery' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: grub2_systemd_debug-shell_argument_absent
+        state: Active
+        text: Rule 'grub2_systemd_debug-shell_argument_absent' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: grub2_password
+        state: Active
+        text: Rule 'grub2_password' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: zipl_systemd_debug-shell_argument_absent
+        state: Active
+        text: Rule 'zipl_systemd_debug-shell_argument_absent' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FIA_UAU.5
+    title: Multiple Authentication Mechanisms
+    objective: Multiple Authentication Mechanisms
+    group: controls
+    assessment-requirements:
+      - id: package_openssh-clients_installed
+        state: Active
+        text: Rule 'package_openssh-clients_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_openssh-server_installed
+        state: Active
+        text: Rule 'package_openssh-server_installed' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FIA_X509_EXT.1
+    title: X.509 Certificate Validation
+    objective: X.509 Certificate Validation
+    group: controls
+    assessment-requirements:
+      - id: package_gnutls-utils_installed
+        state: Active
+        text: Rule 'package_gnutls-utils_installed' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FIA_X509_EXT.1.1
+    title: X.509 Certificate Validation - Valid Certificates
+    objective: X.509 Certificate Validation - Valid Certificates
+    group: controls
+    assessment-requirements:
+      - id: package_gnutls-utils_installed
+        state: Active
+        text: Rule 'package_gnutls-utils_installed' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FIA_X509_EXT.2
+    title: X.509 Certificate Validation - basicConstraints
+    objective: X.509 Certificate Validation - basicConstraints
+    group: controls
+    assessment-requirements:
+      - id: package_gnutls-utils_installed
+        state: Active
+        text: Rule 'package_gnutls-utils_installed' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FMT_MOF_EXT.1
+    title: Management of security functions behavior
+    objective: Management of security functions behavior
+    group: controls
+    assessment-requirements:
+      - id: package_sudo_installed
+        state: Active
+        text: Rule 'package_sudo_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: logind_session_timeout
+        state: Active
+        text: Rule 'logind_session_timeout' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_logind_session_timeout
+        state: Active
+        text: Variable 'var_logind_session_timeout' is set to '30_minutes'
+        applicability:
+          - rhel8-base
+      - id: selinux_policytype
+        state: Active
+        text: Rule 'selinux_policytype' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: selinux_state
+        state: Active
+        text: Rule 'selinux_state' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_selinux_state
+        state: Active
+        text: Variable 'var_selinux_state' is set to 'enforcing'
+        applicability:
+          - rhel8-base
+      - id: var_selinux_policy_name
+        state: Active
+        text: Variable 'var_selinux_policy_name' is set to 'targeted'
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FMT_SMF_EXT.1
+    title: Specification of Management Functions
+    objective: Specification of Management Functions
+    group: controls
+    assessment-requirements:
+      - id: package_fapolicyd_installed
+        state: Active
+        text: Rule 'package_fapolicyd_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: service_fapolicyd_enabled
+        state: Active
+        text: Rule 'service_fapolicyd_enabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: chronyd_client_only
+        state: Active
+        text: Rule 'chronyd_client_only' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_chrony_installed
+        state: Active
+        text: Rule 'package_chrony_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: configure_usbguard_auditbackend
+        state: Active
+        text: Rule 'configure_usbguard_auditbackend' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_usbguard_installed
+        state: Active
+        text: Rule 'package_usbguard_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: service_usbguard_enabled
+        state: Active
+        text: Rule 'service_usbguard_enabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: usbguard_allow_hid_and_hub
+        state: Active
+        text: Rule 'usbguard_allow_hid_and_hub' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: accounts_password_pam_dcredit
+        state: Active
+        text: Rule 'accounts_password_pam_dcredit' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: accounts_password_pam_lcredit
+        state: Active
+        text: Rule 'accounts_password_pam_lcredit' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: accounts_password_pam_minlen
+        state: Active
+        text: Rule 'accounts_password_pam_minlen' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: accounts_password_pam_ocredit
+        state: Active
+        text: Rule 'accounts_password_pam_ocredit' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: accounts_password_pam_ucredit
+        state: Active
+        text: Rule 'accounts_password_pam_ucredit' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_password_pam_minlen
+        state: Active
+        text: Variable 'var_password_pam_minlen' is set to '12'
+        applicability:
+          - rhel8-base
+      - id: var_password_pam_ocredit
+        state: Active
+        text: Variable 'var_password_pam_ocredit' is set to '1'
+        applicability:
+          - rhel8-base
+      - id: var_password_pam_dcredit
+        state: Active
+        text: Variable 'var_password_pam_dcredit' is set to '1'
+        applicability:
+          - rhel8-base
+      - id: var_password_pam_ucredit
+        state: Active
+        text: Variable 'var_password_pam_ucredit' is set to '1'
+        applicability:
+          - rhel8-base
+      - id: var_password_pam_lcredit
+        state: Active
+        text: Variable 'var_password_pam_lcredit' is set to '1'
+        applicability:
+          - rhel8-base
+      - id: package_firewalld_installed
+        state: Active
+        text: Rule 'package_firewalld_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: service_firewalld_enabled
+        state: Active
+        text: Rule 'service_firewalld_enabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: kernel_module_can_disabled
+        state: Active
+        text: Rule 'kernel_module_can_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: kernel_module_tipc_disabled
+        state: Active
+        text: Rule 'kernel_module_tipc_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: kernel_module_bluetooth_disabled
+        state: Active
+        text: Rule 'kernel_module_bluetooth_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: kernel_module_sctp_disabled
+        state: Active
+        text: Rule 'kernel_module_sctp_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: service_systemd-coredump_disabled
+        state: Active
+        text: Rule 'service_systemd-coredump_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_core_pattern_empty_string
+        state: Active
+        text: Rule 'sysctl_kernel_core_pattern_empty_string' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_core_uses_pid
+        state: Active
+        text: Rule 'sysctl_kernel_core_uses_pid' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_perf_event_paranoid
+        state: Active
+        text: Rule 'sysctl_kernel_perf_event_paranoid' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_unprivileged_bpf_disabled_accept_default
+        state: Active
+        text: Rule 'sysctl_kernel_unprivileged_bpf_disabled_accept_default' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_unprivileged_bpf_disabled_value
+        state: Active
+        text: Variable 'sysctl_kernel_unprivileged_bpf_disabled_value' is set to '2'
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_dmesg_restrict
+        state: Active
+        text: Rule 'sysctl_kernel_dmesg_restrict' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_kptr_restrict
+        state: Active
+        text: Rule 'sysctl_kernel_kptr_restrict' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_kexec_load_disabled
+        state: Active
+        text: Rule 'sysctl_kernel_kexec_load_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_kernel_yama_ptrace_scope
+        state: Active
+        text: Rule 'sysctl_kernel_yama_ptrace_scope' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sysctl_user_max_user_namespaces
+        state: Active
+        text: Rule 'sysctl_user_max_user_namespaces' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: partition_for_var_log_audit
+        state: Active
+        text: Rule 'partition_for_var_log_audit' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: mount_option_var_log_audit_nodev
+        state: Active
+        text: Rule 'mount_option_var_log_audit_nodev' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: mount_option_var_log_audit_nosuid
+        state: Active
+        text: Rule 'mount_option_var_log_audit_nosuid' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: mount_option_var_log_audit_noexec
+        state: Active
+        text: Rule 'mount_option_var_log_audit_noexec' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: dnf-automatic_apply_updates
+        state: Active
+        text: Rule 'dnf-automatic_apply_updates' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: timer_dnf-automatic_enabled
+        state: Active
+        text: Rule 'timer_dnf-automatic_enabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: logind_session_timeout
+        state: Active
+        text: Rule 'logind_session_timeout' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_logind_session_timeout
+        state: Active
+        text: Variable 'var_logind_session_timeout' is set to '30_minutes'
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FMT_SMF_EXT.1.1
+    title: Management of security functions behavior - Restrict Administrator Functions
+    objective: Management of security functions behavior - Restrict Administrator Functions
+    group: controls
+    assessment-requirements:
+      - id: service_kdump_disabled
+        state: Active
+        text: Rule 'service_kdump_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: logind_session_timeout
+        state: Active
+        text: Rule 'logind_session_timeout' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: use_pam_wheel_for_su
+        state: Active
+        text: Rule 'use_pam_wheel_for_su' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FPT_ASLR_EXT.1
+    title: Address Space Layout Randomization
+    objective: Address Space Layout Randomization
+    group: controls
+    assessment-requirements:
+      - id: grub2_vsyscall_argument
+        state: Active
+        text: Rule 'grub2_vsyscall_argument' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FPT_TUD_EXT.1
+    title: Trusted Update
+    objective: Trusted Update
+    group: controls
+    assessment-requirements:
+      - id: package_dnf-plugin-subscription-manager_installed
+        state: Active
+        text: Rule 'package_dnf-plugin-subscription-manager_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_dnf-automatic_installed
+        state: Active
+        text: Rule 'package_dnf-automatic_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_subscription-manager_installed
+        state: Active
+        text: Rule 'package_subscription-manager_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: ensure_gpgcheck_globally_activated
+        state: Active
+        text: Rule 'ensure_gpgcheck_globally_activated' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: ensure_gpgcheck_local_packages
+        state: Active
+        text: Rule 'ensure_gpgcheck_local_packages' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: ensure_gpgcheck_never_disabled
+        state: Active
+        text: Rule 'ensure_gpgcheck_never_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: ensure_redhat_gpgkey_installed
+        state: Active
+        text: Rule 'ensure_redhat_gpgkey_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_sequoia-sq_installed
+        state: Active
+        text: Rule 'package_sequoia-sq_installed' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FPT_TUD_EXT.2
+    title: Trusted Update for Application Software
+    objective: Trusted Update for Application Software
+    group: controls
+    assessment-requirements:
+      - id: package_dnf-plugin-subscription-manager_installed
+        state: Active
+        text: Rule 'package_dnf-plugin-subscription-manager_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_dnf-automatic_installed
+        state: Active
+        text: Rule 'package_dnf-automatic_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_subscription-manager_installed
+        state: Active
+        text: Rule 'package_subscription-manager_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: ensure_gpgcheck_globally_activated
+        state: Active
+        text: Rule 'ensure_gpgcheck_globally_activated' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: ensure_gpgcheck_local_packages
+        state: Active
+        text: Rule 'ensure_gpgcheck_local_packages' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: ensure_gpgcheck_never_disabled
+        state: Active
+        text: Rule 'ensure_gpgcheck_never_disabled' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: ensure_redhat_gpgkey_installed
+        state: Active
+        text: Rule 'ensure_redhat_gpgkey_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_sequoia-sq_installed
+        state: Active
+        text: Rule 'package_sequoia-sq_installed' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FPT_TST_EXT.1
+    title: Boot Integrity
+    objective: Boot Integrity
+    group: controls
+    assessment-requirements:
+      - id: zipl_bls_entries_only
+        state: Active
+        text: Rule 'zipl_bls_entries_only' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: zipl_bootmap_is_up_to_date
+        state: Active
+        text: Rule 'zipl_bootmap_is_up_to_date' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FTA_SSL.1
+    title: TSF-initiated session locking
+    objective: TSF-initiated session locking
+    group: controls
+    assessment-requirements:
+      - id: logind_session_timeout
+        state: Active
+        text: Rule 'logind_session_timeout' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: var_logind_session_timeout
+        state: Active
+        text: Variable 'var_logind_session_timeout' is set to '30_minutes'
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FTA_TAB.1
+    title: Default TOE access banners
+    objective: Default TOE access banners
+    group: controls
+    assessment-requirements:
+      - id: sshd_enable_warning_banner
+        state: Active
+        text: Rule 'sshd_enable_warning_banner' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FTP_ITC_EXT.1
+    title: Trusted channel communication
+    objective: Trusted channel communication
+    group: controls
+    assessment-requirements:
+      - id: package_openssh-clients_installed
+        state: Active
+        text: Rule 'package_openssh-clients_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_openssh-server_installed
+        state: Active
+        text: Rule 'package_openssh-server_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sshd_disable_gssapi_auth
+        state: Active
+        text: Rule 'sshd_disable_gssapi_auth' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sshd_disable_kerb_auth
+        state: Active
+        text: Rule 'sshd_disable_kerb_auth' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: FTP_ITC_EXT.1.1
+    title: Trusted channel communication - TLS
+    objective: Trusted channel communication - TLS
+    group: controls
+    assessment-requirements:
+      - id: package_openssh-clients_installed
+        state: Active
+        text: Rule 'package_openssh-clients_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: package_openssh-server_installed
+        state: Active
+        text: Rule 'package_openssh-server_installed' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sshd_disable_gssapi_auth
+        state: Active
+        text: Rule 'sshd_disable_gssapi_auth' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: sshd_disable_kerb_auth
+        state: Active
+        text: Rule 'sshd_disable_kerb_auth' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active
+  - id: AVA_VAN.1
+    title: Vulnerability Assessment
+    objective: Vulnerability Assessment
+    group: controls
+    assessment-requirements:
+      - id: grub2_init_on_alloc_argument
+        state: Active
+        text: Rule 'grub2_init_on_alloc_argument' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: grub2_page_alloc_shuffle_argument
+        state: Active
+        text: Rule 'grub2_page_alloc_shuffle_argument' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: zipl_init_on_alloc_argument
+        state: Active
+        text: Rule 'zipl_init_on_alloc_argument' MUST be verified
+        applicability:
+          - rhel8-base
+      - id: zipl_page_alloc_shuffle_argument
+        state: Active
+        text: Rule 'zipl_page_alloc_shuffle_argument' MUST be verified
+        applicability:
+          - rhel8-base
+    state: Active

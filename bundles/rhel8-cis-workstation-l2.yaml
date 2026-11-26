@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/cis-rhel8-catalog.yaml
+  - governance/policies/rhel8-cis-workstation-l2-policy.yaml

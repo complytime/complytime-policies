@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/anssi-rhel8-catalog.yaml
+  - governance/policies/rhel8-anssi-bp28-high-policy.yaml

@@ -1,0 +1,2505 @@
+title: DRAFT - CIS Fedora Benchmark for Level 1 - Workstation
+metadata:
+  id: fedora-cis-workstation-l1-policy
+  type: Policy
+  gemara-version: 1.2.0
+  description: Automated evaluation policy for the 'cis_workstation_l1' profile on Fedora, generated from the resolved ComplianceAsCode profile. requirement-id values are short CaC rule names (the OpenSCAP provider adds the xccdf_org.ssgproject.content_rule_ prefix).
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  date: '2026-11-20T12:59:42Z'
+  mapping-references:
+    - id: cis-fedora
+      title: CIS Benchmark Control Catalog for Fedora
+      version: Draft
+      url: file://../catalogs/cis-fedora-catalog.yaml
+contacts:
+  responsible:
+    - name: System Administrator
+  accountable:
+    - name: Security Team
+scope:
+  in:
+    technologies:
+      - Fedora
+imports:
+  catalogs:
+    - reference-id: cis-fedora
+adherence:
+  evaluation-methods:
+    - id: openscap-automated
+      type: Behavioral
+      mode: Automated
+      description: OpenSCAP automated compliance evaluation
+      executor:
+        id: openscap
+        name: OpenSCAP
+        type: Software
+  assessment-plans:
+    - id: account_disable_post_pw_expiration
+      requirement-id: account_disable_post_pw_expiration
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_account_disable_post_pw_expiration
+          label: Account Disable Post Pw Expiration
+          description: Profile 'cis_workstation_l1' sets var_account_disable_post_pw_expiration to '30'.
+          accepted-values:
+            - '30'
+    - id: account_password_pam_faillock_password_auth
+      requirement-id: account_password_pam_faillock_password_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: account_password_pam_faillock_system_auth
+      requirement-id: account_password_pam_faillock_system_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: account_unique_id
+      requirement-id: account_unique_id
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: account_unique_name
+      requirement-id: account_unique_name
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_maximum_age_login_defs
+      requirement-id: accounts_maximum_age_login_defs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_maximum_age_login_defs
+          label: Accounts Maximum Age Login Defs
+          description: Profile 'cis_workstation_l1' sets var_accounts_maximum_age_login_defs to '365'.
+          accepted-values:
+            - '365'
+    - id: accounts_no_uid_except_zero
+      requirement-id: accounts_no_uid_except_zero
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_all_shadowed
+      requirement-id: accounts_password_all_shadowed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_last_change_is_in_past
+      requirement-id: accounts_password_last_change_is_in_past
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_dictcheck
+      requirement-id: accounts_password_pam_dictcheck
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_difok
+      requirement-id: accounts_password_pam_difok
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_difok
+          label: Password Pam Difok
+          description: Profile 'cis_workstation_l1' sets var_password_pam_difok to '2'.
+          accepted-values:
+            - '2'
+    - id: accounts_password_pam_enforce_root
+      requirement-id: accounts_password_pam_enforce_root
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_maxrepeat
+      requirement-id: accounts_password_pam_maxrepeat
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_maxrepeat
+          label: Password Pam Maxrepeat
+          description: Profile 'cis_workstation_l1' sets var_password_pam_maxrepeat to '3'.
+          accepted-values:
+            - '3'
+    - id: accounts_password_pam_maxsequence
+      requirement-id: accounts_password_pam_maxsequence
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_minclass
+      requirement-id: accounts_password_pam_minclass
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_minclass
+          label: Password Pam Minclass
+          description: Profile 'cis_workstation_l1' sets var_password_pam_minclass to '4'.
+          accepted-values:
+            - '4'
+    - id: accounts_password_pam_minlen
+      requirement-id: accounts_password_pam_minlen
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_minlen
+          label: Password Pam Minlen
+          description: Profile 'cis_workstation_l1' sets var_password_pam_minlen to '14'.
+          accepted-values:
+            - '14'
+    - id: accounts_password_pam_modules_in_authselect_profile
+      requirement-id: accounts_password_pam_modules_in_authselect_profile
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_pwhistory_remember_password_auth
+      requirement-id: accounts_password_pam_pwhistory_remember_password_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_remember
+          label: Password Pam Remember
+          description: Profile 'cis_workstation_l1' sets var_password_pam_remember to '24'.
+          accepted-values:
+            - '24'
+        - id: var_password_pam_remember_control_flag
+          label: Password Pam Remember Control Flag
+          description: Profile 'cis_workstation_l1' sets var_password_pam_remember_control_flag to 'requisite_or_required'.
+          accepted-values:
+            - requisite_or_required
+    - id: accounts_password_pam_pwhistory_remember_system_auth
+      requirement-id: accounts_password_pam_pwhistory_remember_system_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_remember
+          label: Password Pam Remember
+          description: Profile 'cis_workstation_l1' sets var_password_pam_remember to '24'.
+          accepted-values:
+            - '24'
+        - id: var_password_pam_remember_control_flag
+          label: Password Pam Remember Control Flag
+          description: Profile 'cis_workstation_l1' sets var_password_pam_remember_control_flag to 'requisite_or_required'.
+          accepted-values:
+            - requisite_or_required
+    - id: accounts_password_pam_pwhistory_use_authtok
+      requirement-id: accounts_password_pam_pwhistory_use_authtok
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_pwquality_password_auth
+      requirement-id: accounts_password_pam_pwquality_password_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_pwquality_system_auth
+      requirement-id: accounts_password_pam_pwquality_system_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_unix_authtok
+      requirement-id: accounts_password_pam_unix_authtok
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_unix_enabled
+      requirement-id: accounts_password_pam_unix_enabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_unix_no_remember
+      requirement-id: accounts_password_pam_unix_no_remember
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_set_max_life_existing
+      requirement-id: accounts_password_set_max_life_existing
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_maximum_age_login_defs
+          label: Accounts Maximum Age Login Defs
+          description: Profile 'cis_workstation_l1' sets var_accounts_maximum_age_login_defs to '365'.
+          accepted-values:
+            - '365'
+    - id: accounts_password_set_warn_age_existing
+      requirement-id: accounts_password_set_warn_age_existing
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_password_warn_age_login_defs
+          label: Accounts Password Warn Age Login Defs
+          description: Profile 'cis_workstation_l1' sets var_accounts_password_warn_age_login_defs to '7'.
+          accepted-values:
+            - '7'
+    - id: accounts_password_warn_age_login_defs
+      requirement-id: accounts_password_warn_age_login_defs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_password_warn_age_login_defs
+          label: Accounts Password Warn Age Login Defs
+          description: Profile 'cis_workstation_l1' sets var_accounts_password_warn_age_login_defs to '7'.
+          accepted-values:
+            - '7'
+    - id: accounts_passwords_pam_faillock_deny
+      requirement-id: accounts_passwords_pam_faillock_deny
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_passwords_pam_faillock_deny
+          label: Accounts Passwords Pam Faillock Deny
+          description: Profile 'cis_workstation_l1' sets var_accounts_passwords_pam_faillock_deny to '5'.
+          accepted-values:
+            - '5'
+    - id: accounts_passwords_pam_faillock_unlock_time
+      requirement-id: accounts_passwords_pam_faillock_unlock_time
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_passwords_pam_faillock_deny
+          label: Accounts Passwords Pam Faillock Deny
+          description: Profile 'cis_workstation_l1' sets var_accounts_passwords_pam_faillock_deny to '5'.
+          accepted-values:
+            - '5'
+        - id: var_accounts_passwords_pam_faillock_unlock_time
+          label: Accounts Passwords Pam Faillock Unlock Time
+          description: Profile 'cis_workstation_l1' sets var_accounts_passwords_pam_faillock_unlock_time to '900'.
+          accepted-values:
+            - '900'
+    - id: accounts_root_gid_zero
+      requirement-id: accounts_root_gid_zero
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_root_path_dirs_no_write
+      requirement-id: accounts_root_path_dirs_no_write
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_set_post_pw_existing
+      requirement-id: accounts_set_post_pw_existing
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_account_disable_post_pw_expiration
+          label: Account Disable Post Pw Expiration
+          description: Profile 'cis_workstation_l1' sets var_account_disable_post_pw_expiration to '30'.
+          accepted-values:
+            - '30'
+    - id: accounts_tmout
+      requirement-id: accounts_tmout
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_tmout
+          label: Accounts Tmout
+          description: Profile 'cis_workstation_l1' sets var_accounts_tmout to '15_min'.
+          accepted-values:
+            - 15_min
+    - id: accounts_umask_etc_bashrc
+      requirement-id: accounts_umask_etc_bashrc
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_user_umask
+          label: Accounts User Umask
+          description: Profile 'cis_workstation_l1' sets var_accounts_user_umask to '027'.
+          accepted-values:
+            - '027'
+    - id: accounts_umask_etc_login_defs
+      requirement-id: accounts_umask_etc_login_defs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_user_umask
+          label: Accounts User Umask
+          description: Profile 'cis_workstation_l1' sets var_accounts_user_umask to '027'.
+          accepted-values:
+            - '027'
+    - id: accounts_umask_etc_profile
+      requirement-id: accounts_umask_etc_profile
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_user_umask
+          label: Accounts User Umask
+          description: Profile 'cis_workstation_l1' sets var_accounts_user_umask to '027'.
+          accepted-values:
+            - '027'
+    - id: accounts_umask_root
+      requirement-id: accounts_umask_root
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_user_dot_group_ownership
+      requirement-id: accounts_user_dot_group_ownership
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_user_dot_user_ownership
+      requirement-id: accounts_user_dot_user_ownership
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_user_interactive_home_directory_exists
+      requirement-id: accounts_user_interactive_home_directory_exists
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: aide_build_database
+      requirement-id: aide_build_database
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: aide_check_audit_tools
+      requirement-id: aide_check_audit_tools
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: aide_periodic_cron_checking
+      requirement-id: aide_periodic_cron_checking
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: banner_etc_issue_cis
+      requirement-id: banner_etc_issue_cis
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: cis_banner_text
+          label: Cis Banner Text
+          description: Profile 'cis_workstation_l1' sets cis_banner_text to 'cis'.
+          accepted-values:
+            - cis
+    - id: banner_etc_issue_net_cis
+      requirement-id: banner_etc_issue_net_cis
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: cis_banner_text
+          label: Cis Banner Text
+          description: Profile 'cis_workstation_l1' sets cis_banner_text to 'cis'.
+          accepted-values:
+            - cis
+    - id: banner_etc_motd_cis
+      requirement-id: banner_etc_motd_cis
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: cis_banner_text
+          label: Cis Banner Text
+          description: Profile 'cis_workstation_l1' sets cis_banner_text to 'cis'.
+          accepted-values:
+            - cis
+    - id: chronyd_run_as_chrony_user
+      requirement-id: chronyd_run_as_chrony_user
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: chronyd_specify_remote_server
+      requirement-id: chronyd_specify_remote_server
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: configure_custom_crypto_policy_cis
+      requirement-id: configure_custom_crypto_policy_cis
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: coredump_disable_backtraces
+      requirement-id: coredump_disable_backtraces
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: coredump_disable_storage
+      requirement-id: coredump_disable_storage
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: dconf_db_up_to_date
+      requirement-id: dconf_db_up_to_date
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: dconf_gnome_banner_enabled
+      requirement-id: dconf_gnome_banner_enabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: dconf_gnome_disable_autorun
+      requirement-id: dconf_gnome_disable_autorun
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: dconf_gnome_disable_user_list
+      requirement-id: dconf_gnome_disable_user_list
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: dconf_gnome_login_banner_text
+      requirement-id: dconf_gnome_login_banner_text
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: dconf_gnome_screensaver_idle_delay
+      requirement-id: dconf_gnome_screensaver_idle_delay
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: inactivity_timeout_value
+          label: Inactivity Timeout
+          description: Profile 'cis_workstation_l1' sets inactivity_timeout_value to '15_minutes'.
+          accepted-values:
+            - 15_minutes
+    - id: dconf_gnome_screensaver_lock_delay
+      requirement-id: dconf_gnome_screensaver_lock_delay
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_screensaver_lock_delay
+          label: Screensaver Lock Delay
+          description: Profile 'cis_workstation_l1' sets var_screensaver_lock_delay to '5_seconds'.
+          accepted-values:
+            - 5_seconds
+    - id: dconf_gnome_screensaver_user_locks
+      requirement-id: dconf_gnome_screensaver_user_locks
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: dconf_gnome_session_idle_user_locks
+      requirement-id: dconf_gnome_session_idle_user_locks
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: dir_perms_world_writable_sticky_bits
+      requirement-id: dir_perms_world_writable_sticky_bits
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: directory_groupowner_sshd_config_d
+      requirement-id: directory_groupowner_sshd_config_d
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: directory_owner_sshd_config_d
+      requirement-id: directory_owner_sshd_config_d
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: directory_permissions_sshd_config_d
+      requirement-id: directory_permissions_sshd_config_d
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: disable_host_auth
+      requirement-id: disable_host_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: disable_users_coredumps
+      requirement-id: disable_users_coredumps
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: ensure_fedora_gpgkey_installed
+      requirement-id: ensure_fedora_gpgkey_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: ensure_gpgcheck_globally_activated
+      requirement-id: ensure_gpgcheck_globally_activated
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: ensure_journald_and_rsyslog_not_active_together
+      requirement-id: ensure_journald_and_rsyslog_not_active_together
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: ensure_pam_wheel_group_empty
+      requirement-id: ensure_pam_wheel_group_empty
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_pam_wheel_group_for_su
+          label: Pam Wheel Group For Su
+          description: Profile 'cis_workstation_l1' sets var_pam_wheel_group_for_su to 'cis'.
+          accepted-values:
+            - cis
+    - id: ensure_root_password_configured
+      requirement-id: ensure_root_password_configured
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_at_allow_exists
+      requirement-id: file_at_allow_exists
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_at_deny_not_exist
+      requirement-id: file_at_deny_not_exist
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_cron_allow_exists
+      requirement-id: file_cron_allow_exists
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_cron_deny_not_exist
+      requirement-id: file_cron_deny_not_exist
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_at_allow
+      requirement-id: file_groupowner_at_allow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_backup_etc_group
+      requirement-id: file_groupowner_backup_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_backup_etc_gshadow
+      requirement-id: file_groupowner_backup_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_backup_etc_passwd
+      requirement-id: file_groupowner_backup_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_backup_etc_shadow
+      requirement-id: file_groupowner_backup_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_boot_grub2
+      requirement-id: file_groupowner_boot_grub2
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_cron_allow
+      requirement-id: file_groupowner_cron_allow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_cron_d
+      requirement-id: file_groupowner_cron_d
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_cron_daily
+      requirement-id: file_groupowner_cron_daily
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_cron_hourly
+      requirement-id: file_groupowner_cron_hourly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_cron_monthly
+      requirement-id: file_groupowner_cron_monthly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_cron_weekly
+      requirement-id: file_groupowner_cron_weekly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_cron_yearly
+      requirement-id: file_groupowner_cron_yearly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_crontab
+      requirement-id: file_groupowner_crontab
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_group
+      requirement-id: file_groupowner_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_gshadow
+      requirement-id: file_groupowner_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_issue
+      requirement-id: file_groupowner_etc_issue
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_issue_net
+      requirement-id: file_groupowner_etc_issue_net
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_motd
+      requirement-id: file_groupowner_etc_motd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_passwd
+      requirement-id: file_groupowner_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_security_opasswd
+      requirement-id: file_groupowner_etc_security_opasswd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_security_opasswd_old
+      requirement-id: file_groupowner_etc_security_opasswd_old
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_shadow
+      requirement-id: file_groupowner_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_shells
+      requirement-id: file_groupowner_etc_shells
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_sshd_config
+      requirement-id: file_groupowner_sshd_config
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_sshd_drop_in_config
+      requirement-id: file_groupowner_sshd_drop_in_config
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupownership_sshd_private_key
+      requirement-id: file_groupownership_sshd_private_key
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupownership_sshd_pub_key
+      requirement-id: file_groupownership_sshd_pub_key
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_at_allow
+      requirement-id: file_owner_at_allow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_backup_etc_group
+      requirement-id: file_owner_backup_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_backup_etc_gshadow
+      requirement-id: file_owner_backup_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_backup_etc_passwd
+      requirement-id: file_owner_backup_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_backup_etc_shadow
+      requirement-id: file_owner_backup_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_boot_grub2
+      requirement-id: file_owner_boot_grub2
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_cron_allow
+      requirement-id: file_owner_cron_allow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_cron_d
+      requirement-id: file_owner_cron_d
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_cron_daily
+      requirement-id: file_owner_cron_daily
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_cron_hourly
+      requirement-id: file_owner_cron_hourly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_cron_monthly
+      requirement-id: file_owner_cron_monthly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_cron_weekly
+      requirement-id: file_owner_cron_weekly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_cron_yearly
+      requirement-id: file_owner_cron_yearly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_crontab
+      requirement-id: file_owner_crontab
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_group
+      requirement-id: file_owner_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_gshadow
+      requirement-id: file_owner_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_issue
+      requirement-id: file_owner_etc_issue
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_issue_net
+      requirement-id: file_owner_etc_issue_net
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_motd
+      requirement-id: file_owner_etc_motd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_passwd
+      requirement-id: file_owner_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_security_opasswd
+      requirement-id: file_owner_etc_security_opasswd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_security_opasswd_old
+      requirement-id: file_owner_etc_security_opasswd_old
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_shadow
+      requirement-id: file_owner_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_shells
+      requirement-id: file_owner_etc_shells
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_sshd_config
+      requirement-id: file_owner_sshd_config
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_sshd_drop_in_config
+      requirement-id: file_owner_sshd_drop_in_config
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_ownership_home_directories
+      requirement-id: file_ownership_home_directories
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_ownership_sshd_private_key
+      requirement-id: file_ownership_sshd_private_key
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_ownership_sshd_pub_key
+      requirement-id: file_ownership_sshd_pub_key
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permission_user_bash_history
+      requirement-id: file_permission_user_bash_history
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permission_user_init_files
+      requirement-id: file_permission_user_init_files
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_at_allow
+      requirement-id: file_permissions_at_allow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_backup_etc_group
+      requirement-id: file_permissions_backup_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_backup_etc_gshadow
+      requirement-id: file_permissions_backup_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_backup_etc_passwd
+      requirement-id: file_permissions_backup_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_backup_etc_shadow
+      requirement-id: file_permissions_backup_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_boot_grub2
+      requirement-id: file_permissions_boot_grub2
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_cron_allow
+      requirement-id: file_permissions_cron_allow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_cron_d
+      requirement-id: file_permissions_cron_d
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_cron_daily
+      requirement-id: file_permissions_cron_daily
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_cron_hourly
+      requirement-id: file_permissions_cron_hourly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_cron_monthly
+      requirement-id: file_permissions_cron_monthly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_cron_weekly
+      requirement-id: file_permissions_cron_weekly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_cron_yearly
+      requirement-id: file_permissions_cron_yearly
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_crontab
+      requirement-id: file_permissions_crontab
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_group
+      requirement-id: file_permissions_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_gshadow
+      requirement-id: file_permissions_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_issue
+      requirement-id: file_permissions_etc_issue
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_issue_net
+      requirement-id: file_permissions_etc_issue_net
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_motd
+      requirement-id: file_permissions_etc_motd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_passwd
+      requirement-id: file_permissions_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_security_opasswd
+      requirement-id: file_permissions_etc_security_opasswd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_security_opasswd_old
+      requirement-id: file_permissions_etc_security_opasswd_old
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_shadow
+      requirement-id: file_permissions_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_shells
+      requirement-id: file_permissions_etc_shells
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_home_directories
+      requirement-id: file_permissions_home_directories
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_sshd_config
+      requirement-id: file_permissions_sshd_config
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_sshd_drop_in_config
+      requirement-id: file_permissions_sshd_drop_in_config
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_sshd_private_key
+      requirement-id: file_permissions_sshd_private_key
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_sshd_pub_key
+      requirement-id: file_permissions_sshd_pub_key
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_unauthorized_world_writable
+      requirement-id: file_permissions_unauthorized_world_writable
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: firewalld_loopback_traffic_restricted
+      requirement-id: firewalld_loopback_traffic_restricted
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: firewalld_loopback_traffic_trusted
+      requirement-id: firewalld_loopback_traffic_trusted
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: gid_passwd_group_same
+      requirement-id: gid_passwd_group_same
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: group_unique_id
+      requirement-id: group_unique_id
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: group_unique_name
+      requirement-id: group_unique_name
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: groups_no_zero_gid_except_root
+      requirement-id: groups_no_zero_gid_except_root
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: grub2_enable_selinux
+      requirement-id: grub2_enable_selinux
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: grub2_password
+      requirement-id: grub2_password
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: has_nonlocal_mta
+      requirement-id: has_nonlocal_mta
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: journald_compress
+      requirement-id: journald_compress
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: journald_disable_forward_to_syslog
+      requirement-id: journald_disable_forward_to_syslog
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: journald_storage
+      requirement-id: journald_storage
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_atm_disabled
+      requirement-id: kernel_module_atm_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_can_disabled
+      requirement-id: kernel_module_can_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_cramfs_disabled
+      requirement-id: kernel_module_cramfs_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_dccp_disabled
+      requirement-id: kernel_module_dccp_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_freevxfs_disabled
+      requirement-id: kernel_module_freevxfs_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_hfs_disabled
+      requirement-id: kernel_module_hfs_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_hfsplus_disabled
+      requirement-id: kernel_module_hfsplus_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_jffs2_disabled
+      requirement-id: kernel_module_jffs2_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_rds_disabled
+      requirement-id: kernel_module_rds_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_tipc_disabled
+      requirement-id: kernel_module_tipc_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_dev_shm_nodev
+      requirement-id: mount_option_dev_shm_nodev
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_dev_shm_noexec
+      requirement-id: mount_option_dev_shm_noexec
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_dev_shm_nosuid
+      requirement-id: mount_option_dev_shm_nosuid
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_home_nodev
+      requirement-id: mount_option_home_nodev
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_home_nosuid
+      requirement-id: mount_option_home_nosuid
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_tmp_nodev
+      requirement-id: mount_option_tmp_nodev
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_tmp_noexec
+      requirement-id: mount_option_tmp_noexec
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_tmp_nosuid
+      requirement-id: mount_option_tmp_nosuid
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_log_audit_nodev
+      requirement-id: mount_option_var_log_audit_nodev
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_log_audit_noexec
+      requirement-id: mount_option_var_log_audit_noexec
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_log_audit_nosuid
+      requirement-id: mount_option_var_log_audit_nosuid
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_log_nodev
+      requirement-id: mount_option_var_log_nodev
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_log_noexec
+      requirement-id: mount_option_var_log_noexec
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_log_nosuid
+      requirement-id: mount_option_var_log_nosuid
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_nodev
+      requirement-id: mount_option_var_nodev
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_nosuid
+      requirement-id: mount_option_var_nosuid
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_tmp_nodev
+      requirement-id: mount_option_var_tmp_nodev
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_tmp_noexec
+      requirement-id: mount_option_var_tmp_noexec
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: mount_option_var_tmp_nosuid
+      requirement-id: mount_option_var_tmp_nosuid
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_empty_passwords
+      requirement-id: no_empty_passwords
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_empty_passwords_etc_shadow
+      requirement-id: no_empty_passwords_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_files_or_dirs_ungroupowned
+      requirement-id: no_files_or_dirs_ungroupowned
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_files_or_dirs_unowned_by_user
+      requirement-id: no_files_or_dirs_unowned_by_user
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_forward_files
+      requirement-id: no_forward_files
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_invalid_shell_accounts_unlocked
+      requirement-id: no_invalid_shell_accounts_unlocked
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_netrc_files
+      requirement-id: no_netrc_files
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_password_auth_for_systemaccounts
+      requirement-id: no_password_auth_for_systemaccounts
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_rhost_files
+      requirement-id: no_rhost_files
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_shelllogin_for_systemaccounts
+      requirement-id: no_shelllogin_for_systemaccounts
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_aide_installed
+      requirement-id: package_aide_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_bind_removed
+      requirement-id: package_bind_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_cron_installed
+      requirement-id: package_cron_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_cyrus-imapd_removed
+      requirement-id: package_cyrus-imapd_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_dnsmasq_removed
+      requirement-id: package_dnsmasq_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_dovecot_removed
+      requirement-id: package_dovecot_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_firewalld_installed
+      requirement-id: package_firewalld_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_ftp_removed
+      requirement-id: package_ftp_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_httpd_removed
+      requirement-id: package_httpd_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_kea_removed
+      requirement-id: package_kea_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_libselinux_installed
+      requirement-id: package_libselinux_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_mcstrans_removed
+      requirement-id: package_mcstrans_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_net-snmp_removed
+      requirement-id: package_net-snmp_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_nftables_installed
+      requirement-id: package_nftables_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_nginx_removed
+      requirement-id: package_nginx_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_pam_pwquality_installed
+      requirement-id: package_pam_pwquality_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_rsync_removed
+      requirement-id: package_rsync_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_samba_removed
+      requirement-id: package_samba_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_squid_removed
+      requirement-id: package_squid_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_sudo_installed
+      requirement-id: package_sudo_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_systemd-journal-remote_installed
+      requirement-id: package_systemd-journal-remote_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_telnet-server_removed
+      requirement-id: package_telnet-server_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_telnet_removed
+      requirement-id: package_telnet_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_tftp-server_removed
+      requirement-id: package_tftp-server_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_tftp_removed
+      requirement-id: package_tftp_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_vsftpd_removed
+      requirement-id: package_vsftpd_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: partition_for_dev_shm
+      requirement-id: partition_for_dev_shm
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: partition_for_tmp
+      requirement-id: partition_for_tmp
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: postfix_network_listening_disabled
+      requirement-id: postfix_network_listening_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_postfix_inet_interfaces
+          label: Postfix Inet Interfaces
+          description: Profile 'cis_workstation_l1' sets var_postfix_inet_interfaces to 'loopback-only'.
+          accepted-values:
+            - loopback-only
+    - id: root_path_no_dot
+      requirement-id: root_path_no_dot
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: rsyslog_files_groupownership
+      requirement-id: rsyslog_files_groupownership
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: rsyslog_files_ownership
+      requirement-id: rsyslog_files_ownership
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: rsyslog_files_permissions
+      requirement-id: rsyslog_files_permissions
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: selinux_not_disabled
+      requirement-id: selinux_not_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: selinux_policytype
+      requirement-id: selinux_policytype
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_selinux_policy_name
+          label: Selinux Policy Name
+          description: Profile 'cis_workstation_l1' sets var_selinux_policy_name to 'targeted'.
+          accepted-values:
+            - targeted
+    - id: service_crond_enabled
+      requirement-id: service_crond_enabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: service_firewalld_enabled
+      requirement-id: service_firewalld_enabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: service_nfs_disabled
+      requirement-id: service_nfs_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: service_nftables_disabled
+      requirement-id: service_nftables_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: service_rpcbind_disabled
+      requirement-id: service_rpcbind_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: service_systemd-journal-upload_enabled
+      requirement-id: service_systemd-journal-upload_enabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: service_systemd-journald_enabled
+      requirement-id: service_systemd-journald_enabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: set_password_hashing_algorithm_logindefs
+      requirement-id: set_password_hashing_algorithm_logindefs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_hashing_algorithm
+          label: Password Hashing Algorithm
+          description: Profile 'cis_workstation_l1' sets var_password_hashing_algorithm to 'cis_fedora'.
+          accepted-values:
+            - cis_fedora
+    - id: set_password_hashing_algorithm_passwordauth
+      requirement-id: set_password_hashing_algorithm_passwordauth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_hashing_algorithm
+          label: Password Hashing Algorithm
+          description: Profile 'cis_workstation_l1' sets var_password_hashing_algorithm to 'cis_fedora'.
+          accepted-values:
+            - cis_fedora
+        - id: var_password_hashing_algorithm_pam
+          label: Password Hashing Algorithm Pam
+          description: Profile 'cis_workstation_l1' sets var_password_hashing_algorithm_pam to 'yescrypt'.
+          accepted-values:
+            - yescrypt
+    - id: set_password_hashing_algorithm_systemauth
+      requirement-id: set_password_hashing_algorithm_systemauth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_hashing_algorithm
+          label: Password Hashing Algorithm
+          description: Profile 'cis_workstation_l1' sets var_password_hashing_algorithm to 'cis_fedora'.
+          accepted-values:
+            - cis_fedora
+        - id: var_password_hashing_algorithm_pam
+          label: Password Hashing Algorithm Pam
+          description: Profile 'cis_workstation_l1' sets var_password_hashing_algorithm_pam to 'yescrypt'.
+          accepted-values:
+            - yescrypt
+    - id: socket_systemd-journal-remote_disabled
+      requirement-id: socket_systemd-journal-remote_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_disable_empty_passwords
+      requirement-id: sshd_disable_empty_passwords
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_disable_forwarding
+      requirement-id: sshd_disable_forwarding
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_disable_gssapi_auth
+      requirement-id: sshd_disable_gssapi_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_disable_rhosts
+      requirement-id: sshd_disable_rhosts
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_disable_root_login
+      requirement-id: sshd_disable_root_login
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_do_not_permit_user_env
+      requirement-id: sshd_do_not_permit_user_env
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_enable_pam
+      requirement-id: sshd_enable_pam
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_enable_warning_banner_net
+      requirement-id: sshd_enable_warning_banner_net
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_limit_user_access
+      requirement-id: sshd_limit_user_access
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_set_idle_timeout
+      requirement-id: sshd_set_idle_timeout
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: sshd_idle_timeout_value
+          label: Sshd Idle Timeout
+          description: Profile 'cis_workstation_l1' sets sshd_idle_timeout_value to '5_minutes'.
+          accepted-values:
+            - 5_minutes
+    - id: sshd_set_keepalive
+      requirement-id: sshd_set_keepalive
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_sshd_set_keepalive
+          label: Sshd Set Keepalive
+          description: Profile 'cis_workstation_l1' sets var_sshd_set_keepalive to '1'.
+          accepted-values:
+            - '1'
+    - id: sshd_set_login_grace_time
+      requirement-id: sshd_set_login_grace_time
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_sshd_set_login_grace_time
+          label: Sshd Set Login Grace Time
+          description: Profile 'cis_workstation_l1' sets var_sshd_set_login_grace_time to '60'.
+          accepted-values:
+            - '60'
+    - id: sshd_set_loglevel_verbose
+      requirement-id: sshd_set_loglevel_verbose
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_set_max_auth_tries
+      requirement-id: sshd_set_max_auth_tries
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: sshd_max_auth_tries_value
+          label: Sshd Max Auth Tries
+          description: Profile 'cis_workstation_l1' sets sshd_max_auth_tries_value to '4'.
+          accepted-values:
+            - '4'
+    - id: sshd_set_max_sessions
+      requirement-id: sshd_set_max_sessions
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_sshd_max_sessions
+          label: Sshd Max Sessions
+          description: Profile 'cis_workstation_l1' sets var_sshd_max_sessions to '10'.
+          accepted-values:
+            - '10'
+    - id: sshd_set_maxstartups
+      requirement-id: sshd_set_maxstartups
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_sshd_set_maxstartups
+          label: Sshd Set Maxstartups
+          description: Profile 'cis_workstation_l1' sets var_sshd_set_maxstartups to '10:30:60'.
+          accepted-values:
+            - 10:30:60
+    - id: sudo_add_use_pty
+      requirement-id: sudo_add_use_pty
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sudo_custom_logfile
+      requirement-id: sudo_custom_logfile
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sudo_remove_no_authenticate
+      requirement-id: sudo_remove_no_authenticate
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sudo_require_reauthentication
+      requirement-id: sudo_require_reauthentication
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_sudo_timestamp_timeout
+          label: Sudo Timestamp Timeout
+          description: Profile 'cis_workstation_l1' sets var_sudo_timestamp_timeout to '15_minutes'.
+          accepted-values:
+            - 15_minutes
+    - id: sysctl_fs_protected_hardlinks
+      requirement-id: sysctl_fs_protected_hardlinks
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_fs_protected_symlinks
+      requirement-id: sysctl_fs_protected_symlinks
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_fs_suid_dumpable
+      requirement-id: sysctl_fs_suid_dumpable
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_kernel_dmesg_restrict
+      requirement-id: sysctl_kernel_dmesg_restrict
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_kernel_kptr_restrict
+      requirement-id: sysctl_kernel_kptr_restrict
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_kernel_randomize_va_space
+      requirement-id: sysctl_kernel_randomize_va_space
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_kernel_yama_ptrace_scope
+      requirement-id: sysctl_kernel_yama_ptrace_scope
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_all_accept_redirects
+      requirement-id: sysctl_net_ipv4_conf_all_accept_redirects
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_all_accept_source_route
+      requirement-id: sysctl_net_ipv4_conf_all_accept_source_route
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_all_forwarding
+      requirement-id: sysctl_net_ipv4_conf_all_forwarding
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_all_log_martians
+      requirement-id: sysctl_net_ipv4_conf_all_log_martians
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_all_rp_filter
+      requirement-id: sysctl_net_ipv4_conf_all_rp_filter
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: sysctl_net_ipv4_conf_all_rp_filter_value
+          label: Sysctl Net Ipv4 Conf All Rp Filter
+          description: Profile 'cis_workstation_l1' sets sysctl_net_ipv4_conf_all_rp_filter_value to 'enabled'.
+          accepted-values:
+            - enabled
+    - id: sysctl_net_ipv4_conf_all_secure_redirects
+      requirement-id: sysctl_net_ipv4_conf_all_secure_redirects
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_all_send_redirects
+      requirement-id: sysctl_net_ipv4_conf_all_send_redirects
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_default_accept_redirects
+      requirement-id: sysctl_net_ipv4_conf_default_accept_redirects
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_default_accept_source_route
+      requirement-id: sysctl_net_ipv4_conf_default_accept_source_route
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_default_forwarding
+      requirement-id: sysctl_net_ipv4_conf_default_forwarding
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_default_log_martians
+      requirement-id: sysctl_net_ipv4_conf_default_log_martians
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_default_rp_filter
+      requirement-id: sysctl_net_ipv4_conf_default_rp_filter
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_default_secure_redirects
+      requirement-id: sysctl_net_ipv4_conf_default_secure_redirects
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_conf_default_send_redirects
+      requirement-id: sysctl_net_ipv4_conf_default_send_redirects
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_icmp_echo_ignore_broadcasts
+      requirement-id: sysctl_net_ipv4_icmp_echo_ignore_broadcasts
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_icmp_ignore_bogus_error_responses
+      requirement-id: sysctl_net_ipv4_icmp_ignore_bogus_error_responses
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_ip_forward
+      requirement-id: sysctl_net_ipv4_ip_forward
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv4_tcp_syncookies
+      requirement-id: sysctl_net_ipv4_tcp_syncookies
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv6_conf_all_accept_ra
+      requirement-id: sysctl_net_ipv6_conf_all_accept_ra
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv6_conf_all_accept_redirects
+      requirement-id: sysctl_net_ipv6_conf_all_accept_redirects
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv6_conf_all_accept_source_route
+      requirement-id: sysctl_net_ipv6_conf_all_accept_source_route
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv6_conf_all_forwarding
+      requirement-id: sysctl_net_ipv6_conf_all_forwarding
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv6_conf_default_accept_ra
+      requirement-id: sysctl_net_ipv6_conf_default_accept_ra
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv6_conf_default_accept_redirects
+      requirement-id: sysctl_net_ipv6_conf_default_accept_redirects
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv6_conf_default_accept_source_route
+      requirement-id: sysctl_net_ipv6_conf_default_accept_source_route
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sysctl_net_ipv6_conf_default_forwarding
+      requirement-id: sysctl_net_ipv6_conf_default_forwarding
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: use_pam_wheel_group_for_su
+      requirement-id: use_pam_wheel_group_for_su
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_pam_wheel_group_for_su
+          label: Pam Wheel Group For Su
+          description: Profile 'cis_workstation_l1' sets var_pam_wheel_group_for_su to 'cis'.
+          accepted-values:
+            - cis

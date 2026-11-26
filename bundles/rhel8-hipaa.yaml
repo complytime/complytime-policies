@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/hipaa-rhel8-catalog.yaml
+  - governance/policies/rhel8-hipaa-policy.yaml

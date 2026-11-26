@@ -1,0 +1,3 @@
+layers:
+  - governance/catalogs/stig-rhel10-catalog.yaml
+  - governance/policies/rhel10-stig-policy.yaml

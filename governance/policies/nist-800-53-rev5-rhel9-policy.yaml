@@ -9,7 +9,7 @@ metadata:
     name: ComplianceAsCode Project
     type: Software
     uri: https://github.com/ComplianceAsCode/content
-  date: '2026-09-10T19:10:44Z'
+  date: '2026-11-20T13:00:28Z'
   mapping-references:
     - id: nist-800-53-rev5-rhel9
       title: NIST SP 800-53 Rev 5 Control Catalog for RHEL9

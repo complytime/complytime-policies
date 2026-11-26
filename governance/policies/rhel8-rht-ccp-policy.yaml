@@ -1,0 +1,645 @@
+title: Red Hat Corporate Profile for Certified Cloud Providers (RH CCP)
+metadata:
+  id: rhel8-rht-ccp-policy
+  type: Policy
+  gemara-version: 1.2.0
+  description: Automated evaluation policy for the 'rht-ccp' profile on Red Hat Enterprise Linux 8, generated from the resolved ComplianceAsCode profile. requirement-id values are short CaC rule names (the OpenSCAP provider adds the xccdf_org.ssgproject.content_rule_ prefix).
+  author:
+    id: complianceascode
+    name: ComplianceAsCode Project
+    type: Software
+    uri: https://github.com/ComplianceAsCode/content
+  date: '2026-11-20T12:59:32Z'
+  mapping-references:
+    - id: rhel8-rules
+      title: RHEL8 Rules Control Catalog for RHEL8
+      version: ''
+      url: file://../catalogs/rhel8-rules-catalog.yaml
+contacts:
+  responsible:
+    - name: System Administrator
+  accountable:
+    - name: Security Team
+scope:
+  in:
+    technologies:
+      - Red Hat Enterprise Linux 8
+imports:
+  catalogs:
+    - reference-id: rhel8-rules
+adherence:
+  evaluation-methods:
+    - id: openscap-automated
+      type: Behavioral
+      mode: Automated
+      description: OpenSCAP automated compliance evaluation
+      executor:
+        id: openscap
+        name: OpenSCAP
+        type: Software
+  assessment-plans:
+    - id: accounts_minimum_age_login_defs
+      requirement-id: accounts_minimum_age_login_defs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_minimum_age_login_defs
+          label: Accounts Minimum Age Login Defs
+          description: Profile 'rht-ccp' sets var_accounts_minimum_age_login_defs to '7'.
+          accepted-values:
+            - '7'
+    - id: accounts_no_uid_except_zero
+      requirement-id: accounts_no_uid_except_zero
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_all_shadowed
+      requirement-id: accounts_password_all_shadowed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: accounts_password_pam_dcredit
+      requirement-id: accounts_password_pam_dcredit
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_dcredit
+          label: Password Pam Dcredit
+          description: Profile 'rht-ccp' sets var_password_pam_dcredit to '1'.
+          accepted-values:
+            - '1'
+    - id: accounts_password_pam_difok
+      requirement-id: accounts_password_pam_difok
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_difok
+          label: Password Pam Difok
+          description: Profile 'rht-ccp' sets var_password_pam_difok to '3'.
+          accepted-values:
+            - '3'
+    - id: accounts_password_pam_lcredit
+      requirement-id: accounts_password_pam_lcredit
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_lcredit
+          label: Password Pam Lcredit
+          description: Profile 'rht-ccp' sets var_password_pam_lcredit to '2'.
+          accepted-values:
+            - '2'
+    - id: accounts_password_pam_ocredit
+      requirement-id: accounts_password_pam_ocredit
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_ocredit
+          label: Password Pam Ocredit
+          description: Profile 'rht-ccp' sets var_password_pam_ocredit to '2'.
+          accepted-values:
+            - '2'
+    - id: accounts_password_pam_retry
+      requirement-id: accounts_password_pam_retry
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_retry
+          label: Password Pam Retry
+          description: Profile 'rht-ccp' sets var_password_pam_retry to '3'.
+          accepted-values:
+            - '3'
+    - id: accounts_password_pam_ucredit
+      requirement-id: accounts_password_pam_ucredit
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_ucredit
+          label: Password Pam Ucredit
+          description: Profile 'rht-ccp' sets var_password_pam_ucredit to '2'.
+          accepted-values:
+            - '2'
+    - id: accounts_password_pam_unix_remember
+      requirement-id: accounts_password_pam_unix_remember
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_pam_unix_remember
+          label: Password Pam Unix Remember
+          description: Profile 'rht-ccp' sets var_password_pam_unix_remember to '5'.
+          accepted-values:
+            - '5'
+    - id: accounts_password_warn_age_login_defs
+      requirement-id: accounts_password_warn_age_login_defs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_password_warn_age_login_defs
+          label: Accounts Password Warn Age Login Defs
+          description: Profile 'rht-ccp' sets var_accounts_password_warn_age_login_defs to '7'.
+          accepted-values:
+            - '7'
+    - id: accounts_passwords_pam_faillock_deny
+      requirement-id: accounts_passwords_pam_faillock_deny
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_accounts_passwords_pam_faillock_deny
+          label: Accounts Passwords Pam Faillock Deny
+          description: Profile 'rht-ccp' sets var_accounts_passwords_pam_faillock_deny to '5'.
+          accepted-values:
+            - '5'
+    - id: configure_crypto_policy
+      requirement-id: configure_crypto_policy
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_system_crypto_policy
+          label: System Crypto Policy
+          description: Profile 'rht-ccp' sets var_system_crypto_policy to 'fips'.
+          accepted-values:
+            - fips
+    - id: configure_ssh_crypto_policy
+      requirement-id: configure_ssh_crypto_policy
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: disable_host_auth
+      requirement-id: disable_host_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: enable_authselect
+      requirement-id: enable_authselect
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_authselect_profile
+          label: Authselect Profile
+          description: Profile 'rht-ccp' sets var_authselect_profile to 'sssd'.
+          accepted-values:
+            - sssd
+    - id: ensure_gpgcheck_globally_activated
+      requirement-id: ensure_gpgcheck_globally_activated
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: ensure_gpgcheck_never_disabled
+      requirement-id: ensure_gpgcheck_never_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: ensure_redhat_gpgkey_installed
+      requirement-id: ensure_redhat_gpgkey_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_group
+      requirement-id: file_groupowner_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_gshadow
+      requirement-id: file_groupowner_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_passwd
+      requirement-id: file_groupowner_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_etc_shadow
+      requirement-id: file_groupowner_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_groupowner_grub2_cfg
+      requirement-id: file_groupowner_grub2_cfg
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_group
+      requirement-id: file_owner_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_gshadow
+      requirement-id: file_owner_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_passwd
+      requirement-id: file_owner_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_etc_shadow
+      requirement-id: file_owner_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_owner_grub2_cfg
+      requirement-id: file_owner_grub2_cfg
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_ownership_binary_dirs
+      requirement-id: file_ownership_binary_dirs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_ownership_library_dirs
+      requirement-id: file_ownership_library_dirs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_binary_dirs
+      requirement-id: file_permissions_binary_dirs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_group
+      requirement-id: file_permissions_etc_group
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_gshadow
+      requirement-id: file_permissions_etc_gshadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_passwd
+      requirement-id: file_permissions_etc_passwd
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_etc_shadow
+      requirement-id: file_permissions_etc_shadow
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_grub2_cfg
+      requirement-id: file_permissions_grub2_cfg
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_library_dirs
+      requirement-id: file_permissions_library_dirs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: file_permissions_var_log_audit
+      requirement-id: file_permissions_var_log_audit
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: firewalld_sshd_port_enabled
+      requirement-id: firewalld_sshd_port_enabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: grub2_password
+      requirement-id: grub2_password
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_dccp_disabled
+      requirement-id: kernel_module_dccp_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: kernel_module_sctp_disabled
+      requirement-id: kernel_module_sctp_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_empty_passwords
+      requirement-id: no_empty_passwords
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: no_shelllogin_for_systemaccounts
+      requirement-id: no_shelllogin_for_systemaccounts
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_aide_installed
+      requirement-id: package_aide_installed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_telnet-server_removed
+      requirement-id: package_telnet-server_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: package_telnet_removed
+      requirement-id: package_telnet_removed
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: partition_for_tmp
+      requirement-id: partition_for_tmp
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: partition_for_var
+      requirement-id: partition_for_var
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: partition_for_var_log
+      requirement-id: partition_for_var_log
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: partition_for_var_log_audit
+      requirement-id: partition_for_var_log_audit
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: require_singleuser_auth
+      requirement-id: require_singleuser_auth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: security_patches_up_to_date
+      requirement-id: security_patches_up_to_date
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: selinux_policytype
+      requirement-id: selinux_policytype
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_selinux_policy_name
+          label: Selinux Policy Name
+          description: Profile 'rht-ccp' sets var_selinux_policy_name to 'targeted'.
+          accepted-values:
+            - targeted
+    - id: selinux_state
+      requirement-id: selinux_state
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_selinux_state
+          label: Selinux State
+          description: Profile 'rht-ccp' sets var_selinux_state to 'enforcing'.
+          accepted-values:
+            - enforcing
+    - id: service_abrtd_disabled
+      requirement-id: service_abrtd_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: service_firewalld_enabled
+      requirement-id: service_firewalld_enabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: service_telnet_disabled
+      requirement-id: service_telnet_disabled
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: set_firewalld_default_zone
+      requirement-id: set_firewalld_default_zone
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: set_password_hashing_algorithm_libuserconf
+      requirement-id: set_password_hashing_algorithm_libuserconf
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_hashing_algorithm_pam
+          label: Password Hashing Algorithm Pam
+          description: Profile 'rht-ccp' sets var_password_hashing_algorithm_pam to 'sha512'.
+          accepted-values:
+            - sha512
+    - id: set_password_hashing_algorithm_logindefs
+      requirement-id: set_password_hashing_algorithm_logindefs
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: set_password_hashing_algorithm_passwordauth
+      requirement-id: set_password_hashing_algorithm_passwordauth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_hashing_algorithm_pam
+          label: Password Hashing Algorithm Pam
+          description: Profile 'rht-ccp' sets var_password_hashing_algorithm_pam to 'sha512'.
+          accepted-values:
+            - sha512
+    - id: set_password_hashing_algorithm_systemauth
+      requirement-id: set_password_hashing_algorithm_systemauth
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: var_password_hashing_algorithm_pam
+          label: Password Hashing Algorithm Pam
+          description: Profile 'rht-ccp' sets var_password_hashing_algorithm_pam to 'sha512'.
+          accepted-values:
+            - sha512
+    - id: sshd_allow_only_protocol2
+      requirement-id: sshd_allow_only_protocol2
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_disable_empty_passwords
+      requirement-id: sshd_disable_empty_passwords
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_disable_root_login
+      requirement-id: sshd_disable_root_login
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_do_not_permit_user_env
+      requirement-id: sshd_do_not_permit_user_env
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_enable_warning_banner
+      requirement-id: sshd_enable_warning_banner
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+    - id: sshd_set_idle_timeout
+      requirement-id: sshd_set_idle_timeout
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated
+      parameters:
+        - id: sshd_idle_timeout_value
+          label: Sshd Idle Timeout
+          description: Profile 'rht-ccp' sets sshd_idle_timeout_value to '5_minutes'.
+          accepted-values:
+            - 5_minutes
+    - id: sshd_set_keepalive_0
+      requirement-id: sshd_set_keepalive_0
+      frequency: on-demand
+      evaluation-methods:
+        - id: openscap-automated
+          type: Behavioral
+          mode: Automated

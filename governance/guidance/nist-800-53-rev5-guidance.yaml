@@ -9,7 +9,7 @@ metadata:
     type: Human
     uri: https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final
   version: Revision 5
-  date: '2026-09-10T19:10:41Z'
+  date: '2026-11-20T13:00:01Z'
   applicability-groups:
     - id: low
       title: Low Baseline
@@ -11071,12 +11071,12 @@ guidelines:
         - Satisfy NIST 800-53 Rev 5 control SA-15.12
   - id: sa-15.13
     title: Logging Syntax
-    objective: Require the developer of the system or system component to minimize the use of personally identifiable information in development and test environments.
+    objective: Require the developer of the system, system component, or system service to use secure logging format(s) to log events types to log at level of detail to log.
     group: sa
     state: Active
     statements:
       - id: sa-15.13--stmt
-        text: Require the developer of the system or system component to minimize the use of personally identifiable information in development and test environments.
+        text: Require the developer of the system, system component, or system service to use secure logging format(s) to log events types to log at level of detail to log.
     rationale:
       importance: In support of better incident response and the ability to more quickly reconstruct security-related actions, identifying specific requirements for secure logging facilitates the ability to connect application-produced audit event logs with operational data. Event types are consistent with the event types defined in [AU-02](#au-2).
       goals:
